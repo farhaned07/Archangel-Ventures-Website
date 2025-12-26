@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border-dim: var(--border-dim);
+
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-mono);
+}
+
+:root {
+  /* Institutional Palette - Helixar Standard */
+  --background: #050505;
+  /* Near Black */
+  --foreground: #E5E5E5;
+  /* High Contrast Grey */
+  --accent: #0047FF;
+  /* Signal Blue - Use Sparingly */
+  --muted: #888888;
+  /* Secondary Text */
+  --border-dim: #222222;
+  /* Hairline Borders */
+
+  /* Typography */
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "Menlo", "Monaco", "Courier New", monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+/* Institutional Utilities */
+
+/* 1px Grid Lines */
+@utility border-grid {
+  border: 1px solid var(--border-dim);
+}
+
+@utility border-grid-t {
+  border-top: 1px solid var(--border-dim);
+}
+
+@utility border-grid-b {
+  border-bottom: 1px solid var(--border-dim);
+}
+
+@utility border-grid-r {
+  border-right: 1px solid var(--border-dim);
+}
+
+/* Typography Utilities */
+@utility text-hero {
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+@utility text-display {
+  font-size: clamp(2rem, 4vw, 4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@utility text-mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+
+/* Layout Utilities */
+@utility section-pad {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+@utility container-grid {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Reset Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
