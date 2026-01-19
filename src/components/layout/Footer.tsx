@@ -17,7 +17,7 @@ export function Footer() {
                     <div className="md:col-span-3">
                         <span className="text-xs font-mono text-[#666] uppercase tracking-widest block mb-6">Location</span>
                         <p className="text-[#E5E5E5]">Thailand-based.</p>
-                        <p className="text-[#888]">Serving South Asia.</p>
+                        <p className="text-[#888]">Scaling globally.</p>
                     </div>
 
                     <div className="md:col-span-6 text-right md:text-right">

@@ -64,13 +64,13 @@ export default function Home() {
           <div className="md:col-span-9">
             <Reveal delay={0.1}>
               <h2 className="text-display text-white mb-12 max-w-4xl">
-                We do not flip assets. We compound operational capability.
+                We do not trade in companies. We architect enduring systems.
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="text-[#888] text-lg leading-relaxed max-w-2xl mb-8">
-                Archangel creates and owns infrastructure businesses designed for institutional adoption.
-                Each company is built from first principles and operated directly by the founding team.
+                Archangel designs, builds, and stewards mission-critical infrastructure for institutional-scale adoption.
+                Each platform is engineered from first principles and governed directly by the founding team to ensure long-term control, resilience, and strategic alignment.
               </p>
             </Reveal>
           </div>
