@@ -12,17 +12,12 @@
 }
 
 :root {
-  /* Institutional Palette - Helixar Standard */
+  /* Archangel Institutional Palette */
   --background: #050505;
-  /* Near Black */
   --foreground: #E5E5E5;
-  /* High Contrast Grey */
-  --accent: #0047FF;
-  /* Signal Blue - Use Sparingly */
+  --accent: #6F829A;
   --muted: #888888;
-  /* Secondary Text */
   --border-dim: #222222;
-  /* Hairline Borders */
 
   /* Typography */
   --font-inter: "Inter", sans-serif;
@@ -44,7 +39,6 @@ body {
 
 /* Institutional Utilities */
 
-/* 1px Grid Lines */
 @utility border-grid {
   border: 1px solid var(--border-dim);
 }
@@ -64,23 +58,23 @@ body {
 /* Typography Utilities */
 @utility text-hero {
   font-size: clamp(3rem, 6vw, 6rem);
-  font-weight: 500;
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-weight: 400;
+  line-height: 0.96;
+  letter-spacing: -0.015em;
 }
 
 @utility text-display {
   font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 500;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
 }
 
 @utility text-mono-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.14em;
   color: var(--muted);
 }
 
@@ -99,7 +93,6 @@ body {
   padding-right: 2rem;
 }
 
-/* Reset Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   background: var(--background);
