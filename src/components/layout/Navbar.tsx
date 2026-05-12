@@ -15,7 +15,7 @@ export function Navbar() {
                     <Link
                         href="/"
                         aria-label="Archangel home"
-                        className="text-[13px] md:text-sm font-light tracking-[0.42em] text-white uppercase leading-none"
+                        className="text-[13px] md:text-sm font-light tracking-[0.36em] md:tracking-[0.45em] text-white uppercase leading-none"
                     >
                         ΛRCHΛNGEL
                     </Link>
