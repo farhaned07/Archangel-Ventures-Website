@@ -12,8 +12,12 @@ export function Navbar() {
         <>
             <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-[#222]">
                 <div className="flex items-center justify-between px-6 py-4 md:px-8 max-w-[1400px] mx-auto">
-                    <Link href="/" className="text-lg font-bold tracking-[0.18em] text-white uppercase">
-                        Archangel
+                    <Link
+                        href="/"
+                        aria-label="Archangel home"
+                        className="text-[13px] md:text-sm font-light tracking-[0.42em] text-white uppercase leading-none"
+                    >
+                        ΛRCHΛNGEL
                     </Link>
 
                     <div className="hidden md:flex items-center gap-12">
