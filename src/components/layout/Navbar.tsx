@@ -12,28 +12,25 @@ export function Navbar() {
         <>
             <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-[#222]">
                 <div className="flex items-center justify-between px-6 py-4 md:px-8 max-w-[1400px] mx-auto">
-                    {/* Brand - Text Only, No Logo Mark */}
-                    <Link href="/" className="text-lg font-bold tracking-tight text-white uppercase">
+                    <Link href="/" className="text-lg font-bold tracking-[0.18em] text-white uppercase">
                         Archangel
                     </Link>
 
-                    {/* Desktop Navigation - Mono, Spaced */}
                     <div className="hidden md:flex items-center gap-12">
-                        <NavLink href="#identity">01 Identity</NavLink>
+                        <NavLink href="#thesis">01 Thesis</NavLink>
                         <NavLink href="#focus">02 Focus</NavLink>
-                        <NavLink href="#portfolio">03 Portfolio</NavLink>
-                        <NavLink href="#operations">04 Operations</NavLink>
+                        <NavLink href="#companies">03 Companies</NavLink>
+                        <NavLink href="#approach">04 Approach</NavLink>
+                        <NavLink href="#structure">05 Structure</NavLink>
                     </div>
 
-                    {/* Desktop Contact - Minimal Text Link */}
                     <Link
-                        href="#signal"
+                        href="#contact"
                         className="hidden md:inline-flex text-sm font-medium text-white border border-[#333] px-6 py-2 hover:bg-white hover:text-black transition-colors"
                     >
                         Contact
                     </Link>
 
-                    {/* Mobile Menu Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
                         className="md:hidden text-white"
@@ -44,21 +41,21 @@ export function Navbar() {
                 </div>
             </nav>
 
-            {/* Mobile Menu Overlay - Sharp, Black */}
             {isOpen && (
                 <div className="fixed inset-0 z-40 bg-[#050505] pt-24 px-6 md:hidden">
                     <div className="flex flex-col gap-8">
-                        <MobileNavLink href="#identity" onClick={closeMenu}>01 / Identity</MobileNavLink>
+                        <MobileNavLink href="#thesis" onClick={closeMenu}>01 / Thesis</MobileNavLink>
                         <MobileNavLink href="#focus" onClick={closeMenu}>02 / Focus</MobileNavLink>
-                        <MobileNavLink href="#portfolio" onClick={closeMenu}>03 / Portfolio</MobileNavLink>
-                        <MobileNavLink href="#operations" onClick={closeMenu}>04 / Operations</MobileNavLink>
+                        <MobileNavLink href="#companies" onClick={closeMenu}>03 / Companies</MobileNavLink>
+                        <MobileNavLink href="#approach" onClick={closeMenu}>04 / Approach</MobileNavLink>
+                        <MobileNavLink href="#structure" onClick={closeMenu}>05 / Structure</MobileNavLink>
 
                         <Link
-                            href="#signal"
+                            href="#contact"
                             onClick={closeMenu}
                             className="mt-8 text-xl font-medium text-white border-b border-white/20 pb-4 inline-block"
                         >
-                            Contact Signal →
+                            Contact →
                         </Link>
                     </div>
                 </div>
