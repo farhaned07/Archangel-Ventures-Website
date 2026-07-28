@@ -20,6 +20,17 @@ Archangel Trade         → Thailand setup, BOI, visas, market entry
 Archangel Private Office → Bangladesh ↔ Thailand access and response network
 ```
 
+## Archangel Enterprise AI Transformation Framework
+
+This repository now also contains the reusable consulting product architecture for Archangel.
+
+Start here:
+
+- [Framework overview](docs/aetf/README.md)
+- [Platform core](docs/aetf/platform/README.md)
+- [Accelerators index](docs/aetf/accelerators/README.md)
+- [AP Accelerator](docs/aetf/accelerators/ap/README.md)
+
 ## Stack
 
 ```text
