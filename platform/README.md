@@ -65,6 +65,10 @@ Run the same command with `-Stage production -ApprovedForProduction`. Production
 
 AI may propose extraction and mappings. Financial controls, approval decisions, audit records and production promotion remain deterministic and human governed.
 
+## Secrets
+
+Never commit tenant secrets, connection IDs or generated client outputs. Keep them in GitHub environment secrets or a local secret store.
+
 ## Important tenant requirement
 
 The repository is deployment complete, but no external system can be installed into a private Microsoft tenant without tenant specific credentials, permissions, connection IDs and ERP details. These are supplied at deployment time and are never committed to source control.
