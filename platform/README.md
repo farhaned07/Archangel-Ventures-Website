@@ -1,28 +1,70 @@
 # Archangel Enterprise AI Transformation Platform
 
-This directory contains the first executable delivery slice.
+This package deploys the Accounts Payable accelerator into a client Microsoft environment.
 
-## Current flow
+## Delivery flow
 
-1. Read an environment assessment.
-2. Generate invariant platform configuration.
-3. Produce a sandbox deployment plan.
-4. Validate AP invoices deterministically.
-5. Resolve the correct human approver.
+1. Assess the client environment.
+2. Generate client configuration and deployment settings.
+3. Provision Dataverse tables and environment variables.
+4. Install Power Automate workflows in a stopped state.
+5. Run tenant smoke tests.
+6. Validate with real invoices.
+7. Enable flows and promote with human approval.
 
-## Run
+## Prerequisites
+
+- Node.js 20 or later
+- PowerShell 7
+- Microsoft Entra service principal with access to the target Power Platform environment
+- Existing Office 365 Outlook, Dataverse and Approvals connections owned or shared with the deployment identity
+- ERP endpoint and authentication method
+
+## Generate configuration
 
 ```bash
 npm run platform:generate
 npm run test:platform
 ```
 
-Generated artifacts are written to `platform/output/`.
+Edit `platform/examples/environment-assessment.json` before generation. Generated files are written to `platform/output/`.
 
-## Design rule
+## Deploy to sandbox
 
-AI and discovery components may propose configuration. Financial controls, approvals, validation, audit, and production promotion remain deterministic and human governed.
+```powershell
+./platform/scripts/deploy-all.ps1 `
+  -Stage sandbox `
+  -EnvironmentUrl "https://YOURORG.crm.dynamics.com" `
+  -EnvironmentName "YOUR-POWER-PLATFORM-ENVIRONMENT-ID" `
+  -TenantId "YOUR-TENANT-ID" `
+  -ClientId "YOUR-APP-ID" `
+  -ClientSecret $env:ARCHANGEL_CLIENT_SECRET `
+  -Office365ConnectionName "shared-office365-CONNECTION-ID" `
+  -DataverseConnectionName "shared-commondataserviceforapps-CONNECTION-ID" `
+  -ApprovalsConnectionName "shared-approvals-CONNECTION-ID"
+```
 
-## Next implementation increment
+The deployment is idempotent. Tables and variables are created only when missing. Flows are created or updated and remain stopped until an operator validates connections, approvers, ERP authentication and a real invoice.
 
-Connect the assessment contract to Microsoft Graph and Power Platform inventory exports, then package the AP resources as a managed Power Platform solution.
+## Production promotion
+
+Run the same command with `-Stage production -ApprovedForProduction`. Production promotion is blocked unless the explicit approval switch is present.
+
+## Installed capability
+
+- Invoice intake from Outlook attachments
+- Canonical Dataverse invoice records
+- Deterministic validation and exception routing
+- Human approval through Microsoft Approvals and Teams
+- ERP handoff through a configured endpoint
+- Audit and exception tables
+- Client configuration and deployment settings
+- CI validation and post deployment smoke tests
+
+## Security rule
+
+AI may propose extraction and mappings. Financial controls, approval decisions, audit records and production promotion remain deterministic and human governed.
+
+## Important tenant requirement
+
+The repository is deployment complete, but no external system can be installed into a private Microsoft tenant without tenant specific credentials, permissions, connection IDs and ERP details. These are supplied at deployment time and are never committed to source control.
