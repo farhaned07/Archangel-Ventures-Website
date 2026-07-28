@@ -1,0 +1,10 @@
+flowchart TD
+    A[Invoice Email Arrives] --> B[Save to SharePoint]
+    B --> C[AI Builder Extracts Fields]
+    C --> D[Validate in Dataverse]
+    D -->|Valid| E[Teams Approval]
+    D -->|Exception| F[Exception Queue]
+    E -->|Approved| G[ERP Posting]
+    E -->|Rejected or More Info| F
+    G --> H[Audit Log]
+    H --> I[Power BI Dashboard]
