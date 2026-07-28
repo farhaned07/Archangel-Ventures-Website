@@ -1,0 +1,30 @@
+{
+  "client": { "id": "demo-thailand", "name": "Demo Thailand Enterprise" },
+  "environment": {
+    "tenantId": "00000000-0000-0000-0000-000000000000",
+    "targetEnvironment": "sandbox",
+    "region": "asia",
+    "workloads": {
+      "outlook": true,
+      "teams": true,
+      "sharepoint": true,
+      "powerAutomate": true,
+      "dataverse": true
+    }
+  },
+  "accountsPayable": {
+    "invoiceMailbox": "ap@example.com",
+    "sharePointSite": "https://example.sharepoint.com/sites/finance",
+    "teamsApprovalChannel": "Finance/AP Approvals",
+    "currency": "THB",
+    "confidenceThreshold": 0.9,
+    "requirePurchaseOrder": true,
+    "amountMismatchTolerance": 1,
+    "erp": { "type": "sap", "endpoint": "connection-reference:sap-ap" },
+    "approvers": [
+      { "email": "ap.manager@example.com", "minimumAmount": 0, "maximumAmount": 100000, "businessUnits": ["*"] },
+      { "email": "finance.director@example.com", "minimumAmount": 100000.01, "businessUnits": ["*"] }
+    ]
+  },
+  "governance": { "auditRetentionDays": 2555, "dataLossPreventionPolicy": "Finance Enterprise DLP" }
+}
