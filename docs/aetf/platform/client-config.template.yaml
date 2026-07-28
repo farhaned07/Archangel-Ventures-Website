@@ -1,0 +1,48 @@
+# Archangel client configuration template
+# Copy this file and fill it in per client.
+
+client:
+  name: "Client Name"
+  industry: "Finance"
+  region: "Thailand"
+  owner: "Program Sponsor"
+
+environment:
+  tenant_name: "Microsoft 365 Tenant"
+  dev: "DEV"
+  test: "TEST"
+  prod: "PROD"
+
+invoice:
+  mailbox: "invoices@company.com"
+  sharepoint_library: "Finance/Invoices"
+  dataverse_table: "Invoices"
+  approval_team: "Finance Approvals"
+
+vendor:
+  source_system: "SAP"
+  table_name: "Vendors"
+
+purchase_order:
+  source_system: "Oracle"
+  table_name: "PurchaseOrders"
+
+approval_rules:
+  tolerance_percent: 5
+  max_auto_approve_amount: 10000
+  escalation_hours: 48
+
+reporting:
+  powerbi_workspace: "Finance KPI"
+  kpis:
+    - processing_time
+    - approval_time
+    - exception_rate
+    - hours_saved
+
+security:
+  data_classification: "Internal"
+  retention_days: 3650
+  audit_enabled: true
+
+notes: []
