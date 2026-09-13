@@ -1,7 +1,4 @@
-"use client";
-
-import React, { useEffect, useRef } from "react";
-import { motion, useInView, useAnimation, Variant } from "framer-motion";
+import React from "react";
 
 interface RevealProps {
     children: React.ReactNode;
@@ -18,34 +15,14 @@ export const Reveal = ({
     className = "",
     variant = "slide"
 }: RevealProps) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, amount: 0.15 }); // Trigger when 15% visible
-    const mainControls = useAnimation();
-
-    useEffect(() => {
-        if (isInView) {
-            mainControls.start("visible");
-        }
-    }, [isInView, mainControls]);
-
-    // The "Heavy" Ease: [0.25, 0.25, 0, 1]
-    const transition = { duration: 0.8, ease: [0.25, 0.25, 0, 1] as any, delay: delay };
-
-    const variants = {
-        hidden: { opacity: 0, y: variant === "slide" ? 40 : 0 },
-        visible: { opacity: 1, y: 0 }
-    };
-
     return (
-        <div ref={ref} style={{ position: "relative", width }} className={className}>
-            <motion.div
-                variants={variants}
-                initial="hidden"
-                animate={mainControls}
-                transition={transition}
+        <div style={{ position: "relative", width }} className={className}>
+            <div
+                className={variant === "fade" ? "reveal-safe reveal-fade" : "reveal-safe"}
+                style={{ animationDelay: `${delay}s` }}
             >
                 {children}
-            </motion.div>
+            </div>
         </div>
     );
 };
