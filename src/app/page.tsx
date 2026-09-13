@@ -1,376 +1,279 @@
 "use client";
 
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 
+const workflowExamples = [
+  "Invoice and document processing",
+  "Management reporting",
+  "Reconciliation and data entry",
+  "Customer enquiries",
+  "Quotation and proposal generation",
+  "Approvals and operational handoffs",
+];
+
 export default function Home() {
   return (
-    <main className="min-h-screen w-full flex flex-col pt-24">
-
-      {/* 01 HERO SECTION */}
-      <section className="w-full min-h-[90vh] flex flex-col justify-between border-b border-[#222]">
-        <div className="container-grid flex-1 flex flex-col justify-center">
+    <main className="min-h-screen w-full flex flex-col pt-20 md:pt-24">
+      <section className="w-full min-h-[86vh] flex flex-col justify-between border-b border-[#222]">
+        <div className="container-grid flex-1 flex flex-col justify-center py-20 md:py-28">
           <Reveal>
-            <h1 className="text-display md:text-hero uppercase tracking-tighter leading-[0.9] text-white max-w-6xl">
-              AI companies <br />
-              <span className="text-[#888]">for emerging-market realities.</span>
+            <span className="text-mono-label block mb-6">Applied AI · Bangkok, Thailand</span>
+          </Reveal>
+          <Reveal delay={0.05}>
+            <h1 className="text-hero text-white max-w-6xl">
+              Give us one painful business process.
+              <span className="text-[#888] block mt-2">We make it faster with AI.</span>
             </h1>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <p className="mt-8 text-lg md:text-xl text-[#999] leading-relaxed max-w-2xl">
+              Archangel finds expensive manual work inside your business, builds the automation, and proves the result against the way your team works today.
+            </p>
+          </Reveal>
+          <Reveal delay={0.18}>
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
+              <a
+                href="mailto:build@archangel.ventures?subject=AI%20Workflow%20Sprint"
+                className="inline-flex items-center justify-center gap-2 bg-white text-black px-6 py-3.5 text-sm font-medium hover:bg-[#DADADA] transition-colors"
+              >
+                Bring us a workflow <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#sprint"
+                className="inline-flex items-center justify-center border border-[#333] text-white px-6 py-3.5 text-sm hover:border-[#666] transition-colors"
+              >
+                See the fixed-fee sprint
+              </a>
+            </div>
           </Reveal>
         </div>
 
         <div className="w-full border-t border-[#222]">
-          <div className="container-grid grid grid-cols-1 md:grid-cols-4 gap-0">
-            <div className="p-6 md:p-8 border-r border-[#222] border-b md:border-b-0">
-              <Reveal delay={0.2}>
-                <span className="text-mono-label block mb-2">Context</span>
-                <p className="text-sm text-[#E5E5E5] leading-relaxed">
-                  A founder-led holding company building and owning AI-native companies from inside the markets they serve.
-                </p>
-              </Reveal>
-            </div>
-            <div className="p-6 md:p-8 border-r border-[#222] border-b md:border-b-0">
-              <Reveal delay={0.3}>
-                <span className="text-mono-label block mb-2">Structure</span>
-                <span className="text-2xl font-medium text-white block">Hanna + Onnesha</span>
-                <span className="text-xs text-[#888]">First companies</span>
-              </Reveal>
-            </div>
-            <div className="p-6 md:p-8 border-r border-[#222] border-b md:border-b-0">
-              <Reveal delay={0.4}>
-                <span className="text-mono-label block mb-2">Geography</span>
-                <p className="text-sm text-[#E5E5E5] leading-relaxed">
-                  Thailand · Bangladesh · Southeast Asia
-                </p>
-              </Reveal>
-            </div>
-            <div className="p-6 md:p-8 flex flex-col justify-between items-start md:items-end">
-              <Reveal delay={0.5}>
-                <span className="text-mono-label block mb-2">Established</span>
-                <span className="text-xl text-[#E5E5E5]">2023</span>
-              </Reveal>
-            </div>
+          <div className="container-grid grid grid-cols-2 md:grid-cols-4 gap-0">
+            <Stat label="Engagement" value="10 working days" />
+            <Stat label="Fixed fee" value="฿45,000" />
+            <Stat label="Scope" value="One workflow" />
+            <Stat label="Company" value="BOI promoted" last />
           </div>
         </div>
       </section>
 
-      {/* 02 THESIS */}
-      <section id="thesis" className="w-full border-b border-[#222]">
+      <section id="how" className="w-full border-b border-[#222]">
         <div className="container-grid grid grid-cols-1 md:grid-cols-12 section-pad">
-          <div className="md:col-span-3 mb-8 md:mb-0">
-            <Reveal>
-              <span className="text-mono-label">01 / Thesis</span>
-            </Reveal>
+          <div className="md:col-span-3 mb-10 md:mb-0">
+            <Reveal><span className="text-mono-label">01 / What we do</span></Reveal>
           </div>
           <div className="md:col-span-9">
-            <Reveal delay={0.1}>
-              <h2 className="text-display text-white mb-12 max-w-4xl">
-                The next important AI companies will not only come from Silicon Valley.
+            <Reveal>
+              <h2 className="text-display text-white max-w-4xl mb-16">
+                We begin with the work, not the technology.
               </h2>
             </Reveal>
-            <Reveal delay={0.2}>
-              <div className="text-[#888] text-lg leading-relaxed max-w-2xl space-y-6">
-                <p>
-                  Emerging markets are not smaller versions of advanced markets. They have different healthcare systems, languages, workflows, institutions, constraints, and trust gaps.
-                </p>
-                <p>
-                  Archangel builds from inside these realities.
-                </p>
-                <p>
-                  We create and own AI-native companies around problems where local context matters deeply — starting with care intelligence in Thailand and AI work infrastructure for Bangladesh and Southeast Asia.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 03 FOCUS */}
-      <section id="focus" className="w-full border-b border-[#222]">
-        <div className="w-full border-b border-[#222] py-6">
-          <div className="container-grid">
-            <Reveal>
-              <span className="text-mono-label">02 / Focus</span>
-            </Reveal>
-          </div>
-        </div>
-        <div className="container-grid grid grid-cols-1 md:grid-cols-3">
-          <div className="border-r border-[#222] border-b md:border-b-0 p-8 md:p-12 h-full min-h-[450px] flex flex-col justify-between hover:bg-[#0A0A0A] transition-colors">
-            <Reveal delay={0.1}>
-              <div>
-                <span className="text-mono-label text-[#444] block mb-8">001</span>
-                <h3 className="text-2xl font-medium text-white mb-6">Care <br /> Intelligence</h3>
-                <p className="text-[#888] leading-relaxed mb-6">
-                  Healthcare teams need better visibility between clinical visits.
-                </p>
-                <p className="text-[#666] text-sm leading-relaxed">
-                  We build systems that help care teams monitor patients, identify risk earlier, and move from manual follow-up to exception-driven care.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 mt-8">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">Healthcare</span>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">Risk Visibility</span>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">Patient Follow-up</span>
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="border-r border-[#222] border-b md:border-b-0 p-8 md:p-12 h-full min-h-[450px] flex flex-col justify-between hover:bg-[#0A0A0A] transition-colors">
-            <Reveal delay={0.2}>
-              <div>
-                <span className="text-mono-label text-[#444] block mb-8">002</span>
-                <h3 className="text-2xl font-medium text-white mb-6">AI Work <br /> Infrastructure</h3>
-                <p className="text-[#888] leading-relaxed mb-6">
-                  Emerging markets need tools that help people build, automate, and operate faster with AI.
-                </p>
-                <p className="text-[#666] text-sm leading-relaxed">
-                  We build AI work systems designed around local talent, business workflows, and regional constraints.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 mt-8">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">AI Workers</span>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">Automation</span>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">Productivity</span>
-              </div>
-            </Reveal>
-          </div>
-
-          <div className="p-8 md:p-12 h-full min-h-[450px] flex flex-col justify-between hover:bg-[#0A0A0A] transition-colors">
-            <Reveal delay={0.3}>
-              <div>
-                <span className="text-mono-label text-[#444] block mb-8">003</span>
-                <h3 className="text-2xl font-medium text-white mb-6">Institutional <br /> Systems</h3>
-                <p className="text-[#888] leading-relaxed mb-6">
-                  Some of the largest opportunities are hidden inside institutions.
-                </p>
-                <p className="text-[#666] text-sm leading-relaxed">
-                  We look for systems where AI can improve coordination, escalation, decision-making, and operational intelligence.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 mt-8">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">Operations</span>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">Infrastructure</span>
-                <span className="text-[10px] font-mono uppercase tracking-wider text-[#555] border border-[#222] px-2 py-1">Decision Systems</span>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 04 COMPANIES */}
-      <section id="companies" className="w-full border-b border-[#222] bg-[#050505]">
-        <div className="container-grid grid grid-cols-1 md:grid-cols-12 pt-24 pb-12">
-          <div className="md:col-span-3">
-            <Reveal>
-              <span className="text-mono-label">03 / Companies</span>
-            </Reveal>
-          </div>
-          <div className="md:col-span-9">
-            <Reveal>
-              <h2 className="text-4xl text-white mb-16">First companies.</h2>
-            </Reveal>
-
-            <div className="grid grid-cols-12 pb-4 border-b border-[#222] text-xs font-mono text-[#666] uppercase tracking-wider">
-              <div className="col-span-5 md:col-span-4">Company</div>
-              <div className="col-span-5 md:col-span-4">Category</div>
-              <div className="hidden md:block md:col-span-3">Region</div>
-              <div className="col-span-2 md:col-span-1 text-right">Link</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[#222]">
+              <ProcessStep number="01" title="Understand" text="We sit with the people doing the work and map the real process, including the messy parts that SOPs miss." />
+              <ProcessStep number="02" title="Build" text="We simplify what should be simplified, then build the smallest reliable AI automation that can do useful work." />
+              <ProcessStep number="03" title="Prove" text="We compare the new workflow against the old one using time, effort, delay, quality and operating cost." last />
             </div>
-
-            <Reveal delay={0.1}>
-              <Link href="https://www.hanna.care" target="_blank" className="group grid grid-cols-12 py-8 border-b border-[#222] items-start hover:bg-[#0A0A0A] transition-colors cursor-pointer">
-                <div className="col-span-12 md:col-span-5 pr-8 mb-4 md:mb-0">
-                  <h3 className="text-xl text-white font-medium group-hover:text-[#6F829A] transition-colors mb-2">Hanna</h3>
-                  <p className="text-[#888] text-sm leading-relaxed">
-                    Care intelligence for healthcare teams in Thailand. Hanna helps care teams monitor patients between visits, identify risk earlier, and move from manual follow-up to exception-driven care.
-                  </p>
-                </div>
-                <div className="col-span-6 md:col-span-3 text-[#E5E5E5] text-sm">
-                  Care Intelligence
-                </div>
-                <div className="col-span-4 md:col-span-3 text-[#888] text-sm">
-                  Thailand
-                </div>
-                <div className="col-span-2 md:col-span-1 text-right">
-                  <ArrowUpRight className="w-5 h-5 ml-auto text-[#444] group-hover:text-white" />
-                </div>
-              </Link>
-            </Reveal>
-
-            <Reveal delay={0.2}>
-              <Link href="https://www.onnesha.fun" target="_blank" className="group grid grid-cols-12 py-8 border-b border-[#222] items-start hover:bg-[#0A0A0A] transition-colors cursor-pointer">
-                <div className="col-span-12 md:col-span-5 pr-8 mb-4 md:mb-0">
-                  <h3 className="text-xl text-white font-medium group-hover:text-[#6F829A] transition-colors mb-2">Onnesha AI</h3>
-                  <p className="text-[#888] text-sm leading-relaxed">
-                    AI work infrastructure for Bangladesh and Southeast Asia. Onnesha helps people and businesses build, automate, and operate faster with AI.
-                  </p>
-                </div>
-                <div className="col-span-6 md:col-span-3 text-[#E5E5E5] text-sm">
-                  AI Work Infrastructure
-                </div>
-                <div className="col-span-4 md:col-span-3 text-[#888] text-sm">
-                  Bangladesh / Southeast Asia
-                </div>
-                <div className="col-span-2 md:col-span-1 text-right">
-                  <ArrowUpRight className="w-5 h-5 ml-auto text-[#444] group-hover:text-white" />
-                </div>
-              </Link>
-            </Reveal>
-
-            <Reveal delay={0.3}>
-              <div className="group grid grid-cols-12 py-8 border-b border-[#222] items-start hover:bg-[#0A0A0A] transition-colors cursor-default">
-                <div className="col-span-12 md:col-span-5 pr-8 mb-4 md:mb-0">
-                  <h3 className="text-xl text-white font-medium mb-2">Future Companies</h3>
-                  <p className="text-[#888] text-sm leading-relaxed">
-                    New companies will be built where intelligence, infrastructure, capital, and trust create long-term strategic opportunity.
-                  </p>
-                </div>
-                <div className="col-span-6 md:col-span-3 text-[#E5E5E5] text-sm">
-                  Incubation
-                </div>
-                <div className="col-span-4 md:col-span-3 text-[#888] text-sm">
-                  Emerging Markets
-                </div>
-                <div className="col-span-2 md:col-span-1 text-right">
-                  <ArrowUpRight className="w-5 h-5 ml-auto text-[#222]" />
-                </div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* 05 APPROACH */}
-      <section id="approach" className="w-full border-b border-[#222]">
+      <section id="sprint" className="w-full border-b border-[#222] bg-[#090909]">
         <div className="container-grid grid grid-cols-1 md:grid-cols-12 section-pad">
-          <div className="md:col-span-3 mb-8 md:mb-0">
-            <Reveal>
-              <span className="text-mono-label">04 / Approach</span>
-            </Reveal>
+          <div className="md:col-span-3 mb-10 md:mb-0">
+            <Reveal><span className="text-mono-label">02 / Start here</span></Reveal>
           </div>
           <div className="md:col-span-9">
-            <Reveal delay={0.1}>
-              <h2 className="text-display text-white mb-16 max-w-4xl">
-                We do not collect ideas. We build operating companies.
-              </h2>
+            <Reveal>
+              <div className="flex flex-col xl:flex-row xl:items-end xl:justify-between gap-8 border-b border-[#333] pb-10 mb-12">
+                <div>
+                  <p className="text-[#888] text-sm mb-4">ARCHANGEL AI WORKFLOW SPRINT</p>
+                  <h2 className="text-display text-white max-w-3xl">
+                    One workflow. Ten working days. A working result.
+                  </h2>
+                </div>
+                <div className="xl:text-right shrink-0">
+                  <p className="text-4xl md:text-5xl text-white tracking-tight">฿45,000</p>
+                  <p className="text-sm text-[#777] mt-2">฿22,500 to start · ฿22,500 on delivery</p>
+                </div>
+              </div>
             </Reveal>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-              <Reveal delay={0.15}>
-                <h3 className="text-xl text-white font-medium mb-4">Founder-led</h3>
-                <p className="text-[#888] leading-relaxed">
-                  Archangel is built around direct founder involvement. We design, build, test, and operate close to the market.
-                </p>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+              <Reveal delay={0.08}>
+                <div>
+                  <h3 className="text-xl text-white mb-6">What you get</h3>
+                  <div className="space-y-4">
+                    <Deliverable text="Current workflow mapped" />
+                    <Deliverable text="Baseline for time, people, delay and errors" />
+                    <Deliverable text="Working AI automation for the selected process" />
+                    <Deliverable text="Before-and-after comparison" />
+                    <Deliverable text="ROI and scale recommendation" />
+                  </div>
+                </div>
               </Reveal>
-              <Reveal delay={0.25}>
-                <h3 className="text-xl text-white font-medium mb-4">Company-first</h3>
-                <p className="text-[#888] leading-relaxed">
-                  We do not build demos for attention. We build companies around real market gaps, durable demand, and institutional trust.
-                </p>
-              </Reveal>
-              <Reveal delay={0.35}>
-                <h3 className="text-xl text-white font-medium mb-4">Context-native</h3>
-                <p className="text-[#888] leading-relaxed">
-                  We start from local systems, not imported assumptions. Language, regulation, culture, distribution, and trust shape the product from day one.
-                </p>
+              <Reveal delay={0.14}>
+                <div className="border border-[#2A2A2A] p-7 md:p-9">
+                  <span className="text-mono-label block mb-5">The point</span>
+                  <p className="text-xl md:text-2xl text-white leading-snug mb-6">
+                    You do not need to approve an AI transformation programme to find out whether AI can remove real work.
+                  </p>
+                  <p className="text-[#888] leading-relaxed">
+                    Start with one process. If the economics are good, we expand. If they are not, we stop there.
+                  </p>
+                </div>
               </Reveal>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 06 STRUCTURE */}
-      <section id="structure" className="w-full border-b border-[#222] bg-[#0A0A0A]">
+      <section id="examples" className="w-full border-b border-[#222]">
         <div className="container-grid grid grid-cols-1 md:grid-cols-12 section-pad">
-          <div className="md:col-span-3 mb-8 md:mb-0">
-            <Reveal>
-              <span className="text-mono-label">05 / Structure</span>
-            </Reveal>
+          <div className="md:col-span-3 mb-10 md:mb-0">
+            <Reveal><span className="text-mono-label">03 / Good candidates</span></Reveal>
           </div>
           <div className="md:col-span-9">
-            <Reveal delay={0.1}>
-              <h2 className="text-display text-white mb-12 max-w-4xl">
-                A holding company for intelligence, infrastructure, capital, and private access.
+            <Reveal>
+              <h2 className="text-display text-white max-w-4xl mb-6">
+                Look for work your team repeats every week.
               </h2>
-            </Reveal>
-            <Reveal delay={0.2}>
-              <div className="text-[#888] text-lg leading-relaxed max-w-2xl space-y-6">
-                <p>
-                  Archangel’s first public focus is AI company building.
-                </p>
-                <p>
-                  The longer-term structure is broader: to build and own companies across the systems that shape how people receive care, work, move, invest, and access trusted networks.
-                </p>
-                <p>
-                  AI is the first wedge. The holding company is the architecture.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* 07 CONTEXT */}
-      <section id="context" className="w-full border-b border-[#222]">
-        <div className="container-grid grid grid-cols-1 md:grid-cols-12 section-pad">
-          <div className="md:col-span-3 mb-8 md:mb-0">
-            <Reveal>
-              <span className="text-mono-label">06 / Context</span>
-            </Reveal>
-          </div>
-          <div className="md:col-span-9">
-            <Reveal delay={0.1}>
-              <p className="text-2xl md:text-3xl text-white leading-tight max-w-4xl">
-                Emerging markets do not need copied AI. They need contextual AI.
+              <p className="text-[#888] text-lg max-w-2xl mb-14 leading-relaxed">
+                The best first workflow is repetitive, rules-heavy, document-heavy, or requires people to move information between systems by hand.
               </p>
             </Reveal>
-            <Reveal delay={0.2}>
-              <div className="mt-12 text-[#888] leading-relaxed max-w-2xl space-y-6">
-                <p>
-                  Most global AI products are built for advanced markets first and localized later.
-                </p>
-                <p>
-                  But countries like Thailand and Bangladesh have different healthcare workflows, institutional structures, trust systems, languages, and cost pressures.
-                </p>
-                <p>
-                  The opportunity is not to copy what exists elsewhere. The opportunity is to build from inside the market.
-                </p>
-              </div>
-            </Reveal>
+            <div className="grid grid-cols-1 sm:grid-cols-2 border-t border-l border-[#222]">
+              {workflowExamples.map((item, index) => (
+                <Reveal key={item} delay={0.04 * index}>
+                  <div className="min-h-28 border-r border-b border-[#222] p-6 md:p-8 flex items-center justify-between gap-6">
+                    <span className="text-[#E5E5E5] text-lg">{item}</span>
+                    <span className="font-mono text-xs text-[#444]">0{index + 1}</span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 08 CONTACT */}
-      <section id="contact" className="w-full md:min-h-[60vh] flex flex-col justify-center py-24 bg-[#050505]">
-        <div className="container-grid grid grid-cols-1 md:grid-cols-12">
-          <div className="md:col-span-3 mb-8 md:mb-0">
-            <Reveal>
-              <span className="text-mono-label">07 / Contact</span>
-            </Reveal>
+      <section id="fit" className="w-full border-b border-[#222] bg-[#050505]">
+        <div className="container-grid grid grid-cols-1 md:grid-cols-12 section-pad">
+          <div className="md:col-span-3 mb-10 md:mb-0">
+            <Reveal><span className="text-mono-label">04 / Fit</span></Reveal>
           </div>
-          <div className="md:col-span-9 flex flex-col justify-between h-full">
-            <div className="mb-24">
-              <Reveal delay={0.1}>
-                <h2 className="text-display text-white mb-8">
-                  Build with Archangel.
-                </h2>
+          <div className="md:col-span-9">
+            <Reveal>
+              <h2 className="text-display text-white max-w-4xl mb-14">
+                Built for operating companies, not innovation theatre.
+              </h2>
+            </Reveal>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#222] border border-[#222]">
+              <FitCard title="Good fit" items={["Finance and back-office teams", "Operations with manual handoffs", "Growing businesses adding headcount to cope", "Teams already exploring AI, RPA or automation"]} />
+              <FitCard title="Not a good first project" items={["A vague request to ‘add AI’", "A company-wide platform before one use case works", "A demo with no process owner", "Automation with no measurable business outcome"]} />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="why" className="w-full border-b border-[#222]">
+        <div className="container-grid grid grid-cols-1 md:grid-cols-12 section-pad">
+          <div className="md:col-span-3 mb-10 md:mb-0">
+            <Reveal><span className="text-mono-label">05 / Archangel</span></Reveal>
+          </div>
+          <div className="md:col-span-9">
+            <Reveal>
+              <h2 className="text-display text-white max-w-4xl mb-12">
+                Applied AI, close to the business.
+              </h2>
+            </Reveal>
+            <div className="text-[#999] text-lg leading-relaxed max-w-3xl space-y-6">
+              <Reveal delay={0.06}>
+                <p>
+                  Archangel Company Limited is a Thailand BOI promoted software and digital platform company. We design and build applied AI systems around real operating workflows.
+                </p>
               </Reveal>
-              <Reveal delay={0.2}>
-                <p className="text-[#888] max-w-xl text-lg">
-                  For healthcare pilots, AI infrastructure partnerships, investment conversations, media inquiries, and strategic collaboration.
+              <Reveal delay={0.12}>
+                <p>
+                  Our work spans healthcare AI, automation and operational intelligence. We are founder-led and implementation-first: the objective is useful systems in production, not more slides about AI.
                 </p>
               </Reveal>
             </div>
-
-            <Reveal delay={0.3}>
-              <a href="mailto:build@archangel.ventures" className="text-3xl md:text-5xl text-white font-medium hover:text-[#6F829A] transition-colors border-b border-[#333] pb-2 self-start">
-                build@archangel.ventures
-              </a>
+            <Reveal delay={0.18}>
+              <Link href="/work" className="inline-flex items-center gap-2 mt-10 text-white border-b border-[#555] pb-1 hover:border-white transition-colors">
+                See our work and company history <ArrowUpRight className="w-4 h-4" />
+              </Link>
             </Reveal>
           </div>
         </div>
       </section>
 
+      <section id="contact" className="w-full min-h-[65vh] flex items-center bg-white text-black py-24">
+        <div className="container-grid grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="md:col-span-3">
+            <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#666]">06 / Next step</span>
+          </div>
+          <div className="md:col-span-9">
+            <h2 className="text-display max-w-4xl mb-8">
+              Bring us one process your team should not be doing by hand.
+            </h2>
+            <p className="text-[#555] text-lg max-w-2xl mb-10 leading-relaxed">
+              We will tell you whether it is a good candidate for the 10-day sprint. No transformation programme required.
+            </p>
+            <a
+              href="mailto:build@archangel.ventures?subject=AI%20Workflow%20Sprint"
+              className="inline-flex items-center gap-3 text-xl md:text-2xl font-medium border-b border-black pb-2"
+            >
+              build@archangel.ventures <ArrowUpRight className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
+  );
+}
+
+function Stat({ label, value, last = false }: { label: string; value: string; last?: boolean }) {
+  return (
+    <div className={`p-5 md:p-7 border-b md:border-b-0 ${last ? "" : "border-r border-[#222]"}`}>
+      <span className="text-mono-label block mb-2">{label}</span>
+      <span className="text-white text-sm md:text-base">{value}</span>
+    </div>
+  );
+}
+
+function ProcessStep({ number, title, text, last = false }: { number: string; title: string; text: string; last?: boolean }) {
+  return (
+    <div className={`py-8 md:p-8 md:first:pl-0 ${last ? "" : "md:border-r border-[#222]"}`}>
+      <span className="font-mono text-xs text-[#555] block mb-8">{number}</span>
+      <h3 className="text-xl text-white mb-4">{title}</h3>
+      <p className="text-[#777] text-sm leading-relaxed">{text}</p>
+    </div>
+  );
+}
+
+function Deliverable({ text }: { text: string }) {
+  return (
+    <div className="flex items-start gap-3 text-[#D5D5D5]">
+      <Check className="w-4 h-4 mt-1 text-[#888] shrink-0" />
+      <span>{text}</span>
+    </div>
+  );
+}
+
+function FitCard({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div className="bg-[#050505] p-7 md:p-9">
+      <h3 className="text-white text-xl mb-7">{title}</h3>
+      <div className="space-y-4">
+        {items.map((item) => (
+          <div key={item} className="flex gap-3 text-[#888] leading-relaxed">
+            <span className="text-[#444]">→</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

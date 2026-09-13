@@ -20,19 +20,18 @@ export function Navbar() {
                         ΛRCHΛNGEL
                     </Link>
 
-                    <div className="hidden md:flex items-center gap-12">
-                        <NavLink href="#thesis">01 Thesis</NavLink>
-                        <NavLink href="#focus">02 Focus</NavLink>
-                        <NavLink href="#companies">03 Companies</NavLink>
-                        <NavLink href="#approach">04 Approach</NavLink>
-                        <NavLink href="#structure">05 Structure</NavLink>
+                    <div className="hidden md:flex items-center gap-10">
+                        <NavLink href="/#sprint">Sprint</NavLink>
+                        <NavLink href="/#how">How it works</NavLink>
+                        <NavLink href="/#examples">Examples</NavLink>
+                        <NavLink href="/work">Work</NavLink>
                     </div>
 
                     <Link
-                        href="#contact"
-                        className="hidden md:inline-flex text-sm font-medium text-white border border-[#333] px-6 py-2 hover:bg-white hover:text-black transition-colors"
+                        href="/#contact"
+                        className="hidden md:inline-flex text-sm font-medium text-black bg-white px-5 py-2.5 hover:bg-[#DADADA] transition-colors"
                     >
-                        Contact
+                        Bring a workflow
                     </Link>
 
                     <button
@@ -48,18 +47,17 @@ export function Navbar() {
             {isOpen && (
                 <div className="fixed inset-0 z-40 bg-[#050505] pt-24 px-6 md:hidden">
                     <div className="flex flex-col gap-8">
-                        <MobileNavLink href="#thesis" onClick={closeMenu}>01 / Thesis</MobileNavLink>
-                        <MobileNavLink href="#focus" onClick={closeMenu}>02 / Focus</MobileNavLink>
-                        <MobileNavLink href="#companies" onClick={closeMenu}>03 / Companies</MobileNavLink>
-                        <MobileNavLink href="#approach" onClick={closeMenu}>04 / Approach</MobileNavLink>
-                        <MobileNavLink href="#structure" onClick={closeMenu}>05 / Structure</MobileNavLink>
+                        <MobileNavLink href="/#sprint" onClick={closeMenu}>AI Workflow Sprint</MobileNavLink>
+                        <MobileNavLink href="/#how" onClick={closeMenu}>How it works</MobileNavLink>
+                        <MobileNavLink href="/#examples" onClick={closeMenu}>Examples</MobileNavLink>
+                        <MobileNavLink href="/work" onClick={closeMenu}>Work</MobileNavLink>
 
                         <Link
-                            href="#contact"
+                            href="/#contact"
                             onClick={closeMenu}
                             className="mt-8 text-xl font-medium text-white border-b border-white/20 pb-4 inline-block"
                         >
-                            Contact →
+                            Bring a workflow →
                         </Link>
                     </div>
                 </div>
