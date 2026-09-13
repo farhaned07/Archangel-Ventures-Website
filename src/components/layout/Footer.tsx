@@ -2,31 +2,44 @@ import Link from "next/link";
 
 export function Footer() {
     return (
-        <footer className="w-full bg-[#050505] border-t border-[#222]">
-            <div className="max-w-[1400px] mx-auto px-6 md:px-8 py-12 md:py-16">
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10 border-b border-[#222] pb-10 md:pb-12">
-                    <div>
-                        <span className="text-xs font-mono text-[#666] uppercase tracking-widest block mb-4">Archangel</span>
-                        <p className="text-[#E5E5E5] text-lg md:text-xl max-w-md leading-relaxed">
-                            Applied AI for expensive manual business processes.
+        <footer className="w-full bg-[#050505] border-t border-[#202226]">
+            <div className="max-w-[1500px] mx-auto border-l border-r border-[#202226]">
+                <div className="grid grid-cols-1 md:grid-cols-12 border-b border-[#202226]">
+                    <div className="md:col-span-7 p-6 md:p-8 lg:p-10 md:border-r border-[#202226]">
+                        <div className="flex items-center justify-between text-mono-label mb-10">
+                            <span>Archangel / Applied AI</span>
+                            <span className="text-[#494d52]">AG / TH</span>
+                        </div>
+                        <p className="text-[#dededa] text-xl md:text-2xl max-w-xl leading-snug">
+                            Applied AI systems for expensive manual business processes.
                         </p>
                     </div>
 
-                    <div className="flex flex-col md:items-end gap-3">
-                        <Link href="/work" className="text-[#888] text-sm hover:text-white transition-colors">Work</Link>
-                        <a href="mailto:build@archangel.ventures?subject=AI%20Workflow%20Sprint" className="text-white text-sm hover:text-[#AAA] transition-colors">
-                            build@archangel.ventures
-                        </a>
+                    <div className="md:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col justify-between gap-12">
+                        <div className="grid grid-cols-2 gap-8 text-sm">
+                            <div>
+                                <span className="text-mono-label block mb-4">Navigate</span>
+                                <Link href="/work" className="text-[#8b8f94] hover:text-white transition-colors">Company record</Link>
+                            </div>
+                            <div>
+                                <span className="text-mono-label block mb-4">Contact</span>
+                                <a href="mailto:build@archangel.ventures?subject=AI%20Workflow%20Sprint" className="text-[#d8d8d4] hover:text-white transition-colors break-all">
+                                    build@archangel.ventures
+                                </a>
+                            </div>
+                        </div>
+                        <div className="text-mono-label flex items-center gap-3">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#b9bbb7]" />
+                            <span>Bangkok / Operational</span>
+                        </div>
                     </div>
                 </div>
 
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 pt-8">
-                    <p className="text-xs font-mono uppercase tracking-[0.2em] text-[#444]">
-                        Bangkok, Thailand · BOI promoted
-                    </p>
-                    <p className="text-xs text-[#444] font-mono">
-                        © 2026 Archangel Company Limited
-                    </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 text-[9px] font-mono uppercase tracking-[0.14em] text-[#4e5257]">
+                    <div className="p-4 border-b sm:border-r md:border-b-0 border-[#202226]">Bangkok, Thailand</div>
+                    <div className="p-4 border-b md:border-r md:border-b-0 border-[#202226]">BOI promoted</div>
+                    <div className="p-4 border-b sm:border-r sm:border-b-0 border-[#202226]">Software + digital platform</div>
+                    <div className="p-4">© 2026 Archangel Co., Ltd.</div>
                 </div>
             </div>
         </footer>
