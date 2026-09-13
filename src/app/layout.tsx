@@ -7,9 +7,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Archangel | AI Companies for Emerging Markets",
+  title: "Archangel | Applied AI for Business Workflows",
   description:
-    "Archangel is a founder-led holding company building AI companies for emerging-market realities, starting with Hanna and Onnesha.",
+    "Archangel is a Thailand BOI promoted applied AI company. Give us one painful business process and we build a working AI automation in a 10-day fixed-fee sprint.",
 };
 
 export default function RootLayout({
