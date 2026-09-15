@@ -1,234 +1,193 @@
 "use client";
 
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import Link from "next/link";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { ValueMap, WorkshopOutputPreview } from "@/components/ui/TransformationVisuals";
-
-const opportunityAreas = [
-  ["Finance", "Invoices, approvals, reconciliation, reporting"],
-  ["Operations", "Handoffs, repetitive decisions, status chasing"],
-  ["Sales", "Research, proposals, CRM administration, follow up"],
-  ["Customer", "Enquiries, triage, knowledge retrieval, escalation"],
-];
+import { TransformationCanvas, WorkshopPreview, WorkflowStory } from "@/components/ui/PremiumVisuals";
 
 export default function Home() {
   return (
-    <main className="min-h-screen w-full flex flex-col pt-[61px] md:pt-[65px]">
-      <section className="w-full border-b border-[#202226] technical-grid scanline">
-        <div className="container-grid">
-          <div className="flex items-center justify-between py-3.5 md:py-4 border-b border-[#202226] text-mono-label">
-            <span>AG / AI Transformation Partner</span>
-            <span className="hidden sm:block">Bangkok · Thailand</span>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-14 items-center py-10 md:py-16 lg:py-20">
-            <div className="lg:col-span-7 xl:col-span-7 relative z-10">
-              <Reveal>
-                <div className="flex items-center gap-3 mb-5 md:mb-7">
-                  <span className="signal-dot" />
-                  <span className="text-mono-label">BOI promoted · Strategy + implementation</span>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.04}>
-                <h1 className="text-hero text-[#F1F1ED] max-w-[900px]">
-                  Make AI useful
-                  <span className="block text-[#777b80]">inside your business.</span>
-                </h1>
-              </Reveal>
-
-              <Reveal delay={0.08}>
-                <p className="mt-6 md:mt-8 text-[15px] md:text-lg text-[#92969b] leading-relaxed max-w-xl">
-                  We find expensive workflows, identify where AI creates measurable value, then implement what is worth building.
-                </p>
-              </Reveal>
-
-              <Reveal delay={0.12}>
-                <div className="mt-7 md:mt-9 flex flex-col sm:flex-row gap-3">
-                  <Link
-                    href="/ai-transformation"
-                    className="group inline-flex items-center justify-between gap-6 bg-[#e9e7df] text-[#070707] px-5 py-4 text-[10px] md:text-xs font-mono uppercase tracking-[0.11em] hover:bg-white transition-colors w-full sm:w-auto sm:min-w-[260px]"
-                  >
-                    Start with the workshop <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </Link>
-                  <a
-                    href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call"
-                    className="inline-flex items-center justify-between gap-6 border border-[#383a3e] text-[#c2c3bf] px-5 py-4 text-[10px] md:text-xs font-mono uppercase tracking-[0.11em] hover:border-[#777b80] hover:text-white transition-colors w-full sm:w-auto sm:min-w-[230px]"
-                  >
-                    15 minute call <ArrowUpRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </Reveal>
-            </div>
-
-            <div className="lg:col-span-5 xl:col-span-5">
-              <Reveal delay={0.08} variant="fade">
-                <ValueMap />
-              </Reveal>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-l border-[#202226]">
-            <StatCell label="Entry offer" value="Management workshop" />
-            <StatCell label="Fixed fee" value="฿45,000" accent />
-            <StatCell label="Delivery" value="Bangkok · on site" />
-            <StatCell label="Company" value="BOI promoted" />
-          </div>
-        </div>
-      </section>
-
-      <section id="how" className="w-full border-b border-[#202226] bg-[#060606]">
-        <div className="container-grid section-pad">
-          <SectionHead index="01" label="What Archangel does" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 mt-10 md:mt-16">
-            <div className="lg:col-span-5">
-              <Reveal>
-                <h2 className="text-display text-[#efefeb] max-w-xl">We begin with the work.</h2>
-              </Reveal>
-              <Reveal delay={0.05}>
-                <p className="text-[#85898e] text-[15px] md:text-lg max-w-lg leading-relaxed mt-5 md:mt-7">
-                  Not with a model, chatbot or AI roadmap. We start with the processes costing the business time, money and attention.
-                </p>
-              </Reveal>
-            </div>
-
-            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <ActionCard number="01" title="Find value" text="Map expensive work and rank the best AI opportunities." />
-              <ActionCard number="02" title="Simplify" text="Remove bad process before automating anything." />
-              <ActionCard number="03" title="Implement" text="Build the useful system inside the real workflow." />
-              <ActionCard number="04" title="Measure" text="Compare results against the current operating baseline." accent />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="workshop" className="w-full border-b border-[#202226] technical-grid">
-        <div className="container-grid section-pad">
-          <SectionHead index="02" label="The entry offer" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 mt-10 md:mt-16 items-start">
-            <div className="lg:col-span-6 surface-card-amber technical-corner p-5 md:p-8 lg:p-10">
-              <div className="flex items-center justify-between text-mono-label mb-8">
-                <span>AI Transformation Workshop</span>
-                <span className="signal-text">AG-01</span>
+    <main className="pt-[64px] md:pt-[72px] overflow-hidden">
+      <section className="page-shell pt-12 md:pt-20 lg:pt-24 pb-16 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-12 lg:gap-16 xl:gap-20 items-center">
+          <div className="max-w-3xl">
+            <Reveal>
+              <div className="flex flex-wrap items-center gap-2 mb-7 md:mb-9">
+                <span className="pill">Bangkok based</span>
+                <span className="pill">BOI promoted</span>
               </div>
+            </Reveal>
 
-              <h2 className="text-display text-[#f0f0ec] max-w-2xl">Find where AI can actually save your business money.</h2>
+            <Reveal delay={0.04}>
+              <h1 className="display-hero max-w-[850px]">
+                Make AI useful
+                <span className="block text-[#777771]">at work.</span>
+              </h1>
+            </Reveal>
 
-              <div className="flex items-end justify-between gap-4 mt-9 pt-7 border-t border-[rgba(214,161,92,0.22)]">
+            <Reveal delay={0.08}>
+              <p className="mt-7 md:mt-9 text-lg md:text-xl leading-relaxed text-[#666660] max-w-2xl">
+                Archangel works with management teams to find where AI can create measurable value, implement the right systems, and make them work inside the business.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.12}>
+              <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3">
+                <Link href="/ai-transformation" className="button-primary w-full sm:w-auto">
+                  Start with the workshop <ArrowRight className="w-4 h-4" />
+                </Link>
+                <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="button-secondary w-full sm:w-auto">
+                  Talk to Archangel <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.16}>
+              <div className="mt-10 md:mt-12 pt-5 border-t border-[#deded8] flex flex-wrap gap-x-7 gap-y-2 text-sm text-[#85857f]">
+                <span>Strategy + implementation</span>
+                <span>Founder led</span>
+                <span>Thailand</span>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal delay={0.08} variant="fade">
+            <div className="lg:-mr-10 xl:-mr-20">
+              <TransformationCanvas />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-[#11110f] text-[#f5f5f0]">
+        <div className="page-shell py-20 md:py-32 lg:py-36">
+          <div className="max-w-5xl">
+            <p className="eyebrow text-[#8e8e87] mb-8">The problem</p>
+            <Reveal>
+              <h2 className="display-large">
+                AI is everywhere.
+                <span className="block text-[#85857e]">Business value isn&apos;t.</span>
+              </h2>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <p className="mt-8 md:mt-10 text-lg md:text-2xl leading-relaxed text-[#aaa9a2] max-w-3xl">
+                Most companies do not need more AI tools. They need to know which parts of the business are worth changing, what to build, and whether the economics justify it.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" className="page-shell section-space">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] gap-12 lg:gap-20 items-start">
+          <div className="lg:sticky lg:top-28">
+            <p className="eyebrow text-[#85857f]">How we work</p>
+            <h2 className="display-medium mt-5">We begin with the work.</h2>
+            <p className="text-[#686862] text-base md:text-lg leading-relaxed mt-6 max-w-md">
+              Not with a model, chatbot or transformation deck. We start with the workflows consuming time, money and management attention.
+            </p>
+          </div>
+
+          <div className="border-t border-[#d9d9d3]">
+            <ProcessRow number="01" title="Find the value" text="Map operating friction and identify where AI could materially improve the economics." />
+            <ProcessRow number="02" title="Simplify first" text="Remove unnecessary process before automating anything." />
+            <ProcessRow number="03" title="Implement" text="Build the useful system inside the real workflow with the team that owns it." />
+            <ProcessRow number="04" title="Measure" text="Compare the result against the current operating baseline and expand only when the evidence is strong." />
+          </div>
+        </div>
+      </section>
+
+      <section id="workshop" className="bg-[#ecece6]">
+        <div className="page-shell section-space">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-16 items-center">
+            <div>
+              <p className="eyebrow text-[#777771]">Start here</p>
+              <h2 className="display-large mt-5">One room. One afternoon. One decision.</h2>
+              <p className="mt-7 text-lg md:text-xl leading-relaxed text-[#666660] max-w-xl">
+                The AI Transformation Workshop gives management a clear view of where AI is worth funding and what should happen next.
+              </p>
+
+              <div className="mt-8 md:mt-10 flex items-end gap-5 border-t border-[#d2d2cc] pt-7">
                 <div>
-                  <span className="text-mono-label block mb-2">Fixed fee</span>
-                  <p className="metric-number text-[#f0efe9]">฿45,000</p>
+                  <span className="text-sm text-[#777771] block mb-2">Fixed fee</span>
+                  <span className="text-5xl md:text-6xl tracking-[-0.06em] font-medium">฿45,000</span>
                 </div>
-                <span className="text-mono-label text-right">Bangkok<br />On site</span>
+                <span className="text-sm text-[#777771] pb-1">Bangkok · on site</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
-                <CheckLine text="Workflow audit" />
-                <CheckLine text="3 to 5 priorities" />
-                <CheckLine text="ROI estimate" />
-                <CheckLine text="30 day action plan" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mt-8">
+                <OfferLine text="Workflow map" />
+                <OfferLine text="3 to 5 priorities" />
+                <OfferLine text="ROI analysis" />
+                <OfferLine text="30 day action plan" />
               </div>
 
-              <Link
-                href="/ai-transformation"
-                className="mt-8 inline-flex items-center justify-between gap-6 bg-[#e9e7df] text-[#070707] px-5 py-4 text-[10px] md:text-xs font-mono uppercase tracking-[0.11em] hover:bg-white transition-colors w-full"
-              >
-                See exactly what you get <ArrowRight className="w-4 h-4" />
+              <Link href="/ai-transformation" className="button-primary mt-9">
+                See the workshop <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="lg:col-span-6">
-              <WorkshopOutputPreview />
-              <p className="text-[#6f7378] text-xs md:text-sm leading-relaxed mt-4 max-w-xl">
-                The workshop is designed to produce management decisions, not AI education. If Archangel implements one of the selected projects, the workshop fee is credited toward implementation.
-              </p>
-            </div>
+            <WorkshopPreview />
           </div>
         </div>
       </section>
 
-      <section id="examples" className="w-full border-b border-[#202226] bg-[#050505]">
-        <div className="container-grid section-pad">
-          <SectionHead index="03" label="Where value usually hides" />
+      <section id="examples" className="page-shell section-space">
+        <div className="max-w-4xl">
+          <p className="eyebrow text-[#85857f]">Where value usually hides</p>
+          <h2 className="display-large mt-5">Look inside operating work.</h2>
+          <p className="mt-6 text-lg md:text-xl text-[#6c6c66] leading-relaxed max-w-2xl">
+            The best first AI projects are usually repetitive, document heavy, rules heavy or dependent on manual handoffs.
+          </p>
+        </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mt-10 md:mt-16">
-            <div className="lg:col-span-4">
-              <h2 className="text-display text-[#eeeeea]">Look inside operating work.</h2>
-              <p className="text-[#777b80] mt-5 leading-relaxed max-w-sm text-sm md:text-base">
-                The strongest first projects are repetitive, document heavy, rules heavy or dependent on manual handoffs.
-              </p>
-            </div>
-
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {opportunityAreas.map(([title, text], index) => (
-                <OpportunityCard key={title} number={`0${index + 1}`} title={title} text={text} />
-              ))}
-            </div>
-          </div>
+        <div className="mt-12 md:mt-16">
+          <WorkflowStory title="Finance" steps={["Invoice arrives", "Extract", "Validate", "Route", "Exception"]} />
+          <WorkflowStory title="Customer operations" steps={["Request", "Understand", "Retrieve", "Respond", "Escalate"]} />
+          <WorkflowStory title="Management reporting" steps={["Sources", "Consolidate", "Analyse", "Brief"]} />
+          <WorkflowStory title="Sales operations" steps={["Research", "Draft", "CRM", "Follow up"]} />
         </div>
       </section>
 
-      <section id="engagement" className="w-full border-b border-[#202226] bg-[#080808]">
-        <div className="container-grid section-pad">
-          <SectionHead index="04" label="Commercial path" />
-          <div className="mt-10 md:mt-16">
-            <h2 className="text-display text-[#eeeeea] max-w-3xl mb-8 md:mb-12">Start small. Prove value. Expand from evidence.</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <PathCard number="01" label="Start" title="Workshop" text="Identify and rank the first opportunities worth funding." />
-              <PathCard number="02" label="Build" title="Implementation" text="Deploy the selected workflow with the team that owns it." accent />
-              <PathCard number="03" label="Expand" title="Transformation partner" text="Scale successful systems across functions with value tracking." />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="why" className="w-full border-b border-[#202226] bg-[#050505]">
-        <div className="container-grid section-pad">
-          <SectionHead index="05" label="Why Archangel" />
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 mt-10 md:mt-16 items-start">
-            <div className="lg:col-span-7">
-              <h2 className="text-display text-[#eeeeea] max-w-3xl">Strategy and implementation under one accountable team.</h2>
-              <p className="text-[#85898e] text-[15px] md:text-lg leading-relaxed max-w-2xl mt-6">
-                Archangel Company Limited is a Thailand BOI promoted software and digital platform company based in Bangkok. We work close to management and operating teams, then build what the business can actually use.
+      <section className="bg-white border-y border-[#e1e1db]">
+        <div className="page-shell section-space">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-20 items-center">
+            <div>
+              <p className="eyebrow text-[#85857f]">Archangel</p>
+              <h2 className="display-large mt-5 max-w-4xl">Strategy is useless if nobody builds it.</h2>
+              <p className="mt-7 text-lg md:text-xl leading-relaxed text-[#686862] max-w-2xl">
+                Archangel Company Limited is a Bangkok based, BOI promoted software and AI company. We work directly with management and operating teams from identifying the opportunity through implementation.
               </p>
-              <Link href="/work" className="inline-flex items-center gap-3 mt-8 text-[10px] md:text-xs font-mono uppercase tracking-[0.12em] text-[#d8d9d5] border-b border-[#45484d] pb-2 hover:border-[#d8d9d5] transition-colors">
-                Company record <ArrowUpRight className="w-4 h-4" />
+              <Link href="/work" className="inline-flex items-center gap-2 mt-8 font-medium border-b border-[#bdbdb7] pb-1 hover:border-[#11110f] transition-colors">
+                About the company <ArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="lg:col-span-5 grid grid-cols-2 gap-3">
-              <TrustCard label="Base" value="Bangkok" />
-              <TrustCard label="Status" value="BOI promoted" accent />
-              <TrustCard label="Mode" value="Founder led" />
-              <TrustCard label="Focus" value="Applied AI" />
+            <div className="rounded-[2rem] bg-[#f0f0eb] p-6 md:p-8 lg:p-10">
+              <div className="flex items-center justify-between pb-6 border-b border-[#d7d7d1]">
+                <span className="text-sm text-[#74746e]">Company</span>
+                <span className="pill bg-white">Thailand</span>
+              </div>
+              <CompanyFact label="Entity" value="Archangel Company Limited" />
+              <CompanyFact label="Status" value="BOI promoted" />
+              <CompanyFact label="Focus" value="Applied AI transformation" />
+              <CompanyFact label="Operating model" value="Founder led" last />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" className="w-full technical-grid bg-[#050505]">
-        <div className="container-grid py-16 md:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-end">
-            <div className="lg:col-span-8">
-              <div className="flex items-center gap-3 mb-5">
-                <span className="signal-dot" />
-                <span className="text-mono-label">15 minute qualification</span>
-              </div>
-              <h2 className="text-display text-[#f0f0ec] max-w-4xl">Tell us where work is costing your business time or money.</h2>
+      <section className="page-shell py-20 md:py-32 lg:py-36">
+        <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[#11110f] text-[#f7f7f2] px-6 py-12 md:p-14 lg:p-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-end">
+            <div>
+              <p className="eyebrow text-[#8f8f88]">Start a conversation</p>
+              <h2 className="display-large mt-5 max-w-4xl">Where is your business wasting time?</h2>
+              <p className="text-[#aaa9a2] mt-6 text-base md:text-lg max-w-2xl">The first call is 15 minutes. We use it to decide whether there is a real business case worth exploring.</p>
             </div>
-            <div className="lg:col-span-4">
-              <a
-                href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call"
-                className="inline-flex items-center justify-between gap-6 bg-[#e9e7df] text-[#070707] px-5 py-4 text-[10px] md:text-xs font-mono uppercase tracking-[0.11em] hover:bg-white transition-colors w-full"
-              >
-                Book opportunity call <ArrowUpRight className="w-4 h-4" />
-              </a>
-              <p className="text-[#686c71] text-xs mt-4">No AI presentation. We use the call to decide if there is a real business case to explore.</p>
-            </div>
+            <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="inline-flex items-center justify-center gap-3 rounded-full bg-[#f6f6f2] text-[#11110f] px-6 py-4 font-semibold whitespace-nowrap hover:bg-white transition-colors">
+              Book the call <ArrowUpRight className="w-4 h-4" />
+            </a>
           </div>
         </div>
       </section>
@@ -236,75 +195,32 @@ export default function Home() {
   );
 }
 
-function SectionHead({ index, label }: { index: string; label: string }) {
+function ProcessRow({ number, title, text }: { number: string; title: string; text: string }) {
   return (
-    <div className="flex items-center gap-4 md:gap-8">
-      <span className="font-mono text-[9px] tracking-[0.18em] signal-text">{index}</span>
-      <div className="h-px bg-[#34373b] flex-1" />
-      <span className="text-mono-label text-right">{label}</span>
+    <div className="grid grid-cols-[48px_1fr] md:grid-cols-[72px_0.65fr_1.1fr] gap-4 md:gap-8 py-7 md:py-9 border-b border-[#d9d9d3] items-start">
+      <span className="text-xs text-[#8c8c86] pt-1">{number}</span>
+      <h3 className="text-xl md:text-2xl font-medium tracking-[-0.03em]">{title}</h3>
+      <p className="col-start-2 md:col-start-auto text-[#71716b] leading-relaxed max-w-xl">{text}</p>
     </div>
   );
 }
 
-function StatCell({ label, value, accent = false }: { label: string; value: string; accent?: boolean }) {
+function OfferLine({ text }: { text: string }) {
   return (
-    <div className={`border-r border-b border-[#202226] min-h-[88px] md:min-h-28 p-3.5 md:p-5 flex flex-col justify-between ${accent ? "bg-[rgba(214,161,92,0.055)]" : "bg-[#060606]/80"}`}>
-      <span className="text-mono-label">{label}</span>
-      <span className={`${accent ? "signal-text" : "text-[#d9d9d5]"} text-sm md:text-base`}>{value}</span>
+    <div className="flex items-center gap-3 text-sm md:text-base text-[#4f4f4a]">
+      <span className="w-5 h-5 rounded-full border border-[#c8c8c2] flex items-center justify-center bg-white/60">
+        <Check className="w-3 h-3" />
+      </span>
+      {text}
     </div>
   );
 }
 
-function ActionCard({ number, title, text, accent = false }: { number: string; title: string; text: string; accent?: boolean }) {
+function CompanyFact({ label, value, last = false }: { label: string; value: string; last?: boolean }) {
   return (
-    <div className={`${accent ? "surface-card-amber" : "surface-card"} p-5 md:p-6 min-h-[170px] flex flex-col justify-between`}>
-      <div className="flex items-center justify-between text-mono-label"><span>{number}</span><span className={accent ? "signal-text" : "text-[#4f5358]"}>AG</span></div>
-      <div>
-        <h3 className="text-xl text-[#e8e7e1] mb-2">{title}</h3>
-        <p className="text-[#777b80] text-sm leading-relaxed">{text}</p>
-      </div>
-    </div>
-  );
-}
-
-function CheckLine({ text }: { text: string }) {
-  return (
-    <div className="flex items-center gap-3 border-t border-[#2c2f33] pt-3 text-sm text-[#c5c5bf]">
-      <Check className="w-3.5 h-3.5 signal-text" />
-      <span>{text}</span>
-    </div>
-  );
-}
-
-function OpportunityCard({ number, title, text }: { number: string; title: string; text: string }) {
-  return (
-    <div className="surface-card p-5 md:p-6 min-h-[150px] flex flex-col justify-between">
-      <div className="flex items-center justify-between text-mono-label"><span>{number}</span><span>WORKFLOW</span></div>
-      <div>
-        <h3 className="text-xl text-[#e4e4de]">{title}</h3>
-        <p className="text-[#6f7378] text-sm mt-2 leading-relaxed">{text}</p>
-      </div>
-    </div>
-  );
-}
-
-function PathCard({ number, label, title, text, accent = false }: { number: string; label: string; title: string; text: string; accent?: boolean }) {
-  return (
-    <div className={`${accent ? "surface-card-amber" : "surface-card"} p-5 md:p-7 min-h-[200px] flex flex-col justify-between`}>
-      <div className="flex items-center justify-between text-mono-label"><span>{number}</span><span className={accent ? "signal-text" : ""}>{label}</span></div>
-      <div>
-        <h3 className="text-xl md:text-2xl text-[#e8e7e1] mb-3">{title}</h3>
-        <p className="text-[#74787d] text-sm leading-relaxed">{text}</p>
-      </div>
-    </div>
-  );
-}
-
-function TrustCard({ label, value, accent = false }: { label: string; value: string; accent?: boolean }) {
-  return (
-    <div className={`${accent ? "surface-card-amber" : "surface-card"} min-h-[120px] p-4 md:p-5 flex flex-col justify-between`}>
-      <span className="text-mono-label">{label}</span>
-      <span className={`${accent ? "signal-text" : "text-[#dfded8]"} text-base md:text-lg`}>{value}</span>
+    <div className={`py-5 md:py-6 grid grid-cols-[0.85fr_1.15fr] gap-5 ${last ? "" : "border-b border-[#d7d7d1]"}`}>
+      <span className="text-sm text-[#85857f]">{label}</span>
+      <span className="text-sm md:text-base font-medium text-right">{value}</span>
     </div>
   );
 }
