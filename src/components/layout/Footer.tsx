@@ -19,6 +19,7 @@ export function Footer() {
             <div>
               <p className="text-[#74746e] mb-4">Explore</p>
               <div className="space-y-3">
+                <Link href="/ai-transformation-partner-thailand" className="block hover:text-white transition-colors">AI transformation Thailand</Link>
                 <Link href="/ai-transformation" className="block hover:text-white transition-colors">AI workshop</Link>
                 <Link href="/work" className="block hover:text-white transition-colors">Company</Link>
                 <Link href="/privacy" className="block hover:text-white transition-colors">Privacy</Link>
