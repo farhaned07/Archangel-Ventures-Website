@@ -1,11 +1,21 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { bookingHref } from "@/lib/site";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = open ? "hidden" : previousOverflow;
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [open]);
 
   return (
     <>
@@ -23,15 +33,18 @@ export function Navbar() {
           </div>
 
           <a
-            href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call"
+            href={bookingHref}
+            data-cta="nav-opportunity-call"
             className="hidden md:inline-flex items-center gap-2 rounded-full bg-[#11110f] text-[#f8f8f4] px-4 py-2.5 text-sm font-medium hover:bg-[#272724] transition-colors"
           >
-            Talk to Archangel <ArrowUpRight className="w-3.5 h-3.5" />
+            Book a call <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
 
           <button
             type="button"
             aria-label="Toggle navigation"
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
             onClick={() => setOpen((value) => !value)}
             className="md:hidden w-10 h-10 rounded-full border border-[#d7d7d1] flex items-center justify-center text-[#11110f] bg-white/50"
           >
@@ -41,8 +54,8 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="fixed inset-0 z-40 bg-[#f6f6f2] pt-[88px] md:hidden">
-          <div className="page-shell flex flex-col min-h-[calc(100vh-88px)]">
+        <div id="mobile-navigation" className="fixed inset-0 z-40 bg-[#f6f6f2] pt-[88px] md:hidden">
+          <div className="page-shell flex flex-col min-h-[calc(100dvh-88px)]">
             <div className="border-t border-[#deded8]">
               <MobileLink href="/#workshop" onClick={() => setOpen(false)}>Workshop</MobileLink>
               <MobileLink href="/#how" onClick={() => setOpen(false)}>Approach</MobileLink>
@@ -50,13 +63,14 @@ export function Navbar() {
               <MobileLink href="/work" onClick={() => setOpen(false)}>Company</MobileLink>
             </div>
 
-            <div className="mt-auto pb-8">
+            <div className="mt-auto pb-[calc(2rem+env(safe-area-inset-bottom))]">
               <a
-                href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call"
+                href={bookingHref}
                 onClick={() => setOpen(false)}
+                data-cta="mobile-nav-opportunity-call"
                 className="button-primary w-full"
               >
-                Talk to Archangel <ArrowUpRight className="w-4 h-4" />
+                Book a 15 minute call <ArrowUpRight className="w-4 h-4" />
               </a>
               <p className="text-xs text-[#888882] mt-4 text-center">Bangkok · BOI promoted · Strategy + implementation</p>
             </div>
