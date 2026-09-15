@@ -9,17 +9,13 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "Archangel | AI Transformation Partner in Thailand",
   description:
-    "Archangel helps companies in Thailand find high value AI opportunities, implement the right workflows, and measure the business result. Start with a fixed fee management AI transformation workshop in Bangkok.",
+    "Archangel works with management teams in Thailand to find where AI can create measurable value, implement the right systems, and make them work in the business.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased bg-black text-white min-h-screen selection:bg-accent selection:text-white`}>
+      <body className={`${inter.variable} min-h-screen bg-[#f6f6f2] text-[#0d0d0c] antialiased`}>
         <Navbar />
         {children}
         <Footer />
