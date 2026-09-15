@@ -1,6 +1,23 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { CompanySystems } from "@/components/ui/CompanySystems";
+
+export const metadata: Metadata = {
+  title: "Archangel Company Limited | Applied AI in Thailand",
+  description:
+    "Bangkok-based, Thailand BOI-promoted software and AI company building applied systems across healthcare, enterprise operations and AI-native media.",
+  alternates: {
+    canonical: "/work",
+  },
+  openGraph: {
+    title: "Archangel Company Limited | Applied AI in Thailand",
+    description:
+      "Bangkok-based, Thailand BOI-promoted software and AI company building applied AI systems close to the work.",
+    url: "/work",
+    type: "website",
+  },
+};
 
 export default function WorkPage() {
   return (
