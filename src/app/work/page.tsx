@@ -65,7 +65,10 @@ export default function WorkPage() {
           </div>
           <div className="lg:pt-3 max-w-2xl">
             <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.025em] text-[#555550]">Farhan Sabbir leads Archangel across product, implementation and client work.</p>
-            <p className="mt-7 text-base md:text-lg leading-relaxed text-[#777771]">The company operates from Bangkok with Thailand and Bangladesh as starting markets and Southeast Asia as the broader operating context.</p>
+            <p className="mt-7 text-base md:text-lg leading-relaxed text-[#777771]">AI Transformation Partner in Thailand and Founder & Executive Director of Archangel Company Limited.</p>
+            <Link href="/farhan-sabbir" className="mt-7 inline-flex items-center gap-2 text-sm font-medium border-b border-[#b9b9b2] pb-1">
+              Farhan Sabbir <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </section>
