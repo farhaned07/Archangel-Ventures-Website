@@ -21,6 +21,7 @@ export function Footer() {
               <div className="space-y-3">
                 <Link href="/ai-transformation" className="block hover:text-white transition-colors">AI workshop</Link>
                 <Link href="/work" className="block hover:text-white transition-colors">Company</Link>
+                <Link href="/privacy" className="block hover:text-white transition-colors">Privacy</Link>
               </div>
             </div>
             <div>
@@ -28,13 +29,14 @@ export function Footer() {
               <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 hover:text-white transition-colors break-all">
                 {site.email} <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
               </a>
+              <p className="mt-4 text-[#777771] leading-relaxed">{site.location}<br />Thailand BOI promoted</p>
             </div>
           </div>
         </div>
 
         <div className="mt-16 md:mt-24 pt-6 border-t border-[#2d2d2a] flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-[#777771]">
-          <span>{site.location} · BOI promoted</span>
-          <span>© 2026 {site.legalName}</span>
+          <span>{site.legalName} · Bangkok · Thailand BOI promoted</span>
+          <span>© 2026 {site.name}</span>
         </div>
       </div>
     </footer>
