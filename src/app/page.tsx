@@ -5,13 +5,13 @@ import Link from "next/link";
 import { Reveal } from "@/components/ui/Reveal";
 import { SystemDiagram } from "@/components/ui/SystemDiagram";
 
-const workflowExamples = [
-  ["01", "Invoice + document processing", "Documents in / structured actions out"],
-  ["02", "Management reporting", "Manual consolidation / recurring reporting"],
-  ["03", "Reconciliation + data entry", "Cross-system matching / repetitive input"],
-  ["04", "Customer enquiries", "High-volume requests / repeatable decisions"],
-  ["05", "Quotation + proposal generation", "Inputs / rules / document assembly"],
-  ["06", "Approvals + operational handoffs", "Queues / routing / status visibility"],
+const opportunityAreas = [
+  ["01", "Finance + accounts payable", "Documents, approvals, reconciliation, reporting"],
+  ["02", "Operations", "Manual handoffs, status chasing, repetitive decisions"],
+  ["03", "Sales operations", "Research, proposals, CRM administration, follow up"],
+  ["04", "Customer operations", "Enquiries, triage, knowledge retrieval, escalation"],
+  ["05", "Management reporting", "Data consolidation, recurring analysis, decision support"],
+  ["06", "Document workflows", "Extraction, classification, review, routing, audit trails"],
 ];
 
 export default function Home() {
@@ -20,45 +20,45 @@ export default function Home() {
       <section className="w-full min-h-[calc(100vh-61px)] md:min-h-[calc(100vh-65px)] border-b border-[#202226] technical-grid scanline">
         <div className="container-grid min-h-[inherit] flex flex-col">
           <div className="flex items-center justify-between py-4 border-b border-[#202226] text-mono-label">
-            <span>AG / Applied Intelligence Systems</span>
-            <span className="hidden sm:block">Bangkok · TH / System Ref. 01</span>
+            <span>AG / AI Transformation Partner</span>
+            <span className="hidden sm:block">Bangkok · Thailand / 2026</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 flex-1 items-center py-12 md:py-16 lg:py-8">
-            <div className="lg:col-span-6 xl:col-span-7 relative z-10 lg:pr-6">
+            <div className="lg:col-span-6 xl:col-span-7 relative z-10 lg:pr-8">
               <Reveal>
                 <div className="flex items-center gap-3 mb-7">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#d8d9d5]" />
-                  <span className="text-mono-label">BOI promoted applied AI company</span>
+                  <span className="text-mono-label">BOI promoted · Bangkok based</span>
                 </div>
               </Reveal>
 
               <Reveal delay={0.04}>
-                <h1 className="text-hero text-[#F1F1ED] max-w-[900px]">
-                  Give us one painful business process.
-                  <span className="block text-[#777b80] mt-3">We make it faster with AI.</span>
+                <h1 className="text-hero text-[#F1F1ED] max-w-[940px]">
+                  Your AI Transformation Partner.
+                  <span className="block text-[#777b80] mt-3">Make AI useful at work.</span>
                 </h1>
               </Reveal>
 
               <Reveal delay={0.09}>
-                <p className="mt-7 md:mt-9 text-base md:text-lg text-[#92969b] leading-relaxed max-w-xl">
-                  Archangel finds expensive manual work, builds the automation, and proves the result against the way your team works today.
+                <p className="mt-7 md:mt-9 text-base md:text-lg text-[#92969b] leading-relaxed max-w-2xl">
+                  We work inside the business to find expensive workflows, redesign them with AI, implement what works, and measure the result.
                 </p>
               </Reveal>
 
               <Reveal delay={0.14}>
                 <div className="mt-9 flex flex-col sm:flex-row gap-3">
-                  <a
-                    href="mailto:build@archangel.ventures?subject=AI%20Workflow%20Sprint"
-                    className="group inline-flex items-center justify-between gap-8 border border-[#d7d8d4] bg-[#e8e8e4] text-[#060606] px-5 py-3.5 text-xs font-mono uppercase tracking-[0.12em] hover:bg-white transition-colors min-w-[220px]"
+                  <Link
+                    href="/ai-transformation"
+                    className="group inline-flex items-center justify-between gap-8 border border-[#d7d8d4] bg-[#e8e8e4] text-[#060606] px-5 py-3.5 text-xs font-mono uppercase tracking-[0.12em] hover:bg-white transition-colors min-w-[250px]"
                   >
-                    Bring us a workflow <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-                  </a>
+                    Start with the workshop <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
                   <a
-                    href="#sprint"
-                    className="inline-flex items-center justify-between gap-8 border border-[#34373b] text-[#b9bbb8] px-5 py-3.5 text-xs font-mono uppercase tracking-[0.12em] hover:border-[#696d72] hover:text-white transition-colors min-w-[220px]"
+                    href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call"
+                    className="inline-flex items-center justify-between gap-8 border border-[#34373b] text-[#b9bbb8] px-5 py-3.5 text-xs font-mono uppercase tracking-[0.12em] hover:border-[#696d72] hover:text-white transition-colors min-w-[250px]"
                   >
-                    View sprint spec <span className="text-[#555a60]">↘</span>
+                    Book a 15 minute call <span className="text-[#555a60]">↗</span>
                   </a>
                 </div>
               </Reveal>
@@ -72,9 +72,9 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 border-t border-l border-[#202226] mb-0">
-            <SpecCell label="Engagement" value="10 working days" code="T+10" />
+            <SpecCell label="Entry offer" value="Management workshop" code="01" />
             <SpecCell label="Fixed fee" value="฿45,000" code="THB" />
-            <SpecCell label="Scope" value="One workflow" code="01" />
+            <SpecCell label="Delivery" value="Bangkok · on site" code="BKK" />
             <SpecCell label="Company" value="BOI promoted" code="8.1" />
           </div>
         </div>
@@ -82,49 +82,52 @@ export default function Home() {
 
       <section id="how" className="w-full border-b border-[#202226] bg-[#060606]">
         <div className="container-grid section-pad">
-          <SectionHead index="01" label="System architecture" />
+          <SectionHead index="01" label="How transformation starts" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mt-14 md:mt-20">
             <div className="lg:col-span-5">
               <Reveal>
                 <h2 className="text-display text-[#efefeb] max-w-2xl">
-                  We begin with the work, not the technology.
+                  We begin with the work.
                 </h2>
               </Reveal>
               <Reveal delay={0.06}>
                 <p className="text-[#85898e] text-base md:text-lg max-w-lg leading-relaxed mt-7">
-                  The objective is not to add AI. The objective is to remove time, delay, errors and unnecessary manual effort from a real operating process.
+                  AI is not the project. The project is removing cost, delay, repetitive work and decision friction from an operating process.
                 </p>
               </Reveal>
             </div>
 
             <div className="lg:col-span-7 technical-corner border border-[#25272b] bg-[#080808]">
-              <ArchitectureRow number="01" title="Map" label="INPUT" text="Observe the real workflow, including the exceptions, handoffs and manual fixes the SOP misses." />
-              <ArchitectureRow number="02" title="Simplify" label="LOGIC" text="Remove unnecessary steps before automating anything. Automation should not preserve a bad process." />
-              <ArchitectureRow number="03" title="Build" label="SYSTEM" text="Create the smallest reliable AI system that can perform useful work inside the process." />
-              <ArchitectureRow number="04" title="Prove" label="OUTPUT" text="Run the new workflow against the old one and measure time, quality, delay and operating cost." last />
+              <ArchitectureRow number="01" title="Find value" label="DISCOVER" text="Map the work, identify expensive friction, and rank where AI can create measurable value." />
+              <ArchitectureRow number="02" title="Design the change" label="SIMPLIFY" text="Remove unnecessary steps first, then define the smallest useful AI intervention." />
+              <ArchitectureRow number="03" title="Implement" label="DEPLOY" text="Build inside the real workflow with the team that owns the outcome." />
+              <ArchitectureRow number="04" title="Measure + expand" label="SCALE" text="Compare the result against the baseline, then expand only where the economics justify it." last />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="sprint" className="w-full border-b border-[#202226] technical-grid">
+      <section id="workshop" className="w-full border-b border-[#202226] technical-grid">
         <div className="container-grid section-pad">
-          <SectionHead index="02" label="Deployment / Start here" />
+          <SectionHead index="02" label="Start here / Management workshop" />
 
           <div className="mt-14 md:mt-20 border border-[#292b30] bg-[#070707] technical-corner">
             <div className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#292b30]">
               <div className="lg:col-span-8 p-6 md:p-10 lg:p-12 lg:border-r border-[#292b30]">
-                <span className="text-mono-label block mb-5">ARCHANGEL / AI WORKFLOW SPRINT</span>
+                <span className="text-mono-label block mb-5">ARCHANGEL / AI TRANSFORMATION WORKSHOP</span>
                 <h2 className="text-display text-[#f0f0ec] max-w-3xl">
-                  One workflow.<br />Ten working days.<br />A working result.
+                  Find where AI can actually save your business money.
                 </h2>
+                <p className="text-[#85898e] mt-6 max-w-2xl leading-relaxed">
+                  A focused management session for companies that want a practical starting point, not another general AI presentation.
+                </p>
               </div>
-              <div className="lg:col-span-4 p-6 md:p-10 lg:p-12 flex flex-col justify-between min-h-[260px]">
-                <div className="text-mono-label flex justify-between"><span>Commercial</span><span>AG-01</span></div>
+              <div className="lg:col-span-4 p-6 md:p-10 lg:p-12 flex flex-col justify-between min-h-[280px]">
+                <div className="text-mono-label flex justify-between"><span>Fixed fee</span><span>AG-01</span></div>
                 <div>
                   <p className="text-5xl md:text-6xl tracking-[-0.05em] text-[#eeeeea]">฿45,000</p>
-                  <p className="text-xs font-mono uppercase tracking-[0.12em] text-[#676b70] mt-4">50% start / 50% delivery</p>
+                  <p className="text-xs font-mono uppercase tracking-[0.12em] text-[#676b70] mt-4">Bangkok · on site</p>
                 </div>
               </div>
             </div>
@@ -132,22 +135,22 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="lg:col-span-7 p-6 md:p-10 lg:p-12 lg:border-r border-[#292b30]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">
-                  <Deliverable number="01" title="Current state" text="Workflow mapped as it actually operates." />
-                  <Deliverable number="02" title="Baseline" text="Time, people, delays and errors quantified." />
-                  <Deliverable number="03" title="Working system" text="AI automation built for the selected process." />
-                  <Deliverable number="04" title="Proof" text="Before and after comparison with ROI." />
+                  <Deliverable number="01" title="Workflow audit" text="Map the work creating the most cost, delay and repetitive effort." />
+                  <Deliverable number="02" title="Opportunity ranking" text="Prioritise the 3 to 5 AI opportunities worth management attention." />
+                  <Deliverable number="03" title="ROI estimate" text="Estimate time saved, operating impact, implementation effort and business value." />
+                  <Deliverable number="04" title="30 day action plan" text="Leave with a clear sequence for what to implement first and why." />
                 </div>
               </div>
-              <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between gap-12 bg-[#090909]">
+              <div className="lg:col-span-5 p-6 md:p-10 lg:p-12 flex flex-col justify-between gap-10 bg-[#090909]">
                 <div>
-                  <span className="text-mono-label">Operating principle</span>
+                  <span className="text-mono-label">Commercial rule</span>
                   <p className="text-xl md:text-2xl text-[#e4e4e0] leading-snug mt-5 max-w-md">
-                    Do not approve a transformation programme before one workflow proves the economics.
+                    If Archangel implements one of the selected projects, the workshop fee is credited toward implementation.
                   </p>
                 </div>
-                <p className="text-[#777b80] text-sm leading-relaxed max-w-md">
-                  Start with one process. If the economics are good, we expand. If they are not, we stop there.
-                </p>
+                <Link href="/ai-transformation" className="inline-flex items-center gap-3 text-xs font-mono uppercase tracking-[0.12em] text-[#d8d9d5] border-b border-[#55595e] pb-2 self-start hover:border-white transition-colors">
+                  Open workshop details <ArrowUpRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           </div>
@@ -156,22 +159,22 @@ export default function Home() {
 
       <section id="examples" className="w-full border-b border-[#202226] bg-[#050505]">
         <div className="container-grid section-pad">
-          <SectionHead index="03" label="Candidate workflows" />
+          <SectionHead index="03" label="Where we look first" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 mt-14 md:mt-20">
             <div className="lg:col-span-4">
               <Reveal>
-                <h2 className="text-display text-[#eeeeea]">Look for work your team repeats every week.</h2>
+                <h2 className="text-display text-[#eeeeea]">Start where work is expensive and repetitive.</h2>
               </Reveal>
               <Reveal delay={0.05}>
                 <p className="text-[#777b80] mt-6 leading-relaxed max-w-md">
-                  Good candidates are repetitive, document heavy, rules heavy, or move information between systems by hand.
+                  The best opportunities usually sit inside core operating workflows, not innovation teams.
                 </p>
               </Reveal>
             </div>
 
             <div className="lg:col-span-8 border-t border-[#2a2c30]">
-              {workflowExamples.map(([number, title, detail]) => (
+              {opportunityAreas.map(([number, title, detail]) => (
                 <WorkflowRow key={number} number={number} title={title} detail={detail} />
               ))}
             </div>
@@ -179,28 +182,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="fit" className="w-full border-b border-[#202226] bg-[#070707]">
+      <section id="engagement" className="w-full border-b border-[#202226] bg-[#070707]">
         <div className="container-grid section-pad">
-          <SectionHead index="04" label="Operating fit" />
+          <SectionHead index="04" label="Commercial path" />
 
           <Reveal>
             <h2 className="text-display text-[#eeeeea] max-w-4xl mt-14 md:mt-20 mb-12">
-              Built for operating companies, not innovation theatre.
+              Start small. Prove value. Expand from evidence.
             </h2>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 border border-[#26282c]">
-            <FitPanel
-              code="FIT / 01"
-              title="Good first system"
-              items={["Finance and back office teams", "Operations with manual handoffs", "Growing businesses adding headcount to cope", "Teams already exploring AI, RPA or automation"]}
-            />
-            <FitPanel
-              code="FILTER / 02"
-              title="Not a good first system"
-              items={["A vague request to add AI", "A company wide platform before one use case works", "A demo with no process owner", "Automation with no measurable business outcome"]}
-              right
-            />
+          <div className="grid grid-cols-1 md:grid-cols-3 border border-[#26282c]">
+            <PathPanel number="01" title="Workshop" text="Management team identifies and ranks the highest value AI opportunities." />
+            <PathPanel number="02" title="Implementation" text="Archangel builds the selected workflow with the operating team and measures the result." border />
+            <PathPanel number="03" title="Transformation partner" text="Successful systems expand across functions with ongoing delivery, governance and value tracking." />
           </div>
         </div>
       </section>
@@ -212,14 +207,14 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mt-14 md:mt-20">
             <div className="lg:col-span-7">
               <Reveal>
-                <h2 className="text-display text-[#eeeeea] max-w-3xl">Applied AI, close to the business.</h2>
+                <h2 className="text-display text-[#eeeeea] max-w-3xl">Strategy and implementation under one accountable team.</h2>
               </Reveal>
               <div className="text-[#85898e] text-base md:text-lg leading-relaxed max-w-2xl space-y-6 mt-8">
                 <Reveal delay={0.05}>
-                  <p>Archangel Company Limited is a Thailand BOI promoted software and digital platform company. We design and build applied AI systems around real operating workflows.</p>
+                  <p>Archangel Company Limited is a Thailand BOI promoted software and digital platform company based in Bangkok.</p>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <p>Our work spans healthcare AI, automation and operational intelligence. We are founder led and implementation first: useful systems in production, not more slides about AI.</p>
+                  <p>We work close to management and operating teams. The objective is not more AI activity. It is measurable change in how the business works.</p>
                 </Reveal>
               </div>
               <Reveal delay={0.14}>
@@ -237,7 +232,7 @@ export default function Home() {
               <DataRow label="Base" value="Bangkok, Thailand" />
               <DataRow label="Status" value="BOI promoted" />
               <DataRow label="Category" value="Software + Digital Platform" />
-              <DataRow label="Focus" value="Applied AI systems" last />
+              <DataRow label="Focus" value="AI transformation" last />
             </div>
           </div>
         </div>
@@ -246,23 +241,23 @@ export default function Home() {
       <section id="contact" className="w-full technical-grid bg-[#050505]">
         <div className="container-grid py-24 md:py-36">
           <div className="flex items-center justify-between border-b border-[#2a2c30] pb-5 mb-12 text-mono-label">
-            <span>06 / Initiate</span><span>System entry point</span>
+            <span>06 / Start</span><span>15 minute qualification</span>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-end">
             <div className="lg:col-span-8">
               <h2 className="text-display text-[#f0f0ec] max-w-5xl">
-                Bring us one process your team should not be doing by hand.
+                Tell us where work is costing your business time or money.
               </h2>
             </div>
             <div className="lg:col-span-4 lg:text-right">
               <p className="text-[#7c8085] text-sm leading-relaxed mb-7 lg:ml-auto max-w-sm">
-                We will tell you whether it is a good candidate for the 10 working day sprint.
+                We use the first call to decide whether the management workshop is the right next step.
               </p>
               <a
-                href="mailto:build@archangel.ventures?subject=AI%20Workflow%20Sprint"
+                href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call"
                 className="inline-flex items-center gap-3 text-sm font-mono uppercase tracking-[0.08em] text-[#ecece8] border-b border-[#777b80] pb-2 hover:border-white transition-colors"
               >
-                build@archangel.ventures <ArrowUpRight className="w-4 h-4" />
+                Book the opportunity call <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -327,21 +322,12 @@ function WorkflowRow({ number, title, detail }: { number: string; title: string;
   );
 }
 
-function FitPanel({ code, title, items, right = false }: { code: string; title: string; items: string[]; right?: boolean }) {
+function PathPanel({ number, title, text, border = false }: { number: string; title: string; text: string; border?: boolean }) {
   return (
-    <div className={`p-6 md:p-9 lg:p-10 ${right ? "md:border-l border-[#26282c]" : ""}`}>
-      <div className="flex items-center justify-between text-mono-label mb-10">
-        <span>{code}</span><span className="text-[#464a4f]">{right ? "−" : "+"}</span>
-      </div>
-      <h3 className="text-2xl text-[#e8e8e4] mb-9">{title}</h3>
-      <div>
-        {items.map((item, index) => (
-          <div key={item} className="grid grid-cols-[32px_1fr] gap-3 py-4 border-t border-[#25272b] text-sm text-[#7c8085]">
-            <span className="font-mono text-[9px] text-[#4b4f54] pt-0.5">0{index + 1}</span>
-            <span>{item}</span>
-          </div>
-        ))}
-      </div>
+    <div className={`p-6 md:p-8 lg:p-10 ${border ? "md:border-l md:border-r border-[#26282c]" : ""}`}>
+      <div className="flex items-center justify-between text-mono-label mb-12"><span>{number}</span><span className="text-[#4b4f54]">AG</span></div>
+      <h3 className="text-xl text-[#e6e6e2] mb-4">{title}</h3>
+      <p className="text-[#74787d] leading-relaxed text-sm">{text}</p>
     </div>
   );
 }

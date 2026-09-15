@@ -21,18 +21,18 @@ export function Navbar() {
                     </Link>
 
                     <div className="hidden md:flex items-stretch ml-auto">
-                        <NavLink href="/#sprint" index="01">Sprint</NavLink>
-                        <NavLink href="/#how" index="02">System</NavLink>
+                        <NavLink href="/#workshop" index="01">Workshop</NavLink>
+                        <NavLink href="/#how" index="02">Method</NavLink>
                         <NavLink href="/#examples" index="03">Workflows</NavLink>
                         <NavLink href="/work" index="04">Record</NavLink>
                     </div>
 
-                    <Link
-                        href="/#contact"
+                    <a
+                        href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call"
                         className="hidden md:flex items-center gap-5 px-6 lg:px-7 border-l border-[#202226] text-[10px] font-mono uppercase tracking-[0.14em] text-[#0a0a0a] bg-[#e8e8e4] hover:bg-white transition-colors"
                     >
-                        Initiate <span>↗</span>
-                    </Link>
+                        Opportunity call <span>↗</span>
+                    </a>
 
                     <button
                         onClick={() => setIsOpen(!isOpen)}
@@ -47,19 +47,19 @@ export function Navbar() {
             {isOpen && (
                 <div className="fixed inset-0 z-40 bg-[#050505] pt-24 px-5 md:hidden technical-grid">
                     <div className="border border-[#24262a] bg-[#060606]">
-                        <MobileNavLink href="/#sprint" index="01" onClick={closeMenu}>AI Workflow Sprint</MobileNavLink>
-                        <MobileNavLink href="/#how" index="02" onClick={closeMenu}>System architecture</MobileNavLink>
-                        <MobileNavLink href="/#examples" index="03" onClick={closeMenu}>Candidate workflows</MobileNavLink>
+                        <MobileNavLink href="/#workshop" index="01" onClick={closeMenu}>AI Transformation Workshop</MobileNavLink>
+                        <MobileNavLink href="/#how" index="02" onClick={closeMenu}>How we work</MobileNavLink>
+                        <MobileNavLink href="/#examples" index="03" onClick={closeMenu}>Opportunity areas</MobileNavLink>
                         <MobileNavLink href="/work" index="04" onClick={closeMenu}>Company record</MobileNavLink>
                     </div>
 
-                    <Link
-                        href="/#contact"
+                    <a
+                        href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call"
                         onClick={closeMenu}
                         className="mt-5 flex items-center justify-between bg-[#e8e8e4] text-[#070707] px-5 py-4 text-xs font-mono uppercase tracking-[0.12em]"
                     >
-                        Bring a workflow <span>↗</span>
-                    </Link>
+                        Book opportunity call <span>↗</span>
+                    </a>
                 </div>
             )}
         </>

@@ -7,9 +7,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Archangel | Applied AI for Business Workflows",
+  title: "Archangel | AI Transformation Partner in Thailand",
   description:
-    "Archangel is a Thailand BOI promoted applied AI company. Give us one painful business process and we build a working AI automation in a 10-day fixed-fee sprint.",
+    "Archangel helps companies in Thailand find high value AI opportunities, implement the right workflows, and measure the business result. Start with a fixed fee management AI transformation workshop in Bangkok.",
 };
 
 export default function RootLayout({

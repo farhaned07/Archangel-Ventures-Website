@@ -7,23 +7,23 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-12 border-b border-[#202226]">
                     <div className="md:col-span-7 p-6 md:p-8 lg:p-10 md:border-r border-[#202226]">
                         <div className="flex items-center justify-between text-mono-label mb-10">
-                            <span>Archangel / Applied AI</span>
+                            <span>Archangel / AI Transformation Partner</span>
                             <span className="text-[#494d52]">AG / TH</span>
                         </div>
                         <p className="text-[#dededa] text-xl md:text-2xl max-w-xl leading-snug">
-                            Applied AI systems for expensive manual business processes.
+                            Find where AI creates measurable value. Implement what works.
                         </p>
                     </div>
 
                     <div className="md:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col justify-between gap-12">
                         <div className="grid grid-cols-2 gap-8 text-sm">
                             <div>
-                                <span className="text-mono-label block mb-4">Navigate</span>
-                                <Link href="/work" className="text-[#8b8f94] hover:text-white transition-colors">Company record</Link>
+                                <span className="text-mono-label block mb-4">Start</span>
+                                <Link href="/ai-transformation" className="text-[#8b8f94] hover:text-white transition-colors">AI transformation workshop</Link>
                             </div>
                             <div>
                                 <span className="text-mono-label block mb-4">Contact</span>
-                                <a href="mailto:build@archangel.ventures?subject=AI%20Workflow%20Sprint" className="text-[#d8d8d4] hover:text-white transition-colors break-all">
+                                <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="text-[#d8d8d4] hover:text-white transition-colors break-all">
                                     build@archangel.ventures
                                 </a>
                             </div>
