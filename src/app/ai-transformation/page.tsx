@@ -19,6 +19,23 @@ export const metadata: Metadata = {
       "Find 3–5 AI opportunities worth funding. Fixed fee, on-site in Bangkok, with a practical decision pack and 30-day action plan.",
     url: "/ai-transformation",
     type: "website",
+    locale: "en_TH",
+    siteName: "Archangel",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Archangel AI Transformation Workshop Bangkok",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Transformation Workshop Bangkok | Archangel",
+    description:
+      "Find 3–5 AI opportunities worth funding. Fixed fee, on-site in Bangkok.",
+    images: ["/opengraph-image"],
   },
 };
 
