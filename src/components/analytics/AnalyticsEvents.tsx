@@ -37,12 +37,16 @@ export function AnalyticsEvents() {
   useEffect(() => {
     function handleClick(event: MouseEvent) {
       const target = event.target as Element | null;
-      const cta = target?.closest<HTMLElement>("[data-cta]");
+      const anchor = target?.closest<HTMLAnchorElement>("a");
+      const trackedElement = target?.closest<HTMLElement>("[data-cta]");
+      const href = anchor?.getAttribute("href") || null;
+      const ctaName = trackedElement?.dataset.cta || href || "unknown";
 
-      if (!cta) return;
+      const isBooking = href === "/book" || href?.endsWith("/book");
+      const isWorkshop = href === "/ai-transformation" || href?.endsWith("/ai-transformation");
+      const isExplicitCta = Boolean(trackedElement);
 
-      const href = cta instanceof HTMLAnchorElement ? cta.getAttribute("href") : null;
-      const ctaName = cta.dataset.cta || "unknown";
+      if (!isBooking && !isWorkshop && !isExplicitCta) return;
 
       pushEvent({
         event: "cta_click",
@@ -51,7 +55,15 @@ export function AnalyticsEvents() {
         page_path: window.location.pathname,
       });
 
-      if (href === "/book" || href?.endsWith("/book")) {
+      if (isWorkshop) {
+        pushEvent({
+          event: "workshop_interest",
+          cta_name: ctaName,
+          page_path: window.location.pathname,
+        });
+      }
+
+      if (isBooking) {
         pushEvent({
           event: "booking_started",
           cta_name: ctaName,
