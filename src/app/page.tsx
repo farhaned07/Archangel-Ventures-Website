@@ -5,9 +5,10 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { OperatingMapArtwork } from "@/components/ui/EditorialArtwork";
 import { WorkflowSimulator } from "@/components/ui/InteractiveExperience";
-import { TransformationWorkbench, HannaProductDemo } from "@/components/ui/ProductExperiences";
+import { TransformationWorkbench } from "@/components/ui/ProductExperiences";
 import { WorkshopReveal } from "@/components/ui/WorkshopReveal";
-import { emailHref, site } from "@/lib/site";
+import { ClosingSequence } from "@/components/ui/ClosingSequence";
+import { bookingHref, site } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -40,9 +41,9 @@ export default function Home() {
                 <Link href="/ai-transformation" className="button-primary w-full sm:w-auto">
                   Start with the workshop <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href={emailHref} className="button-secondary w-full sm:w-auto" data-cta="opportunity-call">
+                <Link href={bookingHref} className="button-secondary w-full sm:w-auto" data-cta="opportunity-call">
                   Talk to Archangel <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             </Reveal>
           </div>
@@ -64,6 +65,11 @@ export default function Home() {
               <span className="block text-[#74746e]">Value is not.</span>
             </h2>
           </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mt-9 md:mt-12 max-w-2xl text-lg md:text-2xl leading-relaxed tracking-[-0.025em] text-[#a2a29b]">
+              Most companies do not need more AI tools. They need to know where AI is actually worth using.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -73,38 +79,7 @@ export default function Home() {
 
       <WorkflowSimulator />
 
-      <HannaProductDemo />
-
-      <section className="bg-white border-y border-[#e1e1db]">
-        <div className="page-shell py-16 md:py-24">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-            <div>
-              <p className="eyebrow text-[#85857f]">Archangel</p>
-              <h2 className="mt-5 text-[2.5rem] sm:text-[3.4rem] lg:text-[4.1rem] leading-[0.96] tracking-[-0.055em] font-medium max-w-3xl">Strategy + implementation, under one team.</h2>
-            </div>
-            <div className="flex flex-wrap gap-2 max-w-lg lg:justify-end">
-              <span className="pill bg-[#f6f6f2]">Thailand BOI promoted</span>
-              <span className="pill bg-[#f6f6f2]">Founder led</span>
-              <span className="pill bg-[#f6f6f2]">Applied AI</span>
-              <Link href="/work" className="pill bg-[#11110f] !text-white !border-[#11110f]">Company <ArrowUpRight className="w-3.5 h-3.5" /></Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="page-shell py-16 md:py-28 lg:py-32">
-        <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[#11110f] text-[#f7f7f2] px-6 py-11 md:p-14 lg:p-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-end">
-            <div>
-              <p className="eyebrow text-[#8f8f88]">Start a conversation</p>
-              <h2 className="mt-5 max-w-4xl text-[2.65rem] sm:text-[3.5rem] lg:text-[4.9rem] leading-[0.97] tracking-[-0.055em] font-medium">Where is your business losing time?</h2>
-            </div>
-            <a href={emailHref} className="button-light" data-cta="opportunity-call">
-              Book the call <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <ClosingSequence />
     </main>
   );
 }
