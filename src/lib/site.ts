@@ -8,3 +8,6 @@ export const site = {
 } as const;
 
 export const emailHref = `mailto:${site.email}?subject=${encodeURIComponent(site.bookingSubject)}`;
+
+// Replace this single value with the public calendar URL when the booking calendar is connected.
+export const bookingHref = emailHref;
