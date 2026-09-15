@@ -4,7 +4,8 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { OperatingMapArtwork } from "@/components/ui/EditorialArtwork";
-import { TransformationSequence, WorkflowSimulator } from "@/components/ui/InteractiveExperience";
+import { WorkflowSimulator } from "@/components/ui/InteractiveExperience";
+import { TransformationWorkbench, HannaProductDemo } from "@/components/ui/ProductExperiences";
 import { WorkshopReveal } from "@/components/ui/WorkshopReveal";
 import { emailHref, site } from "@/lib/site";
 
@@ -66,51 +67,13 @@ export default function Home() {
         </div>
       </section>
 
-      <TransformationSequence />
+      <TransformationWorkbench />
 
       <WorkshopReveal price={site.workshopPrice} />
 
       <WorkflowSimulator />
 
-      <section className="page-shell section-space">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.62fr_1.38fr] gap-10 lg:gap-16 items-center">
-          <div>
-            <p className="eyebrow text-[#85857f]">Built, not presented</p>
-            <h2 className="mt-5 text-[2.7rem] sm:text-[3.7rem] lg:text-[4.6rem] leading-[0.96] tracking-[-0.055em] font-medium">Hanna.</h2>
-            <p className="mt-5 text-base md:text-lg text-[#74746e] max-w-md">Clinical documentation and multilingual care planning built around real healthcare workflows in Thailand.</p>
-            <a href="https://www.hanna.care" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-7 font-medium border-b border-[#bdbdb7] pb-1 hover:border-[#11110f] transition-colors">
-              View Hanna <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          <a href="https://www.hanna.care" target="_blank" rel="noreferrer" className="group relative min-h-[430px] md:min-h-[560px] rounded-[2rem] md:rounded-[2.7rem] overflow-hidden bg-[#11110f] text-white border border-[#252522] shadow-[0_28px_90px_rgba(20,20,18,0.12)]">
-            <div className="absolute inset-0 opacity-90" aria-hidden="true">
-              <div className="absolute w-[48%] aspect-square rounded-full border border-[#33332f] left-[10%] top-[10%]" />
-              <div className="absolute w-[32%] aspect-square rounded-full border border-[#33332f] right-[10%] bottom-[9%]" />
-              <div className="absolute left-[8%] right-[8%] top-1/2 h-px bg-[#2d2d2a]" />
-              <div className="absolute top-[8%] bottom-[8%] left-1/2 w-px bg-[#2d2d2a]" />
-            </div>
-            <div className="relative h-full min-h-[430px] md:min-h-[560px] p-6 md:p-10 flex flex-col justify-between">
-              <div className="flex items-center justify-between gap-3">
-                <span className="text-xs text-[#777771]">Selected system</span>
-                <ArrowUpRight className="w-5 h-5 text-[#777771] group-hover:text-white transition-colors" />
-              </div>
-              <div>
-                <p className="text-[#74746e] text-sm">Healthcare AI · Thailand</p>
-                <h3 className="mt-3 text-[4rem] sm:text-[5rem] md:text-[6.5rem] leading-[0.9] tracking-[-0.07em] font-medium">Hanna</h3>
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                {['Listen', 'Structure', 'Care plan'].map((item, index) => (
-                  <div key={item} className={`rounded-2xl p-4 border ${index === 2 ? 'bg-[#f5f5f0] text-[#11110f] border-[#f5f5f0]' : 'border-[#33332f] bg-[#171715] text-[#aaa9a2]'}`}>
-                    <span className="text-[10px] block mb-5">0{index + 1}</span>
-                    <span className="text-sm font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </a>
-        </div>
-      </section>
+      <HannaProductDemo />
 
       <section className="bg-white border-y border-[#e1e1db]">
         <div className="page-shell py-16 md:py-24">
