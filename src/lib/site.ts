@@ -12,6 +12,7 @@ export const site = {
   bookingSubject: "15 minute AI Opportunity Call",
   location: "Bangkok, Thailand",
   url: (configuredSiteUrl || defaultSiteUrl).replace(/\/+$/, ""),
+  linkedinUrl: "https://th.linkedin.com/in/sabbirfarhan",
   calendarBookingUrl: configuredCalendarUrl || "",
   gtmId: configuredGtmId || "",
 } as const;
