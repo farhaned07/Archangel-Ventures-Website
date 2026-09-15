@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { CompanySystems } from "@/components/ui/CompanySystems";
+import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Archangel Company Limited | Applied AI in Thailand",
+  title: "Archangel Company Limited | AI Company in Bangkok, Thailand",
   description:
-    "Bangkok-based, Thailand BOI-promoted software and AI company building applied systems across healthcare, enterprise operations and AI-native media.",
+    "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company focused on AI transformation, applied AI systems and workflow implementation.",
   alternates: {
     canonical: "/work",
   },
   openGraph: {
-    title: "Archangel Company Limited | Applied AI in Thailand",
+    title: "Archangel Company Limited | AI Company in Bangkok, Thailand",
     description:
-      "Bangkok-based, Thailand BOI-promoted software and AI company building applied AI systems close to the work.",
+      "Thailand BOI-promoted software and AI company building applied systems and AI transformation close to the work.",
     url: "/work",
     type: "website",
     locale: "en_TH",
@@ -23,22 +24,51 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Archangel Company Limited — Applied AI in Thailand",
+        alt: "Archangel Company Limited — AI company in Bangkok, Thailand",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Archangel Company Limited | Applied AI in Thailand",
+    title: "Archangel Company Limited | AI Company in Bangkok, Thailand",
     description:
-      "Bangkok-based, Thailand BOI-promoted software and AI company building applied AI systems.",
+      "Thailand BOI-promoted software and AI company focused on transformation and applied AI systems.",
     images: ["/opengraph-image"],
+  },
+};
+
+const companyPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": `${absoluteUrl("/work")}#about`,
+  url: absoluteUrl("/work"),
+  name: "Archangel Company Limited",
+  description:
+    "Official company page for Archangel Company Limited, a Bangkok-based, Thailand BOI-promoted software and AI company.",
+  mainEntity: {
+    "@type": "Organization",
+    "@id": `${site.url}/#organization`,
+    name: site.legalName,
+    alternateName: site.name,
+    url: site.url,
+    sameAs: [site.companyLinkedinUrl],
+    founder: {
+      "@type": "Person",
+      "@id": `${site.url}/#farhan-sabbir`,
+      name: "Farhan Sabbir",
+      url: absoluteUrl("/farhan-sabbir"),
+    },
   },
 };
 
 export default function WorkPage() {
   return (
     <main className="pt-[64px] md:pt-[72px]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(companyPageSchema) }}
+      />
+
       <section className="page-shell pt-12 md:pt-20 lg:pt-24 pb-16 md:pb-24">
         <Link href="/" className="inline-flex items-center gap-2 text-sm text-[#777771] hover:text-[#11110f] transition-colors">
           <ArrowLeft className="w-4 h-4" /> Back to Archangel
@@ -46,11 +76,11 @@ export default function WorkPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-20 items-end mt-12 md:mt-16">
           <div>
-            <p className="eyebrow text-[#85857f]">Company</p>
+            <p className="eyebrow text-[#85857f]">Archangel Company Limited</p>
             <h1 className="display-hero mt-5 max-w-5xl">Built close to the work.</h1>
           </div>
           <p className="text-lg md:text-xl leading-relaxed text-[#696963] max-w-xl lg:ml-auto">
-            Archangel is a Bangkok based, BOI promoted software and AI company. We build systems where workflow, language and operating context matter.
+            Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company. We work on AI transformation and applied AI systems where workflow, language and operating context matter.
           </p>
         </div>
       </section>
@@ -79,6 +109,9 @@ export default function WorkPage() {
             <div>
               <p className="eyebrow text-[#7a7a74]">Work with Archangel</p>
               <h2 className="mt-5 text-[2.8rem] sm:text-[3.8rem] lg:text-[4.8rem] leading-[0.95] tracking-[-0.055em] font-medium max-w-4xl">Start with one expensive piece of work.</h2>
+              <Link href="/ai-transformation-partner-thailand" className="mt-7 inline-flex items-center gap-2 text-sm font-medium border-b border-[#b9b9b2] pb-1">
+                AI Transformation Partner in Thailand <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
             <Link href="/ai-transformation" className="button-primary w-full sm:w-auto">
               AI Transformation Workshop <ArrowRight className="w-4 h-4" />
