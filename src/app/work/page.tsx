@@ -16,6 +16,23 @@ export const metadata: Metadata = {
       "Bangkok-based, Thailand BOI-promoted software and AI company building applied AI systems close to the work.",
     url: "/work",
     type: "website",
+    locale: "en_TH",
+    siteName: "Archangel",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Archangel Company Limited — Applied AI in Thailand",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Archangel Company Limited | Applied AI in Thailand",
+    description:
+      "Bangkok-based, Thailand BOI-promoted software and AI company building applied AI systems.",
+    images: ["/opengraph-image"],
   },
 };
 
