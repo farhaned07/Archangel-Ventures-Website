@@ -7,9 +7,19 @@ import { ClosingSequence } from "@/components/ui/ClosingSequence";
 import { bookingHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "AI Transformation Workshop Thailand | Archangel",
+  title: "AI Transformation Workshop Bangkok | Archangel",
   description:
-    "A fixed fee AI transformation workshop for management teams in Bangkok. Identify the highest value AI opportunities, estimate ROI, and leave with a practical 30 day implementation plan.",
+    "A ฿45,000 on-site AI transformation workshop for management teams in Bangkok. Identify 3–5 high-value workflows, estimate ROI, and leave with a practical 30-day action plan.",
+  alternates: {
+    canonical: "/ai-transformation",
+  },
+  openGraph: {
+    title: "AI Transformation Workshop Bangkok | Archangel",
+    description:
+      "Find 3–5 AI opportunities worth funding. Fixed fee, on-site in Bangkok, with a practical decision pack and 30-day action plan.",
+    url: "/ai-transformation",
+    type: "website",
+  },
 };
 
 const fit = [
