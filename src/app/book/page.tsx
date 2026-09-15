@@ -4,8 +4,15 @@ import Link from "next/link";
 import { emailHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a 15 minute AI Opportunity Call | Archangel",
+  title: "Book a 15-Minute AI Opportunity Call | Archangel",
   description: "Book a short call with Archangel to discuss where work is costing your business time or money.",
+  alternates: {
+    canonical: "/book",
+  },
+  robots: {
+    index: false,
+    follow: true,
+  },
 };
 
 export default function BookPage() {
@@ -34,7 +41,13 @@ export default function BookPage() {
             {hasCalendar ? (
               <>
                 <p className="text-sm text-[#777771]">Choose a time</p>
-                <a href={site.calendarBookingUrl} className="button-primary mt-7 w-full" target="_blank" rel="noreferrer">
+                <a
+                  href={site.calendarBookingUrl}
+                  className="button-primary mt-7 w-full"
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cta="calendar-booking"
+                >
                   Open calendar <ArrowRight className="w-4 h-4" />
                 </a>
               </>
@@ -42,8 +55,8 @@ export default function BookPage() {
               <>
                 <p className="text-sm text-[#777771]">Calendar connection</p>
                 <h2 className="mt-4 text-3xl md:text-4xl tracking-[-0.045em] font-medium">Scheduling is being connected.</h2>
-                <p className="mt-5 text-[#777771] leading-relaxed">Until the Google Calendar booking page is authorized, you can schedule directly by email.</p>
-                <a href={emailHref} className="button-primary mt-8 w-full">
+                <p className="mt-5 text-[#777771] leading-relaxed">Until the public Google Calendar booking page is added, you can schedule directly by email.</p>
+                <a href={emailHref} className="button-primary mt-8 w-full" data-cta="booking-email">
                   Schedule by email <ArrowRight className="w-4 h-4" />
                 </a>
               </>

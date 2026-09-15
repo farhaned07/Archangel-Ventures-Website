@@ -1,60 +1,172 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { site } from "@/lib/site";
+import { ConsentBanner } from "@/components/analytics/ConsentBanner";
+import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
+import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Archangel | AI Transformation Partner in Thailand",
+  metadataBase: new URL(site.url),
+  title: "AI Transformation Partner Thailand | Archangel",
   description:
-    "Archangel works with management teams in Thailand to find where AI can create measurable value, implement the right systems, and make them work in the business.",
+    "Archangel helps management teams in Thailand find high-value AI opportunities, redesign workflows, implement the right systems, and measure business results.",
   applicationName: "Archangel",
   category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     title: "Archangel | Make AI useful at work",
     description:
       "AI transformation strategy and implementation for management teams in Thailand.",
     type: "website",
+    url: "/",
     locale: "en_TH",
     siteName: "Archangel",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Archangel — Make AI useful at work",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Archangel | Make AI useful at work",
     description:
       "AI transformation strategy and implementation for management teams in Thailand.",
+    images: ["/opengraph-image"],
   },
 };
 
-const organizationSchema = {
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: site.legalName,
-  alternateName: site.name,
-  email: site.email,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Bangkok",
-    addressCountry: "TH",
-  },
-  description:
-    "Bangkok based, BOI promoted software and AI company focused on applied AI transformation.",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${site.url}/#organization`,
+      name: site.name,
+      legalName: site.legalName,
+      url: site.url,
+      logo: absoluteUrl("/favicon.ico"),
+      email: site.email,
+      description:
+        "Bangkok-based, Thailand BOI-promoted software and AI company focused on applied AI transformation.",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Bangkok",
+        addressCountry: "TH",
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "Thailand",
+      },
+      founder: {
+        "@type": "Person",
+        name: "Farhan Sabbir",
+        jobTitle: "Founder & Executive Director",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: site.email,
+        areaServed: "TH",
+        availableLanguage: ["English"],
+      },
+      knowsAbout: [
+        "AI transformation",
+        "Applied AI",
+        "Business process automation",
+        "AI workflow implementation",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      alternateName: site.legalName,
+      inLanguage: "en",
+      publisher: {
+        "@id": `${site.url}/#organization`,
+      },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const hasGtm = Boolean(site.gtmId);
+
   return (
     <html lang="en">
+      <head>
+        {hasGtm ? (
+          <Script id="google-consent-default" strategy="beforeInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              window.gtag = window.gtag || function(){dataLayer.push(arguments);};
+              gtag('consent', 'default', {
+                ad_storage: 'denied',
+                analytics_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500
+              });
+              gtag('set', 'ads_data_redaction', true);
+            `}
+          </Script>
+        ) : null}
+      </head>
       <body className={`${inter.variable} min-h-screen bg-[#f6f6f2] text-[#0d0d0c] antialiased`}>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        {hasGtm ? (
+          <>
+            <Script id="google-tag-manager" strategy="afterInteractive">
+              {`
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','${site.gtmId}');
+              `}
+            </Script>
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${site.gtmId}`}
+                height="0"
+                width="0"
+                style={{ display: "none", visibility: "hidden" }}
+                title="Google Tag Manager"
+              />
+            </noscript>
+          </>
+        ) : null}
         <Navbar />
         {children}
         <Footer />
+        {hasGtm ? <AnalyticsEvents /> : null}
+        {hasGtm ? <ConsentBanner /> : null}
       </body>
     </html>
   );

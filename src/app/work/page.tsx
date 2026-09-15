@@ -1,6 +1,40 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { CompanySystems } from "@/components/ui/CompanySystems";
+
+export const metadata: Metadata = {
+  title: "Archangel Company Limited | Applied AI in Thailand",
+  description:
+    "Bangkok-based, Thailand BOI-promoted software and AI company building applied systems across healthcare, enterprise operations and AI-native media.",
+  alternates: {
+    canonical: "/work",
+  },
+  openGraph: {
+    title: "Archangel Company Limited | Applied AI in Thailand",
+    description:
+      "Bangkok-based, Thailand BOI-promoted software and AI company building applied AI systems close to the work.",
+    url: "/work",
+    type: "website",
+    locale: "en_TH",
+    siteName: "Archangel",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Archangel Company Limited — Applied AI in Thailand",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Archangel Company Limited | Applied AI in Thailand",
+    description:
+      "Bangkok-based, Thailand BOI-promoted software and AI company building applied AI systems.",
+    images: ["/opengraph-image"],
+  },
+};
 
 export default function WorkPage() {
   return (
