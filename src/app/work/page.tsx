@@ -28,8 +28,7 @@ export default function WorkPage() {
               <h2 className="display-medium mt-5">Products and operating systems built from inside the markets they serve.</h2>
             </div>
             <div className="border-t border-[#343431]">
-              <WorkRow name="Hanna" category="Healthcare AI" region="Thailand" description="Clinical documentation, care planning and care intelligence built around real healthcare workflows." href="https://www.hanna.care" />
-              <WorkRow name="Onnesha AI" category="AI work infrastructure" region="South + Southeast Asia" description="Experiments and products around AI native work, automation and local market infrastructure." href="https://www.onnesha.fun" />
+              <WorkRow name="Hanna" category="Healthcare AI" region="Thailand" description="Clinical documentation and multilingual care planning built around real healthcare workflows." href="https://www.hanna.care" />
               <WorkRow name="Archangel Applied AI" category="Enterprise transformation" region="Thailand" description="AI systems for finance, operations and management workflows where measurable operating value matters." />
             </div>
           </div>
