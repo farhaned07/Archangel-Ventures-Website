@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "platform:generate": "node platform/cli.mjs",
+    "platform:validate": "node --test platform/tests/*.test.mjs",
+    "test:platform": "node --test platform/tests/*.test.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
