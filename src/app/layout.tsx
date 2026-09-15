@@ -12,9 +12,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "AI Transformation Partner Thailand | Archangel",
+  title: "Archangel Company Limited | AI Transformation Thailand",
   description:
-    "Archangel helps management teams in Thailand find high-value AI opportunities, redesign workflows, implement the right systems, and measure business results.",
+    "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company helping management teams find, build and measure high-value AI transformation.",
   applicationName: "Archangel",
   category: "technology",
   alternates: {
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Archangel | Make AI useful at work",
+    title: "Archangel Company Limited | Make AI useful at work",
     description:
       "AI transformation strategy and implementation for management teams in Thailand.",
     type: "website",
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Archangel — Make AI useful at work",
+        alt: "Archangel Company Limited — Make AI useful at work",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Archangel | Make AI useful at work",
+    title: "Archangel Company Limited | AI Transformation Thailand",
     description:
-      "AI transformation strategy and implementation for management teams in Thailand.",
+      "Strategy and implementation for management teams that want measurable operating value from AI.",
     images: ["/opengraph-image"],
   },
 };
@@ -63,13 +63,17 @@ const structuredData = {
     {
       "@type": "Organization",
       "@id": `${site.url}/#organization`,
-      name: site.name,
+      name: site.legalName,
+      alternateName: site.name,
       legalName: site.legalName,
       url: site.url,
       logo: absoluteUrl("/favicon.ico"),
       email: site.email,
+      slogan: "Make AI useful at work.",
+      foundingDate: "2023",
+      sameAs: [site.companyLinkedinUrl],
       description:
-        "Bangkok-based, Thailand BOI-promoted software and AI company focused on applied AI transformation.",
+        "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company focused on AI transformation, applied AI systems and workflow implementation.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Bangkok",
@@ -95,10 +99,11 @@ const structuredData = {
         availableLanguage: ["English"],
       },
       knowsAbout: [
-        "AI transformation",
+        "AI transformation in Thailand",
         "Applied AI",
         "Business process automation",
         "AI workflow implementation",
+        "Enterprise AI",
       ],
     },
     {
