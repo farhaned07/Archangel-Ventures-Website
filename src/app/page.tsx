@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { DecisionPackArtwork, OperatingMapArtwork } from "@/components/ui/EditorialArtwork";
+import { OperatingMapArtwork } from "@/components/ui/EditorialArtwork";
 import { TransformationSequence, WorkflowSimulator } from "@/components/ui/InteractiveExperience";
+import { WorkshopReveal } from "@/components/ui/WorkshopReveal";
 import { emailHref, site } from "@/lib/site";
 
 export default function Home() {
@@ -67,36 +68,7 @@ export default function Home() {
 
       <TransformationSequence />
 
-      <section id="workshop" className="bg-[#ecece6]">
-        <div className="page-shell section-space">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.7fr_1.3fr] gap-10 lg:gap-16 items-center">
-            <div>
-              <p className="eyebrow text-[#777771]">Start here</p>
-              <h2 className="mt-5 text-[2.8rem] sm:text-[3.9rem] lg:text-[4.8rem] leading-[0.95] tracking-[-0.06em] font-medium">One afternoon.<br />One decision.</h2>
-              <div className="mt-8 md:mt-10 flex items-end gap-5 border-t border-[#d2d2cc] pt-7">
-                <div>
-                  <span className="text-sm text-[#777771] block mb-2">Fixed fee</span>
-                  <span className="text-5xl md:text-6xl tracking-[-0.06em] font-medium">{site.workshopPrice}</span>
-                </div>
-                <span className="text-sm text-[#777771] pb-1">Bangkok · on site</span>
-              </div>
-
-              <div className="mt-8 space-y-3 text-sm md:text-base text-[#555550]">
-                <OfferLine text="Map the work" />
-                <OfferLine text="Rank 3–5 opportunities" />
-                <OfferLine text="Estimate ROI" />
-                <OfferLine text="Choose the first move" />
-              </div>
-
-              <Link href="/ai-transformation" className="button-primary mt-9">
-                Explore the workshop <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-
-            <DecisionPackArtwork />
-          </div>
-        </div>
-      </section>
+      <WorkshopReveal price={site.workshopPrice} />
 
       <WorkflowSimulator />
 
@@ -171,16 +143,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-  );
-}
-
-function OfferLine({ text }: { text: string }) {
-  return (
-    <div className="flex items-center gap-3">
-      <span className="w-5 h-5 rounded-full border border-[#c8c8c2] flex items-center justify-center bg-white/60">
-        <Check className="w-3 h-3" />
-      </span>
-      {text}
-    </div>
   );
 }
