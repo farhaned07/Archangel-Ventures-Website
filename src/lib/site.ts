@@ -5,9 +5,11 @@ export const site = {
   workshopPrice: "฿45,000",
   bookingSubject: "15 minute AI Opportunity Call",
   location: "Bangkok, Thailand",
+  calendarBookingUrl: "",
 } as const;
 
 export const emailHref = `mailto:${site.email}?subject=${encodeURIComponent(site.bookingSubject)}`;
 
-// Replace this single value with the public calendar URL when the booking calendar is connected.
-export const bookingHref = emailHref;
+// All public CTAs route through /book. Once Google Calendar is connected,
+// set calendarBookingUrl and the booking page will use it without changing the site narrative.
+export const bookingHref = "/book";
