@@ -1,47 +1,41 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export function Footer() {
-    return (
-        <footer className="w-full bg-[#050505] border-t border-[#202226]">
-            <div className="max-w-[1500px] mx-auto border-l border-r border-[#202226]">
-                <div className="grid grid-cols-1 md:grid-cols-12 border-b border-[#202226]">
-                    <div className="md:col-span-7 p-6 md:p-8 lg:p-10 md:border-r border-[#202226]">
-                        <div className="flex items-center justify-between text-mono-label mb-10">
-                            <span>Archangel / AI Transformation Partner</span>
-                            <span className="text-[#494d52]">AG / TH</span>
-                        </div>
-                        <p className="text-[#dededa] text-xl md:text-2xl max-w-xl leading-snug">
-                            Find where AI creates measurable value. Implement what works.
-                        </p>
-                    </div>
+  return (
+    <footer className="bg-[#11110f] text-[#f5f5f0]">
+      <div className="page-shell py-14 md:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-20 items-start">
+          <div>
+            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.34em] uppercase">ΛRCHΛNGEL</span>
+            <p className="display-medium max-w-3xl mt-10">Make AI useful at work.</p>
+            <p className="text-[#aaa9a2] text-sm md:text-base max-w-xl mt-6 leading-relaxed">
+              Strategy and implementation for management teams that want measurable operating value from AI.
+            </p>
+          </div>
 
-                    <div className="md:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col justify-between gap-12">
-                        <div className="grid grid-cols-2 gap-8 text-sm">
-                            <div>
-                                <span className="text-mono-label block mb-4">Start</span>
-                                <Link href="/ai-transformation" className="text-[#8b8f94] hover:text-white transition-colors">AI transformation workshop</Link>
-                            </div>
-                            <div>
-                                <span className="text-mono-label block mb-4">Contact</span>
-                                <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="text-[#d8d8d4] hover:text-white transition-colors break-all">
-                                    build@archangel.ventures
-                                </a>
-                            </div>
-                        </div>
-                        <div className="text-mono-label flex items-center gap-3">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#b9bbb7]" />
-                            <span>Bangkok / Operational</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 text-[9px] font-mono uppercase tracking-[0.14em] text-[#4e5257]">
-                    <div className="p-4 border-b sm:border-r md:border-b-0 border-[#202226]">Bangkok, Thailand</div>
-                    <div className="p-4 border-b md:border-r md:border-b-0 border-[#202226]">BOI promoted</div>
-                    <div className="p-4 border-b sm:border-r sm:border-b-0 border-[#202226]">Software + digital platform</div>
-                    <div className="p-4">© 2026 Archangel Co., Ltd.</div>
-                </div>
+          <div className="grid grid-cols-2 gap-8 text-sm">
+            <div>
+              <p className="text-[#74746e] mb-4">Explore</p>
+              <div className="space-y-3">
+                <Link href="/ai-transformation" className="block hover:text-white transition-colors">AI workshop</Link>
+                <Link href="/work" className="block hover:text-white transition-colors">Company</Link>
+              </div>
             </div>
-        </footer>
-    );
+            <div>
+              <p className="text-[#74746e] mb-4">Contact</p>
+              <a href="mailto:build@archangel.ventures" className="inline-flex items-center gap-2 hover:text-white transition-colors">
+                Email <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-16 md:mt-24 pt-6 border-t border-[#2d2d2a] flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-[#777771]">
+          <span>Bangkok, Thailand · BOI promoted</span>
+          <span>© 2026 Archangel Company Limited</span>
+        </div>
+      </div>
+    </footer>
+  );
 }
