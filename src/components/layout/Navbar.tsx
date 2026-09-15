@@ -35,9 +35,10 @@ export function Navbar() {
           <a
             href={bookingHref}
             data-cta="nav-opportunity-call"
-            className="hidden md:inline-flex items-center gap-2 rounded-full bg-[#11110f] text-[#f8f8f4] px-4 py-2.5 text-sm font-medium hover:bg-[#272724] transition-colors"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-[#11110f] px-4 py-2.5 text-sm font-medium hover:bg-[#272724] transition-colors"
+            style={{ color: "#f8f8f4", WebkitTextFillColor: "#f8f8f4" }}
           >
-            Book a call <ArrowUpRight className="w-3.5 h-3.5" />
+            Book a call <ArrowUpRight className="w-3.5 h-3.5" style={{ color: "#f8f8f4", stroke: "#f8f8f4" }} />
           </a>
 
           <button
