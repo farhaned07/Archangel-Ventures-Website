@@ -7,6 +7,7 @@ const steps = [
     number: "01",
     title: "15 minute call",
     text: "Show us where work is slow, manual or expensive.",
+    highlight: false,
   },
   {
     number: "02",
@@ -18,13 +19,14 @@ const steps = [
     number: "03",
     title: "Build if proven",
     text: "If the business case is strong, Archangel implements the first system.",
+    highlight: false,
   },
 ] as const;
 
 export function ClosingSequence({ compact = false }: { compact?: boolean }) {
   return (
     <section className="bg-[#11110f] text-[#f7f7f2] overflow-hidden">
-      <div className={`page-shell ${compact ? "py-16 md:py-22" : "py-20 md:py-28 lg:py-32"}`}>
+      <div className={`page-shell ${compact ? "py-16 md:py-24" : "py-20 md:py-28 lg:py-32"}`}>
         <div className="max-w-5xl">
           <p className="eyebrow text-[#81817b]">Start small</p>
           <h2 className={`${compact ? "text-[2.8rem] sm:text-[4rem] lg:text-[5rem]" : "text-[3rem] sm:text-[4.6rem] lg:text-[6.3rem]"} mt-5 leading-[0.93] tracking-[-0.065em] font-medium`}>
