@@ -1,14 +1,22 @@
 import type { Metadata } from "next";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { DecisionPackArtwork, OperatingMapArtwork } from "@/components/ui/EditorialArtwork";
-import { CompactAudience, CompactCommercialPath, WorkshopOutputExplorer } from "@/components/ui/InteractiveExperience";
-import { emailHref, site } from "@/lib/site";
+import { WorkshopOutputExplorer } from "@/components/ui/InteractiveExperience";
+import { ClosingSequence } from "@/components/ui/ClosingSequence";
+import { bookingHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "AI Transformation Workshop Thailand | Archangel",
   description:
     "A fixed fee AI transformation workshop for management teams in Bangkok. Identify the highest value AI opportunities, estimate ROI, and leave with a practical 30 day implementation plan.",
 };
+
+const fit = [
+  "AI is already being used, but business impact is unclear.",
+  "Manual work is consuming time across finance, operations, sales or reporting.",
+  "Management wants to know what is worth funding before starting a larger AI programme.",
+];
 
 export default function AITransformationPage() {
   return (
@@ -27,20 +35,22 @@ export default function AITransformationPage() {
             </h1>
 
             <p className="mt-7 md:mt-9 text-lg md:text-xl leading-relaxed text-[#666660] max-w-xl">
-              Map the work. Rank the opportunities. Decide what deserves investment.
+              Map the work. Rank 3–5 opportunities. Decide what deserves investment.
             </p>
 
-            <div className="mt-8 md:mt-10 flex items-end gap-5 border-t border-[#deded8] pt-7 max-w-xl">
-              <div>
-                <span className="text-sm text-[#777771] block mb-2">Fixed fee</span>
-                <span className="text-5xl md:text-6xl tracking-[-0.06em] font-medium">{site.workshopPrice}</span>
+            <div className="mt-8 md:mt-10 border-t border-[#deded8] pt-7 max-w-xl">
+              <div className="flex flex-wrap items-end gap-x-5 gap-y-3">
+                <div>
+                  <span className="text-sm text-[#777771] block mb-2">Fixed fee</span>
+                  <span className="text-5xl md:text-6xl tracking-[-0.06em] font-medium">{site.workshopPrice}</span>
+                </div>
+                <span className="text-sm text-[#777771] pb-1">credited toward implementation</span>
               </div>
-              <span className="text-sm text-[#777771] pb-1">credited toward implementation</span>
             </div>
 
-            <a href={emailHref} className="button-primary mt-8 w-full sm:w-auto" data-cta="opportunity-call">
+            <Link href={bookingHref} className="button-primary mt-8 w-full sm:w-auto" data-cta="opportunity-call">
               Book a 15 minute call <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <div className="lg:-mr-10 xl:-mr-20">
@@ -54,54 +64,33 @@ export default function AITransformationPage() {
       <section className="page-shell section-space">
         <div className="grid grid-cols-1 lg:grid-cols-[0.58fr_1.42fr] gap-10 lg:gap-16 items-center">
           <div>
-            <p className="eyebrow text-[#85857f]">The output</p>
+            <p className="eyebrow text-[#85857f]">What you leave with</p>
             <h2 className="mt-5 text-[2.8rem] sm:text-[3.8rem] lg:text-[4.6rem] leading-[0.96] tracking-[-0.055em] font-medium">Open it the next morning.</h2>
             <p className="mt-5 text-base md:text-lg text-[#74746e] max-w-md">A practical decision pack built from your own workflows and constraints.</p>
           </div>
           <DecisionPackArtwork />
         </div>
-      </section>
 
-      <section className="bg-[#ecece6]">
-        <div className="page-shell py-18 md:py-24 lg:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-[0.58fr_1.42fr] gap-10 lg:gap-16 items-center">
-            <div>
-              <p className="eyebrow text-[#7a7a74]">In the room</p>
-              <h2 className="mt-5 text-[2.7rem] sm:text-[3.5rem] lg:text-[4.2rem] leading-[0.96] tracking-[-0.055em] font-medium">The people who own the work.</h2>
-            </div>
-            <CompactAudience />
+        <div className="mt-14 md:mt-20 border-t border-[#d7d7d1] pt-8 md:pt-10">
+          <p className="eyebrow text-[#85857f]">Good fit</p>
+          <div className="mt-7 grid grid-cols-1 md:grid-cols-3 gap-3">
+            {fit.map((item, index) => (
+              <div key={item} className="rounded-[1.6rem] bg-white border border-[#deded8] p-5 md:p-6 min-h-[165px] flex flex-col justify-between">
+                <span className="text-xs text-[#9a9a94]">0{index + 1}</span>
+                <p className="text-base md:text-lg tracking-[-0.025em] leading-snug text-[#333330]">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="page-shell py-18 md:py-28">
-        <div className="max-w-5xl mb-8 md:mb-10">
-          <p className="eyebrow text-[#85857f]">Commercial path</p>
-          <h2 className="mt-5 text-[2.5rem] sm:text-[3.3rem] lg:text-[4rem] leading-[0.97] tracking-[-0.05em] font-medium">Prove before you scale.</h2>
-        </div>
-        <CompactCommercialPath price={site.workshopPrice} />
-        <p className="mt-5 text-sm text-[#777771]">If Archangel implements one of the selected projects, the workshop fee is credited toward implementation.</p>
-      </section>
-
-      <section className="page-shell pb-16 md:pb-32">
-        <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[#11110f] text-[#f7f7f2] px-6 py-11 md:p-14 lg:p-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-end">
-            <div>
-              <p className="eyebrow text-[#8f8f88]">Start here</p>
-              <h2 className="mt-5 max-w-4xl text-[2.65rem] sm:text-[3.5rem] lg:text-[4.9rem] leading-[0.97] tracking-[-0.055em] font-medium">Where is work losing money?</h2>
-            </div>
-            <a href={emailHref} className="button-light" data-cta="opportunity-call">
-              Book the call <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
-        </div>
-      </section>
+      <ClosingSequence compact />
 
       <div className="fixed md:hidden left-0 right-0 bottom-0 z-40 border-t border-[#deded8] bg-[#f6f6f2]/94 backdrop-blur-xl px-3 py-3 safe-bottom">
-        <a href={emailHref} className="button-primary w-full" data-cta="mobile-opportunity-call">
+        <Link href={bookingHref} className="button-primary w-full" data-cta="mobile-opportunity-call">
           <span>Book a 15 minute call</span>
           <ArrowRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
     </main>
   );
