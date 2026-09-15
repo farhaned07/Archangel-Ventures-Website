@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { site } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -24,16 +25,16 @@ export function Footer() {
             </div>
             <div>
               <p className="text-[#74746e] mb-4">Contact</p>
-              <a href="mailto:build@archangel.ventures" className="inline-flex items-center gap-2 hover:text-white transition-colors">
-                Email <ArrowUpRight className="w-3.5 h-3.5" />
+              <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 hover:text-white transition-colors break-all">
+                {site.email} <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
               </a>
             </div>
           </div>
         </div>
 
         <div className="mt-16 md:mt-24 pt-6 border-t border-[#2d2d2a] flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-[#777771]">
-          <span>Bangkok, Thailand · BOI promoted</span>
-          <span>© 2026 Archangel Company Limited</span>
+          <span>{site.location} · BOI promoted</span>
+          <span>© 2026 {site.legalName}</span>
         </div>
       </div>
     </footer>
