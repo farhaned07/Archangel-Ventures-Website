@@ -13,6 +13,7 @@ export const site = {
   location: "Bangkok, Thailand",
   url: (configuredSiteUrl || defaultSiteUrl).replace(/\/+$/, ""),
   linkedinUrl: "https://th.linkedin.com/in/sabbirfarhan",
+  companyLinkedinUrl: "https://www.linkedin.com/company/143891155",
   calendarBookingUrl: configuredCalendarUrl || "",
   gtmId: configuredGtmId || "",
 } as const;
