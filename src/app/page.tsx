@@ -16,7 +16,9 @@ export default function Home() {
         <div className="max-w-6xl">
           <Reveal>
             <div className="flex flex-wrap items-center gap-2 mb-8 md:mb-10">
-              <span className="pill">AI transformation · Thailand</span>
+              <Link href="/ai-transformation-partner-thailand" className="pill">
+                AI Transformation Partner · Thailand
+              </Link>
             </div>
           </Reveal>
 
