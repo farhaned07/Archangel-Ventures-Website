@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { TransformationCanvas, WorkshopPreview, WorkflowStory } from "@/components/ui/PremiumVisuals";
+import { WorkflowStory } from "@/components/ui/PremiumVisuals";
+import { DecisionPackArtwork, OperatingMapArtwork } from "@/components/ui/EditorialArtwork";
+import { emailHref, site } from "@/lib/site";
 
 export default function Home() {
   return (
@@ -36,7 +38,7 @@ export default function Home() {
                 <Link href="/ai-transformation" className="button-primary w-full sm:w-auto">
                   Start with the workshop <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="button-secondary w-full sm:w-auto">
+                <a href={emailHref} className="button-secondary w-full sm:w-auto" data-cta="opportunity-call">
                   Talk to Archangel <ArrowUpRight className="w-4 h-4" />
                 </a>
               </div>
@@ -53,7 +55,7 @@ export default function Home() {
 
           <Reveal delay={0.08} variant="fade">
             <div className="lg:-mr-10 xl:-mr-20">
-              <TransformationCanvas />
+              <OperatingMapArtwork priority />
             </div>
           </Reveal>
         </div>
@@ -110,7 +112,7 @@ export default function Home() {
               <div className="mt-8 md:mt-10 flex items-end gap-5 border-t border-[#d2d2cc] pt-7">
                 <div>
                   <span className="text-sm text-[#777771] block mb-2">Fixed fee</span>
-                  <span className="text-5xl md:text-6xl tracking-[-0.06em] font-medium">฿45,000</span>
+                  <span className="text-5xl md:text-6xl tracking-[-0.06em] font-medium">{site.workshopPrice}</span>
                 </div>
                 <span className="text-sm text-[#777771] pb-1">Bangkok · on site</span>
               </div>
@@ -127,7 +129,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <WorkshopPreview />
+            <DecisionPackArtwork />
           </div>
         </div>
       </section>
@@ -146,6 +148,34 @@ export default function Home() {
           <WorkflowStory title="Customer operations" steps={["Request", "Understand", "Retrieve", "Respond", "Escalate"]} />
           <WorkflowStory title="Management reporting" steps={["Sources", "Consolidate", "Analyse", "Brief"]} />
           <WorkflowStory title="Sales operations" steps={["Research", "Draft", "CRM", "Follow up"]} />
+        </div>
+      </section>
+
+      <section className="bg-[#11110f] text-[#f5f5f0]">
+        <div className="page-shell section-space">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-12 lg:gap-20 items-start">
+            <div>
+              <p className="eyebrow text-[#8f8f88]">Proof of build capability</p>
+              <h2 className="display-medium mt-5">We build the systems, not only the strategy.</h2>
+            </div>
+            <a href="https://www.hanna.care" target="_blank" rel="noreferrer" className="group rounded-[2rem] border border-[#343431] bg-[#171715] p-6 md:p-8 lg:p-10 hover:border-[#565650] transition-colors">
+              <div className="flex items-start justify-between gap-5">
+                <div>
+                  <p className="eyebrow text-[#85857f]">Selected system</p>
+                  <h3 className="mt-4 text-4xl md:text-5xl font-medium tracking-[-0.05em]">Hanna</h3>
+                </div>
+                <ArrowUpRight className="w-5 h-5 text-[#777771] group-hover:text-white transition-colors" />
+              </div>
+              <p className="mt-8 text-lg md:text-xl leading-relaxed text-[#aaa9a2] max-w-2xl">
+                Clinical documentation and multilingual care planning built around real healthcare workflows in Thailand.
+              </p>
+              <div className="mt-8 pt-5 border-t border-[#343431] flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#83837d]">
+                <span>Product engineering</span>
+                <span>Applied AI</span>
+                <span>Healthcare workflow</span>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -177,15 +207,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="page-shell py-20 md:py-32 lg:py-36">
-        <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[#11110f] text-[#f7f7f2] px-6 py-12 md:p-14 lg:p-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-end">
+      <section className="page-shell py-16 md:py-28 lg:py-32">
+        <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[#11110f] text-[#f7f7f2] px-6 py-11 md:p-14 lg:p-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-end">
             <div>
               <p className="eyebrow text-[#8f8f88]">Start a conversation</p>
-              <h2 className="display-large mt-5 max-w-4xl">Where is your business wasting time?</h2>
+              <h2 className="mt-5 max-w-4xl text-[2.65rem] sm:text-[3.5rem] lg:text-[4.9rem] leading-[0.97] tracking-[-0.055em] font-medium">Where is your business losing time?</h2>
               <p className="text-[#aaa9a2] mt-6 text-base md:text-lg max-w-2xl">The first call is 15 minutes. We use it to decide whether there is a real business case worth exploring.</p>
             </div>
-            <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="inline-flex items-center justify-center gap-3 rounded-full bg-[#f6f6f2] text-[#11110f] px-6 py-4 font-semibold whitespace-nowrap hover:bg-white transition-colors">
+            <a href={emailHref} className="button-light" data-cta="opportunity-call">
               Book the call <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
