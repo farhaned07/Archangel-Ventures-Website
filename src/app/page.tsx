@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Building2, MapPin, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
-import { OperatingMapArtwork } from "@/components/ui/EditorialArtwork";
 import { WorkflowSimulator } from "@/components/ui/InteractiveExperience";
 import { TransformationWorkbench } from "@/components/ui/ProductExperiences";
 import { WorkshopReveal } from "@/components/ui/WorkshopReveal";
@@ -13,44 +12,43 @@ import { bookingHref, site } from "@/lib/site";
 export default function Home() {
   return (
     <main className="pt-[64px] md:pt-[72px] overflow-hidden">
-      <section className="page-shell pt-12 md:pt-20 lg:pt-24 pb-16 md:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-10 lg:gap-14 xl:gap-20 items-center">
-          <div className="max-w-3xl">
-            <Reveal>
-              <div className="flex flex-wrap items-center gap-2 mb-7 md:mb-9">
-                <span className="pill">Bangkok based</span>
-                <span className="pill">BOI promoted</span>
-              </div>
-            </Reveal>
+      <section className="page-shell pt-14 md:pt-24 lg:pt-32 pb-16 md:pb-24">
+        <div className="max-w-6xl">
+          <Reveal>
+            <div className="flex flex-wrap items-center gap-2 mb-8 md:mb-10">
+              <span className="pill">AI transformation · Thailand</span>
+            </div>
+          </Reveal>
 
-            <Reveal delay={0.04}>
-              <h1 className="display-hero max-w-[850px]">
-                Make AI useful
-                <span className="block text-[#777771]">at work.</span>
-              </h1>
-            </Reveal>
+          <Reveal delay={0.04}>
+            <h1 className="text-[4rem] sm:text-[5.8rem] lg:text-[7.9rem] leading-[0.88] tracking-[-0.075em] font-medium max-w-[1180px]">
+              Make AI useful
+              <span className="block text-[#777771]">at work.</span>
+            </h1>
+          </Reveal>
 
-            <Reveal delay={0.08}>
-              <p className="mt-7 md:mt-9 text-lg md:text-xl leading-relaxed text-[#666660] max-w-xl">
-                Find the expensive work. Redesign it. Build what proves value.
-              </p>
-            </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mt-8 md:mt-10 text-lg md:text-2xl leading-relaxed tracking-[-0.02em] text-[#666660] max-w-2xl">
+              Find the expensive work. Redesign it. Build what proves value.
+            </p>
+          </Reveal>
 
-            <Reveal delay={0.12}>
-              <div className="mt-8 md:mt-10 flex flex-col sm:flex-row gap-3">
-                <Link href="/ai-transformation" className="button-primary w-full sm:w-auto">
-                  Start with the workshop <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href={bookingHref} className="button-secondary w-full sm:w-auto" data-cta="opportunity-call">
-                  Talk to Archangel <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </Reveal>
-          </div>
+          <Reveal delay={0.12}>
+            <div className="mt-9 md:mt-11 flex flex-col sm:flex-row gap-3">
+              <Link href="/ai-transformation" className="button-primary w-full sm:w-auto">
+                Start with the workshop <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href={bookingHref} className="button-secondary w-full sm:w-auto" data-cta="opportunity-call">
+                Talk to Archangel <ArrowUpRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </Reveal>
 
-          <Reveal delay={0.08} variant="fade">
-            <div className="lg:-mr-10 xl:-mr-20">
-              <OperatingMapArtwork priority />
+          <Reveal delay={0.16}>
+            <div className="mt-14 md:mt-20 border-y border-[#deded8] grid grid-cols-1 sm:grid-cols-3">
+              <TrustItem icon={<ShieldCheck className="w-4 h-4" />} label="Thailand BOI promoted" detail="Software & digital platform" />
+              <TrustItem icon={<Building2 className="w-4 h-4" />} label="Archangel Company Limited" detail="Strategy + implementation" />
+              <TrustItem icon={<MapPin className="w-4 h-4" />} label="Bangkok, Thailand" detail="Founder led" />
             </div>
           </Reveal>
         </div>
@@ -81,5 +79,17 @@ export default function Home() {
 
       <ClosingSequence />
     </main>
+  );
+}
+
+function TrustItem({ icon, label, detail }: { icon: React.ReactNode; label: string; detail: string }) {
+  return (
+    <div className="flex items-start gap-3 py-5 sm:px-5 first:pl-0 border-b sm:border-b-0 sm:border-r border-[#deded8] last:border-0">
+      <span className="mt-0.5 text-[#11110f]">{icon}</span>
+      <div>
+        <p className="text-sm font-medium text-[#242421]">{label}</p>
+        <p className="mt-1 text-xs text-[#85857f]">{detail}</p>
+      </div>
+    </div>
   );
 }
