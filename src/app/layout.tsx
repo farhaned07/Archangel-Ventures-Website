@@ -81,8 +81,11 @@ const structuredData = {
       },
       founder: {
         "@type": "Person",
+        "@id": `${site.url}/#farhan-sabbir`,
         name: "Farhan Sabbir",
         jobTitle: "Founder & Executive Director",
+        url: absoluteUrl("/farhan-sabbir"),
+        sameAs: [site.linkedinUrl],
       },
       contactPoint: {
         "@type": "ContactPoint",
