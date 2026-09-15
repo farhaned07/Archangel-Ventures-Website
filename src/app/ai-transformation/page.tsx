@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
-import { TransformationCanvas, WorkshopPreview } from "@/components/ui/PremiumVisuals";
+import { DecisionPackArtwork, OperatingMapArtwork } from "@/components/ui/EditorialArtwork";
+import { emailHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "AI Transformation Workshop Thailand | Archangel",
@@ -31,18 +32,18 @@ export default function AITransformationPage() {
             <div className="mt-8 md:mt-10 flex items-end gap-5 border-t border-[#deded8] pt-7 max-w-xl">
               <div>
                 <span className="text-sm text-[#777771] block mb-2">Fixed fee</span>
-                <span className="text-5xl md:text-6xl tracking-[-0.06em] font-medium">฿45,000</span>
+                <span className="text-5xl md:text-6xl tracking-[-0.06em] font-medium">{site.workshopPrice}</span>
               </div>
               <span className="text-sm text-[#777771] pb-1">Workshop fee credited toward implementation</span>
             </div>
 
-            <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="button-primary mt-8 w-full sm:w-auto">
+            <a href={emailHref} className="button-primary mt-8 w-full sm:w-auto" data-cta="opportunity-call">
               Book a 15 minute call <ArrowRight className="w-4 h-4" />
             </a>
           </div>
 
           <div className="lg:-mr-10 xl:-mr-20">
-            <TransformationCanvas />
+            <OperatingMapArtwork priority />
           </div>
         </div>
       </section>
@@ -77,7 +78,7 @@ export default function AITransformationPage() {
               Your decision pack is built from your actual workflows, priorities and operating constraints. No fabricated benchmark numbers. No generic AI roadmap.
             </p>
           </div>
-          <WorkshopPreview />
+          <DecisionPackArtwork />
         </div>
       </section>
 
@@ -103,36 +104,36 @@ export default function AITransformationPage() {
               <p className="eyebrow text-[#85857f]">Commercial rule</p>
               <h2 className="display-medium mt-5">If the case is strong, the workshop becomes the first step of implementation.</h2>
               <p className="mt-6 text-lg text-[#6d6d67] leading-relaxed max-w-2xl">
-                If Archangel implements one of the selected projects, the ฿45,000 workshop fee is credited toward implementation.
+                If Archangel implements one of the selected projects, the {site.workshopPrice} workshop fee is credited toward implementation.
               </p>
             </div>
             <div className="space-y-3">
               <Step number="01" text="15 minute qualification call" />
-              <Step number="02" text="฿45,000 management workshop" />
+              <Step number="02" text={`${site.workshopPrice} management workshop`} />
               <Step number="03" text="Implementation only if the economics justify it" />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="page-shell pb-20 md:pb-32">
-        <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[#11110f] text-[#f7f7f2] px-6 py-12 md:p-14 lg:p-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 items-end">
+      <section className="page-shell pb-16 md:pb-32">
+        <div className="rounded-[2rem] md:rounded-[2.5rem] bg-[#11110f] text-[#f7f7f2] px-6 py-11 md:p-14 lg:p-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-10 items-end">
             <div>
               <p className="eyebrow text-[#8f8f88]">Start here</p>
-              <h2 className="display-large mt-5 max-w-4xl">Tell us where work is costing your business time or money.</h2>
+              <h2 className="mt-5 max-w-4xl text-[2.65rem] sm:text-[3.5rem] lg:text-[4.9rem] leading-[0.97] tracking-[-0.055em] font-medium">Where is your business losing time?</h2>
               <p className="text-[#aaa9a2] mt-6 text-base md:text-lg max-w-2xl">The first call is 15 minutes. We use it to decide whether the workshop is the right next step.</p>
             </div>
-            <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="inline-flex items-center justify-center gap-3 rounded-full bg-[#f6f6f2] text-[#11110f] px-6 py-4 font-semibold whitespace-nowrap hover:bg-white transition-colors">
+            <a href={emailHref} className="button-light" data-cta="opportunity-call">
               Book the call <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
         </div>
       </section>
 
-      <div className="fixed md:hidden left-0 right-0 bottom-0 z-40 border-t border-[#deded8] bg-[#f6f6f2]/92 backdrop-blur-xl px-3 py-3">
-        <a href="mailto:build@archangel.ventures?subject=15%20minute%20AI%20Opportunity%20Call" className="button-primary w-full">
-          <span>Workshop · ฿45,000</span>
+      <div className="fixed md:hidden left-0 right-0 bottom-0 z-40 border-t border-[#deded8] bg-[#f6f6f2]/94 backdrop-blur-xl px-3 py-3 safe-bottom">
+        <a href={emailHref} className="button-primary w-full" data-cta="mobile-opportunity-call">
+          <span>Book a 15 minute call</span>
           <ArrowRight className="w-4 h-4" />
         </a>
       </div>
