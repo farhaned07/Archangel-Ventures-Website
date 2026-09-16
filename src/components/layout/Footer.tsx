@@ -1,44 +1,59 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { site } from "@/lib/site";
-
 export function Footer() {
   return (
-    <footer className="bg-[#11110f] text-[#f5f5f0]">
-      <div className="page-shell py-14 md:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-12 lg:gap-20 items-start">
+    <footer className="site-footer">
+      <div className="page-shell">
+        <div className="footer-main">
           <div>
-            <span className="text-[12px] md:text-[13px] font-semibold tracking-[0.34em] uppercase">ΛRCHΛNGEL</span>
-            <p className="display-medium max-w-3xl mt-10">Make AI useful at work.</p>
-            <p className="text-[#aaa9a2] text-sm md:text-base max-w-xl mt-6 leading-relaxed">
-              Strategy and implementation for management teams that want measurable operating value from AI.
-            </p>
+            <Link href="/" className="wordmark" aria-label="Archangel home">
+              ΛRCHΛNGEL
+            </Link>
+            <p>Make AI useful at work.</p>
+            <span>
+              Archangel Company Limited
+              <br />
+              Bangkok, Thailand
+              <br />
+              Thailand BOI promoted
+            </span>
           </div>
-
-          <div className="grid grid-cols-2 gap-8 text-sm">
-            <div>
-              <p className="text-[#74746e] mb-4">Explore</p>
-              <div className="space-y-3">
-                <Link href="/ai-transformation-partner-thailand" className="block hover:text-white transition-colors">AI transformation Thailand</Link>
-                <Link href="/insights/ai-transformation-thailand-2026" className="block hover:text-white transition-colors">Thailand AI 2026</Link>
-                <Link href="/ai-transformation" className="block hover:text-white transition-colors">AI workshop</Link>
-                <Link href="/work" className="block hover:text-white transition-colors">Company</Link>
-                <Link href="/privacy" className="block hover:text-white transition-colors">Privacy</Link>
-              </div>
-            </div>
-            <div>
-              <p className="text-[#74746e] mb-4">Contact</p>
-              <a href={`mailto:${site.email}`} className="inline-flex items-center gap-2 hover:text-white transition-colors break-all">
-                {site.email} <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
-              </a>
-              <p className="mt-4 text-[#777771] leading-relaxed">{site.location}<br />Thailand BOI promoted</p>
-            </div>
+          <nav aria-label="Footer navigation">
+            <span>Explore</span>
+            <Link href="/ai-transformation-partner-thailand">
+              AI transformation Thailand
+            </Link>
+            <Link href="/ai-transformation">AI Transformation Workshop</Link>
+            <Link href="/work">Our work & company</Link>
+            <Link href="/farhan-sabbir">Farhan Sabbir</Link>
+            <Link href="/insights/ai-transformation-thailand-2026">
+              Thailand AI 2026
+            </Link>
+          </nav>
+          <div className="footer-contact">
+            <span>Start a conversation</span>
+            <a href={`mailto:${site.email}`}>
+              {site.email}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+            <a href={site.companyLinkedinUrl} target="_blank" rel="noreferrer">
+              LinkedIn
+              <ArrowUpRight size={16} aria-hidden="true" />
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
           </div>
         </div>
-
-        <div className="mt-16 md:mt-24 pt-6 border-t border-[#2d2d2a] flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between text-xs text-[#777771]">
-          <span>{site.legalName} · Bangkok · Thailand BOI promoted</span>
-          <span>© 2026 {site.name}</span>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Archangel Company Limited</span>
+          <Link href="/privacy">Privacy notice</Link>
+          <a
+            href="https://unsplash.com/photos/lighted-metropolitan-building-GQT9KhEbJOY"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Bangkok photograph: Waranont (Joe)
+          </a>
         </div>
       </div>
     </footer>

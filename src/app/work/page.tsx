@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { CompanySystems } from "@/components/ui/CompanySystems";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import {
+  Closing,
+  HannaFlow,
+  SectionLabel,
+  TextLink,
+} from "@/components/editorial/Elements";
 import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -63,62 +67,158 @@ const companyPageSchema = {
 
 export default function WorkPage() {
   return (
-    <main className="pt-[64px] md:pt-[72px]">
+    <main id="main-content" className="interior">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(companyPageSchema) }}
       />
-
-      <section className="page-shell pt-12 md:pt-20 lg:pt-24 pb-16 md:pb-24">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm text-[#777771] hover:text-[#11110f] transition-colors">
-          <ArrowLeft className="w-4 h-4" /> Back to Archangel
-        </Link>
-
-        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-20 items-end mt-12 md:mt-16">
-          <div>
-            <p className="eyebrow text-[#85857f]">Archangel Company Limited</p>
-            <h1 className="display-hero mt-5 max-w-5xl">Built close to the work.</h1>
+      <section className="page-hero page-shell">
+        <SectionLabel number="01">Archangel Company Limited</SectionLabel>
+        <h1>
+          Thinking is only
+          <br />
+          <span className="muted">half the work.</span>
+        </h1>
+        <p className="hero-deck">
+          We build applied AI around real operating problems. Healthcare,
+          enterprise operations and AI native systems inform how we design and
+          deliver.
+        </p>
+      </section>
+      <section className="page-shell featured-work">
+        <div className="hanna-feature">
+          <div className="project-copy">
+            <span className="project-category">01 / Healthcare AI</span>
+            <h2>Hanna</h2>
+            <p style={{ marginTop: 24 }}>
+              From the patient conversation to a care plan they can understand.
+            </p>
+            <p className="project-detail">
+              Clinical documentation and multilingual care planning built around
+              the consultation. Doctor review stays part of the workflow.
+            </p>
+            <a
+              href="https://www.hanna.care"
+              target="_blank"
+              rel="noreferrer"
+              className="text-link"
+            >
+              Visit Hanna
+              <ArrowUpRight size={17} aria-hidden="true" />
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
           </div>
-          <p className="text-lg md:text-xl leading-relaxed text-[#696963] max-w-xl lg:ml-auto">
-            Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company. We work on AI transformation and applied AI systems where workflow, language and operating context matter.
+          <HannaFlow />
+        </div>
+      </section>
+      <section className="dark-section" id="enterprise">
+        <div className="page-shell">
+          <SectionLabel number="02">
+            Enterprise operations / delivery framework
+          </SectionLabel>
+          <div className="company-statement">
+            <h2>
+              Built for the steps
+              <br />
+              between systems.
+            </h2>
+            <div className="prose">
+              <p>
+                Archangel’s Enterprise AI Transformation Framework connects
+                discovery, architecture, implementation and operation. The AP
+                Accelerator blueprint applies that method to invoice handling.
+              </p>
+              <p>
+                Approval rules, exceptions, audit trails, ERP handoff and
+                training are part of the design from the beginning.
+              </p>
+            </div>
+          </div>
+          <div className="enterprise-flow">
+            {[
+              "Invoice intake",
+              "AI extraction",
+              "Validation",
+              "Human approval",
+              "ERP handoff",
+            ].map((x, i) => (
+              <span
+                key={x}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 16,
+                }}
+              >
+                {i > 0 && <ArrowRight size={18} aria-hidden="true" />}
+                {x}
+              </span>
+            ))}
+          </div>
+          <p
+            className="visual-caption"
+            style={{ textAlign: "left", padding: "20px 0 0" }}
+          >
+            AP Accelerator blueprint · Microsoft 365 + ERP · delivery
+            architecture
           </p>
         </div>
       </section>
-
-      <CompanySystems />
-
-      <section className="page-shell py-20 md:py-28 lg:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.75fr_1.25fr] gap-10 lg:gap-20 items-start">
-          <div>
-            <p className="eyebrow text-[#85857f]">Founder led</p>
-            <h2 className="mt-5 text-[2.8rem] sm:text-[3.8rem] lg:text-[4.6rem] leading-[0.96] tracking-[-0.055em] font-medium">Strategy and implementation stay under one team.</h2>
-          </div>
-          <div className="lg:pt-3 max-w-2xl">
-            <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.025em] text-[#555550]">Farhan Sabbir leads Archangel across product, implementation and client work.</p>
-            <p className="mt-7 text-base md:text-lg leading-relaxed text-[#777771]">AI Transformation Partner in Thailand and Founder & Executive Director of Archangel Company Limited.</p>
-            <Link href="/farhan-sabbir" className="mt-7 inline-flex items-center gap-2 text-sm font-medium border-b border-[#b9b9b2] pb-1">
-              Farhan Sabbir <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
+      <section className="page-shell section-grid" id="onnesha">
+        <div>
+          <SectionLabel number="03">AI native media / Onnesha</SectionLabel>
+          <h2>
+            A system behind
+            <br />
+            the output.
+          </h2>
+        </div>
+        <div className="prose">
+          <p>
+            Onnesha explores how research, scripting and production can work as
+            a repeatable media system. The emphasis is on the quality of the
+            source, the structure of the process and review of the final output.
+          </p>
+          <div className="enterprise-flow">
+            <span>Research</span>
+            <ArrowRight size={18} />
+            <span>Script</span>
+            <ArrowRight size={18} />
+            <span>Produce</span>
+            <ArrowRight size={18} />
+            <span>Review</span>
           </div>
         </div>
       </section>
-
-      <section className="bg-[#ecece6]">
-        <div className="page-shell py-16 md:py-24 lg:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-end">
-            <div>
-              <p className="eyebrow text-[#7a7a74]">Work with Archangel</p>
-              <h2 className="mt-5 text-[2.8rem] sm:text-[3.8rem] lg:text-[4.8rem] leading-[0.95] tracking-[-0.055em] font-medium max-w-4xl">Start with one expensive piece of work.</h2>
-              <Link href="/ai-transformation-partner-thailand" className="mt-7 inline-flex items-center gap-2 text-sm font-medium border-b border-[#b9b9b2] pb-1">
-                AI Transformation Partner in Thailand <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
-            <Link href="/ai-transformation" className="button-primary w-full sm:w-auto">
-              AI Transformation Workshop <ArrowRight className="w-4 h-4" />
-            </Link>
+      <section className="page-shell section-grid">
+        <div>
+          <SectionLabel number="04">The company</SectionLabel>
+          <h2>
+            Bangkok based.
+            <br />
+            Founder led.
+          </h2>
+        </div>
+        <div className="prose">
+          <p>
+            Archangel Company Limited is a Thailand BOI promoted software and AI
+            company. Our work combines product development, workflow redesign
+            and AI implementation.
+          </p>
+          <p>
+            Farhan Sabbir, Founder & Executive Director, leads product,
+            implementation and client work. Strategy stays connected to the
+            people responsible for building it.
+          </p>
+          <TextLink href="/farhan-sabbir">Meet Farhan Sabbir</TextLink>
+          <div style={{ marginTop: 24 }}>
+            <TextLink href="/ai-transformation-partner-thailand">
+              AI transformation in Thailand
+            </TextLink>
           </div>
         </div>
       </section>
+      <Closing />
     </main>
   );
 }

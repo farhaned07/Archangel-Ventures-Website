@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import { absoluteUrl, bookingHref, site } from "@/lib/site";
+import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "AI Transformation in Thailand 2026: The Execution Gap | Archangel",
@@ -87,164 +86,168 @@ const sources = [
   },
 ];
 
+import { Closing, SectionLabel } from "@/components/editorial/Elements";
 export default function AITransformationThailandInsight() {
   return (
-    <main className="pt-[64px] md:pt-[72px]">
+    <main id="main-content" className="interior">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-
       <article>
-        <header className="page-shell pt-14 md:pt-24 lg:pt-30 pb-16 md:pb-24">
-          <div className="max-w-5xl">
-            <p className="eyebrow text-[#85857f]">Archangel Intelligence · September 2026</p>
-            <h1 className="mt-6 text-[3.5rem] sm:text-[5rem] lg:text-[6.6rem] leading-[0.9] tracking-[-0.07em] font-medium">
-              Thailand does not have an AI adoption problem.
-              <span className="block text-[#777771]">It has an execution problem.</span>
-            </h1>
-            <p className="mt-8 md:mt-10 text-lg md:text-2xl leading-relaxed tracking-[-0.02em] text-[#666660] max-w-3xl">
-              AI transformation in Thailand has reached a new phase. Employees are using AI. Companies are funding pilots. The harder question is whether any of it is changing the economics of the business.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#85857f]">
-              <span>By Farhan Sabbir</span>
-              <span>Founder & Executive Director, Archangel Company Limited</span>
-              <span>Bangkok, Thailand</span>
-            </div>
+        <header className="page-hero page-shell">
+          <SectionLabel number="01">
+            Perspective / Thailand AI 2026
+          </SectionLabel>
+          <h1>
+            Adoption is growing.
+            <br />
+            <span className="muted">Where is the value?</span>
+          </h1>
+          <p className="hero-deck">
+            AI transformation in Thailand faces an execution gap. The next step
+            is to connect everyday AI use with work that changes the economics
+            of the business.
+          </p>
+          <div className="article-byline">
+            <Link href="/farhan-sabbir">By Farhan Sabbir</Link>
+            <time dateTime="2026-09-16">16 September 2026</time>
+            <span>Archangel Company Limited</span>
           </div>
         </header>
-
-        <section className="bg-[#11110f] text-[#f5f5f0]">
-          <div className="page-shell py-16 md:py-24 lg:py-28">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-              <Stat value="61%" label="of Thai organizations are implementing AI" source="Deloitte, 2026" />
-              <Stat value="19%" label="have scaled AI across the enterprise" source="Deloitte, 2026" />
-              <Stat value="18%" label="of Thai CEOs report both higher revenue and lower costs from AI" source="PwC, 2026" />
-            </div>
+        <div className="page-shell article-stats">
+          <div>
+            <strong>61%</strong>
+            <p>
+              of organizations in Deloitte’s Thailand survey are implementing
+              AI.
+            </p>
+            <a href={sources[0].href}>Deloitte, 2026</a>
           </div>
-        </section>
-
-        <section className="page-shell py-20 md:py-28 lg:py-32">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.025em] text-[#444440]">
-              The numbers point in the same direction. Thailand is moving quickly into AI, but adoption is running ahead of operating-model change.
-            </p>
-
-            <h2 className="mt-16 text-[2.6rem] md:text-[3.6rem] leading-[0.98] tracking-[-0.05em] font-medium">
-              The market has moved from “Should we use AI?” to “Where is the value?”
-            </h2>
-            <p className="mt-7 text-base md:text-lg leading-relaxed text-[#666660]">
-              Deloitte reports that 61% of Thai organizations are now implementing AI, yet only 19% have scaled it across the enterprise. Half report cost reduction, while only 9% report new revenue from AI. Deloitte also found that 40% struggle to identify high-value AI use cases and 38% are constrained by data readiness and security.
-            </p>
-            <p className="mt-6 text-base md:text-lg leading-relaxed text-[#666660]">
-              That is an execution gap. Buying another AI tool does not close it. The work itself has to be examined: where time disappears, where decisions slow down, where information is re-entered, where approvals accumulate, and where a model can materially change the unit economics.
-            </p>
-
-            <h2 className="mt-16 text-[2.6rem] md:text-[3.6rem] leading-[0.98] tracking-[-0.05em] font-medium">
-              Thailand's workforce is ahead of many organizations.
-            </h2>
-            <p className="mt-7 text-base md:text-lg leading-relaxed text-[#666660]">
-              Microsoft's 2026 Work Trend Index identifies 32% of Thai workers as “Frontier Professionals,” double the global average reported in the study. But Microsoft also describes a transformation paradox: 85% of Thai AI users fear falling behind, while 60% say it feels safer to focus on current goals than redesign work around AI.
-            </p>
-            <p className="mt-6 text-base md:text-lg leading-relaxed text-[#666660]">
-              In practical terms, individual AI usage can rise while the company itself barely changes. Employees become faster at the old workflow. The workflow remains old.
-            </p>
-
-            <h2 className="mt-16 text-[2.6rem] md:text-[3.6rem] leading-[0.98] tracking-[-0.05em] font-medium">
-              The winning sequence is not tool → rollout. It is work → value → system.
-            </h2>
-            <div className="mt-8 space-y-3">
-              <Step number="01" title="Find" copy="Locate expensive, repetitive, delayed or decision-heavy work. Put a number on the problem before proposing AI." />
-              <Step number="02" title="Simplify" copy="Remove unnecessary steps. Automating a bad process produces a faster bad process." />
-              <Step number="03" title="Build" copy="Implement the smallest system capable of proving the business case in the real workflow." />
-              <Step number="04" title="Measure" copy="Track time, cost, cycle time, quality, risk or revenue. If the metric does not move, the transformation has not happened." />
-            </div>
-
-            <h2 className="mt-16 text-[2.6rem] md:text-[3.6rem] leading-[0.98] tracking-[-0.05em] font-medium">
-              Where management teams should look first.
-            </h2>
-            <p className="mt-7 text-base md:text-lg leading-relaxed text-[#666660]">
-              The best first AI transformation project is rarely the most futuristic one. It is usually a workflow management already knows is expensive: finance operations, reporting, procurement, document processing, customer operations, internal knowledge, sales follow-up or another process with visible friction and enough volume to matter.
-            </p>
-            <p className="mt-6 text-base md:text-lg leading-relaxed text-[#666660]">
-              PwC's Thailand CEO survey reinforces the point. Only 18% of Thai CEOs reported the combination everyone actually wants from AI: increased revenue and reduced cost. The objective should therefore be commercial evidence, not AI activity.
-            </p>
-
-            <div className="mt-16 rounded-[1.8rem] border border-[#deded8] bg-white p-7 md:p-9">
-              <p className="eyebrow text-[#85857f]">Archangel's position</p>
-              <p className="mt-5 text-xl md:text-2xl leading-relaxed tracking-[-0.025em] text-[#444440]">
-                AI transformation should begin with the work. Find the expensive part. Simplify it. Build only what can prove value. Measure what changed.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Link href="/ai-transformation-partner-thailand" className="button-secondary w-full sm:w-auto">
-                  AI Transformation Partner Thailand <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link href="/ai-transformation" className="button-primary w-full sm:w-auto">
-                  Explore the ฿45,000 workshop
-                </Link>
-              </div>
-            </div>
-
-            <div className="mt-16 pt-8 border-t border-[#deded8]">
-              <p className="eyebrow text-[#85857f]">Sources</p>
-              <div className="mt-5 space-y-3">
-                {sources.map((source) => (
-                  <a
-                    key={source.href}
-                    href={source.href}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center justify-between gap-4 text-sm md:text-base text-[#555550] hover:text-[#11110f] transition-colors"
-                  >
-                    <span>{source.name}</span>
-                    <ExternalLink className="w-3.5 h-3.5 shrink-0" />
-                  </a>
-                ))}
-              </div>
-            </div>
+          <div>
+            <strong>19%</strong>
+            <p>have scaled AI across the enterprise in the same survey.</p>
+            <a href={sources[0].href}>Deloitte, 2026</a>
           </div>
-        </section>
-
-        <section className="bg-[#ecece6]">
-          <div className="page-shell py-16 md:py-24 lg:py-28">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-end">
-              <div>
-                <p className="eyebrow text-[#7a7a74]">AI transformation in Thailand</p>
-                <h2 className="mt-5 text-[2.8rem] sm:text-[3.8rem] lg:text-[4.8rem] leading-[0.95] tracking-[-0.055em] font-medium max-w-4xl">
-                  Start with one expensive piece of work.
-                </h2>
-              </div>
-              <Link href={bookingHref} className="button-primary w-full sm:w-auto" data-cta="insight-opportunity-call">
-                Book a 15 minute call <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+          <div>
+            <strong>18%</strong>
+            <p>
+              of Thai CEOs surveyed report both higher revenue and lower costs
+              from AI.
+            </p>
+            <a href={sources[2].href}>PwC, 2026</a>
           </div>
-        </section>
+        </div>
+        <div className="page-shell article-layout">
+          <nav className="article-sidebar" aria-label="Article contents">
+            <a href="#execution">The execution gap</a>
+            <a href="#workforce">People and processes</a>
+            <a href="#next">Where to start</a>
+            <a href="#sources">Sources</a>
+          </nav>
+          <div className="article-body">
+            <h2 id="execution">
+              Using AI and changing the business are different things.
+            </h2>
+            <p>
+              Deloitte’s 2026 Thailand survey reports that AI adoption has
+              accelerated, while most surveyed organizations remain in pilots or
+              experimentation. Its findings identify skills, valuable use cases
+              and data readiness as barriers to wider implementation.{" "}
+              <a href={sources[0].href}>Read the Deloitte survey.</a>
+            </p>
+            <p>
+              Our interpretation is straightforward: the unit of transformation
+              is a workflow. A faster draft or a better search can help an
+              individual. A better process changes how work moves through the
+              organization.
+            </p>
+            <p>
+              Start by tracing where information is entered twice, where
+              approvals wait and where teams spend time correcting an output.
+              That is where a business case begins.
+            </p>
+            <h2 id="workforce">People need room to change the process.</h2>
+            <p>
+              Microsoft’s 2026 Thailand findings describe a tension: employees
+              are receptive to AI, yet many feel safer using it within existing
+              routines than changing the workflow. The report also highlights
+              how rarely teams turn successful experiments into standardized
+              ways of working.{" "}
+              <a href={sources[1].href}>Read Microsoft’s Thailand findings.</a>
+            </p>
+            <p>
+              Management therefore has a role beyond buying tools. Set a clear
+              outcome, give the process an owner, and make time for the people
+              doing the work to test a better approach.
+            </p>
+            <h2 id="next">Start with a result you can measure.</h2>
+            <p>
+              PwC reports that 18% of Thai CEOs surveyed achieved both increased
+              revenue and reduced costs from AI. These are survey findings, not
+              a forecast of what any one organization will achieve.{" "}
+              <a href={sources[2].href}>Read the PwC Thailand survey.</a>
+            </p>
+            <p>
+              For a first project, choose a workflow with visible friction,
+              sufficient volume and information you can work with. Invoice
+              handling, reporting, customer requests and document processing are
+              useful places to investigate.
+            </p>
+            <ol className="editorial-list">
+              {[
+                [
+                  "Find",
+                  "Establish the cost, time and quality of the current process.",
+                ],
+                [
+                  "Simplify",
+                  "Remove steps that should not be automated in the first place.",
+                ],
+                [
+                  "Build",
+                  "Implement a controlled scope with a clear owner and human review.",
+                ],
+                [
+                  "Measure",
+                  "Compare the result with the baseline, including operating costs and adoption.",
+                ],
+              ].map(([title, copy], i) => (
+                <li key={title}>
+                  <span>0{i + 1}</span>
+                  <div>
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <p>
+              This is the approach behind Archangel’s{" "}
+              <Link href="/ai-transformation-partner-thailand">
+                AI transformation work in Thailand
+              </Link>{" "}
+              and our{" "}
+              <Link href="/ai-transformation">AI Transformation Workshop</Link>.
+            </p>
+            <h2 id="sources">Sources</h2>
+            <p>
+              These studies use different samples and methods. The figures
+              should not be treated as a single dataset or as Archangel’s client
+              results.
+            </p>
+            <ol className="editorial-list">
+              {sources.map((source, i) => (
+                <li key={source.href}>
+                  <span>0{i + 1}</span>
+                  <a href={source.href}>{source.name}</a>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
       </article>
+      <Closing title="Make the next AI decision a business decision." />
     </main>
-  );
-}
-
-function Stat({ value, label, source }: { value: string; label: string; source: string }) {
-  return (
-    <div className="rounded-[1.6rem] border border-[#2d2d2a] p-6 md:p-7 min-h-[210px] flex flex-col justify-between">
-      <p className="text-[3rem] md:text-[4rem] leading-none tracking-[-0.06em] font-medium">{value}</p>
-      <div>
-        <p className="text-sm md:text-base leading-relaxed text-[#d0d0c8]">{label}</p>
-        <p className="mt-2 text-xs text-[#777771]">{source}</p>
-      </div>
-    </div>
-  );
-}
-
-function Step({ number, title, copy }: { number: string; title: string; copy: string }) {
-  return (
-    <div className="grid grid-cols-[48px_1fr] gap-4 rounded-[1.4rem] border border-[#deded8] bg-white p-5 md:p-6">
-      <span className="text-xs text-[#9a9a94] pt-1">{number}</span>
-      <div>
-        <h3 className="text-xl font-medium tracking-[-0.03em]">{title}</h3>
-        <p className="mt-2 text-sm md:text-base leading-relaxed text-[#777771]">{copy}</p>
-      </div>
-    </div>
   );
 }

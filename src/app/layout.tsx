@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ConsentBanner } from "@/components/analytics/ConsentBanner";
@@ -8,7 +8,27 @@ import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
 import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = localFont({
+  src: [
+    {
+      path: "./fonts/inter-latin-400-normal.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/inter-latin-500-normal.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/inter-latin-600-normal.woff2",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -120,7 +140,9 @@ const structuredData = {
   ],
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   const hasGtm = Boolean(site.gtmId);
 
   return (
@@ -143,7 +165,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </Script>
         ) : null}
       </head>
-      <body className={`${inter.variable} min-h-screen bg-[#f6f6f2] text-[#0d0d0c] antialiased`}>
+      <body className={`${inter.variable} min-h-screen antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
@@ -170,6 +192,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </noscript>
           </>
         ) : null}
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
         <Navbar />
         {children}
         <Footer />
