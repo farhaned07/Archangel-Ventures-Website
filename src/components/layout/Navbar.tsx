@@ -66,12 +66,20 @@ export function Navbar() {
             ref={trigger}
             type="button"
             className="menu-toggle"
+            style={{
+              marginLeft: "auto",
+              width: 36,
+              height: 36,
+              border: 0,
+              background: "transparent",
+              color: "#727873",
+            }}
             aria-label="Open navigation"
             aria-expanded={open}
             aria-controls="mobile-navigation"
             onClick={() => setOpen(true)}
           >
-            <Menu size={23} />
+            <Menu size={28} strokeWidth={1.4} />
           </button>
         </nav>
       </header>
@@ -90,10 +98,18 @@ export function Navbar() {
           <button
             type="button"
             className="menu-toggle"
+            style={{
+              marginLeft: "auto",
+              width: 36,
+              height: 36,
+              border: 0,
+              background: "transparent",
+              color: "#727873",
+            }}
             aria-label="Close navigation"
             onClick={close}
           >
-            <X size={24} />
+            <X size={26} strokeWidth={1.4} />
           </button>
         </div>
         <nav aria-label="Mobile navigation">
