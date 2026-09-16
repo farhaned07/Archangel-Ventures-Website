@@ -47,13 +47,6 @@ export function Footer() {
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Archangel Company Limited</span>
           <Link href="/privacy">Privacy notice</Link>
-          <a
-            href="https://unsplash.com/photos/lighted-metropolitan-building-GQT9KhEbJOY"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Bangkok photograph: Waranont (Joe)
-          </a>
         </div>
       </div>
     </footer>
