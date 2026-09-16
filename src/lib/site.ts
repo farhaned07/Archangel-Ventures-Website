@@ -1,4 +1,5 @@
 const defaultSiteUrl = "https://archangel-ventures-website.vercel.app";
+const defaultCalendarBookingUrl = "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0KbyUG8Zv6Gb9hjLvZ7CgYQ37wu9P2dzvxZoyj5UO7OfLasInTQBzPeqLTddrzu4LphvjMllL5";
 
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 const configuredCalendarUrl = process.env.NEXT_PUBLIC_CALENDAR_BOOKING_URL?.trim();
@@ -14,7 +15,7 @@ export const site = {
   url: (configuredSiteUrl || defaultSiteUrl).replace(/\/+$/, ""),
   linkedinUrl: "https://th.linkedin.com/in/sabbirfarhan",
   companyLinkedinUrl: "https://www.linkedin.com/company/143891155",
-  calendarBookingUrl: configuredCalendarUrl || "",
+  calendarBookingUrl: configuredCalendarUrl || defaultCalendarBookingUrl,
   gtmId: configuredGtmId || "",
 } as const;
 
