@@ -29,3 +29,8 @@ Distinct route roles: homepage introduces; partner page explains engagement and 
 
 ## Validation plan
 Production build, TypeScript, lint, rendered route/link/metadata/schema checks, browser review of every requested route, responsive viewport checks, keyboard navigation, Google Calendar handoff, reduced motion, performance/asset review. Preserve domain migration through NEXT_PUBLIC_SITE_URL. Record actual results and any limitations; do not equate a self-score with buyer research.
+
+## Visual direction revision
+Farhan explicitly requested a complete frontend redesign and locked the existing logo. Generated sculpture exploration was rejected and is not used in the website. The implemented direction uses real monochrome Bangkok photography, the unchanged ΛRCHΛNGEL wordmark, a bespoke interactive workflow canvas, product-specific Hanna visualization, and varied editorial compositions across routes.
+
+Hero photograph: Waranont (Joe), Bangkok, published 21 July 2019, Unsplash License. Source: https://unsplash.com/photos/lighted-metropolitan-building-GQT9KhEbJOY . Stored locally as optimized WebP; not presented as an Archangel office or client. Hanna visual is explicitly a workflow illustration, not an actual application screenshot.

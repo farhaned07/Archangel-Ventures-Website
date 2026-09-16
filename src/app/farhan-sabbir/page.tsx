@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
-import { absoluteUrl, bookingHref, site } from "@/lib/site";
+import { ExternalLink } from "lucide-react";
+import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Farhan Sabbir | AI Transformation Partner in Thailand",
@@ -60,101 +60,79 @@ const profileSchema = {
   },
 };
 
+import {
+  Closing,
+  SectionLabel,
+  TextLink,
+} from "@/components/editorial/Elements";
 export default function FarhanSabbirPage() {
   return (
-    <main className="pt-[64px] md:pt-[72px]">
+    <main id="main-content" className="interior">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }}
       />
-
-      <section className="page-shell pt-12 md:pt-20 lg:pt-24 pb-16 md:pb-24">
-        <Link href="/work" className="inline-flex items-center gap-2 text-sm text-[#777771] hover:text-[#11110f] transition-colors">
-          <ArrowLeft className="w-4 h-4" /> Company
+      <section className="page-hero page-shell">
+        <Link href="/work" className="route-breadcrumb">
+          Company / Leadership
         </Link>
-
-        <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-20 items-end mt-12 md:mt-16">
-          <div>
-            <p className="eyebrow text-[#85857f]">Founder & Executive Director</p>
-            <h1 className="display-hero mt-5 max-w-5xl">Farhan Sabbir.</h1>
-          </div>
-          <div className="max-w-xl lg:ml-auto">
-            <p className="text-xl md:text-2xl leading-relaxed tracking-[-0.025em] text-[#555550]">
-              AI Transformation Partner in Thailand.
-            </p>
-            <p className="mt-5 text-base md:text-lg leading-relaxed text-[#777771]">
-              I help management teams find where AI can create measurable business value, then build the systems that make it work.
-            </p>
-          </div>
+        <SectionLabel number="01">Founder & Executive Director</SectionLabel>
+        <h1>Farhan Sabbir.</h1>
+        <p className="hero-deck">
+          AI Transformation Partner in Thailand.
+          <br />
+          Founder & Executive Director of Archangel Company Limited.
+        </p>
+        <div className="hero-actions">
+          <a
+            href={site.linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-link"
+          >
+            Connect on LinkedIn
+            <ExternalLink size={16} aria-hidden="true" />
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
         </div>
       </section>
-
-      <section className="bg-[#11110f] text-[#f5f5f0]">
-        <div className="page-shell py-16 md:py-24 lg:py-28">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <div className="rounded-[1.6rem] border border-[#2d2d2a] p-6 md:p-7 min-h-[170px] flex flex-col justify-between">
-              <span className="text-xs text-[#777771]">Company</span>
-              <p className="text-xl tracking-[-0.03em]">Archangel Company Limited</p>
-            </div>
-            <div className="rounded-[1.6rem] border border-[#2d2d2a] p-6 md:p-7 min-h-[170px] flex flex-col justify-between">
-              <span className="text-xs text-[#777771]">Based</span>
-              <p className="text-xl tracking-[-0.03em]">Bangkok, Thailand</p>
-            </div>
-            <div className="rounded-[1.6rem] border border-[#2d2d2a] p-6 md:p-7 min-h-[170px] flex flex-col justify-between">
-              <span className="text-xs text-[#777771]">Company status</span>
-              <p className="text-xl tracking-[-0.03em]">Thailand BOI promoted</p>
-            </div>
-          </div>
+      <section className="dark-section">
+        <div className="page-shell">
+          <p className="profile-quote">
+            The useful question is where AI can change the work enough to make a
+            difference to the business.
+          </p>
+          <cite>Our starting point · Archangel</cite>
         </div>
       </section>
-
-      <section className="page-shell py-20 md:py-28 lg:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-[0.72fr_1.28fr] gap-10 lg:gap-20 items-start">
-          <div>
-            <p className="eyebrow text-[#85857f]">What I work on</p>
-            <h2 className="mt-5 text-[2.8rem] sm:text-[3.8rem] lg:text-[4.5rem] leading-[0.96] tracking-[-0.055em] font-medium">
-              Make AI useful at work.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {[
-              ["AI transformation", "Find expensive workflows and rank where AI is worth funding."],
-              ["Applied AI systems", "Build working software around real operating constraints."],
-              ["Workflow redesign", "Simplify the process before adding automation or models."],
-              ["Implementation", "Move from strategy to deployed systems with measurable outcomes."],
-            ].map(([title, copy]) => (
-              <div key={title} className="rounded-[1.6rem] border border-[#deded8] bg-white p-6 min-h-[190px] flex flex-col justify-between">
-                <h3 className="text-xl tracking-[-0.03em] font-medium">{title}</h3>
-                <p className="text-sm md:text-base leading-relaxed text-[#777771]">{copy}</p>
-              </div>
-            ))}
-          </div>
+      <section className="page-shell section-grid">
+        <div>
+          <SectionLabel number="02">Responsibility</SectionLabel>
+          <h2>
+            From the first question
+            <br />
+            to the working system.
+          </h2>
+        </div>
+        <div className="prose">
+          <p>
+            Farhan leads Archangel across product, implementation and client
+            work. His focus is the connection between an operating problem and
+            software people can actually use.
+          </p>
+          <p>
+            That work includes healthcare documentation and multilingual care
+            planning through Hanna, enterprise workflow design and AI native
+            systems.
+          </p>
+          <p>
+            Based in Bangkok, he works through Archangel Company Limited, a
+            Thailand BOI promoted software and AI company.
+          </p>
+          <TextLink href="/work">Explore Archangel’s work</TextLink>
         </div>
       </section>
-
-      <section className="bg-[#ecece6]">
-        <div className="page-shell py-16 md:py-24 lg:py-28">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-8 lg:gap-12 items-end">
-            <div>
-              <p className="eyebrow text-[#7a7a74]">Connect</p>
-              <h2 className="mt-5 text-[2.8rem] sm:text-[3.8rem] lg:text-[4.8rem] leading-[0.95] tracking-[-0.055em] font-medium max-w-4xl">
-                Start with one expensive piece of work.
-              </h2>
-              <a
-                href={site.linkedinUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-7 inline-flex items-center gap-2 text-sm font-medium border-b border-[#a7a7a0] pb-1"
-              >
-                LinkedIn <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            </div>
-            <Link href={bookingHref} className="button-primary w-full sm:w-auto" data-cta="founder-opportunity-call">
-              Book a 15 minute call <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Closing title="Let’s look at the work." />
     </main>
   );
 }

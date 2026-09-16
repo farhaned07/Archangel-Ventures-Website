@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="pt-[64px] md:pt-[72px] bg-[#f6f6f2]">
+    <main id="main-content" className="pt-[64px] md:pt-[72px] bg-[#f6f6f2]">
       <section className="page-shell py-12 md:py-20 lg:py-24">
         <Link href="/" className="inline-flex items-center gap-2 text-sm text-[#777771] hover:text-[#11110f] transition-colors">
           <ArrowLeft className="w-4 h-4" /> Back to Archangel

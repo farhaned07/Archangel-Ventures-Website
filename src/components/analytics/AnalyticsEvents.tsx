@@ -35,9 +35,9 @@ export function AnalyticsEvents() {
 
     if (pathname === "/book/confirmed") {
       pushEvent({
-        event: "booking_completed",
+        // A page visit is not verified Google Calendar confirmation.
+        event: "booking_confirmation_page_view",
         page_path: pathname,
-        conversion_type: "ai_opportunity_call",
       });
     }
   }, [pathname]);

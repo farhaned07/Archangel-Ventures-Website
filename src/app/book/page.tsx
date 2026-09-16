@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowRight, CalendarDays, Video } from "lucide-react";
+import { ArrowUpRight, CalendarDays, Video } from "lucide-react";
 import Link from "next/link";
 import { emailHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Book a 15-Minute AI Opportunity Call | Archangel",
-  description: "Book a short call with Archangel to discuss where work is costing your business time or money.",
+  description:
+    "Book a short call with Archangel to discuss where work is costing your business time or money.",
   alternates: {
     canonical: "/book",
   },
@@ -15,53 +16,82 @@ export const metadata: Metadata = {
   },
 };
 
+import { SectionLabel } from "@/components/editorial/Elements";
 export default function BookPage() {
-  const hasCalendar = Boolean(site.calendarBookingUrl);
-
   return (
-    <main className="pt-[64px] md:pt-[72px] min-h-screen bg-[#f6f6f2]">
-      <section className="page-shell py-12 md:py-20 lg:py-24">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm text-[#777771] hover:text-[#11110f] transition-colors">
-          <ArrowLeft className="w-4 h-4" /> Back to Archangel
-        </Link>
-
-        <div className="grid grid-cols-1 lg:grid-cols-[0.78fr_1.22fr] gap-10 lg:gap-16 mt-10 md:mt-14 items-start">
-          <div className="max-w-xl">
-            <p className="eyebrow text-[#85857f]">AI Opportunity Call</p>
-            <h1 className="mt-5 text-[3.2rem] sm:text-[4.8rem] lg:text-[5.8rem] leading-[0.92] tracking-[-0.065em] font-medium">15 minutes. One problem.</h1>
-            <p className="mt-7 text-lg md:text-xl leading-relaxed text-[#696963]">Show us where work is slow, manual or expensive. We will tell you whether the workshop is the right next step.</p>
-
-            <div className="mt-9 space-y-3 text-sm text-[#6f6f69]">
-              <div className="flex items-center gap-3"><CalendarDays className="w-4 h-4" /> 15 minutes</div>
-              <div className="flex items-center gap-3"><Video className="w-4 h-4" /> Google Meet</div>
-            </div>
+    <main id="main-content" className="interior">
+      <section className="page-hero page-shell split-hero">
+        <div>
+          <Link href="/" className="route-breadcrumb">
+            Archangel / Start a conversation
+          </Link>
+          <SectionLabel number="01">AI Opportunity Call</SectionLabel>
+          <h1>
+            One conversation.
+            <br />
+            <span className="muted">A useful next step.</span>
+          </h1>
+          <p className="hero-deck">
+            Tell us where work is slow, manual or expensive. We’ll explore the
+            opportunity and whether a workshop makes sense.
+          </p>
+          <div className="booking-meta">
+            <span>
+              <CalendarDays size={18} aria-hidden="true" />
+              15 minutes
+            </span>
+            <span>
+              <Video size={18} aria-hidden="true" />
+              Google Meet
+            </span>
           </div>
-
-          <div className="rounded-[2rem] md:rounded-[2.5rem] border border-[#d9d9d3] bg-white p-6 md:p-9 lg:p-10 shadow-[0_24px_80px_rgba(20,20,18,0.06)]">
-            {hasCalendar ? (
-              <>
-                <p className="text-sm text-[#777771]">Choose a time</p>
-                <a
-                  href={site.calendarBookingUrl}
-                  className="button-primary mt-7 w-full"
-                  target="_blank"
-                  rel="noreferrer"
-                  data-cta="calendar-booking"
-                >
-                  Open calendar <ArrowRight className="w-4 h-4" />
-                </a>
-              </>
-            ) : (
-              <>
-                <p className="text-sm text-[#777771]">Calendar connection</p>
-                <h2 className="mt-4 text-3xl md:text-4xl tracking-[-0.045em] font-medium">Scheduling is being connected.</h2>
-                <p className="mt-5 text-[#777771] leading-relaxed">Until the public Google Calendar booking page is added, you can schedule directly by email.</p>
-                <a href={emailHref} className="button-primary mt-8 w-full" data-cta="booking-email">
-                  Schedule by email <ArrowRight className="w-4 h-4" />
-                </a>
-              </>
-            )}
-          </div>
+        </div>
+        <div className="booking-panel">
+          <SectionLabel number="↗">Choose your time</SectionLabel>
+          <h2>Meet with Archangel.</h2>
+          <p>
+            Your call is with Farhan Sabbir,
+            <br />
+            Founder & Executive Director.
+          </p>
+          {site.calendarBookingUrl && (
+            <a
+              href={site.calendarBookingUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="button-primary"
+              data-cta="calendar-booking"
+            >
+              Open Google Calendar
+              <ArrowUpRight size={19} aria-hidden="true" />
+              <span className="sr-only"> (opens in a new tab)</span>
+            </a>
+          )}
+          <p>
+            Choose an available time on Google Calendar. Your invitation will
+            include the meeting details.
+          </p>
+          <a href={emailHref} className="text-link" data-cta="booking-email">
+            Prefer to arrange it by email?
+            <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+        </div>
+      </section>
+      <section className="page-shell section-grid">
+        <div>
+          <SectionLabel number="02">Before the call</SectionLabel>
+          <h2>Bring one workflow.</h2>
+        </div>
+        <div className="prose">
+          <p>
+            What happens today? Where does it slow down? What would a better
+            result look like?
+          </p>
+          <p>
+            A simple description is enough to begin. You do not need to prepare
+            a presentation or share sensitive documents.
+          </p>
+          <p>Archangel Company Limited · Bangkok · Thailand BOI promoted</p>
         </div>
       </section>
     </main>
