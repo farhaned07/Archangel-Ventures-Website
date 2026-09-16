@@ -32,6 +32,14 @@ export function AnalyticsEvents() {
     if (pathname === "/book") {
       pushEvent({ event: "booking_page_view" });
     }
+
+    if (pathname === "/book/confirmed") {
+      pushEvent({
+        event: "booking_completed",
+        page_path: pathname,
+        conversion_type: "ai_opportunity_call",
+      });
+    }
   }, [pathname]);
 
   useEffect(() => {
@@ -43,6 +51,7 @@ export function AnalyticsEvents() {
       const ctaName = trackedElement?.dataset.cta || href || "unknown";
 
       const isBooking = href === "/book" || href?.endsWith("/book");
+      const isCalendarBooking = trackedElement?.dataset.cta === "calendar-booking";
       const isWorkshop = href === "/ai-transformation" || href?.endsWith("/ai-transformation");
       const isExplicitCta = Boolean(trackedElement);
 
@@ -63,7 +72,7 @@ export function AnalyticsEvents() {
         });
       }
 
-      if (isBooking) {
+      if (isBooking || isCalendarBooking) {
         pushEvent({
           event: "booking_started",
           cta_name: ctaName,
