@@ -56,7 +56,7 @@ export function Navbar() {
           </div>
           <Link
             href={bookingHref}
-            className="nav-call"
+            className="nav-call max-md:!hidden"
             data-cta="nav-opportunity-call"
           >
             Let’s talk
