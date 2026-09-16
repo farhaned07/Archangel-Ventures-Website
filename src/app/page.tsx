@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { WorkCanvas } from "@/components/editorial/WorkCanvas";
 import {
   Closing,
@@ -22,62 +21,46 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main id="main-content">
-      <section className="home-hero">
-        <Image
-          src="/images/bangkok.webp"
-          alt="Bangkok’s business district at dusk"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-city"
-        />
-        <div className="hero-shade" />
-        <div className="page-shell hero-content">
-          <div className="hero-kicker">
-            <span>
-              AI transformation
+      <section className="relative bg-[#111312] text-[#f5f6f2]">
+        <div className="page-shell flex min-h-[720px] flex-col pb-8 pt-[122px] md:min-h-[820px] md:pb-10 md:pt-[150px]">
+          <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#9faa9f] md:text-xs">
+            AI transformation · Thailand
+          </p>
+
+          <div className="my-auto max-w-[1080px] py-12 md:py-20">
+            <h1 className="max-w-[980px] text-[clamp(3.75rem,10vw,7.4rem)] font-medium leading-[0.94] tracking-[-0.065em]">
+              Make AI useful
               <br />
-              Strategy + implementation
-            </span>
-            <span>
-              Bangkok, Thailand
-              <br />
-              Founder led
-            </span>
+              <span className="text-[#adb5ae]">at work.</span>
+            </h1>
+
+            <div className="mt-8 grid max-w-[900px] gap-8 md:mt-10 md:grid-cols-[1fr_auto] md:items-end md:gap-16">
+              <p className="max-w-[590px] text-[18px] leading-[1.6] text-[#c8cec8] md:text-[20px]">
+                We identify expensive work, redesign it, build AI systems and
+                measure what changes.
+              </p>
+              <Link
+                href={bookingHref}
+                className="group inline-flex w-fit items-center gap-3 border-b border-[#738078] pb-2 text-[15px] font-medium"
+                data-cta="hero-opportunity-call"
+              >
+                Book an AI Opportunity Call
+                <ArrowUpRight
+                  size={18}
+                  aria-hidden="true"
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </Link>
+            </div>
           </div>
-          <h1>
-            Make AI useful
-            <br />
-            <em>at work.</em>
-          </h1>
-          <div className="hero-bottom">
-            <Link
-              href={bookingHref}
-              className="hero-invitation"
-              data-cta="hero-opportunity-call"
-            >
-              <span>Book an AI Opportunity Call</span>
-              <span className="circle-arrow">
-                <ArrowUpRight size={25} aria-hidden="true" />
-              </span>
-            </Link>
-            <p>
-              We help management teams identify expensive work, redesign it,
-              build AI systems and measure the business result.
-            </p>
-          </div>
-          <div className="hero-footnote">
-            <span>Archangel Company Limited · Thailand BOI promoted</span>
-            <a href="#how" aria-label="Explore the Archangel method">
-              <ArrowDown size={19} aria-hidden="true" />
-            </a>
+
+          <div className="flex flex-wrap gap-x-8 gap-y-2 border-t border-[#ffffff24] pt-5 text-[11px] text-[#8f9991] md:text-xs">
+            <span>Archangel Company Limited</span>
+            <span className="md:ml-auto">Bangkok · Thailand BOI promoted</span>
           </div>
         </div>
       </section>
-      <div className="identity-strip page-shell">
-        <span>Strategy through implementation.</span>
-        <span>Built in Bangkok. Made for the work.</span>
-      </div>
+
       <WorkCanvas />
       <FeaturedWork />
       <WorkshopSummary />
