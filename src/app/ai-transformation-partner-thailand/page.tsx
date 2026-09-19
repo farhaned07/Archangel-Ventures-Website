@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { absoluteUrl, bookingHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "AI Transformation Partner Thailand | Archangel",
+  title: "AI Transformation Partner in Thailand & Bangkok | Archangel",
   description:
     "Archangel is a Bangkok-based AI transformation partner helping management teams in Thailand find high-value AI opportunities, redesign workflows, implement working systems and measure business results.",
   alternates: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: "AI Transformation Partner Thailand | Archangel",
+    title: "AI Transformation Partner in Thailand & Bangkok | Archangel",
     description:
       "Strategy and implementation for management teams in Thailand that want measurable business value from AI.",
     url: "/ai-transformation-partner-thailand",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Transformation Partner Thailand | Archangel",
+    title: "AI Transformation Partner in Thailand & Bangkok | Archangel",
     description:
       "Find the work worth changing, implement the right AI systems and measure the result.",
     images: ["/opengraph-image"],
@@ -55,6 +55,11 @@ const faqs = [
     question: "Does Archangel only provide AI strategy?",
     answer:
       "No. Archangel combines strategy and implementation. We start with the work, prioritize the highest-value opportunities, then build and deploy systems when the business case is strong enough.",
+  },
+  {
+    question: "How is an AI transformation partner different from an AI consultant or agency?",
+    answer:
+      "A consultant may stop at recommendations and an agency may begin with a build request. A transformation partner connects business diagnosis, workflow redesign, implementation, adoption and measurement in one engagement.",
   },
   {
     question: "Who is the AI Transformation Workshop for?",
@@ -141,7 +146,7 @@ export default function AITransformationPartnerThailandPage() {
       />
       <section className="page-hero page-shell">
         <SectionLabel number="01">
-          AI transformation partner / Thailand
+          AI transformation partner / Bangkok · Thailand
         </SectionLabel>
         <h1>
           From AI ambition
@@ -149,9 +154,10 @@ export default function AITransformationPartnerThailandPage() {
           <span className="muted">to operating value.</span>
         </h1>
         <p className="hero-deck">
-          Strategy and implementation for management teams in Thailand.
-          Archangel identifies expensive work, redesigns the process and builds
-          the system that makes the change useful.
+          Archangel is an AI transformation partner in Bangkok, Thailand.
+          We work with management teams from strategy through implementation:
+          find expensive work, redesign the workflow, build the system and
+          measure the operating result.
         </p>
         <div className="hero-actions">
           <Link href="/ai-transformation" className="button-primary">
@@ -230,7 +236,76 @@ export default function AITransformationPartnerThailandPage() {
       </section>
       <section className="page-shell section-grid">
         <div>
-          <SectionLabel number="04">Implementation discipline</SectionLabel>
+          <SectionLabel number="04">Why a transformation partner</SectionLabel>
+          <h2>
+            Advice and build
+            <br />
+            <span className="muted">should stay connected.</span>
+          </h2>
+        </div>
+        <div className="prose">
+          <h3>Not strategy that stops at a deck.</h3>
+          <p>
+            An AI consultant can be useful when your internal team already owns
+            implementation. Archangel is designed for management teams that want
+            the same partner involved in deciding what should change and making
+            the change work.
+          </p>
+          <h3>Not a build request looking for a problem.</h3>
+          <p>
+            A development agency is useful when the scope is already clear. We
+            begin earlier: with the workflow, the baseline and the business
+            result. The right answer may be a custom system, an existing tool,
+            a simpler process, or no AI at all.
+          </p>
+          <TextLink href="/insights/what-is-an-ai-transformation-partner">
+            What an AI transformation partner should do
+          </TextLink>
+        </div>
+      </section>
+      <section className="dark-section">
+        <div className="page-shell section-grid">
+          <div>
+            <SectionLabel number="05">What we are accountable for</SectionLabel>
+            <h2>
+              One line from
+              <br />
+              <span className="muted">problem to result.</span>
+            </h2>
+          </div>
+          <ol className="editorial-list">
+            {[
+              [
+                "Business case",
+                "Define the baseline, the value at stake and the operating measure before a build is funded.",
+              ],
+              [
+                "Workflow design",
+                "Map the current process, remove unnecessary work and define where human judgment stays.",
+              ],
+              [
+                "Implementation",
+                "Build or integrate the system around real data, permissions, controls and operating constraints.",
+              ],
+              [
+                "Adoption & measurement",
+                "Train the people using it, observe the workflow in practice and compare the result with the baseline.",
+              ],
+            ].map(([a, b], i) => (
+              <li key={a}>
+                <span>0{i + 1}</span>
+                <div>
+                  <h3>{a}</h3>
+                  <p>{b}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      <section className="page-shell section-grid">
+        <div>
+          <SectionLabel number="06">Implementation discipline</SectionLabel>
           <h2>
             Designed to work
             <br />
@@ -256,7 +331,7 @@ export default function AITransformationPartnerThailandPage() {
       <section className="dark-section">
         <div className="page-shell section-grid">
           <div>
-            <SectionLabel number="05">Bangkok, Thailand</SectionLabel>
+            <SectionLabel number="07">Bangkok, Thailand</SectionLabel>
             <h2>
               Close to the
               <br />
@@ -280,7 +355,7 @@ export default function AITransformationPartnerThailandPage() {
       </section>
       <section className="page-shell section-grid">
         <div>
-          <SectionLabel number="06">Questions</SectionLabel>
+          <SectionLabel number="08">Questions</SectionLabel>
           <h2>Before we begin.</h2>
         </div>
         <div className="faq-list">
