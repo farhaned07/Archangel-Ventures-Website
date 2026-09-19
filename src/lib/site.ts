@@ -10,6 +10,7 @@ export const site = {
   legalName: "Archangel Company Limited",
   companyRegistrationNumber: "0105566194825",
   email: "farhan.sabbir07@gmail.com",
+  phone: "+66 92 686 7042",
   workshopPrice: "฿45,000",
   bookingSubject: "15 minute AI Opportunity Call",
   location: "Bangkok, Thailand",
@@ -21,6 +22,7 @@ export const site = {
   companyLinkedinUrl: "https://www.linkedin.com/company/143891155",
   githubUrl: "https://github.com/farhaned07",
   businessRegistryUrl: "https://www.dataforthai.com/company/0105566194825/",
+  googleBusinessProfileUrl: "https://share.google/4MzK4fvh5MJ5dczxI",
   calendarBookingUrl: configuredCalendarUrl || defaultCalendarBookingUrl,
   gtmId: configuredGtmId || "",
 } as const;
