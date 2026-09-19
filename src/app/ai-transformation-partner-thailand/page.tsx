@@ -349,7 +349,12 @@ export default function AITransformationPartnerThailandPage() {
               เราเริ่มจากงานจริงขององค์กร เลือกจุดที่ AI สร้างผลลัพธ์ได้ชัดเจน
               แล้วออกแบบและพัฒนาระบบให้เหมาะกับการทำงาน
             </p>
-            <TextLink href="/work">About Archangel</TextLink>
+            <TextLink href="/ai-transformation-partner-bangkok">
+              AI transformation partner in Bangkok
+            </TextLink>
+            <div style={{ marginTop: 18 }}>
+              <TextLink href="/work">About Archangel</TextLink>
+            </div>
           </div>
         </div>
       </section>
