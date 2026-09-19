@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   category: "technology",
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
   robots: {
     index: true,
@@ -90,13 +93,27 @@ const structuredData = {
       logo: absoluteUrl("/favicon.ico"),
       email: site.email,
       slogan: "Make AI useful at work.",
-      foundingDate: "2023",
-      sameAs: [site.companyLinkedinUrl],
+      foundingDate: "2023-10-05",
+      disambiguatingDescription:
+        "Thailand-registered software and AI company based in Bangkok.",
+      identifier: {
+        "@type": "PropertyValue",
+        propertyID: "Thailand DBD company registration",
+        value: site.companyRegistrationNumber,
+      },
+      sameAs: [site.companyLinkedinUrl, site.businessRegistryUrl],
+      subjectOf: {
+        "@type": "WebPage",
+        name: "ARCHANGEL CO., LTD. public company record",
+        url: site.businessRegistryUrl,
+      },
       description:
         "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company focused on AI transformation, applied AI systems and workflow implementation.",
       address: {
         "@type": "PostalAddress",
+        streetAddress: "57 Wireless Road, Lumphini, Pathum Wan",
         addressLocality: "Bangkok",
+        postalCode: "10330",
         addressCountry: "TH",
       },
       areaServed: {
@@ -109,7 +126,7 @@ const structuredData = {
         name: "Farhan Sabbir",
         jobTitle: "Founder & Executive Director",
         url: absoluteUrl("/farhan-sabbir"),
-        sameAs: [site.linkedinUrl],
+        sameAs: [site.linkedinUrl, site.githubUrl],
       },
       contactPoint: {
         "@type": "ContactPoint",
@@ -124,7 +141,30 @@ const structuredData = {
         "Business process automation",
         "AI workflow implementation",
         "Enterprise AI",
+        "Healthcare AI",
       ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "AI transformation services",
+        itemListElement: [
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI transformation strategy and implementation",
+              url: absoluteUrl("/ai-transformation-partner-thailand"),
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "AI Transformation Workshop",
+              url: absoluteUrl("/ai-transformation"),
+            },
+          },
+        ],
+      },
     },
     {
       "@type": "WebSite",
