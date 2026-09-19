@@ -15,7 +15,8 @@ Thailand company registration: ${site.companyRegistrationNumber}
 ## Canonical pages
 
 - Company: ${site.url}/company
-- AI transformation in Thailand: ${site.url}/ai-transformation-partner-thailand
+- AI transformation partner in Thailand: ${site.url}/ai-transformation-partner-thailand
+- What is an AI transformation partner?: ${site.url}/insights/what-is-an-ai-transformation-partner
 - Thai-language AI transformation page: ${site.url}/th/ai-transformation-partner-thailand
 - AI Transformation Workshop: ${site.url}/ai-transformation
 - Founder profile: ${site.url}/farhan-sabbir
