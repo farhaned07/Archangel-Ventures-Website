@@ -2,7 +2,13 @@ import { site } from "@/lib/site";
 
 export function GET() {
   const urls = [
+    `${site.url}/`,
+    `${site.url}/company`,
+    `${site.url}/farhan-sabbir`,
     `${site.url}/ai-transformation-partner-thailand`,
+    `${site.url}/th/ai-transformation-partner-thailand`,
+    `${site.url}/ai-transformation`,
+    `${site.url}/work`,
     `${site.url}/insights/ai-transformation-thailand-2026`,
   ];
 

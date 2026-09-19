@@ -2,26 +2,32 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-09-16");
+  const lastModified = new Date("2026-09-20");
 
   return [
-    {
-      url: absoluteUrl("/ai-transformation-partner-thailand"),
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: absoluteUrl("/insights/ai-transformation-thailand-2026"),
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
     {
       url: absoluteUrl("/"),
       lastModified,
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: absoluteUrl("/company"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
+    {
+      url: absoluteUrl("/ai-transformation-partner-thailand"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.95,
+    },
+    {
+      url: absoluteUrl("/th/ai-transformation-partner-thailand"),
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
     },
     {
       url: absoluteUrl("/ai-transformation"),
@@ -33,13 +39,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: absoluteUrl("/farhan-sabbir"),
       lastModified,
       changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: absoluteUrl("/insights/ai-transformation-thailand-2026"),
+      lastModified,
+      changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: absoluteUrl("/work"),
       lastModified,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.75,
     },
     {
       url: absoluteUrl("/privacy"),

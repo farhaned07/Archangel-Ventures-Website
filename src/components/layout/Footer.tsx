@@ -21,11 +21,15 @@ export function Footer() {
           </div>
           <nav aria-label="Footer navigation">
             <span>Explore</span>
+            <Link href="/company">Archangel Company Limited</Link>
             <Link href="/ai-transformation-partner-thailand">
               AI transformation Thailand
             </Link>
+            <Link href="/th/ai-transformation-partner-thailand">
+              AI Transformation ประเทศไทย
+            </Link>
             <Link href="/ai-transformation">AI Transformation Workshop</Link>
-            <Link href="/work">Our work & company</Link>
+            <Link href="/work">Our work</Link>
             <Link href="/farhan-sabbir">Farhan Sabbir</Link>
             <Link href="/insights/ai-transformation-thailand-2026">
               Thailand AI 2026
