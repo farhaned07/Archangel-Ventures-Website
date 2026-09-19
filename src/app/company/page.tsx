@@ -47,7 +47,12 @@ const companyPageSchema = {
       propertyID: "Thailand DBD company registration",
       value: site.companyRegistrationNumber,
     },
-    sameAs: [site.companyLinkedinUrl, site.businessRegistryUrl],
+    sameAs: [
+      site.companyLinkedinUrl,
+      site.businessRegistryUrl,
+      site.googleBusinessProfileUrl,
+    ],
+    hasMap: site.googleBusinessProfileUrl,
     founder: {
       "@type": "Person",
       "@id": `${site.url}/#farhan-sabbir`,
@@ -57,10 +62,10 @@ const companyPageSchema = {
     },
     address: {
       "@type": "PostalAddress",
-      streetAddress: "57 Wireless Road, Lumphini, Pathum Wan",
+      streetAddress: site.streetAddress,
       addressLocality: "Bangkok",
-      postalCode: "10330",
-      addressCountry: "TH",
+      postalCode: site.postalCode,
+      addressCountry: site.countryCode,
     },
   },
 };
@@ -87,6 +92,16 @@ export default function CompanyPage() {
           <TextLink href="/ai-transformation-partner-thailand">
             AI transformation in Thailand
           </TextLink>
+          <a
+            href={site.googleBusinessProfileUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-link"
+          >
+            Google Business Profile
+            <ArrowUpRight size={16} aria-hidden="true" />
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
           <a
             href={site.businessRegistryUrl}
             target="_blank"
