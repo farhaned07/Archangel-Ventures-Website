@@ -12,9 +12,9 @@ import {
 import { bookingHref } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Archangel | AI Transformation Strategy & Implementation Thailand",
+  title: "Archangel | AI Transformation Partner in Thailand",
   description:
-    "Make AI useful at work. Archangel Company Limited identifies expensive work, redesigns it, builds AI systems and measures the business result. Bangkok. Thailand BOI promoted.",
+    "Archangel is a Bangkok-based AI transformation partner in Thailand. We identify expensive work, redesign workflows, build AI systems and measure the business result.",
   alternates: { canonical: "/" },
 };
 
@@ -24,7 +24,7 @@ export default function Home() {
       <section className="relative bg-[#111312] text-[#f5f6f2]">
         <div className="page-shell flex min-h-[720px] flex-col pb-8 pt-[122px] md:min-h-[820px] md:pb-10 md:pt-[150px]">
           <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#9faa9f] md:text-xs">
-            AI transformation · Thailand
+            AI transformation partner · Bangkok, Thailand
           </p>
 
           <div className="my-auto max-w-[1080px] py-12 md:py-20">
