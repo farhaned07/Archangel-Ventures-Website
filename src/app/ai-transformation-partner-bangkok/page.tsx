@@ -50,6 +50,8 @@ const localSchema = {
       url: site.url,
       image: absoluteUrl("/opengraph-image"),
       email: site.email,
+      telephone: site.phone,
+      hasMap: site.googleBusinessProfileUrl,
       description:
         "Bangkok-based AI transformation partner providing workflow redesign, AI implementation and transformation services for management teams in Thailand.",
       address: {
@@ -75,7 +77,11 @@ const localSchema = {
         name: "Farhan Sabbir",
         url: absoluteUrl("/farhan-sabbir"),
       },
-      sameAs: [site.companyLinkedinUrl, site.businessRegistryUrl],
+      sameAs: [
+        site.companyLinkedinUrl,
+        site.businessRegistryUrl,
+        site.googleBusinessProfileUrl,
+      ],
       knowsAbout: [
         "AI transformation",
         "Workflow redesign",
@@ -258,6 +264,17 @@ export default function AITransformationPartnerBangkokPage() {
               Farhan Sabbir leads strategy, implementation and client work.
             </p>
             <TextLink href="/company">About Archangel Company Limited</TextLink>
+            <div style={{ marginTop: 18 }}>
+              <a
+                href={site.googleBusinessProfileUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="text-link"
+              >
+                View Archangel on Google
+                <span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

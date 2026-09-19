@@ -101,20 +101,32 @@ const structuredData = {
         propertyID: "Thailand DBD company registration",
         value: site.companyRegistrationNumber,
       },
-      sameAs: [site.companyLinkedinUrl, site.businessRegistryUrl],
-      subjectOf: {
-        "@type": "WebPage",
-        name: "ARCHANGEL CO., LTD. public company record",
-        url: site.businessRegistryUrl,
-      },
+      sameAs: [
+        site.companyLinkedinUrl,
+        site.businessRegistryUrl,
+        site.googleBusinessProfileUrl,
+      ],
+      hasMap: site.googleBusinessProfileUrl,
+      subjectOf: [
+        {
+          "@type": "WebPage",
+          name: "ARCHANGEL CO., LTD. public company record",
+          url: site.businessRegistryUrl,
+        },
+        {
+          "@type": "WebPage",
+          name: "Archangel Company Limited Google Business Profile",
+          url: site.googleBusinessProfileUrl,
+        },
+      ],
       description:
         "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company focused on AI transformation, applied AI systems and workflow implementation.",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "57 Wireless Road, Lumphini, Pathum Wan",
+        streetAddress: site.streetAddress,
         addressLocality: "Bangkok",
-        postalCode: "10330",
-        addressCountry: "TH",
+        postalCode: site.postalCode,
+        addressCountry: site.countryCode,
       },
       areaServed: {
         "@type": "Country",
@@ -132,6 +144,7 @@ const structuredData = {
         "@type": "ContactPoint",
         contactType: "sales",
         email: site.email,
+        telephone: site.phone,
         areaServed: "TH",
         availableLanguage: ["English"],
       },

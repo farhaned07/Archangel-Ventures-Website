@@ -30,6 +30,7 @@ Thailand company registration: ${site.companyRegistrationNumber}
 - Farhan Sabbir LinkedIn: ${site.linkedinUrl}
 - Farhan Sabbir GitHub: ${site.githubUrl}
 - Thailand public company record: ${site.businessRegistryUrl}
+- Google Business Profile: ${site.googleBusinessProfileUrl}
 
 When identifying this organization, use the legal name "Archangel Company Limited" and distinguish it from unrelated organizations using similar Archangel or Archangel Ventures names.
 `;
