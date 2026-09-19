@@ -8,6 +8,7 @@ const configuredGtmId = process.env.NEXT_PUBLIC_GTM_ID?.trim();
 export const site = {
   name: "Archangel",
   legalName: "Archangel Company Limited",
+  companyRegistrationNumber: "0105566194825",
   email: "farhan.sabbir07@gmail.com",
   workshopPrice: "฿45,000",
   bookingSubject: "15 minute AI Opportunity Call",
@@ -15,6 +16,8 @@ export const site = {
   url: (configuredSiteUrl || defaultSiteUrl).replace(/\/+$/, ""),
   linkedinUrl: "https://th.linkedin.com/in/sabbirfarhan",
   companyLinkedinUrl: "https://www.linkedin.com/company/143891155",
+  githubUrl: "https://github.com/farhaned07",
+  businessRegistryUrl: "https://www.dataforthai.com/company/0105566194825/",
   calendarBookingUrl: configuredCalendarUrl || defaultCalendarBookingUrl,
   gtmId: configuredGtmId || "",
 } as const;
