@@ -8,6 +8,7 @@ export async function GET() {
     `${site.url}/company`,
     `${site.url}/farhan-sabbir`,
     `${site.url}/ai-transformation-partner-thailand`,
+    `${site.url}/ai-transformation-partner-bangkok`,
     `${site.url}/insights/what-is-an-ai-transformation-partner`,
     `${site.url}/th/ai-transformation-partner-thailand`,
     `${site.url}/ai-transformation`,

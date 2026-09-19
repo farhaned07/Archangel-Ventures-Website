@@ -25,6 +25,9 @@ export function Footer() {
             <Link href="/ai-transformation-partner-thailand">
               AI transformation partner Thailand
             </Link>
+            <Link href="/ai-transformation-partner-bangkok">
+              AI transformation partner Bangkok
+            </Link>
             <Link href="/insights/what-is-an-ai-transformation-partner">
               What is an AI transformation partner?
             </Link>

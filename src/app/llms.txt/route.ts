@@ -16,6 +16,7 @@ Thailand company registration: ${site.companyRegistrationNumber}
 
 - Company: ${site.url}/company
 - AI transformation partner in Thailand: ${site.url}/ai-transformation-partner-thailand
+- AI transformation partner in Bangkok: ${site.url}/ai-transformation-partner-bangkok
 - What is an AI transformation partner?: ${site.url}/insights/what-is-an-ai-transformation-partner
 - Thai-language AI transformation page: ${site.url}/th/ai-transformation-partner-thailand
 - AI Transformation Workshop: ${site.url}/ai-transformation
