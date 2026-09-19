@@ -9,6 +9,11 @@ export const metadata: Metadata = {
     "Archangel is a Bangkok-based AI transformation partner helping management teams in Thailand find high-value AI opportunities, redesign workflows, implement working systems and measure business results.",
   alternates: {
     canonical: "/ai-transformation-partner-thailand",
+    languages: {
+      "en-TH": "/ai-transformation-partner-thailand",
+      "th-TH": "/th/ai-transformation-partner-thailand",
+      "x-default": "/ai-transformation-partner-thailand",
+    },
   },
   robots: {
     index: true,
@@ -74,6 +79,7 @@ const serviceSchema = {
       url: absoluteUrl("/ai-transformation-partner-thailand"),
       description:
         "AI transformation strategy, workflow redesign, implementation and measurement for management teams in Thailand.",
+      inLanguage: "en",
       areaServed: {
         "@type": "Country",
         name: "Thailand",
