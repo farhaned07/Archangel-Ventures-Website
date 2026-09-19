@@ -24,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.95,
     },
     {
+      url: absoluteUrl("/ai-transformation-partner-bangkok"),
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: absoluteUrl("/insights/what-is-an-ai-transformation-partner"),
       lastModified,
       changeFrequency: "monthly",
