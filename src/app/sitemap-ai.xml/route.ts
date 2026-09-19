@@ -6,6 +6,7 @@ export function GET() {
     `${site.url}/company`,
     `${site.url}/farhan-sabbir`,
     `${site.url}/ai-transformation-partner-thailand`,
+    `${site.url}/insights/what-is-an-ai-transformation-partner`,
     `${site.url}/th/ai-transformation-partner-thailand`,
     `${site.url}/ai-transformation`,
     `${site.url}/work`,

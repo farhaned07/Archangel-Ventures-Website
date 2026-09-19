@@ -49,7 +49,7 @@ const articleSchema = {
   description:
     "An analysis of Thailand's AI transformation gap and what management teams should do to move from pilots to measurable business value.",
   datePublished: "2026-09-16",
-  dateModified: "2026-09-16",
+  dateModified: "2026-09-20",
   mainEntityOfPage: articleUrl,
   author: {
     "@type": "Person",
@@ -225,10 +225,14 @@ export default function AITransformationThailandInsight() {
             <p>
               This is the approach behind Archangel’s{" "}
               <Link href="/ai-transformation-partner-thailand">
-                AI transformation work in Thailand
+                AI transformation partner work in Thailand
               </Link>{" "}
               and our{" "}
               <Link href="/ai-transformation">AI Transformation Workshop</Link>.
+              For a practical definition of the role, read{" "}
+              <Link href="/insights/what-is-an-ai-transformation-partner">
+                What Is an AI Transformation Partner?
+              </Link>.
             </p>
             <h2 id="sources">Sources</h2>
             <p>

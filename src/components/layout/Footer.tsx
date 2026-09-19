@@ -23,7 +23,10 @@ export function Footer() {
             <span>Explore</span>
             <Link href="/company">Archangel Company Limited</Link>
             <Link href="/ai-transformation-partner-thailand">
-              AI transformation Thailand
+              AI transformation partner Thailand
+            </Link>
+            <Link href="/insights/what-is-an-ai-transformation-partner">
+              What is an AI transformation partner?
             </Link>
             <Link href="/th/ai-transformation-partner-thailand">
               AI Transformation ประเทศไทย
