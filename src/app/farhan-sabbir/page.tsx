@@ -38,8 +38,10 @@ const profileSchema = {
     jobTitle: "Founder & Executive Director",
     description:
       "AI Transformation Partner in Thailand and Founder & Executive Director of Archangel Company Limited.",
+    disambiguatingDescription:
+      "Bangkok-based founder leading AI transformation and applied AI work through Archangel Company Limited in Thailand.",
     url: absoluteUrl("/farhan-sabbir"),
-    sameAs: [site.linkedinUrl],
+    sameAs: [site.linkedinUrl, site.githubUrl],
     worksFor: {
       "@type": "Organization",
       "@id": `${site.url}/#organization`,
@@ -91,6 +93,16 @@ export default function FarhanSabbirPage() {
             className="text-link"
           >
             Connect on LinkedIn
+            <ExternalLink size={16} aria-hidden="true" />
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+          <a
+            href={site.githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="text-link"
+          >
+            GitHub
             <ExternalLink size={16} aria-hidden="true" />
             <span className="sr-only"> (opens in a new tab)</span>
           </a>
