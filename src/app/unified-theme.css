@@ -1,0 +1,193 @@
+/* Archangel unified colour system — graphite / warm ivory / neutral detail.
+   Shared across the homepage, services, work, and existing supporting pages.
+   Keep the original wordmark. Functional status colors in demos may remain. */
+:root {
+  --aa-night:#1b1b1a;
+  --aa-forest:#252522;
+  --aa-lime:#eeeae0;
+  --aa-paper:#f7f6f2;
+  --aa-ink:#242321;
+  --aa-muted:#76746e;
+  --aa-rule:#d4d1c9;
+  --background:#f7f6f2;
+  --foreground:#242321;
+  --ink:#242321;
+  --muted:#6b6963;
+  --line:#d6d3cb;
+  --surface:#eeece6;
+}
+body { background:#f7f6f2; color:#242321; }
+.site-header:not(.header-on-dark) { background:#f7f6f2; border-color:#d6d3cb; }
+.header-on-dark { background:transparent; color:#f7f6f2; border-color:#ffffff2e; }
+.site-footer { background:#1b1b1a; color:#f6f5ef; }
+.footer-main > div:first-child > span,
+.footer-main nav > span,
+.footer-contact > span,
+.footer-bottom { color:#b8b5ac; }
+.footer-bottom { border-color:#494740; }
+.button-primary { background:#252523; border-color:#252523; color:#f7f6f2; }
+.button-primary:hover { background:#42413d; }
+.button-secondary { border-color:#aaa69d; }
+.dark-section { background:#232321; color:#f7f6f2; }
+.dark-section .section-label > span,
+.dark-section .prose p,
+.dark-section .editorial-list li > span { color:#c7c4ba; }
+.dark-section .section-grid,
+.dark-section .editorial-list li { border-color:#4b4944; }
+.section-label > span { color:#77736c; }
+.closing { background:#ebe8e1; }
+.closing-action p { color:#68665e; }
+.workshop-section,.booking-panel { background:#eeece6; }
+.workshop-sheet { background:#faf9f6; box-shadow:9px 9px 0 #d9d6cd; }
+.hanna-feature { background:#e9e7e0; }
+.hanna-flow { background:#faf9f6; border-color:#d9d6cd; }
+.hanna-flow-line { border-color:#dedbd3; }
+.hanna-flow figcaption { color:#6e6c65; }
+.company-section,.interior,.article-layout { background:#f7f6f2; }
+.aa-home { background:#f7f6f2; color:#242321; }
+.aa-home .aa-hero,
+.aa-home .aa-services-hero,
+.aa-home .aa-portfolio-hero,
+.aa-home .aa-portfolio-project-dark,
+.aa-home .aa-portfolio-contact,
+.aa-home .aa-start {
+  background:#1b1b1a;
+  color:#f7f6f2;
+}
+.aa-home .aa-hero-glow { opacity:.18; background:radial-gradient(ellipse,#ffffff20 0%,transparent 65%); }
+.aa-home .aa-hero-topline,
+.aa-home .aa-hero-bottom,
+.aa-home .aa-portfolio-top,
+.aa-home .aa-portfolio-hero-foot { color:#b5b2a9; }
+.aa-home .aa-status-dot { background:#d4d2c6; box-shadow:none; }
+.aa-home .aa-overline,
+.aa-home .aa-hero h1 em,
+.aa-home .aa-accent-dot,
+.aa-home .aa-services-hero .aa-kicker,
+.aa-home .aa-services-intro h1 em,
+.aa-home .aa-services-intro h1>span,
+.aa-home .aa-portfolio-hero h1 em,
+.aa-home .aa-portfolio-contact .aa-kicker,
+.aa-home .aa-portfolio-contact h2 em,
+.aa-home .aa-start .aa-kicker,
+.aa-home .aa-start h2 em { color:#efede4; }
+.aa-home .aa-hero-description,
+.aa-home .aa-art-label,
+.aa-home .aa-services-intro>div>p,
+.aa-home .aa-portfolio-hero-row>p,
+.aa-home .aa-start-right>p { color:#cbc8bf; }
+.aa-home .aa-hero-bottom,
+.aa-home .aa-portfolio-hero-foot,
+.aa-home .aa-portfolio-top { border-color:#4b4944; }
+.aa-home .aa-pill-lime { background:#f1efe7; color:#242321; }
+.aa-home .aa-pill-lime:hover { background:#dedbd0; }
+.aa-home .aa-hero-signature { color:#b8b4aa; }
+.aa-home .aa-signature-icon { color:#e4e1d7; }
+.aa-home .aa-kicker,
+.aa-home .aa-mini-index,
+.aa-home .aa-manifesto-foot>span,
+.aa-home .aa-capability-number,
+.aa-home .aa-capability-copy,
+.aa-home .aa-capabilities-footer,
+.aa-home .aa-work-honesty,
+.aa-home .aa-service-index,
+.aa-home .aa-service-index span:first-child,
+.aa-home .aa-service-deck,
+.aa-home .aa-work-card-tag,
+.aa-home .aa-portfolio-project-head,
+.aa-home .aa-portfolio-eyebrow { color:#77736b; }
+.aa-home .aa-manifesto,
+.aa-home .aa-work-section,
+.aa-home .aa-portfolio-project:not(.aa-portfolio-project-dark) { background:#f7f6f2; }
+.aa-home .aa-manifesto>p span { color:#97948c; }
+.aa-home .aa-manifesto-foot,
+.aa-home .aa-capability-list,
+.aa-home .aa-capability,
+.aa-home .aa-process-steps,
+.aa-home .aa-process-step,
+.aa-home .aa-service,
+.aa-home .aa-portfolio-project-head { border-color:#d0cdc4; }
+.aa-home .aa-capabilities,
+.aa-home .aa-services-demo,
+.aa-home .aa-process { background:#eeece6; }
+.aa-home .aa-section-heading h2 em,
+.aa-home .aa-process-intro h2 em,
+.aa-home .aa-services-demo h2 em,
+.aa-home .aa-portfolio-digital h2 em { color:#88857d; }
+.aa-home .aa-section-heading>p,
+.aa-home .aa-process-step p,
+.aa-home .aa-process-intro>p,
+.aa-home .aa-services-demo-layout>div:first-child>p,
+.aa-home .aa-portfolio-digital>div:first-child>p,
+.aa-home .aa-portfolio-copy>p:not(.aa-portfolio-lead),
+.aa-home .aa-portfolio-copy>small,
+.aa-home .aa-service-details>div:last-child>p { color:#6f6c65; }
+.aa-home .aa-capability:hover { background:#faf9f6; }
+.aa-home .aa-capability-main>p { color:#747169; }
+.aa-home .aa-capability-tags span,
+.aa-home .aa-capability-arrow { color:#6e6c66; border-color:#cbc8c0; }
+.aa-home .aa-capability:hover .aa-capability-arrow { background:#e3e0d6; }
+.aa-home .aa-hanna-copy { background:#292826; color:#f7f6f2; }
+.aa-home .aa-feature-top,
+.aa-home .aa-feature-bottom,
+.aa-home .aa-hanna-detail { color:#c9c6bd; }
+.aa-home .aa-feature-bottom { border-color:#5d5a54; }
+.aa-home .aa-feature-symbol { background:#e8e5dd; color:#33312e; }
+.aa-home .aa-hanna-visual,
+.aa-home .aa-portfolio-hanna { background:radial-gradient(circle at 62% 16%,#f8f7f2,#dad8d0); }
+.aa-home .aa-visual-caption,
+.aa-home .aa-portfolio-hanna>span { color:#77746d; }
+.aa-home .aa-work-brief { background:#eae8e1; }
+.aa-home .aa-work-web { background:#e5e1d7; }
+.aa-home .aa-web-study { background:linear-gradient(120deg,#353430,#20201e 80%); }
+.aa-home .aa-web-study em { color:#eeeae0; }
+.aa-home .aa-work-wire i { border-color:#aaa69b; }
+.aa-home .aa-work-wire i:not(:nth-child(4)):before { background:#aaa69b; }
+.aa-home .aa-work-wire i:after { background:#918d84; }
+.aa-home .aa-work-wire b { color:#6c6962; }
+.aa-home .aa-portfolio-copy { background:#eae8e1; }
+.aa-home .aa-portfolio-copy h2 span,
+.aa-home .aa-portfolio-enterprise h2 span { color:#a6a095; }
+.aa-home .aa-portfolio-copy .aa-portfolio-lead { color:#302f2b; }
+.aa-home .aa-portfolio-chips span { border-color:#c9c5ba; }
+.aa-home .aa-portfolio-project-dark .aa-portfolio-project-head { color:#bebbb2; border-color:#58564f; }
+.aa-home .aa-portfolio-enterprise .aa-kicker,
+.aa-home .aa-portfolio-enterprise small { color:#c4c0b6; }
+.aa-home .aa-portfolio-enterprise>div:first-child>p { color:#cbc8bd; }
+.aa-home .aa-enterprise-visual { background:#eeece6; color:#33312c; }
+.aa-home .aa-enterprise-visual-head,
+.aa-home .aa-enterprise-visual-foot,
+.aa-home .aa-enterprise-nodes>div>span,
+.aa-home .aa-enterprise-nodes small { color:#77746e; }
+.aa-home .aa-enterprise-nodes>div { background:#faf9f6; border-color:#d8d5cc; }
+.aa-home .aa-portfolio-enterprise>div:first-child>a { color:#f7f6f2; }
+.aa-home .aa-services-ticker { color:#b5b2a8; border-color:#4b4944; }
+.aa-home .aa-service-details li { border-color:#dedbd2; }
+.aa-home .aa-service-details li svg { color:#77746e; }
+/* Neutralize the showcase frame on all three pages, not just the homepage. */
+.aa-home .build-lab { border-color:#5e5b54; }
+.aa-home .lab-frame-top,.aa-home .lab-frame-bottom { background:#30302d; color:#d3d0c5; }
+.aa-home .lab-lights i:first-child { background:#e0ddd2; }
+.aa-home .lab-frame-right svg { color:#e0ddd2; }
+.aa-home .lab-switch { background:#252523; }
+.aa-home .lab-switch button { color:#b2aea6; }
+.aa-home .lab-switch button[aria-selected=true] { color:#fff; border-bottom-color:#e6e2d7; }
+.aa-home .lab-switch button span { color:#9e9a8f; }
+.aa-home .lab-app-nav,.aa-home .lab-operations { background:#f5f4f0; }
+.aa-home .lab-app-mark,.aa-home .lab-app-heading h3 { color:#2b2925; }
+.aa-home .lab-app-period,.aa-home .lab-eyebrow { color:#8e897e; }
+.aa-home .lab-action { background:#34332f; }
+.aa-home .lab-record-icon { background:#e6e3d8; color:#6d685d; }
+.aa-home .lab-product { background:#f5f3ed; }
+.aa-home .lab-product-sidebar { background:#e6e3dc; color:#878279; }
+.aa-home .lab-product-symbol,.aa-home .lab-product-main h3 em { color:#868074; }
+.aa-home .lab-checkbox.is-done { background:#716d64; }
+.aa-home .lab-product-bars span:first-child { background:#868177; }
+.aa-home .lab-platform-dark { background:#302f2a; }
+/* Match the same neutral color while preserving existing layout and wordmark. */
+@media (max-width:620px) {
+  .aa-home .aa-services-hero,
+  .aa-home .aa-portfolio-hero { background:#1b1b1a; }
+  .aa-home .aa-services-intro h1 em,
+  .aa-home .aa-portfolio-hero h1 em { color:#efede4; }
+}
