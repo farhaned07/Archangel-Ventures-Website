@@ -8,7 +8,7 @@ import { bookingHref } from "@/lib/site";
 const links = [
   { href: "/ai-transformation-partner-thailand", label: "What we do" },
   { href: "/work", label: "Our work" },
-  { href: "/ai-transformation", label: "Workshop" },
+  { href: "/ai-transformation", label: "Implementation" },
   { href: "/farhan-sabbir", label: "Leadership" },
 ];
 export function Navbar() {

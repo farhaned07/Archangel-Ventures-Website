@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Farhan Sabbir | AI Transformation Partner in Thailand",
     description:
-      "Founder & Executive Director of Archangel Company Limited. AI transformation, applied AI systems and workflow implementation in Thailand.",
+      "Founder & Executive Director of Archangel Company Limited. Founder-led AI implementation and workflow automation in Thailand.",
     url: "/farhan-sabbir",
     type: "profile",
   },
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Farhan Sabbir | AI Transformation Partner in Thailand",
     description:
-      "Founder & Executive Director of Archangel Company Limited. AI transformation and applied AI systems in Thailand.",
+      "Founder & Executive Director of Archangel Company Limited. AI implementation from a defined business problem to a working system.",
   },
 };
 
@@ -37,7 +37,7 @@ const profileSchema = {
     name: "Farhan Sabbir",
     jobTitle: "Founder & Executive Director",
     description:
-      "AI Transformation Partner in Thailand and Founder & Executive Director of Archangel Company Limited.",
+      "AI Implementation Partner in Thailand and Founder & Executive Director of Archangel Company Limited.",
     disambiguatingDescription:
       "Bangkok-based founder leading AI transformation and applied AI work through Archangel Company Limited in Thailand.",
     url: absoluteUrl("/farhan-sabbir"),
@@ -81,7 +81,7 @@ export default function FarhanSabbirPage() {
         <SectionLabel number="01">Founder & Executive Director</SectionLabel>
         <h1>Farhan Sabbir.</h1>
         <p className="hero-deck">
-          AI Transformation Partner in Thailand.
+          AI Transformation & Implementation Partner in Thailand.
           <br />
           Founder & Executive Director of Archangel Company Limited.
         </p>
@@ -111,8 +111,8 @@ export default function FarhanSabbirPage() {
       <section className="dark-section">
         <div className="page-shell">
           <p className="profile-quote">
-            The useful question is where AI can change the work enough to make a
-            difference to the business.
+            The work matters more than the AI pitch. Find the bottleneck,
+            build the system and measure what changes.
           </p>
           <cite>Our starting point · Archangel</cite>
         </div>
@@ -129,8 +129,8 @@ export default function FarhanSabbirPage() {
         <div className="prose">
           <p>
             Farhan leads Archangel across product, implementation and client
-            work. His focus is the connection between an operating problem and
-            software people can actually use.
+            work. His focus is taking an operating problem through system design,
+            implementation and a measurable result.
           </p>
           <p>
             That work includes healthcare documentation and multilingual care

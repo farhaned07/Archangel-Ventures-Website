@@ -12,9 +12,9 @@ import {
 import { bookingHref } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Archangel | AI Transformation Partner in Thailand",
+  title: "Archangel | AI Implementation Partner in Bangkok, Thailand",
   description:
-    "Archangel is a Bangkok-based AI transformation partner in Thailand. We identify expensive work, redesign workflows, build AI systems and measure the business result.",
+    "Archangel implements AI automation for business operations in Thailand. Start with a free fit call, a scoped 30-day pilot, and a measurable path to production.",
   alternates: { canonical: "/" },
 };
 
@@ -24,27 +24,27 @@ export default function Home() {
       <section className="relative bg-[#111312] text-[#f5f6f2]">
         <div className="page-shell flex min-h-[720px] flex-col pb-8 pt-[122px] md:min-h-[820px] md:pb-10 md:pt-[150px]">
           <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#9faa9f] md:text-xs">
-            AI transformation partner · Bangkok, Thailand
+            AI implementation partner · Bangkok, Thailand
           </p>
 
           <div className="my-auto max-w-[1080px] py-12 md:py-20">
             <h1 className="max-w-[980px] text-[clamp(3.75rem,10vw,7.4rem)] font-medium leading-[0.94] tracking-[-0.065em]">
-              Make AI useful
+              AI that works.
               <br />
-              <span className="text-[#adb5ae]">at work.</span>
+              <span className="text-[#adb5ae]">In your business.</span>
             </h1>
 
             <div className="mt-8 grid max-w-[900px] gap-8 md:mt-10 md:grid-cols-[1fr_auto] md:items-end md:gap-16">
               <p className="max-w-[590px] text-[18px] leading-[1.6] text-[#c8cec8] md:text-[20px]">
-                We identify expensive work, redesign it, build AI systems and
-                measure what changes.
+                We redesign expensive workflows, implement working AI systems
+                and measure the result. Start with one 30-day paid pilot.
               </p>
               <Link
                 href={bookingHref}
                 className="group inline-flex w-fit items-center gap-3 border-b border-[#738078] pb-2 text-[15px] font-medium"
                 data-cta="hero-opportunity-call"
               >
-                Book an AI Opportunity Call
+                Discuss an implementation
                 <ArrowUpRight
                   size={18}
                   aria-hidden="true"

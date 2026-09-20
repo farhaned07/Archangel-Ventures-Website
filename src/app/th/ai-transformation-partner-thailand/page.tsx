@@ -95,15 +95,16 @@ export default function ThaiAITransformationPage() {
           <span className="muted">ให้เป็นผลลัพธ์ของธุรกิจ</span>
         </h1>
         <p className="hero-deck">
-          Archangel Company Limited ช่วยทีมผู้บริหารในประเทศไทยค้นหางานที่มีต้นทุนสูง
-          ออกแบบกระบวนการใหม่ พัฒนาระบบ AI และวัดผลลัพธ์ที่เกิดขึ้นจริง
+          Archangel Company Limited ช่วยองค์กรในประเทศไทยปรับขั้นตอนการทำงานที่มีต้นทุนสูง
+          และพัฒนาระบบ AI ที่ใช้งานได้จริง เริ่มจากการพูดคุยเบื้องต้นฟรีและโครงการนำร่อง 30 วัน
+          โดยกำหนดขอบเขตและตัวชี้วัดร่วมกันก่อนเริ่มงาน
         </p>
         <div className="hero-actions">
           <Link href="/ai-transformation" className="button-primary">
-            ดู AI Transformation Workshop
+            ดูบริการทดลองติดตั้งระบบ AI ภายใน 30 วัน
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
-          <TextLink href={bookingHref}>นัดคุย AI Opportunity Call</TextLink>
+          <TextLink href={bookingHref}>นัดคุยเบื้องต้นฟรี</TextLink>
         </div>
       </section>
 

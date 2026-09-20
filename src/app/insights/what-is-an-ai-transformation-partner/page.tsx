@@ -308,7 +308,7 @@ export default function AITransformationPartnerGuide() {
               </Link>{" "}
               or the{" "}
               <Link href="/ai-transformation">
-                AI Transformation Workshop in Bangkok
+                AI implementation and 30-day pilot in Bangkok
               </Link>.
             </p>
 

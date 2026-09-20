@@ -4,9 +4,9 @@ import Link from "next/link";
 import { emailHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Book a 15-Minute AI Opportunity Call | Archangel",
+  title: "Discuss AI Implementation | Book a Free Fit Call | Archangel",
   description:
-    "Book a short call with Archangel to discuss where work is costing your business time or money.",
+    "Book a free 15-minute fit call to discuss a defined workflow, decision owner and a possible 30-day AI implementation pilot.",
   alternates: {
     canonical: "/book",
   },
@@ -25,15 +25,15 @@ export default function BookPage() {
           <Link href="/" className="route-breadcrumb">
             Archangel / Start a conversation
           </Link>
-          <SectionLabel number="01">AI Opportunity Call</SectionLabel>
+          <SectionLabel number="01">Free implementation fit call</SectionLabel>
           <h1>
             One conversation.
             <br />
             <span className="muted">A useful next step.</span>
           </h1>
           <p className="hero-deck">
-            Tell us where work is slow, manual or expensive. We’ll explore the
-            opportunity and whether a workshop makes sense.
+            Bring one workflow that needs to work better. We’ll discuss its
+            current cost, systems, decision owner and whether a paid implementation pilot makes sense.
           </p>
           <div className="booking-meta">
             <span>
