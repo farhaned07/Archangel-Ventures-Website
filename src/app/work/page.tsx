@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <main id="main-content" className="aa-home aa-portfolio">
+    <main id="main-content" className="aa-home aa-studio-interior aa-portfolio">
       <section className="aa-portfolio-hero">
         <div className="page-shell">
           <div className="aa-portfolio-top"><span>ARCHANGEL / SELECTED WORK</span><span>INDEPENDENT TECHNOLOGY STUDIO · BANGKOK</span></div>
