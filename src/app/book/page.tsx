@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 import { SectionLabel } from "@/components/editorial/Elements";
 export default function BookPage() {
   return (
-    <main id="main-content" className="interior">
+    <main id="main-content" className="interior aa-studio-interior">
       <section className="page-hero page-shell split-hero">
         <div>
           <Link href="/" className="route-breadcrumb">
