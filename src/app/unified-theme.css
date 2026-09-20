@@ -17,7 +17,7 @@
   --surface:#eeece6;
 }
 body { background:#f7f6f2; color:#242321; }
-.site-header:not(.header-on-dark) { background:#f7f6f2; border-color:#d6d3cb; }
+.site-header:not(.header-on-dark) { background:#1b1b1a; color:#f7f6f2; border-color:#4b4944; }
 .header-on-dark { background:transparent; color:#f7f6f2; border-color:#ffffff2e; }
 .site-footer { background:#1b1b1a; color:#f6f5ef; }
 .footer-main > div:first-child > span,
