@@ -17,7 +17,7 @@ export default function BookingConfirmedPage() {
   return (
     <main
       id="main-content"
-      className="pt-[64px] md:pt-[72px] min-h-[78vh] bg-[#f6f6f2] flex items-center"
+      className="aa-studio-interior aa-utility-page pt-[64px] md:pt-[72px] min-h-[78vh] bg-[#f6f6f2] flex items-center"
     >
       <section className="page-shell py-16 md:py-24 w-full">
         <div className="max-w-3xl">
