@@ -7,6 +7,8 @@ import { ConsentBanner } from "@/components/analytics/ConsentBanner";
 import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
 import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
+import "./atelier.css";
+import "./atelier-more.css";
 
 const inter = localFont({
   src: [
@@ -32,9 +34,9 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "Archangel Company Limited | AI Transformation Thailand",
+  title: "Archangel Company Limited | Technology & AI Implementation",
   description:
-    "Archangel Company Limited implements AI automation for business operations in Thailand. Free fit call, 30-day pilot and production implementation.",
+    "Archangel is a founder-led technology and AI implementation company in Bangkok. We design and build software products, intelligent workflows, websites and digital platforms.",
   applicationName: "Archangel",
   category: "technology",
   alternates: {
@@ -55,9 +57,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Archangel Company Limited | Make AI useful at work",
+    title: "Archangel | Ideas into working technology",
     description:
-      "Founder-led AI implementation, workflow automation and measurable operational improvement in Thailand.",
+      "Software products, AI automation and digital platforms. Founder-led design and implementation in Bangkok.",
     type: "website",
     url: "/",
     locale: "en_TH",
@@ -158,7 +160,7 @@ const structuredData = {
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "AI implementation services",
+        name: "Technology design and implementation services",
         itemListElement: [
           {
             "@type": "Offer",
@@ -166,6 +168,14 @@ const structuredData = {
               "@type": "Service",
               name: "AI implementation and workflow automation",
               url: absoluteUrl("/ai-transformation-partner-thailand"),
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Software product engineering and digital platforms",
+              url: absoluteUrl("/services"),
             },
           },
           {
