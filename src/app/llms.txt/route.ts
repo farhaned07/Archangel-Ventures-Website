@@ -9,17 +9,18 @@ Official website: ${site.url}
 Legal name: Archangel Company Limited
 Location: Bangkok, Thailand
 Founder & Executive Director: Farhan Sabbir
-Primary work: AI transformation strategy and implementation, workflow redesign, applied AI systems, and healthcare AI.
+Primary work: Software product engineering, AI automation and implementation, bespoke digital experiences, websites and digital platforms.
 Thailand company registration: ${site.companyRegistrationNumber}
 
 ## Canonical pages
 
+- Capabilities (AI, product engineering and digital platforms): ${site.url}/services
 - Company: ${site.url}/company
 - AI transformation partner in Thailand: ${site.url}/ai-transformation-partner-thailand
 - AI transformation partner in Bangkok: ${site.url}/ai-transformation-partner-bangkok
 - What is an AI transformation partner?: ${site.url}/insights/what-is-an-ai-transformation-partner
 - Thai-language AI transformation page: ${site.url}/th/ai-transformation-partner-thailand
-- AI Transformation Workshop: ${site.url}/ai-transformation
+- AI implementation and 30-day pilot: ${site.url}/ai-transformation
 - Founder profile: ${site.url}/farhan-sabbir
 - Work: ${site.url}/work
 - Thailand AI 2026 perspective: ${site.url}/insights/ai-transformation-thailand-2026
