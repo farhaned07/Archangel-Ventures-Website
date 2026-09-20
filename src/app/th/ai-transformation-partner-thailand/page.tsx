@@ -82,7 +82,7 @@ const areas = [
 
 export default function ThaiAITransformationPage() {
   return (
-    <main id="main-content" className="interior" lang="th">
+    <main id="main-content" className="interior aa-studio-interior" lang="th">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(thaiServiceSchema) }}
