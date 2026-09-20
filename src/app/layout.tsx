@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Archangel | Ideas into working technology",
+    title: "Archangel | Make AI useful at work",
     description:
       "Software products, AI automation and digital platforms. Founder-led design and implementation in Bangkok.",
     type: "website",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Archangel Company Limited — Ideas into working technology",
+        alt: "Archangel Company Limited — Make AI useful at work",
       },
     ],
   },
@@ -94,7 +94,7 @@ const structuredData = {
       url: site.url,
       logo: absoluteUrl("/favicon.ico"),
       email: site.email,
-      slogan: "Ideas into working technology.",
+      slogan: "Make AI useful at work.",
       foundingDate: "2023-10-05",
       disambiguatingDescription:
         "Thailand-registered software and AI company based in Bangkok.",
