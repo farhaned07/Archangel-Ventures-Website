@@ -236,3 +236,71 @@
  .aa-hero h1 { font-size:47px; }.aa-pill { gap:18px; }.lab-record-tag { display:none; }.aa-capability-main h3 { font-size:30px; }
 }
 @media (prefers-reduced-motion:reduce) { .aa-home *, .build-lab * { transition:none!important; animation:none!important; } }
+
+/* Homepage palette refinement: graphite + warm ivory, with colour used sparingly.
+   Scoped to the homepage only; service pages, company identity, and logo unchanged. */
+.aa-landing { --aa-night:#151515; --aa-ink:#20201e; --aa-paper:#f7f6f2; --aa-muted:#77766f; --aa-rule:#d6d4cd; }
+.aa-landing .aa-hero { background:#151515; }
+.aa-landing .aa-hero-glow { opacity:.18; background:radial-gradient(ellipse,#ffffff20 0%,transparent 65%); }
+.aa-landing .aa-hero h1 em { color:#f2f1ea; }
+.aa-landing .aa-accent-dot { color:#d1dfad; }
+.aa-landing .aa-overline { color:#c1c3b9; }
+.aa-landing .aa-hero-topline,.aa-landing .aa-hero-bottom { color:#acaea8; }
+.aa-landing .aa-status-dot { background:#d1dfad; box-shadow:none; }
+.aa-landing .aa-hero-description,.aa-landing .aa-art-label { color:#c8c8c1; }
+.aa-landing .aa-hero-bottom { border-top-color:#494946; }
+.aa-landing .aa-pill-lime { background:#f0efe8; color:#20201e; }
+.aa-landing .aa-pill-lime:hover { background:#dfe4d0; }
+.aa-landing .aa-signature-icon { color:#dbdacf; }
+.aa-landing .aa-manifesto { background:#f7f6f2; }
+.aa-landing .aa-manifesto>p span { color:#999992; }
+.aa-landing .aa-capabilities { background:#eeede8; }
+.aa-landing .aa-kicker { color:#73736c; }
+.aa-landing .aa-section-heading h2 em { color:#92918c; }
+.aa-landing .aa-capability-list,.aa-landing .aa-capability { border-color:#cbc9c2; }
+.aa-landing .aa-capability:hover { background:#faf9f5; }
+.aa-landing .aa-capability-main>p,.aa-landing .aa-capability-number,.aa-landing .aa-capability-copy,.aa-landing .aa-capabilities-footer { color:#77766d; }
+.aa-landing .aa-capability-tags span,.aa-landing .aa-capability-arrow { border-color:#d0cec7; color:#65645d; }
+.aa-landing .aa-capability:hover .aa-capability-arrow { background:#e5e5dc; }
+.aa-landing .aa-work-section { background:#f7f6f2; }
+.aa-landing .aa-work-heading h2 em { color:#96958e; }
+.aa-landing .aa-hanna-copy { background:#252525; }
+.aa-landing .aa-hanna-visual { background:radial-gradient(circle at 62% 18%,#f4f3ef,#d8d9d4); }
+.aa-landing .aa-feature-symbol { background:#e4e4db; color:#34342e; }
+.aa-landing .aa-feature-top,.aa-landing .aa-feature-bottom,.aa-landing .aa-hanna-detail { color:#c2c1b9; }
+.aa-landing .aa-feature-bottom { border-top-color:#575651; }
+.aa-landing .aa-visual-caption { color:#6d6d67; }
+.aa-landing .aa-work-brief { background:#eae9e4; }
+.aa-landing .aa-work-web { background:#e6e2d9; }
+.aa-landing .aa-work-wire i,.aa-landing .aa-work-wire i:not(:nth-child(4)):before { border-color:#aaa9a2; background-color:transparent; }
+.aa-landing .aa-work-wire i:not(:nth-child(4)):before { background-color:#aaa9a2; }
+.aa-landing .aa-work-wire i:after { background:#888982; }
+.aa-landing .aa-web-study { background:linear-gradient(120deg,#34332f,#1d1d1c 80%); }
+.aa-landing .aa-web-study em { color:#eae8db; }
+.aa-landing .aa-process { background:#efeee9; }
+.aa-landing .aa-process-intro h2 em { color:#93928c; }
+.aa-landing .aa-process-steps,.aa-landing .aa-process-step { border-color:#d1cfc8; }
+.aa-landing .aa-start { background:#1c1c1c; }
+.aa-landing .aa-start .aa-kicker { color:#b9b9b0; }
+.aa-landing .aa-start h2 em { color:#f0eee6; }
+.aa-landing .aa-start-right>p { color:#c9c8c1; }
+/* The interactive studio keeps only tiny functional state accents. */
+.aa-landing .build-lab { border-color:#555550; }
+.aa-landing .lab-frame-top,.aa-landing .lab-frame-bottom { background:#2c2c2a; color:#bdbdb6; }
+.aa-landing .lab-lights i:first-child { background:#d9d8c9; }
+.aa-landing .lab-frame-right svg { color:#d7d7c8; }
+.aa-landing .lab-switch { background:#252524; }
+.aa-landing .lab-switch button { color:#aaa9a2; }
+.aa-landing .lab-switch button[aria-selected=true] { color:#fff; border-bottom-color:#e8e6da; }
+.aa-landing .lab-switch button span { color:#8c8b85; }
+.aa-landing .lab-app-nav,.aa-landing .lab-operations { background:#f5f4f0; }
+.aa-landing .lab-app-mark,.aa-landing .lab-app-heading h3 { color:#292924; }
+.aa-landing .lab-app-period,.aa-landing .lab-eyebrow { color:#89877b; }
+.aa-landing .lab-action { background:#33332e; }
+.aa-landing .lab-record-icon { background:#e8e7dd; color:#55564e; }
+.aa-landing .lab-product { background:#f3f2ed; }
+.aa-landing .lab-product-sidebar { background:#e6e5de; color:#808078; }
+.aa-landing .lab-product-symbol,.aa-landing .lab-product-main h3 em { color:#77786f; }
+.aa-landing .lab-checkbox.is-done { background:#666962; }
+.aa-landing .lab-product-bars span:first-child { background:#777a72; }
+.aa-landing .lab-platform-dark { background:#2e2d2a; }
