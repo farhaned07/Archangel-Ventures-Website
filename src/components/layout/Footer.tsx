@@ -21,25 +21,13 @@ export function Footer() {
           </div>
           <nav aria-label="Footer navigation">
             <span>Explore</span>
-            <Link href="/services">Capabilities / What we build</Link>
+            <Link href="/services">Capabilities</Link>
             <Link href="/work">Selected work</Link>
-            <Link href="/company">Archangel Company Limited</Link>
-            <Link href="/ai-transformation-partner-thailand">
-              AI transformation partner Thailand
-            </Link>
-            <Link href="/ai-transformation-partner-bangkok">
-              AI transformation partner Bangkok
-            </Link>
-            <Link href="/insights/what-is-an-ai-transformation-partner">
-              What is an AI transformation partner?
-            </Link>
-            <Link href="/th/ai-transformation-partner-thailand">
-              AI Transformation ประเทศไทย
-            </Link>
-            <Link href="/ai-transformation">AI implementation & 30-day pilot</Link>
-            <Link href="/farhan-sabbir">Farhan Sabbir</Link>
+            <Link href="/ai-transformation">AI implementation</Link>
+            <Link href="/company">The company</Link>
+            <Link href="/farhan-sabbir">Founder</Link>
             <Link href="/insights/ai-transformation-thailand-2026">
-              Thailand AI 2026
+              Insights
             </Link>
           </nav>
           <div className="footer-contact">

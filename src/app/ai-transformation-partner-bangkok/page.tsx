@@ -126,7 +126,7 @@ const workflows = [
 
 export default function AITransformationPartnerBangkokPage() {
   return (
-    <main id="main-content" className="interior">
+    <main id="main-content" className="interior aa-studio-interior">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localSchema) }}

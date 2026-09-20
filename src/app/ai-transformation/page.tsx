@@ -36,7 +36,7 @@ const offering = {
 };
 export default function AITransformationPage() {
   return (
-    <main id="main-content" className="interior">
+    <main id="main-content" className="interior aa-studio-interior">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(offering) }} />
       <section className="page-hero page-shell split-hero">
         <div>
