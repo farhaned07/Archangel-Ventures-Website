@@ -10,7 +10,7 @@ export function Footer() {
             <Link href="/" className="wordmark" aria-label="Archangel home">
               ΛRCHΛNGEL
             </Link>
-            <p>Ideas into working technology.</p>
+            <p>Make AI useful at work.</p>
             <span>
               Archangel Company Limited
               <br />
