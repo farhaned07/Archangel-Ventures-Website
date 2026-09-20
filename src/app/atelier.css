@@ -304,3 +304,13 @@
 .aa-landing .lab-checkbox.is-done { background:#666962; }
 .aa-landing .lab-product-bars span:first-child { background:#777a72; }
 .aa-landing .lab-platform-dark { background:#2e2d2a; }
+
+/* Homepage narrative: keep the concise hero legible and give project evidence
+   its own explanatory space without changing the established visual system. */
+.aa-landing .aa-work-heading-aside { max-width:360px; align-self:end; }
+.aa-landing .aa-work-heading-aside p { color:#74736d; font-size:15px; line-height:1.6; margin-bottom:17px; }
+.aa-landing .aa-work-heading-aside .aa-text-link { display:inline-flex; align-items:center; gap:9px; color:#20201e; font-size:14px; font-weight:600; border-bottom:1px solid #93918b; padding-bottom:8px; }
+@media(max-width:620px) {
+  .aa-landing .aa-work-heading-aside { max-width:100%; margin-top:23px; }
+  .aa-landing .aa-work-heading-aside p { font-size:14px; }
+}
