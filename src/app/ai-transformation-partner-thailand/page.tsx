@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Transformation Partner in Thailand & Bangkok | Archangel",
     description:
-      "Strategy and implementation for management teams in Thailand that want measurable business value from AI.",
+      "From a defined business problem to a working AI system: free fit call, scoped 30-day paid pilot and measured deployment.",
     url: "/ai-transformation-partner-thailand",
     type: "website",
     locale: "en_TH",
@@ -62,9 +62,9 @@ const faqs = [
       "A consultant may stop at recommendations and an agency may begin with a build request. A transformation partner connects business diagnosis, workflow redesign, implementation, adoption and measurement in one engagement.",
   },
   {
-    question: "Who is the AI Transformation Workshop for?",
+    question: "How does the 30-day AI implementation pilot work?",
     answer:
-      "The workshop is designed for management teams that know AI matters but need a practical way to decide where to start, what to fund and what business result to measure.",
+      "We scope one business workflow, agree baseline and acceptance criteria, build a working system in an approved environment and evaluate results with real users. Production rollout is quoted separately.",
   },
   {
     question: "Where does Archangel work?",
@@ -97,8 +97,8 @@ const serviceSchema = {
       },
       offers: {
         "@type": "Offer",
-        name: "AI Transformation Workshop",
-        price: "45000",
+        name: "30-day AI implementation pilot",
+        price: "150000",
         priceCurrency: "THB",
         url: absoluteUrl("/ai-transformation"),
       },
@@ -155,16 +155,16 @@ export default function AITransformationPartnerThailandPage() {
         </h1>
         <p className="hero-deck">
           Archangel is an AI transformation partner in Bangkok, Thailand.
-          We work with management teams from strategy through implementation:
-          find expensive work, redesign the workflow, build the system and
-          measure the operating result.
+          We work with management teams to turn expensive workflows into working
+          AI systems. Start with a free fit call, a scoped paid pilot and
+          measurable results before committing to a full rollout.
         </p>
         <div className="hero-actions">
           <Link href="/ai-transformation" className="button-primary">
-            Explore the ฿45,000 workshop
+            Explore the 30-day pilot
             <ArrowRight size={18} aria-hidden="true" />
           </Link>
-          <TextLink href={bookingHref}>Book an AI Opportunity Call</TextLink>
+          <TextLink href={bookingHref}>Discuss an implementation</TextLink>
         </div>
       </section>
       <section className="dark-section">
