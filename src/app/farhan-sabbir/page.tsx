@@ -69,7 +69,7 @@ import {
 } from "@/components/editorial/Elements";
 export default function FarhanSabbirPage() {
   return (
-    <main id="main-content" className="interior">
+    <main id="main-content" className="interior aa-studio-interior">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profileSchema) }}
