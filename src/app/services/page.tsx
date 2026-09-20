@@ -18,7 +18,7 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <main id="main-content" className="aa-home aa-services-page">
+    <main id="main-content" className="aa-home aa-studio-interior aa-services-page">
       <section className="aa-services-hero">
         <div className="page-shell">
           <span className="aa-kicker">CAPABILITIES / DESIGN + ENGINEERING</span>
