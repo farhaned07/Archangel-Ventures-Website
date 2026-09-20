@@ -69,15 +69,15 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Archangel Company Limited — Make AI useful at work",
+        alt: "Archangel Company Limited — Ideas into working technology",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Archangel Company Limited | AI Transformation Thailand",
+    title: "Archangel Company Limited | Technology & AI Implementation",
     description:
-      "AI implementation for business operations. Scope one workflow, build a working pilot and measure the result.",
+      "Technology design and implementation. Software products, intelligent workflows and digital experiences.",
     images: ["/opengraph-image"],
   },
 };
@@ -94,7 +94,7 @@ const structuredData = {
       url: site.url,
       logo: absoluteUrl("/favicon.ico"),
       email: site.email,
-      slogan: "Make AI useful at work.",
+      slogan: "Ideas into working technology.",
       foundingDate: "2023-10-05",
       disambiguatingDescription:
         "Thailand-registered software and AI company based in Bangkok.",
@@ -122,7 +122,7 @@ const structuredData = {
         },
       ],
       description:
-        "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company delivering AI workflow implementation, automation and production integration.",
+        "Archangel Company Limited is a Bangkok-based software and AI technology studio providing software product engineering, workflow automation, AI implementation and digital platform development.",
       address: {
         "@type": "PostalAddress",
         streetAddress: site.streetAddress,
@@ -157,6 +157,9 @@ const structuredData = {
         "AI workflow implementation",
         "Enterprise AI",
         "Healthcare AI",
+        "Software product engineering",
+        "Digital platform development",
+        "Website design and development",
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
