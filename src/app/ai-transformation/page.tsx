@@ -5,217 +5,86 @@ import { Closing, SectionLabel } from "@/components/editorial/Elements";
 import { absoluteUrl, bookingHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "AI Transformation Workshop Bangkok | Archangel",
-  description:
-    "A ฿45,000 on-site AI transformation workshop for management teams in Bangkok. Identify 3–5 high-value workflows, estimate ROI, and leave with a practical 30-day action plan.",
-  alternates: {
-    canonical: "/ai-transformation",
-  },
+  title: "AI Implementation Services & 30-Day Pilot | Archangel Thailand",
+  description: "Archangel builds working AI systems for business operations. Start with a free fit call, a scoped 30-day implementation pilot from ฿150,000, or a full enterprise implementation.",
+  alternates: { canonical: "/ai-transformation" },
   openGraph: {
-    title: "AI Transformation Workshop Bangkok | Archangel",
-    description:
-      "Find 3–5 AI opportunities worth funding. Fixed fee, on-site in Bangkok, with a practical decision pack and 30-day action plan.",
-    url: "/ai-transformation",
-    type: "website",
-    locale: "en_TH",
-    siteName: "Archangel",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Archangel AI Transformation Workshop Bangkok",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "AI Transformation Workshop Bangkok | Archangel",
-    description:
-      "Find 3–5 AI opportunities worth funding. Fixed fee, on-site in Bangkok.",
-    images: ["/opengraph-image"],
+    title: "AI Implementation & 30-Day Pilot | Archangel",
+    description: "From a real workflow to a working AI system. Founder-led delivery, measurable acceptance criteria, and a practical path to production.",
+    url: "/ai-transformation", type: "website", locale: "en_TH", siteName: "Archangel",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Archangel AI implementation in Thailand" }],
   },
 };
-
-const outputs = [
-  [
-    "Workflow map",
-    "How the work moves today, where it slows down, and which handoffs add cost.",
-  ],
-  [
-    "3–5 ranked opportunities",
-    "A shortlist ordered by business value, data readiness and implementation effort.",
-  ],
-  [
-    "Value estimate",
-    "The baseline, assumptions, likely costs and measures needed to judge the investment.",
-  ],
-  [
-    "30 day action plan",
-    "A first scope, accountable owner, dependencies and a practical way to test the result.",
-  ],
+const steps = [
+  ["Free fit call", "15 minutes to understand the process, its owner, the expected value, system access and decision timetable. If a pilot is not viable, we say so."],
+  ["Scope and baseline", "Agree one workflow, representative data, decision owner, risk boundary, success metrics, delivery responsibilities and a written statement of work."],
+  ["30-day paid pilot", "Build and test one bounded AI workflow with real users in an approved environment. Demonstrate the outcome, exceptions and limitations against the baseline."],
+  ["Production and support", "After a successful pilot, agree separately on security, integration, rollout, training, monitoring and ongoing support. No automatic obligation to expand."],
 ];
-const workshopSchema = {
+const offering = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "@id": `${absoluteUrl("/ai-transformation")}#workshop`,
-  name: "AI Transformation Workshop",
-  serviceType: "Management workshop",
+  "@id": `${absoluteUrl("/ai-transformation")}#service`,
+  name: "AI implementation and automation",
+  serviceType: "AI workflow implementation and enterprise integration",
   provider: { "@id": `${site.url}/#organization` },
-  areaServed: { "@type": "City", name: "Bangkok" },
-  offers: {
-    "@type": "Offer",
-    price: "45000",
-    priceCurrency: "THB",
-    url: absoluteUrl("/ai-transformation"),
-  },
+  areaServed: { "@type": "Country", name: "Thailand" },
+  offers: [
+    { "@type": "Offer", name: "30-day AI implementation pilot", price: "150000", priceCurrency: "THB", url: absoluteUrl("/ai-transformation"), description: "Indicative starting fee. Final price depends on agreed scope, access and delivery requirements." },
+    { "@type": "Offer", name: "Enterprise AI implementation", price: "400000", priceCurrency: "THB", url: absoluteUrl("/ai-transformation"), description: "Indicative starting fee; scoped and quoted separately." }
+  ],
 };
 export default function AITransformationPage() {
   return (
     <main id="main-content" className="interior">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(workshopSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(offering) }} />
       <section className="page-hero page-shell split-hero">
         <div>
-          <SectionLabel number="01">AI Transformation Workshop</SectionLabel>
-          <h1>
-            Know what
-            <br />
-            is worth
-            <br />
-            <span className="muted">building.</span>
-          </h1>
-          <p className="hero-deck">
-            A working session for management teams. Your workflows, your
-            constraints, one clear investment decision.
-          </p>
+          <SectionLabel number="01">AI implementation / Bangkok · Thailand</SectionLabel>
+          <h1>From a real problem.<br /><span className="muted">To a working system.</span></h1>
+          <p className="hero-deck">You bring an operational problem and someone who owns it. We redesign the workflow, build the AI system, test it with your team and measure what changes.</p>
           <div className="hero-actions">
-            <Link
-              href={bookingHref}
-              className="button-primary"
-              data-cta="workshop-hero-call"
-            >
-              Discuss your workshop
-              <ArrowRight size={18} aria-hidden="true" />
+            <Link href={bookingHref} className="button-primary" data-cta="implementation-hero-call">
+              Discuss your implementation <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
         </div>
         <div className="workshop-sheet">
-          <div className="sheet-top">
-            <span>Management workshop</span>
-            <span>Bangkok · on site</span>
-          </div>
-          <p className="workshop-price">{site.workshopPrice}</p>
-          <p className="sheet-note">
-            Fixed fee · credited toward implementation
-          </p>
+          <div className="sheet-top"><span>First delivery engagement</span><span>One workflow · 30 days</span></div>
+          <p className="workshop-price">From ฿150,000</p>
+          <p className="sheet-note">Paid implementation pilot · scope confirmed before work begins</p>
           <ol className="deliverables">
-            <li>
-              <span>01</span>Walk through the actual work
-            </li>
-            <li>
-              <span>02</span>Identify what needs to change
-            </li>
-            <li>
-              <span>03</span>Rank the strongest opportunities
-            </li>
-            <li>
-              <span>04</span>Agree the first move
-            </li>
+            <li><span>01</span> A measured baseline and acceptance criteria</li>
+            <li><span>02</span> A working AI-assisted workflow</li>
+            <li><span>03</span> Human review, testing and exception handling</li>
+            <li><span>04</span> Results and a production go/no-go decision</li>
           </ol>
-          <p className="sheet-note">
-            Scope and scheduling agreed on the opportunity call.
-          </p>
+          <p className="sheet-note">One bounded use case. Major integrations, licences, infrastructure and full production rollout are quoted separately.</p>
         </div>
       </section>
       <section className="dark-section">
         <div className="page-shell section-grid">
-          <div>
-            <SectionLabel number="02">The output</SectionLabel>
-            <h2>
-              A decision pack.
-              <br />
-              <span className="muted">Built from your business.</span>
-            </h2>
-          </div>
+          <div><SectionLabel number="02">The engagement</SectionLabel><h2>We build.<br /><span className="muted">You see what changes.</span></h2></div>
           <ol className="editorial-list">
-            {outputs.map(([title, copy], i) => (
-              <li key={title}>
-                <span>0{i + 1}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{copy}</p>
-                </div>
-              </li>
-            ))}
+            {steps.map(([title,copy],i)=><li key={title}><span>0{i+1}</span><div><h3>{title}</h3><p>{copy}</p></div></li>)}
           </ol>
         </div>
       </section>
       <section className="page-shell section-grid">
-        <div>
-          <SectionLabel number="03">In the room</SectionLabel>
-          <h2>The people who can change the work.</h2>
-        </div>
+        <div><SectionLabel number="03">Ways to engage</SectionLabel><h2>Start small.<br /><span className="muted">Scale what works.</span></h2></div>
         <div className="prose">
-          <h3>Management, process owners and technology.</h3>
-          <p>
-            Bring someone who owns the business result, someone who does the
-            work, and someone who understands the systems. We work through real
-            examples together.
-          </p>
-          <h3>Start with a workflow you already know.</h3>
-          <p>
-            Invoice handling. Reporting. Customer requests. Documentation. The
-            useful starting point is work with visible friction and enough
-            volume to matter.
-          </p>
-          <p>
-            We agree the workshop scope and what to prepare on the first call.
-            Use representative or redacted examples where appropriate.
-          </p>
+          <h3>Free initial assessment</h3><p>A 15-minute fit call. We establish whether there is a defined business problem, an accountable owner, accessible systems and a sensible next step. In-depth discovery is scoped separately.</p>
+          <h3>30-day implementation pilot · from ฿150,000</h3><p>One agreed workflow, one measurable outcome, a working system tested with your team and a clear decision on rollout. Timeline begins after scope, permissions and representative data are ready.</p>
+          <h3>Enterprise implementation · from ฿400,000</h3><p>Production integrations, access control, deployment, training and adoption. Final pricing and schedule depend on the systems, data and operational risk involved.</p>
+          <h3>Ongoing operation · scoped monthly</h3><p>Monitoring, support and optimization after deployment. We agree support hours, responsibilities, infrastructure and third-party costs in writing. No support retainer is presumed.</p>
+          <p>Prices are indicative starting fees in THB, excluding applicable taxes and third-party costs. Each engagement requires an agreed statement of work.</p>
         </div>
       </section>
       <section className="page-shell section-grid">
-        <div>
-          <SectionLabel number="04">Before you book</SectionLabel>
-          <h2>A few practical answers.</h2>
-        </div>
-        <div className="faq-list">
-          <details>
-            <summary>Is this an AI training session?</summary>
-            <p>
-              The focus is a business decision: which work should change, why it
-              is worth changing, and how to begin. Relevant AI concepts are
-              explained in the context of your work.
-            </p>
-          </details>
-          <details>
-            <summary>Does the fee include implementation?</summary>
-            <p>
-              The ฿45,000 covers the workshop and decision pack. Implementation
-              is scoped separately. The workshop fee is credited toward
-              implementation.
-            </p>
-          </details>
-          <details>
-            <summary>Do we have to commit to a build?</summary>
-            <p>
-              No. The decision pack helps you decide whether the business case
-              justifies implementation. The workshop is a standalone engagement.
-            </p>
-          </details>
-          <details>
-            <summary>How do we arrange it?</summary>
-            <p>
-              Start with a 15 minute AI Opportunity Call. We discuss the
-              workflow, confirm the fit and agree the scope and schedule.
-            </p>
-          </details>
-        </div>
+        <div><SectionLabel number="04">Fit</SectionLabel><h2>Bring the process owner.<br /><span className="muted">Not a slide deck.</span></h2></div>
+        <div className="prose"><p>We work best with teams that already have a workflow worth changing, a decision-maker, a real data sample and the ability to test the result. We measure time, accuracy, throughput, quality or cost against the current process; savings are not promised before the baseline is known.</p><p>Not every process needs AI. We recommend simpler automation when it can solve the problem more reliably.</p></div>
       </section>
-      <Closing title="Bring the work. Leave with a direction." />
+      <Closing title="Tell us what needs to work better." />
     </main>
   );
 }
