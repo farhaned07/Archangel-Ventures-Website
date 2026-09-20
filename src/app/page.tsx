@@ -25,7 +25,7 @@ const capabilities = [
 
 export default function Home() {
   return (
-    <main id="main-content" className="aa-home">
+    <main id="main-content" className="aa-home aa-landing">
       <section className="aa-hero">
         <div className="aa-hero-glow" aria-hidden="true" />
         <div className="page-shell aa-hero-inner">
