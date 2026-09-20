@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-09-20");
+  const lastModified = new Date("2026-09-21");
 
   return [
     {
@@ -10,6 +10,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "weekly",
       priority: 1,
+    },
+    {
+      url: absoluteUrl("/services"),
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.95,
     },
     {
       url: absoluteUrl("/company"),

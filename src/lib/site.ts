@@ -12,7 +12,7 @@ export const site = {
   email: "farhan.sabbir07@gmail.com",
   phone: "+66 92 686 7042",
   pilotPrice: "From ฿150,000",
-  bookingSubject: "15 minute AI implementation fit call",
+  bookingSubject: "15 minute project fit call",
   location: "Bangkok, Thailand",
   streetAddress: "57 Witthayu Road, Lumphini, Pathum Wan",
   postalCode: "10330",

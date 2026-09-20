@@ -7,6 +7,8 @@ import { ConsentBanner } from "@/components/analytics/ConsentBanner";
 import { AnalyticsEvents } from "@/components/analytics/AnalyticsEvents";
 import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
+import "./atelier.css";
+import "./atelier-more.css";
 
 const inter = localFont({
   src: [
@@ -32,9 +34,9 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "Archangel Company Limited | AI Transformation Thailand",
+  title: "Archangel Company Limited | Technology & AI Implementation",
   description:
-    "Archangel Company Limited implements AI automation for business operations in Thailand. Free fit call, 30-day pilot and production implementation.",
+    "Archangel is a founder-led technology and AI implementation company in Bangkok. We design and build software products, intelligent workflows, websites and digital platforms.",
   applicationName: "Archangel",
   category: "technology",
   alternates: {
@@ -55,9 +57,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Archangel Company Limited | Make AI useful at work",
+    title: "Archangel | Ideas into working technology",
     description:
-      "Founder-led AI implementation, workflow automation and measurable operational improvement in Thailand.",
+      "Software products, AI automation and digital platforms. Founder-led design and implementation in Bangkok.",
     type: "website",
     url: "/",
     locale: "en_TH",
@@ -67,15 +69,15 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Archangel Company Limited — Make AI useful at work",
+        alt: "Archangel Company Limited — Ideas into working technology",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Archangel Company Limited | AI Transformation Thailand",
+    title: "Archangel Company Limited | Technology & AI Implementation",
     description:
-      "AI implementation for business operations. Scope one workflow, build a working pilot and measure the result.",
+      "Technology design and implementation. Software products, intelligent workflows and digital experiences.",
     images: ["/opengraph-image"],
   },
 };
@@ -92,7 +94,7 @@ const structuredData = {
       url: site.url,
       logo: absoluteUrl("/favicon.ico"),
       email: site.email,
-      slogan: "Make AI useful at work.",
+      slogan: "Ideas into working technology.",
       foundingDate: "2023-10-05",
       disambiguatingDescription:
         "Thailand-registered software and AI company based in Bangkok.",
@@ -120,7 +122,7 @@ const structuredData = {
         },
       ],
       description:
-        "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company delivering AI workflow implementation, automation and production integration.",
+        "Archangel Company Limited is a Bangkok-based software and AI technology studio providing software product engineering, workflow automation, AI implementation and digital platform development.",
       address: {
         "@type": "PostalAddress",
         streetAddress: site.streetAddress,
@@ -155,10 +157,13 @@ const structuredData = {
         "AI workflow implementation",
         "Enterprise AI",
         "Healthcare AI",
+        "Software product engineering",
+        "Digital platform development",
+        "Website design and development",
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "AI implementation services",
+        name: "Technology design and implementation services",
         itemListElement: [
           {
             "@type": "Offer",
@@ -166,6 +171,14 @@ const structuredData = {
               "@type": "Service",
               name: "AI implementation and workflow automation",
               url: absoluteUrl("/ai-transformation-partner-thailand"),
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Software product engineering and digital platforms",
+              url: absoluteUrl("/services"),
             },
           },
           {

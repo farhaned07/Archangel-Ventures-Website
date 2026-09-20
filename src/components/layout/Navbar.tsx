@@ -6,10 +6,10 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { bookingHref } from "@/lib/site";
 
 const links = [
-  { href: "/ai-transformation-partner-thailand", label: "What we do" },
-  { href: "/work", label: "Our work" },
-  { href: "/ai-transformation", label: "Implementation" },
-  { href: "/farhan-sabbir", label: "Leadership" },
+  { href: "/services", label: "Capabilities" },
+  { href: "/work", label: "Work" },
+  { href: "/ai-transformation", label: "AI implementation" },
+  { href: "/company", label: "Company" },
 ];
 export function Navbar() {
   const pathname = usePathname();
@@ -37,7 +37,7 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`site-header ${pathname === "/" ? "header-on-dark" : ""}`}
+        className={`site-header ${["/", "/services", "/work"].includes(pathname) ? "header-on-dark" : ""}`}
       >
         <nav className="page-shell nav-inner" aria-label="Main navigation">
           <Link href="/" aria-label="Archangel home" className="wordmark">
@@ -59,7 +59,7 @@ export function Navbar() {
             className="nav-call max-md:!hidden"
             data-cta="nav-opportunity-call"
           >
-            Let’s talk
+            Start a project
             <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
           <button
@@ -72,7 +72,7 @@ export function Navbar() {
               height: 36,
               border: 0,
               background: "transparent",
-              color: "#727873",
+              color: "inherit",
             }}
             aria-label="Open navigation"
             aria-expanded={open}
@@ -127,7 +127,7 @@ export function Navbar() {
           data-cta="mobile-nav-opportunity-call"
           onClick={close}
         >
-          Book an AI Opportunity Call
+          Start a project
           <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
         <p>

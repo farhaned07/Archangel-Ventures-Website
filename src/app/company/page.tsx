@@ -85,12 +85,12 @@ export default function CompanyPage() {
           <span className="muted">Company Limited.</span>
         </h1>
         <p className="hero-deck">
-          A Bangkok-based AI implementation partner. We redesign operational
-          workflows, build working systems and measure the business result.
+          A Bangkok-based technology and AI implementation company. We design
+          and build intelligent workflows, software products and digital experiences.
         </p>
         <div className="hero-actions">
-          <TextLink href="/ai-transformation-partner-thailand">
-            AI transformation in Thailand
+          <TextLink href="/services">
+            Explore our capabilities
           </TextLink>
           <a
             href={site.googleBusinessProfileUrl}
@@ -133,8 +133,8 @@ export default function CompanyPage() {
             </p>
             <p>
               The company is registered in Thailand and operates from Bangkok.
-              Its current commercial focus is AI implementation, workflow automation
-              and measurable business outcomes.
+              Its work spans AI implementation, software product engineering,
+              digital platforms and workflow automation.
             </p>
             <TextLink href="/farhan-sabbir">Meet Farhan Sabbir</TextLink>
           </div>
@@ -171,7 +171,7 @@ export default function CompanyPage() {
           </div>
           <div>
             <dt>Primary work</dt>
-            <dd>AI implementation & workflow automation</dd>
+            <dd>AI implementation, product engineering & digital platforms</dd>
           </div>
         </dl>
       </section>
@@ -192,16 +192,16 @@ export default function CompanyPage() {
             build a working AI system and measure the operating result.
             Begin with a free fit call or a scoped 30-day pilot.
           </p>
-          <h3>Applied AI systems</h3>
+          <h3>Software products and digital experiences</h3>
           <p>
-            Our work includes workflow automation, enterprise AI systems and
-            healthcare documentation and communication products.
+            We design prototypes, custom software, customer-facing applications,
+            and digital platforms alongside our applied AI work.
           </p>
           <TextLink href="/work">Explore our work</TextLink>
         </div>
       </section>
 
-      <Closing title="Make AI useful at work." />
+      <Closing title="Tell us what you need built." />
     </main>
   );
 }

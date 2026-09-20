@@ -10,7 +10,7 @@ export function Footer() {
             <Link href="/" className="wordmark" aria-label="Archangel home">
               ΛRCHΛNGEL
             </Link>
-            <p>Make AI useful at work.</p>
+            <p>Ideas into working technology.</p>
             <span>
               Archangel Company Limited
               <br />
@@ -21,6 +21,8 @@ export function Footer() {
           </div>
           <nav aria-label="Footer navigation">
             <span>Explore</span>
+            <Link href="/services">Capabilities / What we build</Link>
+            <Link href="/work">Selected work</Link>
             <Link href="/company">Archangel Company Limited</Link>
             <Link href="/ai-transformation-partner-thailand">
               AI transformation partner Thailand
@@ -35,7 +37,6 @@ export function Footer() {
               AI Transformation ประเทศไทย
             </Link>
             <Link href="/ai-transformation">AI implementation & 30-day pilot</Link>
-            <Link href="/work">Our work</Link>
             <Link href="/farhan-sabbir">Farhan Sabbir</Link>
             <Link href="/insights/ai-transformation-thailand-2026">
               Thailand AI 2026
