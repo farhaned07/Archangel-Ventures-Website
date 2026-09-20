@@ -4,16 +4,16 @@ import { ExternalLink } from "lucide-react";
 import { absoluteUrl, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Farhan Sabbir | AI Transformation Partner in Thailand",
+  title: "Farhan Sabbir | Technology & AI Implementation Partner",
   description:
-    "Farhan Sabbir is an AI Transformation Partner in Thailand and Founder & Executive Director of Archangel Company Limited, a Bangkok-based, Thailand BOI-promoted software and AI company.",
+    "Farhan Sabbir is the founder of Archangel Company Limited, a Bangkok-based technology studio building AI systems, software products and digital experiences.",
   alternates: {
     canonical: "/farhan-sabbir",
   },
   openGraph: {
     title: "Farhan Sabbir | AI Transformation Partner in Thailand",
     description:
-      "Founder & Executive Director of Archangel Company Limited. Founder-led AI implementation and workflow automation in Thailand.",
+      "Founder & Executive Director of Archangel Company Limited. Founder-led product engineering, AI implementation and digital platforms.",
     url: "/farhan-sabbir",
     type: "profile",
   },
@@ -81,7 +81,7 @@ export default function FarhanSabbirPage() {
         <SectionLabel number="01">Founder & Executive Director</SectionLabel>
         <h1>Farhan Sabbir.</h1>
         <p className="hero-deck">
-          AI Transformation & Implementation Partner in Thailand.
+          Technology & AI Implementation Partner in Thailand.
           <br />
           Founder & Executive Director of Archangel Company Limited.
         </p>
@@ -129,13 +129,13 @@ export default function FarhanSabbirPage() {
         <div className="prose">
           <p>
             Farhan leads Archangel across product, implementation and client
-            work. His focus is taking an operating problem through system design,
-            implementation and a measurable result.
+            work. His focus is taking an operating problem or product idea through
+            design, engineering, launch and a measurable result.
           </p>
           <p>
-            That work includes healthcare documentation and multilingual care
-            planning through Hanna, enterprise workflow design and AI native
-            systems.
+            That work includes software product development, intelligent workflows,
+            healthcare documentation and multilingual care planning through Hanna,
+            and digital platform engineering.
           </p>
           <p>
             Based in Bangkok, he works through Archangel Company Limited, a
