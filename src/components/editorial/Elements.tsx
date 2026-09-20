@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { bookingHref, site } from "@/lib/site";
+import { bookingHref } from "@/lib/site";
 
 export function SectionLabel({
   number,
@@ -65,51 +65,23 @@ export function Closing({
 
 export function WorkshopSummary() {
   return (
-    <section className="workshop-section" id="workshop">
+    <section className="workshop-section" id="implementation">
       <div className="page-shell workshop-grid">
         <div>
-          <SectionLabel number="03">The first engagement</SectionLabel>
-          <h2>
-            A clear decision.
-            <br />
-            <span className="muted">Before a bigger investment.</span>
-          </h2>
-          <p className="section-copy">
-            The AI Transformation Workshop brings management, process owners and
-            technology into one room. We leave with the work worth changing and
-            a plan to begin.
-          </p>
-          <TextLink href="/ai-transformation">Inside the workshop</TextLink>
+          <SectionLabel number="03">Start with delivery</SectionLabel>
+          <h2>A working system.<br /><span className="muted">Not another AI report.</span></h2>
+          <p className="section-copy">Choose one high-value workflow. We scope it, implement a bounded AI pilot, test it with your team and measure the operating result.</p>
+          <TextLink href="/ai-transformation">How implementation works</TextLink>
         </div>
         <div className="workshop-sheet">
-          <div className="sheet-top">
-            <span>AI Transformation Workshop</span>
-            <span>Bangkok · on site</span>
-          </div>
-          <p className="workshop-price">{site.workshopPrice}</p>
-          <p className="sheet-note">
-            Fixed fee · credited toward implementation
-          </p>
+          <div className="sheet-top"><span>30-day implementation pilot</span><span>One workflow</span></div>
+          <p className="workshop-price">From ฿150,000</p>
+          <p className="sheet-note">Defined scope · measured acceptance criteria</p>
           <ol className="deliverables">
-            {[
-              "A map of the current workflow",
-              "3–5 ranked AI opportunities",
-              "An estimate of value and effort",
-              "A practical 30 day action plan",
-            ].map((x, i) => (
-              <li key={x}>
-                <span>0{i + 1}</span>
-                {x}
-              </li>
-            ))}
+            {["Baseline and agreed success measure","Working AI-assisted workflow","Testing and human review","Production go/no-go recommendation"].map((x,i)=><li key={x}><span>0{i+1}</span>{x}</li>)}
           </ol>
-          <Link
-            href={bookingHref}
-            className="sheet-link"
-            data-cta="workshop-opportunity-call"
-          >
-            Discuss your workshop
-            <ArrowRight size={20} aria-hidden="true" />
+          <Link href={bookingHref} className="sheet-link" data-cta="pilot-opportunity-call">
+            Discuss a pilot <ArrowRight size={20} aria-hidden="true" />
           </Link>
         </div>
       </div>
