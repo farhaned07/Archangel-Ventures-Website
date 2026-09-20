@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: "Archangel Company Limited | AI Transformation Thailand",
   description:
-    "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company helping management teams find, build and measure high-value AI transformation.",
+    "Archangel Company Limited implements AI automation for business operations in Thailand. Free fit call, 30-day pilot and production implementation.",
   applicationName: "Archangel",
   category: "technology",
   alternates: {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Archangel Company Limited | Make AI useful at work",
     description:
-      "AI transformation strategy and implementation for management teams in Thailand.",
+      "Founder-led AI implementation, workflow automation and measurable operational improvement in Thailand.",
     type: "website",
     url: "/",
     locale: "en_TH",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Archangel Company Limited | AI Transformation Thailand",
     description:
-      "Strategy and implementation for management teams that want measurable operating value from AI.",
+      "AI implementation for business operations. Scope one workflow, build a working pilot and measure the result.",
     images: ["/opengraph-image"],
   },
 };
@@ -120,7 +120,7 @@ const structuredData = {
         },
       ],
       description:
-        "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company focused on AI transformation, applied AI systems and workflow implementation.",
+        "Archangel Company Limited is a Bangkok-based, Thailand BOI-promoted software and AI company delivering AI workflow implementation, automation and production integration.",
       address: {
         "@type": "PostalAddress",
         streetAddress: site.streetAddress,
@@ -158,13 +158,13 @@ const structuredData = {
       ],
       hasOfferCatalog: {
         "@type": "OfferCatalog",
-        name: "AI transformation services",
+        name: "AI implementation services",
         itemListElement: [
           {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "AI transformation strategy and implementation",
+              name: "AI implementation and workflow automation",
               url: absoluteUrl("/ai-transformation-partner-thailand"),
             },
           },
@@ -172,7 +172,7 @@ const structuredData = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "AI Transformation Workshop",
+              name: "30-day AI implementation pilot",
               url: absoluteUrl("/ai-transformation"),
             },
           },
