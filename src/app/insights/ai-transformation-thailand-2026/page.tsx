@@ -228,7 +228,7 @@ export default function AITransformationThailandInsight() {
                 AI transformation partner work in Thailand
               </Link>{" "}
               and our{" "}
-              <Link href="/ai-transformation">AI Transformation Workshop</Link>.
+              <Link href="/ai-transformation">AI implementation and 30-day pilot</Link>.
               For a practical definition of the role, read{" "}
               <Link href="/insights/what-is-an-ai-transformation-partner">
                 What Is an AI Transformation Partner?
