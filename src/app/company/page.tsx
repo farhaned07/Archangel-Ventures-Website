@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Archangel Company Limited | Bangkok, Thailand",
     description:
-      "Thailand-registered software and AI company focused on AI transformation, applied AI systems and workflow implementation.",
+      "Bangkok-based software and AI implementation company building working systems for business operations.",
     url: "/company",
     type: "website",
     locale: "en_TH",
@@ -85,8 +85,8 @@ export default function CompanyPage() {
           <span className="muted">Company Limited.</span>
         </h1>
         <p className="hero-deck">
-          A Bangkok-based software and AI company focused on turning expensive,
-          repetitive work into measurable operating improvement.
+          A Bangkok-based AI implementation partner. We redesign operational
+          workflows, build working systems and measure the business result.
         </p>
         <div className="hero-actions">
           <TextLink href="/ai-transformation-partner-thailand">
@@ -133,8 +133,8 @@ export default function CompanyPage() {
             </p>
             <p>
               The company is registered in Thailand and operates from Bangkok.
-              Its current focus is AI transformation, applied AI systems and
-              workflow implementation.
+              Its current commercial focus is AI implementation, workflow automation
+              and measurable business outcomes.
             </p>
             <TextLink href="/farhan-sabbir">Meet Farhan Sabbir</TextLink>
           </div>
@@ -171,7 +171,7 @@ export default function CompanyPage() {
           </div>
           <div>
             <dt>Primary work</dt>
-            <dd>AI transformation & applied AI systems</dd>
+            <dd>AI implementation & workflow automation</dd>
           </div>
         </dl>
       </section>
@@ -186,11 +186,11 @@ export default function CompanyPage() {
           </h2>
         </div>
         <div className="prose">
-          <h3>AI transformation</h3>
+          <h3>AI implementation</h3>
           <p>
-            We work with management teams to identify high-value workflows,
-            redesign the process, implement the right system and measure the
-            operating result.
+            We work with process owners to scope one valuable workflow,
+            build a working AI system and measure the operating result.
+            Begin with a free fit call or a scoped 30-day pilot.
           </p>
           <h3>Applied AI systems</h3>
           <p>
