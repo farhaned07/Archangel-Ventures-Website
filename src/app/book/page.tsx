@@ -4,9 +4,9 @@ import Link from "next/link";
 import { emailHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Discuss AI Implementation | Book a Free Fit Call | Archangel",
+  title: "Start a Technology Project | Book a Free Fit Call | Archangel",
   description:
-    "Book a free 15-minute fit call to discuss a defined workflow, decision owner and a possible 30-day AI implementation pilot.",
+    "Book a free 15-minute fit call with Archangel about your AI implementation, software product, prototype or digital platform project.",
   alternates: {
     canonical: "/book",
   },
@@ -25,15 +25,15 @@ export default function BookPage() {
           <Link href="/" className="route-breadcrumb">
             Archangel / Start a conversation
           </Link>
-          <SectionLabel number="01">Free implementation fit call</SectionLabel>
+          <SectionLabel number="01">Free project fit call</SectionLabel>
           <h1>
             One conversation.
             <br />
             <span className="muted">A useful next step.</span>
           </h1>
           <p className="hero-deck">
-            Bring one workflow that needs to work better. We’ll discuss its
-            current cost, systems, decision owner and whether a paid implementation pilot makes sense.
+            Tell us what you want to build or what is not working. We’ll discuss the
+            users, business goal, decision timeline and a useful first milestone.
           </p>
           <div className="booking-meta">
             <span>
@@ -80,12 +80,12 @@ export default function BookPage() {
       <section className="page-shell section-grid">
         <div>
           <SectionLabel number="02">Before the call</SectionLabel>
-          <h2>Bring one workflow.</h2>
+          <h2>Bring one problem or product idea.</h2>
         </div>
         <div className="prose">
           <p>
-            What happens today? Where does it slow down? What would a better
-            result look like?
+            What needs to change or get built? Who will use it, and what would
+            make the first release worthwhile?
           </p>
           <p>
             A simple description is enough to begin. You do not need to prepare
