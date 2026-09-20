@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Transformation Partner Bangkok | Archangel",
     description:
-      "Founder-led AI transformation strategy and implementation for management teams in Bangkok.",
+      "Founder-led AI implementation, from a free fit call to a scoped 30-day pilot and measurable production rollout in Bangkok.",
     url: "/ai-transformation-partner-bangkok",
     type: "website",
     locale: "en_TH",
@@ -142,13 +142,13 @@ export default function AITransformationPartnerBangkokPage() {
         <p className="hero-deck">
           Archangel Company Limited is a Bangkok-based AI transformation
           partner. We work with management teams to identify expensive work,
-          redesign the workflow, implement the right AI system and measure the
-          result.
+          redesign the workflow, implement a working AI system and measure the
+          result. Start with one bounded paid pilot.
         </p>
         <div className="hero-actions">
-          <TextLink href={bookingHref}>Book an AI Opportunity Call</TextLink>
+          <TextLink href={bookingHref}>Discuss an implementation</TextLink>
           <TextLink href="/ai-transformation">
-            Explore the AI Transformation Workshop
+            Explore the 30-day implementation pilot
           </TextLink>
         </div>
       </section>
