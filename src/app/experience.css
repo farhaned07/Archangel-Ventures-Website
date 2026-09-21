@@ -118,6 +118,8 @@
   transition:background .24s,color .24s,transform .24s;
 }
 .ex-home .ex-workflow-step:hover { background:#ffffff10; color:#f5f3ec; }
+.ex-home .ex-workflow-step:disabled { cursor:default; opacity:.58; }
+.ex-home .ex-workflow-step:disabled:hover { background:transparent; color:#aaa79e; }
 .ex-home .ex-workflow-step.is-current { background:#eeeae2; color:#242320; }
 .ex-home .ex-workflow-step.is-complete { color:#e5e2d9; }
 .ex-workflow-step-no { font-family:monospace; font-size:12px; min-width:20px; display:grid; place-items:center; }
