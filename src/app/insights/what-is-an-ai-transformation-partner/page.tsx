@@ -111,7 +111,7 @@ const articleSchema = {
 
 export default function AITransformationPartnerGuide() {
   return (
-    <main id="main-content" className="interior aa-studio-interior">
+    <main id="main-content" className="interior">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}

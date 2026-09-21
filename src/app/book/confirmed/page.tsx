@@ -3,9 +3,9 @@ import { CalendarCheck2, Video } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Your Project Call | Archangel",
+  title: "Your AI Opportunity Call | Archangel",
   description:
-    "Check your Google Calendar invitation for your project call with Archangel.",
+    "Check your Google Calendar invitation for your AI Opportunity Call with Archangel.",
   alternates: { canonical: "/book/confirmed" },
   robots: {
     index: false,
@@ -17,14 +17,14 @@ export default function BookingConfirmedPage() {
   return (
     <main
       id="main-content"
-      className="aa-studio-interior aa-utility-page pt-[64px] md:pt-[72px] min-h-[78vh] bg-[#f6f6f2] flex items-center"
+      className="pt-[64px] md:pt-[72px] min-h-[78vh] bg-[#f6f6f2] flex items-center"
     >
       <section className="page-shell py-16 md:py-24 w-full">
         <div className="max-w-3xl">
           <div className="w-12 h-12 rounded-full border border-[#d8d8d2] bg-white flex items-center justify-center">
             <CalendarCheck2 className="w-5 h-5 text-[#11110f]" />
           </div>
-          <p className="eyebrow text-[#85857f] mt-8">Project fit call</p>
+          <p className="eyebrow text-[#85857f] mt-8">AI Opportunity Call</p>
           <h1 className="mt-5 text-[3.2rem] sm:text-[4.8rem] lg:text-[5.8rem] leading-[0.92] tracking-[-0.065em] font-medium">
             Check your invitation.
           </h1>

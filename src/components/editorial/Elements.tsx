@@ -33,7 +33,7 @@ export function TextLink({
 }
 
 export function Closing({
-  title = "What do you need built?",
+  title = "Where is work costing you more than it should?",
 }: {
   title?: string;
 }) {
@@ -54,7 +54,7 @@ export function Closing({
             className="button-primary"
             data-cta="closing-opportunity-call"
           >
-            Discuss your project
+            Book an AI Opportunity Call
             <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         </div>
