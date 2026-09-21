@@ -139,7 +139,7 @@ const areas = [
 ];
 export default function AITransformationPartnerThailandPage() {
   return (
-    <main id="main-content" className="interior aa-studio-interior">
+    <main id="main-content" className="interior">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}

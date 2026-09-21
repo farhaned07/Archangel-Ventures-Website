@@ -89,7 +89,7 @@ const sources = [
 import { Closing, SectionLabel } from "@/components/editorial/Elements";
 export default function AITransformationThailandInsight() {
   return (
-    <main id="main-content" className="interior aa-studio-interior">
+    <main id="main-content" className="interior">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
