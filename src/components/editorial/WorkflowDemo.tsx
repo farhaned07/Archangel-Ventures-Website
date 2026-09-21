@@ -30,6 +30,7 @@ export function WorkflowDemo() {
               type="button"
               className={`ex-workflow-step ${step === index ? "is-current" : ""} ${step > index ? "is-complete" : ""}`}
               onClick={() => setStep(index as Step)}
+              disabled={index > step}
               aria-current={step === index ? "step" : undefined}
             >
               <span className="ex-workflow-step-no">{step > index ? <Check size={14} /> : `0${index + 1}`}</span>
