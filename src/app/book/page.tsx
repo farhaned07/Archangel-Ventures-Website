@@ -25,9 +25,9 @@ export default function BookPage() {
           <Link href="/" className="route-breadcrumb">
             Archangel / Start a conversation
           </Link>
-          <SectionLabel number="01">Free project fit call</SectionLabel>
+          <SectionLabel number="01">Free 15-minute fit call</SectionLabel>
           <h1>
-            One conversation.
+            A free 15-minute call.
             <br />
             <span className="muted">A useful next step.</span>
           </h1>
@@ -62,7 +62,7 @@ export default function BookPage() {
               className="button-primary"
               data-cta="calendar-booking"
             >
-              Open Google Calendar
+              See available times
               <ArrowUpRight size={19} aria-hidden="true" />
               <span className="sr-only"> (opens in a new tab)</span>
             </a>

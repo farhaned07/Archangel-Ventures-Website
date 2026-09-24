@@ -59,7 +59,7 @@ export function Navbar() {
             className="nav-call max-md:!hidden"
             data-cta="nav-opportunity-call"
           >
-            Start a project
+            Book a free call
             <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
           <button
@@ -127,7 +127,7 @@ export function Navbar() {
           data-cta="mobile-nav-opportunity-call"
           onClick={close}
         >
-          Start a project
+          Book a free call
           <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
         <p>
