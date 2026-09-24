@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, CornerDownRight, MoveUpRight } from "lucide-react";
 import { BuildLab } from "@/components/editorial/BuildLab";
 import { HannaFlow } from "@/components/editorial/Elements";
-import { bookingHref } from "@/lib/site";
+import { bookingHref, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Make AI Useful at Work | Archangel Technology & AI Partner",
@@ -39,7 +39,7 @@ export default function Home() {
               <h1>Make AI<br /><em>useful</em><br />at work<span className="aa-accent-dot">.</span></h1>
               <p className="aa-hero-description">We turn expensive workflows and promising product ideas into technology people can use. AI systems, custom software and digital experiences—from first prototype to working release.</p>
               <div className="aa-hero-actions">
-                <Link href={bookingHref} className="aa-pill aa-pill-lime" data-cta="hero-start-project">Tell us what you need built <ArrowUpRight size={18} /></Link>
+                <Link href={site.calendarBookingUrl} target="_blank" rel="noreferrer" className="aa-pill aa-pill-lime" data-cta="calendar-booking">Book a free 15-minute call <ArrowUpRight size={18} /></Link>
                 <Link href="/work" className="aa-hero-sub-link">Explore the work <ArrowRight size={17} /></Link>
               </div>
               <div className="aa-hero-signature"><span className="aa-signature-icon">✳</span><p>You work directly with the people designing<br />and building your system.</p></div>
@@ -104,7 +104,7 @@ export default function Home() {
       </section>
 
       <section className="aa-start">
-        <div className="page-shell aa-start-layout"><div><span className="aa-kicker">START WITH ONE USEFUL CONVERSATION</span><h2>What do you<br />need <em>built?</em></h2></div><div className="aa-start-right"><p>Tell us the problem, the users and the outcome you need. In a 15-minute call, we’ll establish fit and identify a sensible first milestone.</p><Link href={bookingHref} className="aa-pill aa-pill-lime" data-cta="closing-start-project">Discuss your project <ArrowUpRight size={19} /></Link><span>15-MINUTE INITIAL CALL · SCOPE AND NEXT STEP AGREED SEPARATELY</span></div></div>
+        <div className="page-shell aa-start-layout"><div><span className="aa-kicker">START WITH ONE USEFUL CONVERSATION</span><h2>What do you<br />need <em>built?</em></h2></div><div className="aa-start-right"><p>Tell us the problem, the users and the outcome you need. In a 15-minute call, we’ll establish fit and identify a sensible first milestone.</p><Link href={site.calendarBookingUrl} target="_blank" rel="noreferrer" className="aa-pill aa-pill-lime" data-cta="calendar-booking">Book a free 15-minute call <ArrowUpRight size={19} /></Link><span>15-MINUTE INITIAL CALL · SCOPE AND NEXT STEP AGREED SEPARATELY</span></div></div>
       </section>
     </main>
   );
