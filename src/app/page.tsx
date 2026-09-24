@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, CornerDownRight, MoveUpRight } from "lucide-react";
 import { BuildLab } from "@/components/editorial/BuildLab";
 import { HannaFlow } from "@/components/editorial/Elements";
-import { bookingHref, site } from "@/lib/site";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Make AI Useful at Work | Archangel Technology & AI Partner",
