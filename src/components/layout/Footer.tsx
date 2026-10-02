@@ -1,63 +1,55 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { site } from "@/lib/site";
+
 export function Footer() {
   return (
     <footer className="site-footer">
       <div className="page-shell">
         <div className="footer-main">
           <div>
-            <Link href="/" className="wordmark" aria-label="Archangel home">
-              ΛRCHΛNGEL
-            </Link>
+            <BrandMark className="wordmark" inverse />
             <p>Make AI useful at work.</p>
             <span>
               Archangel Company Limited
               <br />
-              Bangkok, Thailand
+              AI Transformation
               <br />
-              Thailand BOI promoted
+              Bangkok, Thailand
             </span>
           </div>
+
           <nav aria-label="Footer navigation">
-            <span>Explore</span>
-            <Link href="/services">Capabilities / What we build</Link>
-            <Link href="/work">Selected work</Link>
-            <Link href="/company">Archangel Company Limited</Link>
-            <Link href="/ai-transformation-partner-thailand">
-              AI transformation partner Thailand
-            </Link>
-            <Link href="/ai-transformation-partner-bangkok">
-              AI transformation partner Bangkok
-            </Link>
-            <Link href="/insights/what-is-an-ai-transformation-partner">
-              What is an AI transformation partner?
-            </Link>
-            <Link href="/th/ai-transformation-partner-thailand">
-              AI Transformation ประเทศไทย
-            </Link>
-            <Link href="/ai-transformation">AI implementation & 30-day pilot</Link>
-            <Link href="/farhan-sabbir">Farhan Sabbir</Link>
-            <Link href="/insights/ai-transformation-thailand-2026">
-              Thailand AI 2026
-            </Link>
+            <span>Institution</span>
+            <Link href="/services">Capabilities</Link>
+            <Link href="/ai-transformation">AI transformation</Link>
+            <Link href="/work">Work</Link>
+            <Link href="/company">Company</Link>
+            <Link href="/insights">Insights</Link>
           </nav>
+
           <div className="footer-contact">
             <span>Start a conversation</span>
+            <a href={site.calendarBookingUrl} target="_blank" rel="noreferrer">
+              Book a 15-minute call
+              <ArrowUpRight size={15} aria-hidden="true" />
+            </a>
             <a href={`mailto:${site.email}`}>
               {site.email}
-              <ArrowUpRight size={16} aria-hidden="true" />
+              <ArrowUpRight size={15} aria-hidden="true" />
             </a>
             <a href={site.companyLinkedinUrl} target="_blank" rel="noreferrer">
               LinkedIn
-              <ArrowUpRight size={16} aria-hidden="true" />
-              <span className="sr-only"> (opens in a new tab)</span>
+              <ArrowUpRight size={15} aria-hidden="true" />
             </a>
           </div>
         </div>
+
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Archangel Company Limited</span>
-          <Link href="/privacy">Privacy notice</Link>
+          <span>AI Transformation · Bangkok</span>
+          <Link href="/privacy">Privacy</Link>
         </div>
       </div>
     </footer>
