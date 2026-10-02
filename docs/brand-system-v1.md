@@ -82,21 +82,37 @@ In code use:
 - `.aa-suede`
 - `.aa-suede-dark`
 
-## 7. Photography
+## 7. Technology-first visual rule
 
-Photography is monochrome or extremely desaturated.
+ARCHANGEL must read as a technology company before it reads as architectural, editorial or premium.
 
-Subjects:
-- architecture
-- concrete, glass and aluminium
-- Bangkok skyline used sparingly
-- serious work environments
+Primary visual evidence:
+- working interfaces
+- operating-system views
+- workflow maps
+- system architecture
+- telemetry
+- data and knowledge flows
+- technical artifacts
+- product UI
+- integration and control models
+
+Architecture is a secondary influence only. It contributes discipline, materiality, scale and composition; it must never become the category signal.
+
+## 8. Photography
+
+Photography is monochrome or extremely desaturated and used sparingly.
+
+Approved subjects:
+- people operating serious systems
+- technology work environments
 - close material studies
-- negative-space compositions
+- Bangkok context when relevant
+- architecture only as atmosphere or composition
 
-Avoid smiling stock teams, generic office handshakes, holograms, robots, brains, circuit boards and "future city" clichés.
+Do not use buildings as the main proof of capability. Avoid smiling stock teams, generic office handshakes, holograms, robots, brains, circuit boards and "future city" clichés.
 
-## 8. Graphic language
+## 9. Graphic language
 
 Graphic elements should look like serious information design:
 - thin rules
@@ -110,7 +126,7 @@ Graphic elements should look like serious information design:
 
 Never use decorative circuitry, 3D AI orbs, particle fields, excessive icons or dashboard confetti.
 
-## 9. Interface system
+## 10. Interface system
 
 Navigation:
 - restrained wordmark left
@@ -134,7 +150,7 @@ Motion:
 - 180–420ms
 - no parallax spectacle, bouncing or glowing hover states
 
-## 10. Brand voice
+## 11. Brand voice
 
 ARCHANGEL speaks in short, concrete language.
 
@@ -153,7 +169,7 @@ Avoid:
 - "next-generation"
 - inflated claims without evidence
 
-## 11. Application hierarchy
+## 12. Application hierarchy
 
 Priority order:
 1. Website
@@ -167,7 +183,7 @@ Priority order:
 
 Every application should feel like it came from one institutional system, not a separate campaign.
 
-## 12. Prohibited drift
+## 13. Prohibited drift
 
 Do not introduce:
 - neon
@@ -183,7 +199,7 @@ Do not introduce:
 - fake futuristic text
 - distorted logo applications
 
-## 13. Code source of truth
+## 14. Code source of truth
 
 The implementation tokens live in:
 - `src/app/brand-system.css`
