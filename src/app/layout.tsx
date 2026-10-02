@@ -11,6 +11,7 @@ import "./atelier.css";
 import "./atelier-more.css";
 import "./brand-system.css";
 import "./institutional.css";
+import "./institutional-pages.css";
 
 const inter = localFont({
   src: [
