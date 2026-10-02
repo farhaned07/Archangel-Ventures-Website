@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { bookingHref } from "@/lib/site";
+import { DeliveryTrace, SystemArchitectureMap } from "@/components/technology/TechnologyArtifacts";
 
 export const metadata: Metadata = {
   title: "Capabilities | ARCHANGEL",
@@ -128,6 +129,23 @@ export default function ServicesPage() {
                 <span>ARCHANGEL</span>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="tech-dark-visual">
+        <div className="page-shell">
+          <header className="tech-dark-visual-head">
+            <div className="aa-section-kicker">SYSTEMS / NOT FEATURE LISTS</div>
+            <h2>
+              What we build
+              <br />
+              <span>has an operating shape.</span>
+            </h2>
+          </header>
+          <SystemArchitectureMap />
+          <div className="tech-artifact-full">
+            <DeliveryTrace />
           </div>
         </div>
       </section>
