@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { bookingHref } from "@/lib/site";
+import {
+  DeliveryTrace,
+  HannaProductSurface,
+  SystemArchitectureMap,
+  TransformationWorkbench,
+} from "@/components/technology/TechnologyArtifacts";
 
 export const metadata: Metadata = {
   title: "ARCHANGEL | AI Transformation — Bangkok",
@@ -164,20 +170,74 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="tech-light-section">
-        <div className="page-shell tech-intro-grid">
-          <div className="aa-section-kicker">THE POSITION</div>
-          <h2>
-            AI should change
-            <br />
-            <span>how the organisation works.</span>
-          </h2>
-          <p>
-            The important question is not whether employees can use AI. It is
-            whether the organisation can remove cost, compress cycle time,
-            improve quality, increase throughput or create a capability that did
-            not exist before.
-          </p>
+      <section className="tech-evidence">
+        <div className="page-shell">
+          <header className="tech-evidence-head">
+            <div className="aa-section-kicker">OPERATING CHANGE / NOT AI THEATRE</div>
+            <h2>
+              See the work
+              <br />
+              <span>before and after.</span>
+            </h2>
+          </header>
+
+          <TransformationWorkbench />
+        </div>
+      </section>
+
+      <section className="tech-dark-visual">
+        <div className="page-shell">
+          <header className="tech-dark-visual-head">
+            <div className="aa-section-kicker">PRODUCT PROOF / BUILT BY ARCHANGEL</div>
+            <h2>
+              We build products,
+              <br />
+              <span>not presentation slides.</span>
+            </h2>
+          </header>
+
+          <div className="tech-evidence-grid">
+            <div className="tech-evidence-copy">
+              <div className="aa-section-kicker">HANNA / HEALTHCARE AI</div>
+              <h3>
+                Conversation in.
+                <br />
+                <span>Useful care out.</span>
+              </h3>
+              <p>
+                Hanna is an Archangel product in development. It explores how a
+                consultation can become structured clinical documentation and a
+                multilingual patient care plan while keeping clinician review
+                explicit.
+              </p>
+              <a
+                href="https://www.hanna.care"
+                target="_blank"
+                rel="noreferrer"
+                className="aa-button aa-button-dark"
+              >
+                Explore Hanna
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </a>
+            </div>
+
+            <HannaProductSurface />
+          </div>
+        </div>
+      </section>
+
+      <section className="tech-evidence">
+        <div className="page-shell">
+          <header className="tech-evidence-head">
+            <div className="aa-section-kicker">SYSTEM DESIGN / CONTROLLED BY DEFAULT</div>
+            <h2>
+              The model is one component.
+              <br />
+              <span>The system is the real product.</span>
+            </h2>
+          </header>
+
+          <SystemArchitectureMap />
         </div>
       </section>
 
@@ -208,6 +268,42 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="tech-evidence">
+        <div className="page-shell">
+          <header className="tech-evidence-head">
+            <div className="aa-section-kicker">DELIVERY / BUILD TRACE</div>
+            <h2>
+              Serious systems need
+              <br />
+              <span>visible delivery control.</span>
+            </h2>
+          </header>
+
+          <div className="tech-evidence-grid">
+            <DeliveryTrace />
+
+            <div className="tech-evidence-copy">
+              <div className="aa-section-kicker">ENGINEERING DISCIPLINE</div>
+              <h3>
+                Build.
+                <br />
+                <span>Test. Control. Deploy.</span>
+              </h3>
+              <p>
+                We treat AI implementation as software delivery: defined
+                environments, visible exceptions, audit events, human review,
+                measurable acceptance criteria and a controlled path to
+                production.
+              </p>
+              <Link href="/ai-transformation" className="aa-button aa-button-dark">
+                See the implementation model
+                <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="tech-proof">
         <div className="page-shell tech-proof-grid">
           <div className="tech-proof-copy">
@@ -223,12 +319,6 @@ export default function Home() {
               another agreed business metric. The system then has something real
               to prove.
             </p>
-            <div className="tech-hero-actions">
-              <Link href="/ai-transformation" className="aa-button aa-button-dark">
-                See the transformation model
-                <ArrowUpRight size={15} aria-hidden="true" />
-              </Link>
-            </div>
           </div>
 
           <div className="tech-proof-panel">
