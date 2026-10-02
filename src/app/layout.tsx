@@ -13,6 +13,7 @@ import "./brand-system.css";
 import "./institutional.css";
 import "./institutional-pages.css";
 import "./technology-home.css";
+import "./technology-artifacts.css";
 import "./tech-home.css";
 
 const inter = localFont({
