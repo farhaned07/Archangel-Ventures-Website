@@ -44,7 +44,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className="site-header">
+      <header className={`site-header ${pathname === "/" ? "header-on-dark" : ""}`}>
         <nav className="page-shell nav-inner" aria-label="Main navigation">
           <BrandMark className="wordmark nav-wordmark" />
 
