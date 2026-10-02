@@ -1,24 +1,29 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { BrandMark } from "@/components/brand/BrandMark";
 import { bookingHref } from "@/lib/site";
 
 const links = [
   { href: "/services", label: "Capabilities" },
+  { href: "/ai-transformation", label: "AI transformation" },
   { href: "/work", label: "Work" },
-  { href: "/ai-transformation", label: "AI implementation" },
   { href: "/company", label: "Company" },
 ];
+
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const d = dialog.current;
     if (!d) return;
+
     if (open) {
       d.showModal();
       const before = document.body.style.overflow;
@@ -28,61 +33,56 @@ export function Navbar() {
         document.body.style.overflow = before;
       };
     }
+
     d.close();
   }, [open]);
+
   function close() {
     setOpen(false);
     trigger.current?.focus();
   }
+
   return (
     <>
-      <header
-        className={`site-header ${["/", "/services", "/work"].includes(pathname) ? "header-on-dark" : ""}`}
-      >
+      <header className={`site-header ${pathname === "/" ? "header-on-tech" : ""}`}>
         <nav className="page-shell nav-inner" aria-label="Main navigation">
-          <Link href="/" aria-label="Archangel home" className="wordmark">
-            ΛRCHΛNGEL
-          </Link>
+          <BrandMark className="wordmark nav-wordmark" />
+
           <div className="desktop-links">
-            {links.map((l) => (
+            {links.map((link) => (
               <Link
-                key={l.href}
-                href={l.href}
-                aria-current={pathname === l.href ? "page" : undefined}
+                key={link.href}
+                href={link.href}
+                aria-current={pathname === link.href ? "page" : undefined}
               >
-                {l.label}
+                {link.label}
               </Link>
             ))}
           </div>
+
           <Link
             href={bookingHref}
-            className="nav-call max-md:!hidden"
-            data-cta="nav-opportunity-call"
+            className="nav-call"
+            data-cta="nav-project-call"
           >
-            Book a free call
-            <ArrowUpRight size={16} aria-hidden="true" />
+            Start a conversation
+            <ArrowUpRight size={15} aria-hidden="true" />
           </Link>
+
           <button
             ref={trigger}
             type="button"
             className="menu-toggle"
-            style={{
-              marginLeft: "auto",
-              width: 36,
-              height: 36,
-              border: 0,
-              background: "transparent",
-              color: "inherit",
-            }}
             aria-label="Open navigation"
             aria-expanded={open}
             aria-controls="mobile-navigation"
             onClick={() => setOpen(true)}
           >
-            <Menu size={28} strokeWidth={1.4} />
+            <Menu size={25} strokeWidth={1.3} />
           </button>
         </nav>
       </header>
+
       <dialog
         ref={dialog}
         id="mobile-navigation"
@@ -92,48 +92,41 @@ export function Navbar() {
         onClose={() => setOpen(false)}
       >
         <div className="mobile-nav-top">
-          <Link href="/" className="wordmark" onClick={close}>
-            ΛRCHΛNGEL
-          </Link>
+          <BrandMark className="wordmark" />
           <button
             type="button"
             className="menu-toggle"
-            style={{
-              marginLeft: "auto",
-              width: 36,
-              height: 36,
-              border: 0,
-              background: "transparent",
-              color: "#727873",
-            }}
             aria-label="Close navigation"
             onClick={close}
           >
-            <X size={26} strokeWidth={1.4} />
+            <X size={24} strokeWidth={1.3} />
           </button>
         </div>
+
         <nav aria-label="Mobile navigation">
-          {links.map((l, i) => (
-            <Link key={l.href} href={l.href} onClick={close}>
-              <span>0{i + 1}</span>
-              {l.label}
-              <ArrowUpRight size={23} aria-hidden="true" />
+          {links.map((link, index) => (
+            <Link key={link.href} href={link.href} onClick={close}>
+              <span>0{index + 1}</span>
+              {link.label}
+              <ArrowUpRight size={20} aria-hidden="true" />
             </Link>
           ))}
         </nav>
+
         <Link
           href={bookingHref}
           className="button-primary"
-          data-cta="mobile-nav-opportunity-call"
+          data-cta="mobile-nav-project-call"
           onClick={close}
         >
-          Book a free call
-          <ArrowUpRight size={18} aria-hidden="true" />
+          Start a conversation
+          <ArrowUpRight size={17} aria-hidden="true" />
         </Link>
+
         <p>
           Archangel Company Limited
           <br />
-          Bangkok · Thailand BOI promoted
+          AI Transformation · Bangkok, Thailand
         </p>
       </dialog>
     </>

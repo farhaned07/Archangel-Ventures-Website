@@ -9,6 +9,12 @@ import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
 import "./atelier.css";
 import "./atelier-more.css";
+import "./brand-system.css";
+import "./institutional.css";
+import "./institutional-pages.css";
+import "./technology-home.css";
+import "./technology-artifacts.css";
+import "./tech-home.css";
 
 const inter = localFont({
   src: [
@@ -34,9 +40,9 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "Archangel Company Limited | Technology & AI Implementation",
+  title: "ARCHANGEL | AI Transformation — Bangkok",
   description:
-    "Archangel is a founder-led technology and AI implementation company in Bangkok. We design and build software products, intelligent workflows, websites and digital platforms.",
+    "Archangel is a Bangkok-based AI transformation and technology company. We identify expensive work, redesign how it operates, build AI-enabled systems, and measure business impact.",
   applicationName: "Archangel",
   category: "technology",
   alternates: {

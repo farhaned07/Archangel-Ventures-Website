@@ -1,0 +1,262 @@
+/*
+ * ARCHANGEL Brand System v1.0
+ * Source of truth for visual tokens and reusable brand primitives.
+ * Do not introduce new brand colours, radii, shadows, or decorative motifs
+ * without updating docs/brand-system-v1.md.
+ */
+
+:root {
+  /* Core palette */
+  --aa-black: #0a0a0a;
+  --aa-ink: #111111;
+  --aa-graphite: #2b2b2b;
+  --aa-stone: #6b6b6b;
+  --aa-concrete: #a5a29c;
+  --aa-aluminium: #c9c9c9;
+  --aa-paper: #dedbd4;
+  --aa-warm-white: #edebe6;
+  --aa-white: #f7f5f0;
+
+  /* Semantic colour */
+  --aa-bg: var(--aa-warm-white);
+  --aa-bg-dark: var(--aa-black);
+  --aa-text: var(--aa-ink);
+  --aa-text-inverse: var(--aa-white);
+  --aa-text-muted: #686761;
+  --aa-text-muted-inverse: #aaa8a1;
+  --aa-line: rgba(17, 17, 17, 0.18);
+  --aa-line-dark: rgba(247, 245, 240, 0.20);
+
+  /* Typography */
+  --aa-font-sans: var(--font-inter), "Inter", "Helvetica Neue", Arial, sans-serif;
+  --aa-font-display: var(--aa-font-sans);
+  --aa-weight-regular: 400;
+  --aa-weight-medium: 500;
+  --aa-weight-semibold: 600;
+
+  /* Type scale */
+  --aa-type-xs: clamp(0.66rem, 0.62rem + 0.10vw, 0.75rem);
+  --aa-type-sm: clamp(0.78rem, 0.74rem + 0.12vw, 0.88rem);
+  --aa-type-body: clamp(0.98rem, 0.93rem + 0.16vw, 1.10rem);
+  --aa-type-lead: clamp(1.18rem, 1.02rem + 0.50vw, 1.52rem);
+  --aa-type-h3: clamp(1.65rem, 1.25rem + 1.20vw, 2.55rem);
+  --aa-type-h2: clamp(2.55rem, 1.80rem + 2.80vw, 5.35rem);
+  --aa-type-h1: clamp(4.10rem, 2.40rem + 6.20vw, 9.10rem);
+
+  /* Spacing: 4px base with intentionally generous macro rhythm */
+  --aa-space-1: 0.25rem;
+  --aa-space-2: 0.5rem;
+  --aa-space-3: 0.75rem;
+  --aa-space-4: 1rem;
+  --aa-space-5: 1.5rem;
+  --aa-space-6: 2rem;
+  --aa-space-7: 3rem;
+  --aa-space-8: 4rem;
+  --aa-space-9: 6rem;
+  --aa-space-10: 8rem;
+  --aa-space-11: 12rem;
+
+  /* Layout */
+  --aa-shell: 1520px;
+  --aa-gutter: clamp(1.25rem, 4vw, 4rem);
+  --aa-grid-gap: clamp(1rem, 2vw, 2rem);
+
+  /* Geometry */
+  --aa-radius-sm: 2px;
+  --aa-radius-md: 4px;
+  --aa-radius-pill: 999px;
+
+  /* Motion */
+  --aa-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --aa-duration-fast: 180ms;
+  --aa-duration: 420ms;
+
+  /* Depth is intentionally restrained */
+  --aa-shadow-paper: 0 18px 50px rgba(0,0,0,0.08);
+  --aa-shadow-object: 0 30px 80px rgba(0,0,0,0.16);
+}
+
+.aa-brand-shell {
+  width: min(calc(100% - (2 * var(--aa-gutter))), var(--aa-shell));
+  margin-inline: auto;
+}
+
+.aa-brand-wordmark {
+  font-family: var(--aa-font-display);
+  font-weight: var(--aa-weight-regular);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.aa-brand-eyebrow {
+  font-size: var(--aa-type-xs);
+  font-weight: var(--aa-weight-medium);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.aa-brand-display {
+  font-family: var(--aa-font-display);
+  font-size: var(--aa-type-h1);
+  font-weight: var(--aa-weight-regular);
+  line-height: 0.89;
+  letter-spacing: -0.065em;
+}
+
+.aa-brand-heading {
+  font-size: var(--aa-type-h2);
+  font-weight: var(--aa-weight-regular);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.aa-brand-subheading {
+  font-size: var(--aa-type-h3);
+  font-weight: var(--aa-weight-regular);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.aa-brand-lead {
+  font-size: var(--aa-type-lead);
+  line-height: 1.5;
+  letter-spacing: -0.025em;
+}
+
+.aa-brand-body {
+  font-size: var(--aa-type-body);
+  line-height: 1.65;
+}
+
+.aa-brand-rule {
+  border: 0;
+  border-top: 1px solid var(--aa-line);
+}
+
+/*
+ * Suede is a material accent, not a decorative effect.
+ * Use on one dominant surface per viewport at most.
+ * The turbulence is monochrome and deliberately low contrast.
+ */
+.aa-suede,
+.aa-suede-dark {
+  position: relative;
+  isolation: isolate;
+}
+
+.aa-suede::after,
+.aa-suede-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+
+.aa-suede {
+  background: linear-gradient(145deg, #eeeae2 0%, #ded9d0 50%, #e7e3dc 100%);
+}
+
+.aa-suede-dark {
+  background: linear-gradient(145deg, #101010 0%, #1b1b1a 50%, #0a0a0a 100%);
+  color: var(--aa-text-inverse);
+}
+
+.aa-suede-dark::after {
+  opacity: 0.13;
+  mix-blend-mode: screen;
+}
+
+.aa-metal {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.35), rgba(255,255,255,0) 30%, rgba(0,0,0,.07) 65%, rgba(255,255,255,.2)),
+    #c9c9c9;
+}
+
+.aa-grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--aa-grid-gap);
+}
+
+.aa-data-rule {
+  display: flex;
+  align-items: center;
+  gap: var(--aa-space-4);
+  font-size: var(--aa-type-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.aa-data-rule::before {
+  content: "";
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.45;
+}
+
+.aa-button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.82rem 1.1rem;
+  border: 1px solid currentColor;
+  border-radius: var(--aa-radius-sm);
+  font-size: var(--aa-type-sm);
+  font-weight: var(--aa-weight-medium);
+  transition:
+    background-color var(--aa-duration-fast) var(--aa-ease),
+    color var(--aa-duration-fast) var(--aa-ease),
+    transform var(--aa-duration-fast) var(--aa-ease);
+}
+
+.aa-button:hover {
+  transform: translateY(-1px);
+}
+
+.aa-button-dark {
+  background: var(--aa-black);
+  color: var(--aa-white);
+  border-color: var(--aa-black);
+}
+
+.aa-button-dark:hover {
+  background: var(--aa-graphite);
+}
+
+.aa-button-light {
+  background: transparent;
+  color: var(--aa-ink);
+  border-color: rgba(17,17,17,.35);
+}
+
+.aa-button-light:hover {
+  background: rgba(17,17,17,.05);
+}
+
+@media (max-width: 800px) {
+  :root {
+    --aa-gutter: 1.25rem;
+    --aa-space-10: 6rem;
+    --aa-space-11: 8rem;
+  }
+
+  .aa-grid-12 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aa-button {
+    transition: none;
+  }
+}
