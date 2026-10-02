@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { bookingHref } from "@/lib/site";
+import { DeliveryTrace, HannaProductSurface, TransformationWorkbench } from "@/components/technology/TechnologyArtifacts";
 
 export const metadata: Metadata = {
   title: "Work | ARCHANGEL",
@@ -74,19 +75,7 @@ export default function WorkPage() {
               </small>
             </article>
 
-            <div className="aa-work-visual aa-suede">
-              <div className="aa-micro">CLINICAL INFORMATION FLOW / STUDY</div>
-              <div className="aa-work-visual-grid">
-                <div><span>01</span><strong>Conversation</strong></div>
-                <div><span>02</span><strong>Structured note</strong></div>
-                <div><span>03</span><strong>Clinician review</strong></div>
-                <div><span>04</span><strong>Patient care plan</strong></div>
-              </div>
-              <div className="aa-inner-material-foot">
-                <span>VOICE → STRUCTURE → REVIEW</span>
-                <span>ARCHANGEL</span>
-              </div>
-            </div>
+            <HannaProductSurface />
           </div>
         </div>
       </section>
@@ -130,6 +119,9 @@ export default function WorkPage() {
             approach to controlled workflow design. It is not presented as a
             deployed customer case study.
           </p>
+          <div style={{ marginTop: "2rem" }}>
+            <TransformationWorkbench />
+          </div>
         </div>
       </section>
 
@@ -159,6 +151,11 @@ export default function WorkPage() {
               <ArrowUpRight size={15} aria-hidden="true" />
             </Link>
           </div>
+        </div>
+        <div className="page-shell" style={{ marginTop: "3rem" }}>
+          <DeliveryTrace />
+        </div>
+        <div className="page-shell aa-two-col" style={{ display: "none" }}>
         </div>
       </section>
 
