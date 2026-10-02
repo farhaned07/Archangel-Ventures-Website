@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { bookingHref } from "@/lib/site";
+import { SystemArchitectureMap, TransformationWorkbench } from "@/components/technology/TechnologyArtifacts";
 
 export const metadata: Metadata = {
   title: "AI Transformation | ARCHANGEL",
@@ -63,6 +64,20 @@ export default function AITransformationPage() {
               <span>HUMAN CONTROL</span>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section className="tech-evidence">
+        <div className="page-shell">
+          <header className="tech-evidence-head">
+            <div className="aa-section-kicker">OPERATING MODEL / INTERACTIVE STUDY</div>
+            <h2>
+              Redesign the work
+              <br />
+              <span>before automating it.</span>
+            </h2>
+          </header>
+          <TransformationWorkbench />
         </div>
       </section>
 
@@ -138,6 +153,20 @@ export default function AITransformationPage() {
               support are defined against the production environment before commitment.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="tech-dark-visual">
+        <div className="page-shell">
+          <header className="tech-dark-visual-head">
+            <div className="aa-section-kicker">REFERENCE ARCHITECTURE</div>
+            <h2>
+              AI sits inside
+              <br />
+              <span>a controlled system.</span>
+            </h2>
+          </header>
+          <SystemArchitectureMap />
         </div>
       </section>
 
