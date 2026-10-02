@@ -1,110 +1,297 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, CornerDownRight, MoveUpRight } from "lucide-react";
-import { BuildLab } from "@/components/editorial/BuildLab";
-import { HannaFlow } from "@/components/editorial/Elements";
-import { site } from "@/lib/site";
+import { ArrowDownRight, ArrowRight, ArrowUpRight } from "lucide-react";
+import { bookingHref } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Make AI Useful at Work | Archangel Technology & AI Partner",
-  description: "Make AI useful at work. Archangel designs and builds AI systems, software products and digital experiences, from a clear first milestone to a working release.",
+  title: "ARCHANGEL | AI Transformation — Bangkok",
+  description:
+    "Make AI useful at work. Archangel identifies expensive work, redesigns how it operates, builds AI-enabled systems, and measures business impact.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Archangel — Make AI useful at work.",
-    description: "AI systems, software products and digital experiences. Founder-led engineering from first scope to working release in Bangkok.",
-    url: "/", type: "website", locale: "en_TH", siteName: "Archangel",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Archangel — Technology and AI implementation" }],
+    title: "ARCHANGEL — Make AI useful at work.",
+    description:
+      "AI transformation and technology systems for serious organisations. Bangkok, Thailand.",
+    url: "/",
+    type: "website",
+    locale: "en_TH",
+    siteName: "Archangel",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "ARCHANGEL — AI Transformation",
+      },
+    ],
   },
 };
 
-const capabilities = [
-  { index: "01", name: "AI & automation", short: "Take repetitive work off your team’s plate.", copy: "Build an AI-assisted document review, connect disconnected tools or automate a high-volume workflow—with human approval where it matters.", href: "/ai-transformation", tags: ["INTELLIGENT WORKFLOWS", "SYSTEM INTEGRATION"] },
-  { index: "02", name: "Product engineering", short: "Put your product idea in users’ hands.", copy: "Commission a testable prototype, MVP, customer-facing application or custom internal tool—and define the next release from what users actually need.", href: "/services#product-engineering", tags: ["PROTOTYPES & MVPS", "CUSTOM SOFTWARE"] },
-  { index: "03", name: "Digital experiences", short: "Make your digital presence do its job.", copy: "Build a distinctive business website, customer portal or digital platform that is clear to use, responsive and engineered for your real objectives.", href: "/services#digital-experiences", tags: ["WEBSITES & PLATFORMS", "INTERFACE ENGINEERING"] },
+const method = [
+  {
+    index: "01",
+    title: "Identify",
+    copy: "Find the work that is expensive, repetitive, slow, error-prone or structurally difficult to scale. Establish the current baseline before proposing technology.",
+    result: "EXPENSIVE WORK",
+  },
+  {
+    index: "02",
+    title: "Redesign",
+    copy: "Change the operating model around the work. Decide what software should do, what people should decide, and where controls need to remain visible.",
+    result: "NEW OPERATING MODEL",
+  },
+  {
+    index: "03",
+    title: "Build",
+    copy: "Engineer the AI-enabled workflow, product or platform. Integrate the systems, test real exceptions and put the work in front of the people who use it.",
+    result: "WORKING SYSTEM",
+  },
+  {
+    index: "04",
+    title: "Measure",
+    copy: "Compare the result against the baseline. Measure time, quality, throughput, cost or other agreed business outcomes and decide what should scale.",
+    result: "BUSINESS IMPACT",
+  },
+];
+
+const engagements = [
+  {
+    number: "01",
+    title: "AI transformation",
+    copy: "For organisations with costly operational work that can be redesigned and augmented with AI.",
+    href: "/ai-transformation",
+    cta: "Explore AI transformation",
+  },
+  {
+    number: "02",
+    title: "Technology systems",
+    copy: "Custom software, internal tools, intelligent workflows and digital platforms built around a real operating need.",
+    href: "/services",
+    cta: "Explore capabilities",
+  },
+  {
+    number: "03",
+    title: "Public-sector delivery",
+    copy: "Software-heavy systems and digital infrastructure for institutional and government environments in Thailand.",
+    href: "/company",
+    cta: "About Archangel",
+  },
 ];
 
 export default function Home() {
   return (
-    <main id="main-content" className="aa-home aa-landing">
-      <section className="aa-hero">
-        <div className="aa-hero-glow" aria-hidden="true" />
-        <div className="page-shell aa-hero-inner">
-          <div className="aa-hero-topline">
-            <span><i className="aa-status-dot" /> AN INDEPENDENT TECHNOLOGY STUDIO</span>
-            <span>BANGKOK, THAILAND / WORKING EVERYWHERE</span>
+    <main id="main-content" className="aa-new-home">
+      <section className="aa-new-hero">
+        <div className="page-shell aa-new-hero-inner">
+          <div className="aa-new-hero-copy">
+            <div className="aa-new-hero-kicker">
+              ARCHANGEL / AI TRANSFORMATION / BANGKOK
+            </div>
+
+            <h1>
+              Make AI
+              <span>useful at work.</span>
+            </h1>
+
+            <div className="aa-new-hero-bottom">
+              <p>
+                We identify expensive work, redesign how it operates, build
+                AI-enabled systems, and measure the resulting business impact.
+              </p>
+              <Link href={bookingHref} className="aa-button aa-button-dark">
+                Start a conversation
+                <ArrowUpRight size={16} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
-          <div className="aa-hero-grid">
-            <div className="aa-hero-copy">
-              <p className="aa-overline">FOUNDER-LED DESIGN + ENGINEERING</p>
-              <h1>Make AI<br /><em>useful</em><br />at work<span className="aa-accent-dot">.</span></h1>
-              <p className="aa-hero-description">We turn expensive workflows and promising product ideas into technology people can use. AI systems, custom software and digital experiences—from first prototype to working release.</p>
-              <div className="aa-hero-actions">
-                <Link href={site.calendarBookingUrl} target="_blank" rel="noreferrer" className="aa-pill aa-pill-lime" data-cta="calendar-booking">Book a free 15-minute call <ArrowUpRight size={18} /></Link>
-                <Link href="/work" className="aa-hero-sub-link">Explore the work <ArrowRight size={17} /></Link>
+
+          <aside className="aa-hero-material aa-suede" aria-label="Archangel transformation model">
+            <div className="aa-material-top">
+              <span>Transformation model</span>
+              <span>AA / 01</span>
+            </div>
+
+            <div className="aa-system-map">
+              <div className="aa-system-node">
+                <span>01</span>
+                <strong>Work</strong>
+                <small>Find cost + friction</small>
               </div>
-              <div className="aa-hero-signature"><span className="aa-signature-icon">✳</span><p>You work directly with the people designing<br />and building your system.</p></div>
+              <div className="aa-system-node">
+                <span>02</span>
+                <strong>Operating model</strong>
+                <small>Redesign the flow</small>
+              </div>
+              <div className="aa-system-node">
+                <span>03</span>
+                <strong>System</strong>
+                <small>Build + integrate</small>
+              </div>
+              <div className="aa-system-node">
+                <span>04</span>
+                <strong>Impact</strong>
+                <small>Measure what changed</small>
+              </div>
             </div>
-            <div className="aa-hero-art">
-              <div className="aa-art-label"><span>STUDIO / 001</span><span>EXPLORE WHAT WE BUILD <CornerDownRight size={14} /></span></div>
-              <BuildLab compact />
-              <p className="aa-art-note">Try three small interface studies using sample content. <span>These illustrate interaction design, not client deployments.</span></p>
+
+            <div className="aa-material-foot">
+              <span>Technology follows the operating problem.</span>
+              <ArrowDownRight size={15} aria-hidden="true" />
             </div>
-          </div>
-          <div className="aa-hero-bottom"><span>ARCHANGEL COMPANY LIMITED · THAILAND BOI PROMOTED</span><a href="#capabilities">SCROLL TO EXPLORE <ArrowDown size={15} /></a><span>01 / DESIGN + ENGINEERING</span></div>
+          </aside>
         </div>
       </section>
 
-      <section className="aa-manifesto page-shell" aria-label="Our approach">
-        <div className="aa-mini-index"><span>WHEN TO BRING US IN</span><span>01 — 04</span></div>
-        <p>A workflow eats up your team’s time. A product needs its first users. A digital experience needs to work harder. <span>We get close to the problem, then build what is needed.</span></p>
-        <div className="aa-manifesto-foot"><span>ONE PARTNER / FROM THE FIRST SCOPE TO THE WORKING BUILD</span><Link href="/company">Who you will work with <ArrowUpRight size={16} /></Link></div>
+      <section className="aa-statement">
+        <div className="page-shell aa-statement-grid">
+          <div className="aa-section-kicker">THE POSITION</div>
+          <blockquote>
+            AI adoption is easy.
+            <br />
+            <span>Operational change is not.</span>
+          </blockquote>
+          <p className="aa-statement-note">
+            Archangel works at the point where technology meets the real operating
+            system of a business: people, approvals, information, software,
+            exceptions, controls and measurable commercial outcomes.
+          </p>
+        </div>
       </section>
 
-      <section className="aa-capabilities" id="capabilities">
+      <section className="aa-method">
         <div className="page-shell">
-          <div className="aa-section-heading"><div><span className="aa-kicker">WHAT WE DO / THREE DISCIPLINES</span><h2>Three ways<br /><em>we can help.</em></h2></div><p>Bring us an operational bottleneck, a product idea or a digital experience that needs to perform. We scope and build the right solution.</p></div>
-          <div className="aa-capability-list">
-            {capabilities.map((item) => <Link href={item.href} className="aa-capability" key={item.index}>
-              <div className="aa-capability-number">{item.index} / 03</div>
-              <div className="aa-capability-main"><h3>{item.name}</h3><p>{item.short}</p><div className="aa-capability-tags">{item.tags.map(t=><span key={t}>{t}</span>)}</div></div>
-              <p className="aa-capability-copy">{item.copy}</p>
-              <span className="aa-capability-arrow" aria-hidden="true"><ArrowUpRight size={25} /></span>
-            </Link>)}
+          <header className="aa-section-head">
+            <div className="aa-section-kicker">HOW WE WORK / 01—04</div>
+            <h2>
+              From expensive work
+              <br />
+              <span>to a working system.</span>
+            </h2>
+          </header>
+
+          <div className="aa-method-list">
+            {method.map((item) => (
+              <article className="aa-method-row" key={item.index}>
+                <span className="aa-method-index">{item.index}</span>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+                <span>{item.result}</span>
+              </article>
+            ))}
           </div>
-          <div className="aa-capabilities-footer"><span>ONE TEAM. THE RIGHT DISCIPLINE FOR THE JOB.</span><Link href="/services">See all capabilities <ArrowUpRight size={16} /></Link></div>
         </div>
       </section>
 
-      <section className="aa-work-section" id="selected-work">
+      <section className="aa-institutional">
+        <div className="aa-institutional-photo" role="img" aria-label="Bangkok architecture" />
+        <div className="aa-institutional-copy">
+          <div>
+            <div className="aa-section-kicker">BUILT FOR SERIOUS ENVIRONMENTS</div>
+            <h2>
+              Technology for
+              <br />
+              <span>institutions.</span>
+            </h2>
+            <p className="aa-brand-lead">
+              We are building Archangel to work where reliability, governance,
+              judgement and implementation matter more than technology theatre.
+            </p>
+          </div>
+
+          <div className="aa-sector-list">
+            <div>Corporations</div>
+            <div>Government</div>
+            <div>Healthcare</div>
+            <div>Enterprise operations</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="aa-engagement">
         <div className="page-shell">
-          <div className="aa-section-heading aa-work-heading"><div><span className="aa-kicker">A LOOK INSIDE / WHAT EXISTS TODAY</span><h2>Inside the<br /><em>studio.</em></h2></div><div className="aa-work-heading-aside"><p>Our own product, an internal engineering blueprint and a live digital experience. Each is labelled for what it actually demonstrates.</p><Link href="/work" className="aa-text-link">Explore the portfolio <ArrowUpRight size={17} /></Link></div></div>
-          <div className="aa-hanna-feature">
-            <div className="aa-hanna-copy">
-              <div className="aa-feature-top"><span>01 / OWN PRODUCT · HEALTHCARE</span><span>IN DEVELOPMENT</span></div>
-              <div className="aa-feature-middle"><span className="aa-feature-symbol">h.</span><h3>Hanna</h3><p>From a patient conversation to a clinical note and a care plan they can understand.</p><p className="aa-hanna-detail">Our own product in development, exploring voice AI, structured clinical notes, multilingual care plans and clinician review.</p><a href="https://www.hanna.care" target="_blank" rel="noreferrer">Explore Hanna <ArrowUpRight size={17} /></a></div>
-              <div className="aa-feature-bottom">PRODUCT DEVELOPMENT / ARCHANGEL STUDIO <span>↗</span></div>
+          <header className="aa-section-head">
+            <div className="aa-section-kicker">CAPABILITIES</div>
+            <h2>
+              What Archangel
+              <br />
+              <span>is built to do.</span>
+            </h2>
+          </header>
+
+          <div className="aa-engagement-grid">
+            {engagements.map((item) => (
+              <article className="aa-engagement-card" key={item.number}>
+                <span>{item.number} / 03</span>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+                <Link href={item.href}>
+                  {item.cta}
+                  <ArrowUpRight size={15} aria-hidden="true" />
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="aa-proof">
+        <div className="page-shell aa-proof-grid">
+          <div className="aa-proof-copy">
+            <div className="aa-section-kicker">MEASURE THE CHANGE</div>
+            <h2>Useful AI has a business result.</h2>
+            <p>
+              Every serious implementation should begin with a baseline and end
+              with evidence. We define what matters before we build: time,
+              throughput, accuracy, cost, quality or another agreed operating
+              metric.
+            </p>
+            <Link href="/ai-transformation" className="aa-button" style={{ marginTop: "2rem" }}>
+              See the implementation model
+              <ArrowRight size={16} aria-hidden="true" />
+            </Link>
+          </div>
+
+          <div className="aa-proof-diagram">
+            <div className="aa-proof-diagram-head">
+              <span>Illustrative measurement language</span>
+              <span>AA / DATA 01</span>
             </div>
-            <div className="aa-hanna-visual"><HannaFlow /><span className="aa-visual-caption">ILLUSTRATIVE PRODUCT WORKFLOW · NOT A CLIENT DEPLOYMENT</span></div>
+
+            <div className="aa-proof-lines" aria-label="Illustrative business measurements">
+              <div className="aa-proof-line"><span>Cycle time</span><i /><strong>↓</strong></div>
+              <div className="aa-proof-line"><span>Manual work</span><i /><strong>↓</strong></div>
+              <div className="aa-proof-line"><span>Exceptions</span><i /><strong>↓</strong></div>
+              <div className="aa-proof-line"><span>Throughput</span><i /><strong>↑</strong></div>
+            </div>
+
+            <div className="aa-proof-diagram-foot">
+              <span>Baseline → implementation → evidence</span>
+              <span>No invented ROI.</span>
+            </div>
           </div>
-          <div className="aa-work-split">
-            <div className="aa-work-brief"><span className="aa-work-card-tag">02 / ENGINEERING STUDY</span><div className="aa-work-wire" aria-hidden="true"><i /><i /><i /><i /><b>CAPTURE</b><b>CHECK</b><b>REVIEW</b><b>CONNECT</b></div><div><h3>Systems that connect<br />the work.</h3><p>An internal design study showing how document intake, validation, human approval and system handoff could fit together.</p><Link href="/work#enterprise">Explore the approach <MoveUpRight size={17} /></Link></div></div>
-            <div className="aa-work-web"><span className="aa-work-card-tag">03 / LIVE DIGITAL EXPERIENCE</span><div className="aa-web-study" aria-hidden="true"><span>ARCHANGEL / DIGITAL</span><strong>Built with<br /><em>intention.</em></strong><span>DESIGN · ENGINEERING · PERFORMANCE</span></div><div><h3>Experience, engineered.</h3><p>This website is a live example of our responsive interface design, interaction engineering and digital delivery.</p><Link href="/work#digital">See the build <MoveUpRight size={17} /></Link></div></div>
-          </div>
-          <p className="aa-work-honesty">These examples demonstrate product thinking, interface engineering and workflow design. They are not presented as verified client outcomes.</p>
         </div>
       </section>
 
-      <section className="aa-process">
-        <div className="page-shell aa-process-layout">
-          <div className="aa-process-intro"><span className="aa-kicker">HOW A PROJECT MOVES</span><h2>A clear brief.<br /><em>A working build.</em></h2><p>We agree on the first useful milestone, show the work as it takes shape and stay involved through delivery. The steps depend on your project—not a fixed package.</p><Link href="/farhan-sabbir">Meet the founder <ArrowUpRight size={16} /></Link></div>
-          <div className="aa-process-steps">
-            {[["01","Define the first milestone","Agree who the system is for, what it needs to do, the constraints, and what counts as a successful first release."],["02","Make it tangible","Review a prototype, interface direction or technical proof before committing to a larger build, where the project calls for one."],["03","Engineer and test","Build the agreed scope, connect the necessary systems, test real workflows and make limitations visible."],["04","Deliver and improve","Launch or hand over what was built, with documentation and an agreed plan for support or the next release."]].map(([n,title,copy])=><div className="aa-process-step" key={n}><span>{n} / 04</span><div><h3>{title}</h3><p>{copy}</p></div><ArrowUpRight size={18} /></div>)}
+      <section className="aa-close aa-suede">
+        <div className="page-shell">
+          <div className="aa-section-kicker">ARCHANGEL / BANGKOK</div>
+          <h2>
+            Bring us the
+            <br />
+            <span>expensive work.</span>
+          </h2>
+
+          <div className="aa-close-row">
+            <p>
+              Start with the process that costs too much time, money or attention.
+              We will establish whether technology can materially change it.
+            </p>
+            <Link href={bookingHref} className="aa-button aa-button-dark">
+              Book a 15-minute call
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </Link>
           </div>
         </div>
-      </section>
-
-      <section className="aa-start">
-        <div className="page-shell aa-start-layout"><div><span className="aa-kicker">START WITH ONE USEFUL CONVERSATION</span><h2>What do you<br />need <em>built?</em></h2></div><div className="aa-start-right"><p>Tell us the problem, the users and the outcome you need. In a 15-minute call, we’ll establish fit and identify a sensible first milestone.</p><Link href={site.calendarBookingUrl} target="_blank" rel="noreferrer" className="aa-pill aa-pill-lime" data-cta="calendar-booking">Book a free 15-minute call <ArrowUpRight size={19} /></Link><span>15-MINUTE INITIAL CALL · SCOPE AND NEXT STEP AGREED SEPARATELY</span></div></div>
       </section>
     </main>
   );
