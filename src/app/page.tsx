@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { bookingHref } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -85,60 +85,29 @@ export default function Home() {
         <div className="page-shell aa-new-hero-inner">
           <div className="aa-new-hero-copy">
             <div className="aa-new-hero-kicker">
-              ARCHANGEL / AI TRANSFORMATION / BANGKOK
+              <span aria-hidden="true" />
+              AI Transformation
             </div>
 
-            <h1>
-              Make AI
-              <span>useful at work.</span>
-            </h1>
+            <h1>Make AI useful<br />at work.</h1>
 
-            <div className="aa-new-hero-bottom">
-              <p>
-                We identify expensive work, redesign how it operates, build
-                AI-enabled systems, and measure the resulting business impact.
-              </p>
-              <Link href={bookingHref} className="aa-button aa-button-dark">
-                Start a conversation
-                <ArrowUpRight size={16} aria-hidden="true" />
-              </Link>
-            </div>
+            <p className="aa-new-hero-description">
+              Archangel works with organisations to identify expensive work,
+              redesign how it operates, build AI-enabled systems, and measure the
+              resulting business impact.
+            </p>
+
+            <Link href="/work" className="aa-new-hero-link">
+              Explore our work
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
           </div>
 
-          <aside className="aa-hero-material aa-suede" aria-label="Archangel transformation model">
-            <div className="aa-material-top">
-              <span>Transformation model</span>
-              <span>AA / 01</span>
-            </div>
-
-            <div className="aa-system-map">
-              <div className="aa-system-node">
-                <span>01</span>
-                <strong>Work</strong>
-                <small>Find cost + friction</small>
-              </div>
-              <div className="aa-system-node">
-                <span>02</span>
-                <strong>Operating model</strong>
-                <small>Redesign the flow</small>
-              </div>
-              <div className="aa-system-node">
-                <span>03</span>
-                <strong>System</strong>
-                <small>Build + integrate</small>
-              </div>
-              <div className="aa-system-node">
-                <span>04</span>
-                <strong>Impact</strong>
-                <small>Measure what changed</small>
-              </div>
-            </div>
-
-            <div className="aa-material-foot">
-              <span>Technology follows the operating problem.</span>
-              <ArrowDownRight size={15} aria-hidden="true" />
-            </div>
-          </aside>
+          <div
+            className="aa-new-hero-image"
+            role="img"
+            aria-label="Monochrome institutional architecture"
+          />
         </div>
       </section>
 
