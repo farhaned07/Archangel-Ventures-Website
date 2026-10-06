@@ -14,23 +14,23 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main id="main-content" className="pt-[64px] md:pt-[72px] bg-[#f6f6f2]">
-      <section className="page-shell py-12 md:py-20 lg:py-24">
-        <Link href="/" className="inline-flex items-center gap-2 text-sm text-[#777771] hover:text-[#11110f] transition-colors">
-          <ArrowLeft className="w-4 h-4" /> Back to Archangel
+    <main id="main-content" className="privacy-page">
+      <section className="privacy-inner page-shell">
+        <Link href="/" className="privacy-back">
+          <ArrowLeft className="privacy-back-icon" /> Back to Archangel
         </Link>
 
-        <div className="mt-10 md:mt-14 max-w-3xl">
-          <p className="eyebrow text-[#85857f]">Privacy</p>
-          <h1 className="mt-5 text-[3rem] sm:text-[4.5rem] lg:text-[5.4rem] leading-[0.94] tracking-[-0.06em] font-medium">
+        <div className="privacy-heading">
+          <p className="eyebrow privacy-eyebrow">Privacy</p>
+          <h1 className="privacy-title">
             Privacy notice.
           </h1>
-          <p className="mt-7 text-lg text-[#696963] leading-relaxed">
+          <p className="privacy-lead">
             This notice explains how {site.legalName} handles information collected through this website and our booking process.
           </p>
         </div>
 
-        <div className="mt-14 md:mt-20 max-w-3xl border-t border-[#d9d9d3]">
+        <div className="privacy-body">
           <PrivacySection title="Information we may collect">
             We may receive information you choose to provide when you contact us or book a meeting, such as your name, business email, company and meeting details. We may also collect limited website usage information such as page visits, referral source and interactions with key calls to action.
           </PrivacySection>
@@ -57,13 +57,13 @@ export default function PrivacyPage() {
 
           <PrivacySection title="Contact">
             For privacy questions, contact us at{" "}
-            <a className="underline underline-offset-4 text-[#11110f]" href={`mailto:${site.email}`}>
+            <a className="privacy-email" href={`mailto:${site.email}`}>
               {site.email}
             </a>
             .
           </PrivacySection>
 
-          <p className="py-8 text-xs text-[#8a8a84]">Last updated 15 September 2026.</p>
+          <p className="privacy-updated">Last updated 15 September 2026.</p>
         </div>
       </section>
     </main>
@@ -72,9 +72,9 @@ export default function PrivacyPage() {
 
 function PrivacySection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="py-8 md:py-10 border-b border-[#d9d9d3]">
-      <h2 className="text-xl md:text-2xl tracking-[-0.035em] font-medium">{title}</h2>
-      <p className="mt-4 text-base md:text-lg leading-relaxed text-[#6d6d67]">{children}</p>
+    <section className="privacy-section">
+      <h2 className="privacy-section-title">{title}</h2>
+      <p className="privacy-section-copy">{children}</p>
     </section>
   );
 }
