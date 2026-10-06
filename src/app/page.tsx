@@ -72,7 +72,7 @@ export default function Home() {
               </div>
               <div className="aa-hero-signature">
                 <span className="aa-signature-icon">✳</span>
-                <p>You work directly with the people designing<br />and building your system.</p>
+                <p><strong>One task. One week. Fixed price.</strong><br />You work directly with the people designing and building it.</p>
               </div>
             </div>
 
@@ -188,6 +188,7 @@ export default function Home() {
           <div className="aa-process-intro">
             <span className="aa-kicker">HOW WE WORK</span>
             <h2>Understand.<br /><em>Build. Deploy.</em></h2>
+            <div className="aa-process-promise">ONE TASK. ONE WEEK. FIXED PRICE.</div>
             <p>We learn how the work really runs, build a useful version early, and put it into your team’s hands with clear limits and support.</p>
             <Link href="/farhan-sabbir">Meet the founder <ArrowUpRight size={16} /></Link>
           </div>
@@ -206,6 +207,13 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="aa-safety">
+        <div className="page-shell aa-safety-inner">
+          <span className="aa-kicker">IS MY DATA SAFE?</span>
+          <p>We only use the access and data needed for the work. We keep it limited to the agreed purpose and can explain what systems and AI services are involved before anything is deployed.</p>
         </div>
       </section>
 
