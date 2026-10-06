@@ -83,3 +83,73 @@
  .aa-portfolio-hanna .hanna-flow { padding:17px; }.aa-portfolio-enterprise h2 { font-size:64px; }.aa-enterprise-visual { padding:17px; }.aa-enterprise-nodes { gap:8px; }.aa-enterprise-nodes>div { padding:18px 12px; min-height:125px; }
  .aa-portfolio-digital h2 { font-size:53px; }.aa-portfolio-contact { padding:72px 0; }
 }
+
+
+/* Brand alignment layer — keeps interior/editorial routes inside the current Archangel system. */
+.interior{background:var(--aa-paper);color:var(--aa-ink);padding-top:88px}
+.interior .page-shell{width:min(100% - 112px,1440px)}
+.interior .page-hero{padding:92px 0 82px}
+.interior .page-hero h1{font-size:clamp(58px,6.6vw,105px);line-height:.99;letter-spacing:-.075em}
+.interior .page-hero .hero-deck{font-size:clamp(17px,1.5vw,20px);line-height:1.65;color:#667164}
+.interior .section-grid{border-color:var(--aa-rule);padding-block:100px}
+.interior .section-grid h2{font-size:clamp(43px,4.6vw,76px);line-height:1.02;letter-spacing:-.065em}
+.interior .prose p,.interior .editorial-list p{color:#667164}
+.interior .dark-section{background:var(--aa-night)}
+.interior .button-primary{border-color:var(--aa-ink);background:var(--aa-ink);border-radius:100px;padding:14px 21px}
+.interior .button-primary:hover{background:#344439}
+.interior .workshop-sheet,.interior .booking-panel{background:#e7ebe3;border:1px solid #cbd3c8;box-shadow:10px 10px 0 #c9d1c5}
+.interior .route-breadcrumb{color:#687568}
+.interior .muted{color:#879287}
+.interior .closing{background:#e2e7df}
+.interior .page-hero+.dark-section{border-top:0}
+.interior .section-label{color:#5e7461}
+
+.cap-page{--night:var(--aa-night);--lime:var(--aa-lime);--paper:var(--aa-paper);color:var(--aa-ink);background:var(--aa-paper)}
+.cap-hero{background:var(--aa-night);color:#f4f7ed}
+.cap-hero h1{letter-spacing:-.085em}
+.cap-lab{background:#e5e9df}
+.cap-page h2 em{color:#839387}
+.cap-page .aa-pill{border:0;border-radius:100px}
+.cap-page .page-shell{width:min(100% - 112px,1440px)}
+
+@media(max-width:760px){
+ .interior .page-shell,.cap-page .page-shell{width:min(100% - 40px,1440px)}
+ .interior .page-hero{padding:62px 0 55px}
+ .interior .page-hero h1{font-size:clamp(47px,13vw,72px)}
+ .interior .section-grid{grid-template-columns:1fr;gap:40px;padding-block:65px}
+ .interior .page-hero .hero-deck{font-size:17px}
+}
+
+/* Utility pages use the same brand tokens as the commercial site. */
+.confirmed-page,.privacy-page{background:var(--aa-paper);color:var(--aa-ink)}
+.confirmed-page{min-height:78vh;display:flex;align-items:center}
+.confirmed-inner{width:min(100% - 112px,1440px);padding-block:96px}
+.confirmed-content{max-width:760px}
+.confirmed-icon{width:52px;height:52px;border:1px solid var(--aa-rule);background:#fff;display:grid;place-items:center}
+.confirmed-icon-svg{width:20px;height:20px;color:var(--aa-ink)}
+.confirmed-eyebrow,.privacy-eyebrow{color:#707c71;margin-top:32px}
+.confirmed-title,.privacy-title{margin-top:20px;font-size:clamp(54px,6.4vw,104px);line-height:.96;letter-spacing:-.075em;font-weight:500}
+.confirmed-copy{margin-top:28px;max-width:650px;font-size:clamp(17px,1.55vw,20px);line-height:1.65;color:#667164}
+.confirmed-meta{margin-top:34px;display:flex;align-items:center;gap:10px;font-size:13px;color:#6f796e}
+.confirmed-meta.svg{width:16px;height:16px}
+.confirmed-cta{margin-top:38px}
+.privacy-inner{width:min(100% - 112px,1440px);padding-block:78px 100px}
+.privacy-back{display:inline-flex;align-items:center;gap:10px;color:#687568;font-size:14px}
+.privacy-back:hover{color:var(--aa-ink)}
+.privacy-back-icon{width:16px;height:16px}
+.privacy-heading{margin-top:52px;max-width:760px}
+.privacy-lead{margin-top:28px;font-size:18px;line-height:1.65;color:#667164}
+.privacy-body{margin-top:70px;max-width:760px;border-top:1px solid var(--aa-rule)}
+.privacy-section{padding-block:30px;border-bottom:1px solid var(--aa-rule)}
+.privacy-section-title{font-size:22px;letter-spacing:-.035em;font-weight:500}
+.privacy-section-copy{margin-top:13px;font-size:16px;line-height:1.75;color:#6d776b}
+.privacy-email{color:var(--aa-ink);text-decoration:underline;text-underline-offset:4px}
+.privacy-updated{padding-top:30px;font-size:11px;color:#8a9388}
+@media(max-width:760px){
+ .confirmed-inner,.privacy-inner{width:min(100% - 40px,1440px)}
+ .confirmed-inner{padding-block:70px}
+ .confirmed-title,.privacy-title{font-size:clamp(48px,13vw,72px)}
+ .privacy-inner{padding-block:48px 70px}
+ .privacy-heading{margin-top:40px}
+ .privacy-body{margin-top:52px}
+}
