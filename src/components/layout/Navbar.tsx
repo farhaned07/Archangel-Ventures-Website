@@ -6,16 +6,17 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { bookingHref } from "@/lib/site";
 
 const links = [
-  { href: "/services", label: "Capabilities" },
-  { href: "/work", label: "Work" },
-  { href: "/ai-transformation", label: "AI implementation" },
-  { href: "/company", label: "Company" },
+  { href: "/services", label: "Services" },
+  { href: "/work", label: "Examples" },
+  { href: "/ai-transformation", label: "AI at work" },
+  { href: "/company", label: "About" },
 ];
+
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const dialog = useRef<HTMLDialogElement>(null);
-  const trigger = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const d = dialog.current;
     if (!d) return;
@@ -23,118 +24,47 @@ export function Navbar() {
       d.showModal();
       const before = document.body.style.overflow;
       document.body.style.overflow = "hidden";
-      return () => {
-        d.close();
-        document.body.style.overflow = before;
-      };
+      return () => { d.close(); document.body.style.overflow = before; };
     }
     d.close();
   }, [open]);
+
   function close() {
     setOpen(false);
-    trigger.current?.focus();
+    document.activeElement instanceof HTMLElement && document.activeElement.blur();
   }
+
   return (
     <>
-      <header
-        className={`site-header ${["/", "/services", "/work"].includes(pathname) ? "header-on-dark" : ""}`}
-      >
+      <header className={`site-header ${["/", "/services", "/work"].includes(pathname) ? "header-on-dark" : ""}`}>
         <nav className="page-shell nav-inner" aria-label="Main navigation">
-          <Link href="/" aria-label="Archangel home" className="wordmark">
-            ΛRCHΛNGEL
-          </Link>
+          <Link href="/" aria-label="Archangel home" className="wordmark">ΛRCHΛNGEL</Link>
           <div className="desktop-links">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                aria-current={pathname === l.href ? "page" : undefined}
-              >
-                {l.label}
-              </Link>
-            ))}
+            {links.map((l) => <Link key={l.href} href={l.href} aria-current={pathname === l.href ? "page" : undefined}>{l.label}</Link>)}
           </div>
-          <Link
-            href={bookingHref}
-            className="nav-call max-md:!hidden"
-            data-cta="nav-opportunity-call"
-          >
-            Book a free call
-            <ArrowUpRight size={16} aria-hidden="true" />
+          <Link href={bookingHref} className="nav-call max-md:!hidden" data-cta="nav-opportunity-call">
+            Book a free call <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
-          <button
-            ref={trigger}
-            type="button"
-            className="menu-toggle"
-            style={{
-              marginLeft: "auto",
-              width: 36,
-              height: 36,
-              border: 0,
-              background: "transparent",
-              color: "inherit",
-            }}
-            aria-label="Open navigation"
-            aria-expanded={open}
-            aria-controls="mobile-navigation"
-            onClick={() => setOpen(true)}
-          >
+          <button type="button" className="menu-toggle" style={{ marginLeft: "auto", width: 36, height: 36, border: 0, background: "transparent", color: "inherit" }} aria-label="Open navigation" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(true)}>
             <Menu size={28} strokeWidth={1.4} />
           </button>
         </nav>
       </header>
-      <dialog
-        ref={dialog}
-        id="mobile-navigation"
-        className="mobile-navigation"
-        aria-label="Navigation"
-        onCancel={close}
-        onClose={() => setOpen(false)}
-      >
+
+      <dialog ref={dialog} id="mobile-navigation" className="mobile-navigation" aria-label="Navigation" onCancel={close} onClose={() => setOpen(false)}>
         <div className="mobile-nav-top">
-          <Link href="/" className="wordmark" onClick={close}>
-            ΛRCHΛNGEL
-          </Link>
-          <button
-            type="button"
-            className="menu-toggle"
-            style={{
-              marginLeft: "auto",
-              width: 36,
-              height: 36,
-              border: 0,
-              background: "transparent",
-              color: "#727873",
-            }}
-            aria-label="Close navigation"
-            onClick={close}
-          >
+          <Link href="/" className="wordmark" onClick={close}>ΛRCHΛNGEL</Link>
+          <button type="button" className="menu-toggle" style={{ marginLeft: "auto", width: 36, height: 36, border: 0, background: "transparent", color: "#727873" }} aria-label="Close navigation" onClick={close}>
             <X size={26} strokeWidth={1.4} />
           </button>
         </div>
         <nav aria-label="Mobile navigation">
-          {links.map((l, i) => (
-            <Link key={l.href} href={l.href} onClick={close}>
-              <span>0{i + 1}</span>
-              {l.label}
-              <ArrowUpRight size={23} aria-hidden="true" />
-            </Link>
-          ))}
+          {links.map((l, i) => <Link key={l.href} href={l.href} onClick={close}><span>0{i + 1}</span>{l.label}<ArrowUpRight size={23} aria-hidden="true" /></Link>)}
         </nav>
-        <Link
-          href={bookingHref}
-          className="button-primary"
-          data-cta="mobile-nav-opportunity-call"
-          onClick={close}
-        >
-          Book a free call
-          <ArrowUpRight size={18} aria-hidden="true" />
+        <Link href={bookingHref} className="button-primary" data-cta="mobile-nav-opportunity-call" onClick={close}>
+          Book a free call <ArrowUpRight size={18} aria-hidden="true" />
         </Link>
-        <p>
-          Archangel Company Limited
-          <br />
-          Bangkok · Thailand BOI promoted
-        </p>
+        <p>Archangel Company Limited<br />Bangkok · Thailand BOI promoted</p>
       </dialog>
     </>
   );
