@@ -36,7 +36,7 @@ export function Navbar() {
 
   return (
     <>
-      <header className={`site-header ${["/", "/services", "/work"].includes(pathname) ? "header-on-dark" : ""}`}>
+      <header className={`site-header ${["/", "/services", "/work", "/capabilities"].includes(pathname) ? "header-on-dark" : ""}`}>
         <nav className="page-shell nav-inner" aria-label="Main navigation">
           <Link href="/" aria-label="Archangel home" className="wordmark">ΛRCHΛNGEL</Link>
           <div className="desktop-links">
