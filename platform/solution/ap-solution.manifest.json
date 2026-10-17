@@ -1,0 +1,79 @@
+{
+  "solution": {
+    "uniqueName": "ArchangelEnterpriseAP",
+    "friendlyName": "Archangel Enterprise AP Accelerator",
+    "version": "1.0.0.0",
+    "publisher": { "uniqueName": "archangel", "prefix": "aa", "optionValuePrefix": 71000 }
+  },
+  "tables": [
+    {
+      "logicalName": "aa_invoice",
+      "displayName": "Invoice",
+      "displayCollectionName": "Invoices",
+      "primaryName": "aa_invoicenumber",
+      "columns": [
+        ["aa_vendorname", "String", "Vendor Name", 250],
+        ["aa_vendorid", "String", "Vendor ID", 100],
+        ["aa_purchaseorder", "String", "Purchase Order", 100],
+        ["aa_currency", "String", "Currency", 10],
+        ["aa_totalamount", "Money", "Total Amount"],
+        ["aa_taxamount", "Money", "Tax Amount"],
+        ["aa_invoicedate", "DateTime", "Invoice Date"],
+        ["aa_duedate", "DateTime", "Due Date"],
+        ["aa_extractionconfidence", "Decimal", "Extraction Confidence", 5, 4],
+        ["aa_status", "Choice", "Status", ["Received", "Validation", "Exception", "Approval", "Approved", "Rejected", "Posted"]],
+        ["aa_sourceurl", "String", "Source URL", 1000],
+        ["aa_erpdocumentid", "String", "ERP Document ID", 100]
+      ]
+    },
+    {
+      "logicalName": "aa_invoiceexception",
+      "displayName": "Invoice Exception",
+      "displayCollectionName": "Invoice Exceptions",
+      "primaryName": "aa_name",
+      "columns": [
+        ["aa_invoiceid", "String", "Invoice ID", 100],
+        ["aa_exceptiontype", "String", "Exception Type", 100],
+        ["aa_details", "Multiline", "Details", 4000],
+        ["aa_resolution", "Multiline", "Resolution", 4000],
+        ["aa_resolvedby", "String", "Resolved By", 250],
+        ["aa_resolvedat", "DateTime", "Resolved At"]
+      ]
+    },
+    {
+      "logicalName": "aa_auditevent",
+      "displayName": "Audit Event",
+      "displayCollectionName": "Audit Events",
+      "primaryName": "aa_name",
+      "columns": [
+        ["aa_entitytype", "String", "Entity Type", 100],
+        ["aa_entityid", "String", "Entity ID", 100],
+        ["aa_eventtype", "String", "Event Type", 100],
+        ["aa_actor", "String", "Actor", 250],
+        ["aa_payload", "Multiline", "Payload", 100000],
+        ["aa_occurredat", "DateTime", "Occurred At"]
+      ]
+    }
+  ],
+  "environmentVariables": [
+    ["archangel_APMailbox", "AP Mailbox", "String"],
+    ["archangel_APSharePointSite", "AP SharePoint Site", "String"],
+    ["archangel_APTeamsChannel", "AP Teams Channel", "String"],
+    ["archangel_APCurrency", "AP Currency", "String"],
+    ["archangel_APConfidenceThreshold", "AP Confidence Threshold", "Decimal"],
+    ["archangel_APRequirePurchaseOrder", "AP Require Purchase Order", "Boolean"],
+    ["archangel_APAmountMismatchTolerance", "AP Amount Mismatch Tolerance", "Decimal"],
+    ["archangel_APErpType", "AP ERP Type", "String"],
+    ["archangel_APErpEndpoint", "AP ERP Endpoint", "String"],
+    ["archangel_APApproversJson", "AP Approvers JSON", "String"],
+    ["archangel_AuditRetentionDays", "Audit Retention Days", "Integer"],
+    ["archangel_DlpPolicy", "DLP Policy", "String"]
+  ],
+  "flows": [
+    "AA AP Invoice Intake",
+    "AA AP Validate and Route",
+    "AA AP Approval",
+    "AA AP ERP Handoff",
+    "AA AP Exception Escalation"
+  ]
+}

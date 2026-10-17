@@ -1,0 +1,156 @@
+{
+  "flows": [
+    {
+      "name": "AA AP Invoice Intake",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": { "$connections": { "defaultValue": {}, "type": "Object" } },
+        "triggers": {
+          "When_a_new_email_arrives": {
+            "type": "OpenApiConnectionNotification",
+            "inputs": {
+              "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365", "connectionName": "shared_office365", "operationId": "OnNewEmailV3" },
+              "parameters": { "folderPath": "Inbox", "includeAttachments": true, "importance": "Any", "fetchOnlyWithAttachment": true }
+            },
+            "splitOn": "@triggerOutputs()?['body/value']"
+          }
+        },
+        "actions": {
+          "For_each_attachment": {
+            "type": "Foreach",
+            "foreach": "@triggerOutputs()?['body/attachments']",
+            "actions": {
+              "Create_invoice_row": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps", "connectionName": "shared_commondataserviceforapps", "operationId": "CreateRecord" },
+                  "parameters": {
+                    "entityName": "aa_invoices",
+                    "item/aa_invoicenumber": "@concat('PENDING-', guid())",
+                    "item/aa_vendorname": "@triggerOutputs()?['body/from']",
+                    "item/aa_sourceurl": "@triggerOutputs()?['body/webLink']",
+                    "item/aa_status": 71000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "outputs": {}
+      }
+    },
+    {
+      "name": "AA AP Validate and Route",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": { "$connections": { "defaultValue": {}, "type": "Object" } },
+        "triggers": {
+          "When_invoice_is_created": {
+            "type": "OpenApiConnectionWebhook",
+            "inputs": {
+              "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps", "connectionName": "shared_commondataserviceforapps", "operationId": "SubscribeWebhookTrigger" },
+              "parameters": { "subscriptionRequest/message": 1, "subscriptionRequest/entityname": "aa_invoice", "subscriptionRequest/scope": 4, "subscriptionRequest/filterexpression": "aa_status eq 71000" }
+            }
+          }
+        },
+        "actions": {
+          "Check_required_fields": {
+            "type": "If",
+            "expression": { "or": [ { "equals": ["@triggerOutputs()?['body/aa_vendorname']", null] }, { "equals": ["@triggerOutputs()?['body/aa_totalamount']", null] } ] },
+            "actions": {
+              "Create_exception": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps", "connectionName": "shared_commondataserviceforapps", "operationId": "CreateRecord" },
+                  "parameters": { "entityName": "aa_invoiceexceptions", "item/aa_name": "Missing required invoice data", "item/aa_invoiceid": "@triggerOutputs()?['body/aa_invoiceid']", "item/aa_exceptiontype": "VALIDATION", "item/aa_details": "Vendor or amount is missing" }
+                }
+              }
+            },
+            "else": {
+              "actions": {
+                "Update_for_approval": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps", "connectionName": "shared_commondataserviceforapps", "operationId": "UpdateRecord" },
+                    "parameters": { "entityName": "aa_invoices", "recordId": "@triggerOutputs()?['body/aa_invoiceid']", "item/aa_status": 71003 }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "outputs": {}
+      }
+    },
+    {
+      "name": "AA AP Approval",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": { "$connections": { "defaultValue": {}, "type": "Object" } },
+        "triggers": {
+          "When_ready_for_approval": {
+            "type": "OpenApiConnectionWebhook",
+            "inputs": {
+              "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps", "connectionName": "shared_commondataserviceforapps", "operationId": "SubscribeWebhookTrigger" },
+              "parameters": { "subscriptionRequest/message": 3, "subscriptionRequest/entityname": "aa_invoice", "subscriptionRequest/scope": 4, "subscriptionRequest/filterexpression": "aa_status eq 71003" }
+            }
+          }
+        },
+        "actions": {
+          "Start_and_wait_for_approval": {
+            "type": "OpenApiConnectionWebhook",
+            "inputs": {
+              "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_approvals", "connectionName": "shared_approvals", "operationId": "StartAndWaitForAnApproval" },
+              "parameters": { "approvalType": "Basic", "WebhookApprovalCreationInput/title": "@concat('Invoice ', triggerOutputs()?['body/aa_invoicenumber'], ' for ', triggerOutputs()?['body/aa_totalamount'])", "WebhookApprovalCreationInput/assignedTo": "@variables('Approver')", "WebhookApprovalCreationInput/details": "@triggerOutputs()?['body/aa_vendorname']" }
+            }
+          },
+          "Apply_decision": {
+            "type": "OpenApiConnection",
+            "runAfter": { "Start_and_wait_for_approval": ["Succeeded"] },
+            "inputs": {
+              "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps", "connectionName": "shared_commondataserviceforapps", "operationId": "UpdateRecord" },
+              "parameters": { "entityName": "aa_invoices", "recordId": "@triggerOutputs()?['body/aa_invoiceid']", "item/aa_status": "@if(equals(outputs('Start_and_wait_for_approval')?['body/outcome'],'Approve'),71004,71005)" }
+            }
+          }
+        },
+        "outputs": {}
+      }
+    },
+    {
+      "name": "AA AP ERP Handoff",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": { "$connections": { "defaultValue": {}, "type": "Object" } },
+        "triggers": {
+          "When_invoice_approved": {
+            "type": "OpenApiConnectionWebhook",
+            "inputs": {
+              "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps", "connectionName": "shared_commondataserviceforapps", "operationId": "SubscribeWebhookTrigger" },
+              "parameters": { "subscriptionRequest/message": 3, "subscriptionRequest/entityname": "aa_invoice", "subscriptionRequest/scope": 4, "subscriptionRequest/filterexpression": "aa_status eq 71004" }
+            }
+          }
+        },
+        "actions": {
+          "Post_to_ERP_endpoint": {
+            "type": "Http",
+            "inputs": { "method": "POST", "uri": "@parameters('ERP_ENDPOINT')", "headers": { "Content-Type": "application/json" }, "body": "@triggerOutputs()?['body']" },
+            "runtimeConfiguration": { "contentTransfer": { "transferMode": "Chunked" } }
+          },
+          "Mark_posted": {
+            "type": "OpenApiConnection",
+            "runAfter": { "Post_to_ERP_endpoint": ["Succeeded"] },
+            "inputs": {
+              "host": { "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps", "connectionName": "shared_commondataserviceforapps", "operationId": "UpdateRecord" },
+              "parameters": { "entityName": "aa_invoices", "recordId": "@triggerOutputs()?['body/aa_invoiceid']", "item/aa_status": 71006, "item/aa_erpdocumentid": "@outputs('Post_to_ERP_endpoint')?['body/id']" }
+            }
+          }
+        },
+        "outputs": {}
+      }
+    }
+  ]
+}
