@@ -9,6 +9,7 @@ import { absoluteUrl, site } from "@/lib/site";
 import "./globals.css";
 import "./atelier.css";
 import "./atelier-more.css";
+import "./deployment.css";
 
 const inter = localFont({
   src: [
