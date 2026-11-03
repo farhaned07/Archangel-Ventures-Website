@@ -469,3 +469,123 @@
   .adv-step h3{margin-top:7px}
   .adv-feature{border:0}
 }
+
+
+/* DESIGN PASS 3 — MOBILE-FIRST FIT, TOUCH TARGETS, TYPOGRAPHIC SAFETY */
+.adv-site{overflow-x:clip;max-width:100%}
+.adv-shell,.adv-shell>*{min-width:0}
+.adv-site p,.adv-feature-content>p{overflow-wrap:break-word}
+.adv-button,.adv-text-button,.adv-underline-link,.adv-feature-content a{touch-action:manipulation}
+.adv-button{min-height:52px}
+.av3-artwork{max-width:100%;overflow:hidden}
+.av3-artwork>svg{display:block;max-width:100%}
+.adv-feature-screen,.adv-feature-content,.adv-workshow,.adv-services-visual-grid>*{min-width:0}
+.adv-hero-description{max-width:min(100%,720px)}
+.adv-feature-content a{min-height:44px;align-items:center}
+@media(max-width:1000px){
+  .adv-heading-row{gap:36px}
+  .adv-thesis-grid{gap:40px}
+  .adv-hero-center{padding-top:75px}
+  .adv-workshow{padding-top:100px;padding-bottom:105px}
+  .adv-hero-description{max-width:620px}
+}
+@media(max-width:800px){
+  .adv-hero-center{padding-top:65px}
+  .adv-hero h1{font-size:clamp(47px,8.9vw,80px);letter-spacing:-.065em}
+  .adv-site .adv-hero{padding-bottom:46px}
+  .adv-thesis{padding-block:78px}
+  .adv-offerings{padding-block:84px}
+  .adv-feature-screen{padding:18px}
+  .adv-feature-content{padding:34px 25px}
+  .adv-workshow{padding-block:82px}
+  .adv-method{padding-block:76px}
+  .adv-contact{padding-top:83px}
+  .adv-models{padding-block:82px}
+  .av3-artwork-compact{max-height:460px}
+}
+@media(max-width:600px){
+  .adv-hero-inner{padding-top:108px}
+  .adv-hero-center{padding:58px 0 35px}
+  .adv-hero h1{font-size:clamp(43px,10vw,62px);line-height:1.045;letter-spacing:-.065em;margin-bottom:20px;overflow-wrap:normal}
+  .adv-hero-description{font-size:16px;line-height:1.53;margin-bottom:22px;max-width:380px}
+  .adv-eyebrow{margin-bottom:19px}
+  .adv-actions{gap:15px}
+  .adv-actions .adv-button{width:100%;max-width:350px}
+  .adv-actions .adv-text-button{padding:8px 0}
+  .adv-site h2{font-size:clamp(36px,9.5vw,54px);letter-spacing:-.062em;line-height:1.085}
+  .adv-hero-meta{max-width:100%}
+  .av3-signal{aspect-ratio:5/4}
+  .av3-signal>svg{aspect-ratio:auto}
+  .av3-signal-label>span:first-child{max-width:180px}
+  .av3-signal-label>span:last-child{font-size:7px;max-width:133px}
+  .adv-thesis-grid{gap:33px}
+  .adv-thesis-copy h2{margin-block:20px}
+  .adv-thesis-copy>p{font-size:16px}
+  .adv-offering{grid-template-columns:42px minmax(0,1fr) 17px;gap:9px}
+  .adv-offering h3{font-size:clamp(25px,7vw,33px)}
+  .adv-offering p{font-size:14px}
+  .adv-work-heading{margin-bottom:32px}
+  .adv-feature-content h3{font-size:clamp(36px,8.8vw,51px)}
+  .adv-feature-screen{padding:18px 10px}
+  .adv-model-row>div:last-child p{font-size:17px}
+  .adv-contact-row .adv-button{width:100%}
+  .adv-contact h2{font-size:clamp(58px,12.3vw,90px)}
+  .adv-service-hero{padding-top:110px}
+  .adv-service-hero h1,.adv-work-hero h1{font-size:clamp(44px,10vw,68px);letter-spacing:-.064em}
+  .adv-service-hero p,.adv-work-hero p{font-size:16px}
+  .adv-services-visual h2{margin-block:20px}
+  .adv-service-line{scroll-margin-top:85px}
+  .adv-service-meta li{font-size:14px}
+  .av3-capability-art{aspect-ratio:5/4}
+  .adv-feature-ops .adv-feature-screen{order:2}
+}
+@media(max-width:420px){
+  .adv-shell{width:calc(100% - 30px)}
+  .adv-hero h1{font-size:clamp(42px,10.4vw,52px);letter-spacing:-.065em}
+  .adv-hero-description{font-size:15.5px}
+  .adv-hero-meta{font-size:8px}
+  .adv-hero-center{padding-top:53px}
+  .adv-site h2{font-size:clamp(34px,10vw,43px)}
+  .adv-thesis{padding-block:62px}
+  .adv-offerings{padding-block:67px}
+  .adv-workshow{padding-block:66px}
+  .adv-method{padding-block:69px}
+  .adv-contact{padding-top:68px}
+  .adv-models{padding-block:67px}
+  .adv-feature-content{padding:29px 21px}
+  .adv-feature-screen{padding:20px 13px}
+  .av3-hanna-cards{grid-template-columns:1fr!important;gap:10px}
+  .av3-clinical-card{min-height:0;padding:13px 12px}
+  .av3-waveform{height:49px}
+  .av3-clinical-list p{font-size:11px!important}
+  .av3-clinical-list>span{font-size:9px}
+  .av3-note-section strong{font-size:11px}
+  .av3-note-section p{font-size:11px!important}
+  .av3-note-approval{font-size:10px;padding:9px}
+  .av3-clinical-card>small{font-size:9px}
+  .av3-review-status{white-space:normal;font-size:9px!important;max-width:160px}
+  .av3-demo .adv-ui-foot{flex-direction:column;align-items:flex-start;gap:5px}
+  .av3-operation-overview{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .av3-operation-overview>div>span{display:none}
+  .av3-operation-overview strong{font-size:12px}
+  .av3-operation-panel{padding:11px}
+  .av3-trace-row strong{font-size:11px}
+  .av3-trace-row small{font-size:9px}
+  .av3-capability-art{aspect-ratio:1/1.03}
+  .av3-capability-art svg{object-position:52% center}
+  .av3-signal-label{inset:11px}
+}
+@media(max-width:345px){
+  .adv-hero h1{font-size:41px}
+  .adv-hero-description{font-size:15px}
+  .adv-hero-meta{letter-spacing:.04em}
+  .adv-offering{grid-template-columns:34px minmax(0,1fr) 15px}
+  .adv-offer-no{font-size:8px}
+  .adv-offering h3{font-size:24px}
+  .adv-feature-screen{padding:14px 8px}
+  .av3-demo .adv-ui-toolbar{padding-inline:7px}
+  .av3-review-status{font-size:8px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .adv-site *, .av3-artwork *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
