@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowDownRight, ArrowRight, ArrowUpRight, Check, MoveUpRight } from "lucide-react";
 import { bookingHref } from "@/lib/site";
 import { FieldImage, HannaPreview, SystemImage, WorkflowPreview } from "@/components/deployment/Visuals";
+import { ProcessGlyph } from "@/components/deployment/CinematicArt";
 
 export const metadata: Metadata = {
   title: "Forward Deployed AI Engineering in Thailand | Archangel",
@@ -81,7 +82,7 @@ export default function Home() {
     <section className="adv-method">
       <div className="adv-shell">
         <div className="adv-method-heading"><span className="adv-marker">04 / HOW FDE WORKS</span><h2>Close to the problem.<br/><em>Accountable for the result.</em></h2><p>We take an evidence-led path from the first working version to something people can operate with confidence.</p></div>
-        <div className="adv-steps">{steps.map(s=><div className="adv-step" key={s.no}><span>{s.no} / 04</span><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
+        <div className="adv-steps">{steps.map(s=><div className="adv-step" key={s.no}><div className="av3-step-heading"><span>{s.no} / 04</span><ProcessGlyph phase={Number(s.no) as 1 | 2 | 3 | 4}/></div><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
         <div className="adv-method-foot"><span><Check size={14}/> Bounded pilots</span><span><Check size={14}/> Model choice by evidence</span><span><Check size={14}/> Human oversight where needed</span></div>
       </div>
     </section>

@@ -40,12 +40,12 @@ export function Navbar() {
         <nav className="page-shell nav-inner" aria-label="Main navigation">
           <Link href="/" aria-label="Archangel home" className="wordmark">ΛRCHΛNGEL</Link>
           <div className="desktop-links">
-            {links.map((l) => <Link key={l.href} href={l.href} aria-current={pathname === l.href ? "page" : undefined}>{l.label}</Link>)}
+            {links.map((l) => <Link key={l.href} href={l.href} aria-current={pathname === l.href || (l.href==="/#approach" && pathname==="/") ? "page" : undefined}>{l.label}</Link>)}
           </div>
           <Link href={bookingHref} className="nav-call max-md:!hidden" data-cta="nav-opportunity-call">
             Start a project <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
-          <button type="button" className="menu-toggle" style={{ marginLeft: "auto", width: 36, height: 36, border: 0, background: "transparent", color: "inherit" }} aria-label="Open navigation" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(true)}>
+          <button type="button" className="menu-toggle" style={{ marginLeft: "auto", width: 44, height: 44, border: 0, background: "transparent", color: "inherit" }} aria-label="Open navigation" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(true)}>
             <Menu size={28} strokeWidth={1.4} />
           </button>
         </nav>
@@ -54,7 +54,7 @@ export function Navbar() {
       <dialog ref={dialog} id="mobile-navigation" className="mobile-navigation" aria-label="Navigation" onCancel={close} onClose={() => setOpen(false)}>
         <div className="mobile-nav-top">
           <Link href="/" className="wordmark" onClick={close}>ΛRCHΛNGEL</Link>
-          <button type="button" className="menu-toggle" style={{ marginLeft: "auto", width: 36, height: 36, border: 0, background: "transparent", color: "#727873" }} aria-label="Close navigation" onClick={close}>
+          <button type="button" className="menu-toggle" style={{ marginLeft: "auto", width: 44, height: 44, border: 0, background: "transparent", color: "#727873" }} aria-label="Close navigation" onClick={close}>
             <X size={26} strokeWidth={1.4} />
           </button>
         </div>
