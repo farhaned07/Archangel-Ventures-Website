@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { bookingHref } from "@/lib/site";
-import "../deployment.css";
 
 export const metadata: Metadata = {
   title: "AI Deployment Services & Forward Deployed Engineering | Archangel",
