@@ -156,7 +156,6 @@ export function ArchitectureArtwork() {
         {routeNodes.map((node,i)=>(
           <g key={node.number}>
             <circle cx={node.x} cy={node.y} r="9" fill="#f6ffec" stroke="#386b70" strokeWidth="3" className={i%2===0?"av3-node-pulse":""}/>
-            <g transform={"translate("+(i%2===0?24:node.x-225)+","+(i===0?68:i===1?62:i===2?640:650)+")"}></g>
             <rect x={i%2===0?35:615} y={i<2?50:665} width="191" height="65" rx="2" fill="url(#av3-a-glass)" stroke="#d3f6e3" strokeOpacity=".47"/>
             <text x={i%2===0?49:630} y={i<2?72:687} fontSize="10" fontFamily="Arial,sans-serif" letterSpacing="1.5" fill="#e7f9e9">{node.number+" / "+node.title}</text>
             <text x={i%2===0?49:630} y={i<2?98:713} fontSize="11" fontFamily="Arial,sans-serif" fill="#e7f9e9" opacity=".78">{node.detail}</text>
@@ -185,5 +184,54 @@ export function ProcessGlyph({ phase }: { phase: 1 | 2 | 3 | 4 }) {
       <circle cx="74" cy="56" r="7" fill="#effded"/>
       <g fill="#effded"><circle cx="74" cy="14" r="3"/><circle cx="116" cy="56" r="3"/><circle cx="74" cy="98" r="3"/><circle cx="32" cy="56" r="3"/></g>
     </svg>
+  );
+}
+
+
+/** Distinct artwork for the Services page: a deployment pipeline, not a repeat of the hero field. */
+export function CapabilityAtlas() {
+  const waypoints = [
+    { x: 235, y: 300, number: "01", name: "UNDERSTAND", sub: "WORKFLOW" },
+    { x: 535, y: 240, number: "02", name: "ENGINEER", sub: "SYSTEM" },
+    { x: 825, y: 293, number: "03", name: "EVALUATE", sub: "OUTCOME" },
+    { x: 1155, y: 232, number: "04", name: "OPERATE", sub: "IN CONTEXT" },
+  ];
+  return (
+    <VisualFrame className="av3-capability-art">
+      <svg viewBox="0 0 1440 500" role="img" aria-label="Original engineering lifecycle artwork showing four connected stages: understand, engineer, evaluate and operate">
+        <defs>
+          <linearGradient id="av3-cap-bg" x1="0" y1="0" x2="1" y2=".8">
+            <stop stopColor="#12323d"/><stop offset=".54" stopColor="#377c82"/><stop offset="1" stopColor="#a3c7b0"/>
+          </linearGradient>
+          <radialGradient id="av3-cap-bloom"><stop stopColor="#eafcdf" stopOpacity=".5"/><stop offset="1" stopColor="#eafcdf" stopOpacity="0"/></radialGradient>
+          <pattern id="av3-cap-grid" width="28" height="28" patternUnits="userSpaceOnUse">
+            <path d="M28 0H0V28" stroke="#f4faec" strokeOpacity=".085"/>
+          </pattern>
+        </defs>
+        <rect width="1440" height="500" fill="url(#av3-cap-bg)"/><rect width="1440" height="500" fill="url(#av3-cap-grid)"/>
+        {waypoints.map((p,i)=><g key={p.number}>
+          <circle cx={p.x} cy={p.y} r="176" fill="url(#av3-cap-bloom)" opacity={i%2===0?".6":".34"}/>
+          <circle cx={p.x} cy={p.y} r="74" fill="none" stroke="#e9fff0" strokeOpacity=".44"/>
+          <circle cx={p.x} cy={p.y} r="111" fill="none" stroke="#e9fff0" strokeOpacity=".22" strokeDasharray="3 8"/>
+          <circle cx={p.x} cy={p.y} r="39" fill="#dbf4e5" fillOpacity=".17" stroke="#f3fff1" strokeOpacity=".65"/>
+          <circle cx={p.x} cy={p.y} r="8" fill="#f3fff1"/>
+          <path d={"M"+p.x+" "+(p.y-18)+"v-9m0 45v9m-18-18h-9m45 0h9"} stroke="#ecffee" strokeOpacity=".7"/>
+          <g fontFamily="Arial,sans-serif" fill="#f7fff0">
+            <text x={p.x} y={p.y+127} fontSize="11" letterSpacing="2" textAnchor="middle">{p.number+" / "+p.name}</text>
+            <text x={p.x} y={p.y+143} fontSize="10" letterSpacing="2" opacity=".75" textAnchor="middle">{p.sub}</text>
+          </g>
+        </g>)}
+        <path d="M-35 305C148 305 170 300 235 300S440 240 535 240S715 293 825 293S1035 232 1155 232S1330 280 1470 130" stroke="#f5ffe8" strokeWidth="1.8" fill="none" opacity=".86"/>
+        <path d="M-35 319C148 319 170 314 235 314S440 254 535 254S715 307 825 307S1035 246 1155 246S1330 294 1470 144" stroke="#f5ffe8" strokeWidth=".7" strokeDasharray="3 6" fill="none" opacity=".45"/>
+        <g stroke="#f4ffe9" strokeOpacity=".5" fill="none">
+          <path d="M24 24h22M24 24v22M1416 24h-22M1416 24v22M24 476h22M24 476v-22M1416 476h-22M1416 476v-22"/>
+          <path d="M0 45H1440M0 452H1440" strokeDasharray="2 10"/>
+        </g>
+        <g fontFamily="Arial,sans-serif" fill="#ecf9eb" fontSize="10" letterSpacing="2" opacity=".85">
+          <text x="40" y="39">ARCHANGEL / DELIVERY CYCLE</text>
+          <text x="1182" y="463">MODELS ARE A COMPONENT, NOT THE RESULT</text>
+        </g>
+      </svg>
+    </VisualFrame>
   );
 }
