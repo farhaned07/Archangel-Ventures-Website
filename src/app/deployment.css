@@ -315,3 +315,124 @@
 @media(prefers-reduced-motion:reduce){
   .av3-breath,.av3-node-pulse{animation:none!important}
 }
+
+
+/* DESIGN PASS 2 — EDITORIAL REFINEMENT AND MORE CREDIBLE PRODUCT ART */
+.av3-demo{max-width:880px;border-radius:9px;background:#fbfcfb;box-shadow:0 32px 95px rgba(13,54,51,.19),0 0 0 1px rgba(222,239,229,.75);border:0}
+.av3-demo .adv-ui-toolbar{height:49px;padding-inline:19px;background:#f9fcf9;border-bottom:1px solid #e1eae3}
+.av3-demo .adv-ui-toolbar .av3-ui-top-title{font-size:10px;letter-spacing:.045em;font-weight:500;color:#6e7a71}
+.av3-demo .adv-ui-toolbar small{white-space:nowrap;font-size:9px;color:#596f61}
+.av3-hanna-workspace{grid-template-columns:54px minmax(0,1fr)}
+.av3-sidebar{background:#edf3ed;gap:16px}
+.av3-sidebar i{width:19px;height:19px;border-radius:5px;background:#e6efe7}
+.av3-sidebar i.selected{background:#a6d2b5;border-color:#7eab90}
+.av3-demo .adv-hanna-primary{padding:26px}
+.av3-demo-header{margin-bottom:20px}
+.av3-demo-header h3{font-size:clamp(24px,2.3vw,33px);margin:4px 0 0;color:#1d3026;letter-spacing:-.055em}
+.av3-demo-dot{color:#85b89b}
+.av3-review-status{border:1px solid #cfe3d5!important;background:#eaf5ed!important;color:#37634c!important;border-radius:100px;padding:7px 11px!important;font-weight:600!important}
+.av3-clinical-breadcrumb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-bottom:18px}
+.av3-clinical-breadcrumb span{padding:11px 5px 10px;border-top:2px solid #d9e6dc;color:#83938a;font-size:10px;font-weight:600}
+.av3-clinical-breadcrumb span.active{color:#315946;border-color:#418465}
+.av3-hanna-cards{grid-template-columns:1fr 1fr;gap:14px}
+.av3-clinical-card{border-radius:5px;padding:19px 17px;min-height:300px;background:#fff;border:1px solid #e1eae3}
+.av3-clinical-card>small{letter-spacing:.08em;color:#577865}
+.av3-audio-card{padding:14px 0 10px;margin:14px 0;border-bottom:1px solid #e8eee9}
+.av3-waveform{height:55px;display:flex;align-items:center;gap:2px;overflow:hidden}
+.av3-waveform i{flex:1;min-width:1px;background:linear-gradient(#a5d1b8,#477c70);border-radius:4px}
+.av3-audio-time{display:flex;justify-content:space-between;margin-top:9px;font-size:8px;color:#8a978b;letter-spacing:.06em}
+.av3-clinical-list>span{display:block;color:#809388;font-size:9px;letter-spacing:.08em;font-weight:600;margin:12px 0 8px}
+.av3-clinical-list p{display:flex;align-items:center;gap:7px;color:#4c6757;margin:8px 0!important;font-size:11px!important;line-height:1.4}
+.av3-clinical-list svg{color:#48835e;flex-shrink:0}
+.av3-care-card{background:#f8fbf8}
+.av3-note-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:18px 0 14px;padding-bottom:12px;border-bottom:1px solid #dce8dc}
+.av3-note-head span{font-size:15px;color:#24382c;font-weight:600}
+.av3-note-head b{font-size:8px;letter-spacing:.045em;color:#627f68;white-space:nowrap}
+.av3-note-section{margin:13px 0}
+.av3-note-section strong{font-size:11px;color:#536d59}
+.av3-note-section p{font-size:11px!important;line-height:1.5!important;color:#526457!important;margin:5px 0!important;max-width:260px}
+.av3-note-approval{display:flex;align-items:center;gap:7px;margin-top:20px;padding:10px;color:#46735a;background:#eaf5eb;border:1px solid #d9e9d9;font-size:10px;font-weight:600}
+.av3-demo .adv-ui-foot{font-size:9px;letter-spacing:.055em;padding-top:8px}
+.av3-flow-body{padding:25px 27px}
+.av3-flow-body .adv-ui-title{margin-bottom:21px}
+.av3-operation-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:0 0 16px}
+.av3-operation-overview>div{background:#f1f6f1;border:1px solid #e1eae1;border-radius:4px;padding:14px;display:flex;flex-direction:column;gap:7px}
+.av3-operation-overview small{font-size:9px;font-weight:600;color:#799183;letter-spacing:.08em}
+.av3-operation-overview strong{font-size:18px;color:#2b4435;font-weight:500;letter-spacing:-.035em}
+.av3-operation-overview>div>span{display:flex;align-items:center;gap:5px;color:#58826b;font-size:10px}
+.av3-operation-panel{background:#fff;border:1px solid #e1eae3;border-radius:5px;padding:15px 17px}
+.av3-operation-top{display:flex;justify-content:space-between;gap:12px;color:#7b8b7f;letter-spacing:.08em;font-size:9px;font-weight:600;padding-bottom:12px;border-bottom:1px solid #e4eee6}
+.av3-operation-trace{padding-top:2px}
+.av3-trace-row{display:grid;grid-template-columns:35px minmax(0,1fr) auto;align-items:center;gap:13px;min-height:48px;position:relative}
+.av3-trace-connector{display:grid;place-items:center;width:29px;height:29px;background:#407f62;color:white;border-radius:50%;font-size:10px;position:relative;z-index:1}
+.av3-trace-row.review .av3-trace-connector{color:#336943;background:#dfedde}
+.av3-trace-row.pending .av3-trace-connector{color:#77877a;background:#edf2ec}
+.av3-trace-row:not(:last-child)::after{content:"";position:absolute;left:14px;top:31px;height:18px;border-left:1px dashed #aec8b6}
+.av3-trace-row>div{display:flex;flex-direction:column;gap:3px}
+.av3-trace-row strong{font-size:12px;color:#334a3a;font-weight:600}
+.av3-trace-row small{font-size:10px;color:#7a8b7e}
+.av3-trace-status{font-size:9px;color:#577d61}
+.av3-trace-row.pending .av3-trace-status{color:#8d9990}
+.av3-trace-row.review .av3-trace-status{padding:5px 7px;border-radius:100px;background:#e4f1e4;color:#41704a}
+.av3-flow-body .adv-ui-foot span:last-child{display:flex;gap:6px;align-items:center}
+.adv-feature-screen{isolation:isolate}
+.adv-feature-screen::before{content:"";position:absolute;width:50%;height:55%;top:11%;right:-6%;background:radial-gradient(circle,rgba(202,235,213,.8),transparent 72%);pointer-events:none;z-index:-1}
+.adv-feature-screen{position:relative}
+.adv-feature-ops .adv-feature-screen::before{left:-4%;right:auto;background:radial-gradient(circle,rgba(231,248,217,.72),transparent 70%)}
+@media(max-width:900px){
+  .av3-demo .adv-ui-toolbar .av3-ui-top-title{display:none}
+  .av3-demo .adv-hanna-primary,.av3-flow-body{padding:17px}
+  .av3-clinical-card{padding:13px 12px;min-height:275px}
+  .av3-note-head{flex-direction:column;align-items:flex-start;gap:5px}
+  .av3-demo-header h3{font-size:25px}
+  .av3-operation-overview>div{padding:9px}
+  .av3-operation-overview strong{font-size:14px}
+}
+@media(max-width:600px){
+  .adv-feature-screen{padding:22px 10px;min-height:325px}
+  .av3-demo{width:100%;min-height:0;border-radius:5px}
+  .av3-hanna-workspace{grid-template-columns:28px minmax(0,1fr)}
+  .av3-sidebar{padding:12px 4px;gap:12px}
+  .av3-sidebar span{font-size:15px}
+  .av3-sidebar i{width:13px;height:13px}
+  .av3-demo .adv-ui-toolbar{height:43px;padding:0 10px}
+  .av3-demo .adv-ui-toolbar strong{font-size:20px}
+  .av3-demo .adv-ui-toolbar small{font-size:8px}
+  .av3-demo .adv-hanna-primary,.av3-flow-body{padding:11px}
+  .av3-demo-header{margin-bottom:12px}
+  .av3-demo-header h3{font-size:20px}
+  .av3-review-status{font-size:8px!important;padding:5px 7px!important}
+  .av3-clinical-breadcrumb{gap:4px;margin-bottom:12px}
+  .av3-clinical-breadcrumb span{font-size:8px;padding:7px 0;letter-spacing:-.02em}
+  .av3-hanna-cards{grid-template-columns:1fr 1fr;gap:6px}
+  .av3-clinical-card{padding:10px 8px;min-height:220px}
+  .av3-clinical-card>small{font-size:8px;gap:4px;letter-spacing:0}
+  .av3-waveform{height:38px}
+  .av3-clinical-list>span{font-size:7px}
+  .av3-clinical-list p{font-size:9px!important;gap:3px;margin:6px 0!important}
+  .av3-clinical-list svg{width:9px}
+  .av3-note-head{margin:10px 0 7px;padding-bottom:8px}
+  .av3-note-head span{font-size:11px}
+  .av3-note-head b{font-size:7px}
+  .av3-note-section{margin:8px 0}
+  .av3-note-section strong{font-size:10px}
+  .av3-note-section p{font-size:9px!important}
+  .av3-note-approval{padding:6px 4px;font-size:8px;margin-top:10px}
+  .av3-note-approval svg{width:12px;flex-shrink:0}
+  .av3-demo .adv-ui-foot{font-size:7px!important;letter-spacing:0;gap:9px}
+  .av3-operation-overview{gap:5px;margin-bottom:9px}
+  .av3-operation-overview>div{padding:7px 5px}
+  .av3-operation-overview small{font-size:7px}
+  .av3-operation-overview strong{font-size:11px}
+  .av3-operation-overview>div>span{font-size:8px;gap:2px}
+  .av3-operation-overview svg{width:9px}
+  .av3-operation-panel{padding:10px 9px}
+  .av3-operation-top{font-size:8px}
+  .av3-operation-top span:last-child{display:none}
+  .av3-trace-row{grid-template-columns:24px minmax(0,1fr) auto;gap:7px;min-height:47px}
+  .av3-trace-connector{width:22px;height:22px}
+  .av3-trace-row:not(:last-child)::after{left:10px;top:24px;height:24px}
+  .av3-trace-row strong{font-size:10px}
+  .av3-trace-row small{font-size:8px}
+  .av3-trace-status{font-size:8px}
+}
