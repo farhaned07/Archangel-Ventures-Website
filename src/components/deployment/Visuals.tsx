@@ -1,7 +1,11 @@
 import { ArrowUpRight, Check, CheckCheck, FileText, GitBranch, Layers3, LockKeyhole, ScanLine, ShieldCheck } from "lucide-react";
 
 /** Original artwork and fictional UI studies — no customer systems or clinical outcomes are implied. */
-export { SignalField as FieldImage, ArchitectureArtwork as SystemImage } from "./CinematicArt";
+import { SignalField, ArchitectureArtwork } from "./CinematicArt";
+import { MobileSignal } from "./MobileArt";
+
+export function FieldImage({ compact = false }: {compact?:boolean}) { return <div className="am4-adaptive-field"><div className="am4-desktop-art"><SignalField compact={compact}/></div><div className="am4-mobile-art"><MobileSignal/></div></div>; }
+export { ArchitectureArtwork as SystemImage };
 
 export function HannaPreview() {
   return (
