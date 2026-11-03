@@ -284,3 +284,34 @@
   .adv-work-third p{font-size:17px}
 }
 @media(prefers-reduced-motion:reduce){.adv-site *{transition:none!important;animation:none!important}}
+
+
+/* DESIGN PASS 1 — CINEMATIC, ORIGINAL VECTOR ARTWORK */
+.av3-artwork{position:relative;isolation:isolate;overflow:hidden;margin:0;background:#1c5962;min-width:0}
+.av3-artwork>svg{display:block;width:100%;height:100%;min-width:0;object-fit:cover}
+.av3-signal{aspect-ratio:1440/700;box-shadow:0 24px 66px rgba(24,66,66,.12)}
+.av3-signal>svg{aspect-ratio:1440/700}
+.av3-signal-label{position:absolute;inset:26px 31px;display:flex;justify-content:space-between;gap:18px;pointer-events:none;color:#f6fbef;font-size:10px;font-weight:600;letter-spacing:.16em}
+.av3-signal-label>span:first-child{display:flex;align-items:flex-start;gap:8px}
+.av3-signal-label i{width:6px;height:6px;display:block;margin-top:5px;border-radius:50%;background:#dff9df;box-shadow:0 0 14px #f3ffe0}
+.av3-signal-label>span:last-child{align-self:flex-end}
+.av3-signal-label b{font-size:20px;vertical-align:middle;margin-left:13px;font-weight:300}
+.av3-architecture{aspect-ratio:840/760;min-height:0;align-self:stretch;box-shadow:0 34px 80px rgba(16,70,66,.13)}
+.av3-architecture svg{width:100%;height:100%}
+.av3-process-glyph{display:block;width:164px;height:auto;max-width:100%}
+.av3-breath{transform-box:fill-box;transform-origin:center;animation:av3-breathe 9s ease-in-out infinite}
+.av3-node-pulse{transform-box:fill-box;transform-origin:center;animation:av3-node 7s ease-in-out infinite}
+@keyframes av3-breathe{0%,100%{opacity:.68;transform:scale(.91)}50%{opacity:1;transform:scale(1.08)}}
+@keyframes av3-node{0%,100%{opacity:.8}50%{opacity:1}}
+@media(max-width:700px){
+  .av3-signal{aspect-ratio:5/4;box-shadow:none}
+  .av3-signal>svg{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:55% center}
+  .av3-signal-label{inset:15px;font-size:8px;letter-spacing:.055em}
+  .av3-signal-label>span:last-child{max-width:145px;text-align:right}
+  .av3-signal-label b{display:none}
+  .av3-architecture{aspect-ratio:1/1.04;box-shadow:none}
+  .av3-process-glyph{width:122px}
+}
+@media(prefers-reduced-motion:reduce){
+  .av3-breath,.av3-node-pulse{animation:none!important}
+}
