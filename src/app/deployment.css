@@ -628,3 +628,63 @@
  .adv-site .adv-hero{padding-bottom:32px}
  .adv-service-hero .am4-mobile-atlas{margin-top:39px}
 }
+
+/* DESIGN ITERATION 2 — product visuals must remain readable, not miniature dashboards */
+.adv-feature-screen{overflow:hidden}
+.av3-demo{transform:translateZ(0)}
+.av3-demo-header h3{overflow-wrap:normal}
+.adv-feature-content{position:relative}
+.adv-feature-content::before{content:"";position:absolute;top:34px;right:34px;width:24px;height:24px;border-top:1px solid #9bb9a9;border-right:1px solid #9bb9a9;opacity:.6;pointer-events:none}
+.adv-feature-hanna .adv-feature-screen{background:radial-gradient(ellipse at 65% 30%,#e3f4e7,transparent 68%),linear-gradient(130deg,#cfdfd5,#b8cfc2)}
+.adv-feature-ops .adv-feature-screen{background:radial-gradient(ellipse at 40% 30%,#d9eadc,transparent 64%),linear-gradient(140deg,#a1bbb7,#c7ddd0)}
+.adv-product-ui{box-shadow:0 28px 72px rgba(18,57,51,.19),0 0 0 1px rgba(247,255,248,.5)}
+.adv-ui-toolbar strong,.av3-demo-header h3{font-feature-settings:"kern"}
+.adv-work-hero{background:radial-gradient(ellipse at 50% 100%,#e8efe9,transparent 70%),#fbfbf9}
+.adv-work-note{max-width:920px;margin:0 auto;text-align:center}
+@media(max-width:900px){
+ .adv-feature,.adv-feature-ops{grid-template-columns:1fr;min-height:0}
+ .adv-feature-content{padding:clamp(34px,5vw,55px)}
+ .adv-feature-screen{padding:clamp(24px,5vw,50px);min-height:0}
+ .adv-feature-ops .adv-feature-screen{order:2}
+ .adv-feature-ops .adv-feature-content{order:1}
+ .av3-demo{max-width:690px;margin:0 auto}
+}
+@media(max-width:700px){
+ .adv-feature-screen{padding:22px 17px 26px}
+ .av3-hanna-cards{grid-template-columns:1fr!important;gap:12px!important}
+ .av3-hanna-workspace{grid-template-columns:34px minmax(0,1fr)}
+ .av3-demo .adv-hanna-primary{padding:16px}
+ .av3-clinical-card{min-height:0!important;padding:17px!important}
+ .av3-clinical-card>small{font-size:10px}
+ .av3-waveform{height:65px}
+ .av3-audio-card{margin:13px 0}
+ .av3-clinical-list p{font-size:12px!important}
+ .av3-clinical-list p svg{width:13px}
+ .av3-note-section strong{font-size:12px}
+ .av3-note-section p{font-size:12px!important}
+ .av3-note-head span{font-size:15px}
+ .av3-note-head b{font-size:9px}
+ .av3-note-approval{font-size:11px;line-height:1.4;padding:11px}
+ .av3-clinical-breadcrumb span{font-size:9px;overflow-wrap:anywhere}
+ .av3-demo-header h3{font-size:24px}
+ .av3-demo .adv-ui-foot{font-size:8px!important;flex-wrap:wrap;row-gap:4px}
+ .av3-flow-body{padding:17px}
+ .av3-operation-overview{gap:8px}
+ .av3-operation-overview>div{padding:11px}
+ .av3-operation-overview strong{font-size:13px}
+ .av3-trace-row strong{font-size:12px}
+ .av3-trace-row small{font-size:10px}
+ .av3-trace-status{font-size:10px}
+ .adv-feature-content::before{top:24px;right:24px}
+ .adv-work-hero{padding-top:122px}
+}
+@media(max-width:420px){
+ .adv-feature-screen{padding:16px 9px 21px}
+ .av3-demo .adv-hanna-primary{padding:12px}
+ .av3-clinical-card{padding:13px 12px!important}
+ .av3-operation-overview>div{padding:8px}
+ .av3-operation-overview strong{font-size:11px}
+ .av3-demo .adv-ui-toolbar{padding-inline:10px}
+ .av3-review-status{max-width:none!important}
+ .av3-operation-panel{padding:12px}
+}
