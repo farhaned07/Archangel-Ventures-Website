@@ -22,19 +22,19 @@ const inter = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "Archangel — Make AI useful at work",
-  description: "We build AI that takes repetitive work off your team. Bangkok-based, founder-led.",
+  title: "Archangel — Forward Deployed AI Engineering",
+  description: "Model-independent forward deployed AI engineering. We build, integrate and deploy production systems alongside your team, from Bangkok, Thailand.",
   applicationName: "Archangel",
   category: "technology",
   alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
   openGraph: {
-    title: "Archangel — Make AI useful at work",
-    description: "We build AI that takes repetitive work off your team. Bangkok-based, founder-led.",
+    title: "Archangel — Forward Deployed AI Engineering",
+    description: "Model-independent forward deployed AI engineering. We build, integrate and deploy production systems alongside your team, from Bangkok, Thailand.",
     type: "website", url: "/", locale: "en_TH", siteName: "Archangel",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Archangel — Make AI useful at work" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Archangel — Forward Deployed AI Engineering" }],
   },
-  twitter: { card: "summary_large_image", title: "Archangel — Make AI useful at work", description: "We build AI that takes repetitive work off your team. Bangkok-based, founder-led.", images: ["/opengraph-image"] },
+  twitter: { card: "summary_large_image", title: "Archangel — Forward Deployed AI Engineering", description: "Model-independent forward deployed AI engineering. We build, integrate and deploy production systems alongside your team, from Bangkok, Thailand.", images: ["/opengraph-image"] },
 };
 
 const structuredData = {
@@ -44,7 +44,7 @@ const structuredData = {
       "@type": "Organization",
       "@id": `${site.url}/#organization`,
       name: site.legalName, alternateName: site.name, legalName: site.legalName, url: site.url,
-      logo: absoluteUrl("/favicon.ico"), email: site.email, slogan: "Make AI useful at work.",
+      logo: absoluteUrl("/favicon.ico"), email: site.email, slogan: "Forward deployed AI. Built for real work.",
       foundingDate: "2023-10-05",
       disambiguatingDescription: "Thailand-registered software and AI company based in Bangkok.",
       identifier: { "@type": "PropertyValue", propertyID: "Thailand DBD company registration", value: site.companyRegistrationNumber },
@@ -54,12 +54,12 @@ const structuredData = {
         { "@type": "WebPage", name: "ARCHANGEL CO., LTD. public company record", url: site.businessRegistryUrl },
         { "@type": "WebPage", name: "Archangel Company Limited Google Business Profile", url: site.googleBusinessProfileUrl },
       ],
-      description: "Archangel Company Limited is a Bangkok-based software and AI company building AI workflows, software products and digital experiences.",
+      description: "Archangel Company Limited is a Bangkok-based forward deployed AI engineering and software company helping teams design, integrate and operate production AI systems.",
       address: { "@type": "PostalAddress", streetAddress: site.streetAddress, addressLocality: "Bangkok", postalCode: site.postalCode, addressCountry: site.countryCode },
       areaServed: { "@type": "Country", name: "Thailand" },
       founder: { "@type": "Person", "@id": `${site.url}/#farhan-sabbir`, name: "Farhan Sabbir", jobTitle: "Founder & Executive Director", url: absoluteUrl("/farhan-sabbir"), sameAs: [site.linkedinUrl, site.githubUrl] },
       contactPoint: { "@type": "ContactPoint", contactType: "sales", email: site.email, telephone: site.phone, areaServed: "TH", availableLanguage: ["English"] },
-      knowsAbout: ["Applied AI", "Business process automation", "AI workflow implementation", "Enterprise AI", "Healthcare AI", "Software product engineering", "Digital platform development", "Website design and development"],
+      knowsAbout: ["Forward deployed engineering", "AI implementation", "Applied AI", "Model-agnostic AI deployment", "Enterprise AI agents", "AI evaluation", "Systems integration", "Healthcare AI", "Software product engineering"],
     },
     {
       "@type": "WebSite", "@id": `${site.url}/#website`, url: site.url, name: site.name, alternateName: site.legalName,
