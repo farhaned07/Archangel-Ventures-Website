@@ -1,65 +1,33 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { site } from "@/lib/site";
+
 export function Footer() {
-  return (
-    <footer className="site-footer">
-      <div className="page-shell">
-        <div className="footer-main">
-          <div>
-            <Link href="/" className="wordmark" aria-label="Archangel home">
-              ΛRCHΛNGEL
-            </Link>
-            <p>Forward deployed AI. Built for real work.</p>
-            <span>
-              Archangel Company Limited
-              <br />
-              Bangkok, Thailand
-              <br />
-              Thailand BOI promoted
-            </span>
-          </div>
-          <nav aria-label="Footer navigation">
-            <span>Explore</span>
-            <Link href="/services">Forward deployed AI services</Link>
-            <Link href="/work">Selected engineering work</Link>
-            <Link href="/company">Archangel Company Limited</Link>
-            <Link href="/ai-transformation-partner-thailand">
-              AI transformation partner Thailand
-            </Link>
-            <Link href="/ai-transformation-partner-bangkok">
-              AI transformation partner Bangkok
-            </Link>
-            <Link href="/insights/what-is-an-ai-transformation-partner">
-              What is an AI transformation partner?
-            </Link>
-            <Link href="/th/ai-transformation-partner-thailand">
-              AI Transformation ประเทศไทย
-            </Link>
-            <Link href="/ai-transformation">AI implementation & 30-day pilot</Link>
-            <Link href="/farhan-sabbir">Farhan Sabbir</Link>
-            <Link href="/insights/ai-transformation-thailand-2026">
-              Thailand AI 2026
-            </Link>
-          </nav>
-          <div className="footer-contact">
-            <span>Start a conversation</span>
-            <a href={`mailto:${site.email}`}>
-              {site.email}
-              <ArrowUpRight size={16} aria-hidden="true" />
-            </a>
-            <a href={site.companyLinkedinUrl} target="_blank" rel="noreferrer">
-              LinkedIn
-              <ArrowUpRight size={16} aria-hidden="true" />
-              <span className="sr-only"> (opens in a new tab)</span>
-            </a>
-          </div>
+  return <footer className="site-footer">
+    <div className="page-shell">
+      <div className="footer-main">
+        <div>
+          <Link href="/" className="wordmark" aria-label="Archangel home">ΛRCHΛNGEL</Link>
+          <p>AI deployment.<br/>Built for the real world.</p>
+          <span>Archangel Company Limited<br/>Bangkok, Thailand<br/>Thailand BOI promoted</span>
         </div>
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Archangel Company Limited</span>
-          <Link href="/privacy">Privacy notice</Link>
+        <nav aria-label="Footer navigation">
+          <span>Explore</span>
+          <Link href="/services">Deployment services</Link>
+          <Link href="/work">Selected work</Link>
+          <Link href="/#approach">How we work</Link>
+          <Link href="/ai-transformation">30-day implementation pilot</Link>
+          <Link href="/company">Company</Link>
+          <Link href="/insights/ai-transformation-thailand-2026">Insights</Link>
+        </nav>
+        <div className="footer-contact">
+          <span>Connect</span>
+          <a href={"mailto:"+site.email}>{site.email}<ArrowUpRight size={16} aria-hidden="true"/></a>
+          <a href={site.companyLinkedinUrl} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={16} aria-hidden="true"/><span className="sr-only"> (opens in a new tab)</span></a>
+          <Link href="/book">Discuss a deployment <ArrowUpRight size={16} aria-hidden="true"/></Link>
         </div>
       </div>
-    </footer>
-  );
+      <div className="footer-bottom"><span>© {new Date().getFullYear()} Archangel Company Limited · Thailand</span><Link href="/privacy">Privacy notice</Link></div>
+    </div>
+  </footer>;
 }

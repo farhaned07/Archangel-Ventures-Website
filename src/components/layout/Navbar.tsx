@@ -7,7 +7,7 @@ import { bookingHref } from "@/lib/site";
 
 const links = [
   { href: "/services", label: "Services" },
-  { href: "/#what-is-fde", label: "Approach" },
+  { href: "/#approach", label: "Approach" },
   { href: "/work", label: "Work" },
   { href: "/company", label: "Company" },
 ];
@@ -36,14 +36,14 @@ export function Navbar() {
 
   return (
     <>
-      <header className={`site-header ${["/", "/services", "/work", "/capabilities"].includes(pathname) ? "header-on-dark" : ""}`}>
+      <header className={`site-header ${["/capabilities"].includes(pathname) ? "header-on-dark" : ""}`}>
         <nav className="page-shell nav-inner" aria-label="Main navigation">
           <Link href="/" aria-label="Archangel home" className="wordmark">ΛRCHΛNGEL</Link>
           <div className="desktop-links">
             {links.map((l) => <Link key={l.href} href={l.href} aria-current={pathname === l.href ? "page" : undefined}>{l.label}</Link>)}
           </div>
           <Link href={bookingHref} className="nav-call max-md:!hidden" data-cta="nav-opportunity-call">
-            Book a free call <ArrowUpRight size={16} aria-hidden="true" />
+            Start a project <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
           <button type="button" className="menu-toggle" style={{ marginLeft: "auto", width: 36, height: 36, border: 0, background: "transparent", color: "inherit" }} aria-label="Open navigation" aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(true)}>
             <Menu size={28} strokeWidth={1.4} />
