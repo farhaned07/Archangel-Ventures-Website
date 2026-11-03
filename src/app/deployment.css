@@ -589,3 +589,42 @@
 @media(prefers-reduced-motion:reduce){
   .adv-site *, .av3-artwork *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 }
+
+/* DESIGN ITERATION 1 — genuine mobile artwork + visual hierarchy */
+.am4-adaptive-field,.am4-adaptive-field>*{min-width:0}
+.am4-desktop-art{display:block}
+.am4-mobile-art{display:none}
+.am4-mobile-signal,.am4-mobile-atlas{margin:0;background:#1b606a;overflow:hidden}
+.am4-mobile-signal svg,.am4-mobile-atlas svg{display:block;width:100%;height:100%;object-fit:cover}
+.adv-site .adv-hero{background:radial-gradient(ellipse at 50% 0%,#f1f6f1 0%,#fbfbf9 58%)}
+.adv-hero h1 em{color:#456c67}
+.adv-hero-center{max-width:1120px}
+.adv-site h2{word-wrap:normal}
+.adv-field,.av3-artwork{box-shadow:0 28px 84px rgba(31,75,72,.13)}
+.adv-feature-hanna .adv-feature-content h3{font-size:clamp(54px,5vw,80px)}
+.adv-offering:hover{background:linear-gradient(90deg,rgba(204,224,213,.16),transparent 76%)}
+.adv-method{background:radial-gradient(ellipse at 78% 10%,rgba(47,101,93,.18),transparent 55%),#142322}
+@media(max-width:700px){
+ .am4-desktop-art{display:none!important}
+ .am4-mobile-art{display:block!important}
+ .am4-adaptive-field{width:100%}
+ .am4-mobile-signal{aspect-ratio:390/450}
+ .am4-mobile-atlas{aspect-ratio:390/440;margin-top:40px}
+ .adv-site .adv-hero{background:linear-gradient(#f8faf7,#fbfbf9)}
+ .adv-hero-center{padding-top:57px}
+ .adv-hero h1{font-size:clamp(40px,10.2vw,68px);letter-spacing:-.068em;line-height:1.075;overflow-wrap:normal}
+ .adv-hero h1 em{color:#456c67}
+ .adv-hero-description{max-width:500px}
+ .adv-site .adv-hero{padding-bottom:47px}
+ .adv-service-hero .am4-mobile-atlas{margin-top:57px}
+ .adv-service-hero .adv-eyebrow{margin-bottom:16px}
+ .adv-offering:active{background:#edf3ef}
+ .adv-site h2{hyphens:none}
+ .adv-feature-hanna .adv-feature-content h3{font-size:47px}
+}
+@media(max-width:380px){
+ .adv-hero h1{font-size:clamp(38px,10.1vw,48px)}
+ .adv-hero-center{padding-top:49px}
+ .adv-site .adv-hero{padding-bottom:32px}
+ .adv-service-hero .am4-mobile-atlas{margin-top:39px}
+}
