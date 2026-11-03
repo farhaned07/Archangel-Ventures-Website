@@ -436,3 +436,36 @@
   .av3-trace-row small{font-size:8px}
   .av3-trace-status{font-size:8px}
 }
+
+
+/* VISUAL PASS 2B — DISTINCT ART FOR EACH SECTION, PURPOSEFUL RHYTHM */
+.av3-capability-art{width:100%;aspect-ratio:1440/500;margin-top:75px;background:#306c71;box-shadow:0 22px 72px #1c45451d}
+.av3-capability-art svg{aspect-ratio:1440/500;height:100%;width:100%;object-fit:cover}
+.av3-step-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.av3-step-heading>span{font-size:11px;color:#a7c8ba;letter-spacing:.13em}
+.av3-step-heading svg{width:88px;margin-top:-18px;opacity:.91}
+.adv-step h3{margin-top:33px}
+.adv-step:first-child{background:linear-gradient(135deg,rgba(52,98,83,.14),transparent 80%)}
+.adv-feature-hanna{background:#f9faf7}
+.adv-feature-ops{background:#dce8e4}
+.adv-feature{border:1px solid rgba(77,125,106,.13)}
+.adv-feature-screen{background:linear-gradient(145deg,#e5f2e9,#b8d4c9 80%)}
+.adv-feature-ops .adv-feature-screen{background:linear-gradient(140deg,#a2c5bd,#d7e7d8 85%)}
+.adv-product-ui{min-width:0}
+.adv-thesis-copy{min-width:0}
+.adv-thesis-copy p + p{margin-top:21px}
+.adv-offering h3{transition:transform .22s}
+.adv-offering:hover h3{transform:translateX(4px)}
+.adv-service-line .adv-service-desc{max-width:790px}
+@media(max-width:900px){
+  .av3-capability-art{margin-top:52px}
+  .av3-step-heading svg{width:75px}
+  .adv-step h3{margin-top:20px}
+}
+@media(max-width:600px){
+  .av3-capability-art{aspect-ratio:5/4;margin-top:45px;box-shadow:none}
+  .av3-capability-art svg{width:100%;height:100%;aspect-ratio:auto;object-position:50% center}
+  .av3-step-heading svg{width:97px}
+  .adv-step h3{margin-top:7px}
+  .adv-feature{border:0}
+}
