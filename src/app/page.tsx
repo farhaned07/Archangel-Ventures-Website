@@ -3,7 +3,6 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { bookingHref, site } from "@/lib/site";
 
-import "./deployment.css";
 
 export const metadata: Metadata = {
   title: "Forward Deployed AI Engineering | Archangel Thailand",
