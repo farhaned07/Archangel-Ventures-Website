@@ -1,126 +1,100 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
-import { bookingHref, site } from "@/lib/site";
-
+import { ArrowDownRight, ArrowRight, ArrowUpRight, Check, MoveUpRight } from "lucide-react";
+import { bookingHref } from "@/lib/site";
+import { FieldImage, HannaPreview, SystemImage, WorkflowPreview } from "@/components/deployment/Visuals";
 
 export const metadata: Metadata = {
-  title: "Forward Deployed AI Engineering | Archangel Thailand",
-  description: "Archangel embeds hands-on engineers with your team to design, evaluate, integrate and deploy production AI. OpenAI, Claude, Gemini or open models—the right technology for the work.",
+  title: "Forward Deployed AI Engineering in Thailand | Archangel",
+  description: "We deploy AI where work happens. Embedded engineers, AI agents, custom integrations and production-ready systems, built with the right model for each business.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Archangel — Forward Deployed AI Engineering",
-    description: "Embedded engineers. Production AI. No single-model agenda. Based in Bangkok, working across Thailand and beyond.",
+    title: "Archangel — We deploy AI where work happens",
+    description: "Model-independent AI engineering. From first workflow to reliable production system, built alongside your team in Thailand and beyond.",
     url: "/", type: "website", locale: "en_TH", siteName: "Archangel",
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Archangel — Forward Deployed AI Engineering" }],
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "Archangel forward deployed AI engineering" }],
   },
 };
 
-const disciplines = [
-  { number: "01", title: "Forward deployed engineering", body: "Engineers who work alongside your operators and technical team. We map the real constraint, build in context, and stay accountable through deployment.", detail: "ON-SITE / HYBRID / REMOTE", href: "/services#forward-deployed-engineering" },
-  { number: "02", title: "AI agents and workflows", body: "Purpose-built agents, human review, document intelligence and multi-step systems connected to the way your business actually runs.", detail: "AGENTS / WORKFLOW REDESIGN", href: "/services#ai-automation" },
-  { number: "03", title: "Integration and engineering", body: "APIs, data pipelines, internal applications and platform integrations that turn a promising model response into a usable product.", detail: "SYSTEMS / DATA / PRODUCT", href: "/services#product-engineering" },
-  { number: "04", title: "Evaluation and operations", body: "Real-world evaluations, permission boundaries, observability, exception handling and improvements after launch.", detail: "EVALUATION / RELIABILITY", href: "/services#production-ai" },
+const services=[
+  {no:"01",name:"Forward deployed engineering",desc:"Hands-on engineers alongside your team, moving from a hard operational problem to working software.",link:"/services#forward-deployed-engineering"},
+  {no:"02",name:"AI agents & automation",desc:"Agents and human-led workflows integrated with your tools, information and business processes.",link:"/services#ai-automation"},
+  {no:"03",name:"Systems & integrations",desc:"APIs, applications, data pipelines and model routing built around the software you already run.",link:"/services#product-engineering"},
+  {no:"04",name:"Evaluation & operations",desc:"Test, monitor and improve behavior so a promising prototype becomes a dependable system.",link:"/services#production-ai"},
 ];
-
-const principles = [
-  { n: "01", title: "Start in the workflow", text: "We work with the people who do the job, not just the people who sponsor the project. We find the bottleneck worth solving." },
-  { n: "02", title: "Build against reality", text: "We test with representative inputs, existing systems and real constraints. A working system comes before a large transformation plan." },
-  { n: "03", title: "Measure what changed", text: "Accuracy, turnaround time, throughput, human effort and reliability are measured against an agreed baseline." },
-  { n: "04", title: "Deploy, then improve", text: "We connect the system, prepare the team, make failure modes visible and support the next iteration when the evidence justifies it." },
+const steps=[
+  {no:"01",title:"Get close",desc:"Talk to the people who do the work. Map the operational constraint and agree what improvement looks like."},
+  {no:"02",title:"Build the right system",desc:"Prototype against real inputs and evaluate the tools, models and integrations the workflow actually needs."},
+  {no:"03",title:"Prove it works",desc:"Test against representative cases, edge conditions and a measured baseline—not just a polished demo."},
+  {no:"04",title:"Deploy & improve",desc:"Put it into use with appropriate controls, monitoring and a clear owner for the next iteration."},
 ];
 
 export default function Home() {
-  return (
-    <main id="main-content" className="fd-landing">
-      <section className="fd-hero">
-        <div className="fd-container fd-hero-wrap">
-          <div className="fd-topline"><span>ARCHANGEL / FORWARD DEPLOYED ENGINEERING</span><span>BANGKOK · THAILAND · GLOBAL DELIVERY</span></div>
-          <div className="fd-hero-copy">
-            <span className="fd-eyebrow fd-on-dark">FROM AI EXPERIMENTS TO OPERATIONS</span>
-            <h1>Intelligence<br />belongs in<br /><span>the real world.</span></h1>
-            <p>We embed with organizations to solve difficult operational problems using AI—designing, building and deploying systems with the teams who depend on them. <strong>Any model. The right solution.</strong></p>
-            <div className="fd-hero-ctas">
-              <Link className="fd-button fd-button-light" href={bookingHref} data-cta="fde-home-hero">Discuss a deployment <ArrowUpRight size={19} /></Link>
-              <a className="fd-text-cta" href="#what-is-fde">How we work <ArrowDown size={17} /></a>
-            </div>
-          </div>
-          <div className="fd-hero-bottom"><span>ENGINEERS, NOT JUST ADVICE.</span><span>MODEL-INDEPENDENT BY DESIGN.</span><span>01 — 06</span></div>
+  return <main id="main-content" className="adv-site adv-home">
+    <section className="adv-hero">
+      <div className="adv-shell adv-hero-inner">
+        <div className="adv-hero-meta"><span>ARCHANGEL / FORWARD DEPLOYED ENGINEERING</span><span>INDEPENDENT AI DEPLOYMENT · THAILAND</span></div>
+        <div className="adv-hero-center">
+          <p className="adv-eyebrow">FROM EXPERIMENT TO PRODUCTION</p>
+          <h1>We deploy AI<br/><em>where work happens.</em></h1>
+          <p className="adv-hero-description">Embedded engineers who turn powerful AI into working business systems. We work with your team to build, integrate, evaluate and deploy—using whichever technology fits the problem.</p>
+          <div className="adv-actions"><Link className="adv-button adv-button-black" href={bookingHref} data-cta="adv-home-hero">Discuss a deployment <ArrowUpRight size={17}/></Link><a href="#approach" className="adv-text-button">How we work <ArrowDownRight size={17}/></a></div>
         </div>
-      </section>
+        <FieldImage/>
+      </div>
+    </section>
 
-      <section id="what-is-fde" className="fd-intro fd-light-section">
-        <div className="fd-container fd-two-col">
-          <div className="fd-rail"><span className="fd-index">01 / THE APPROACH</span><span className="fd-rail-line" /></div>
-          <div className="fd-intro-main">
-            <span className="fd-eyebrow">WHAT IS FORWARD DEPLOYED ENGINEERING?</span>
-            <h2>Close to the problem.<br /><span>Responsible for the result.</span></h2>
-            <p>Forward deployed engineering puts builders directly beside the people doing the work. Instead of handing over a strategy deck or selling a prepackaged tool, we study a specific problem, build a working system, test it in context and take it toward production.</p>
-            <p>For Archangel, that means pairing AI engineering with your industry expertise, existing software, data and operational realities. We are not tied to one model provider or one product.</p>
-            <Link className="fd-inline-link" href="/services">Explore what we deploy <ArrowUpRight size={18} /></Link>
-          </div>
+    <section className="adv-thesis" id="approach">
+      <div className="adv-shell adv-thesis-grid">
+        <div className="adv-thesis-copy">
+          <span className="adv-marker">01 / WHAT WE BELIEVE</span>
+          <h2>AI is powerful.<br/><span>Deployment is the work.</span></h2>
+          <p>Good models are increasingly available. Making them useful inside real organizations takes something else: understanding the workflow, connecting the systems, designing the controls and staying responsible after launch.</p>
+          <p>We work directly with domain experts and engineering teams. We don't arrive with a prescribed product or a single-model agenda.</p>
+          <Link className="adv-underline-link" href="/services">What we can deploy <ArrowUpRight size={18}/></Link>
         </div>
-      </section>
+        <SystemImage/>
+      </div>
+    </section>
 
-      <section className="fd-model-section">
-        <div className="fd-container">
-          <div className="fd-section-head"><span className="fd-index">02 / THE DIFFERENCE</span><h2>Choose the model.<br />Own the outcome.</h2><p>Your problem determines the architecture—not a model sales target. We can evaluate frontier APIs, open-weight models and conventional software together.</p></div>
-          <div className="fd-architecture" aria-label="Illustrative architecture showing operations connected through an AI deployment layer to a choice of models">
-            <div className="fd-arch-node"><span>01 / THE INPUT</span><strong>Your operations</strong><small>People · Data · Existing systems</small></div>
-            <div className="fd-arch-connector"><span /></div>
-            <div className="fd-arch-node fd-arch-core"><span>02 / ARCHANGEL</span><strong>Deployment layer</strong><small>Integration · Evaluation · Controls</small></div>
-            <div className="fd-arch-connector"><span /></div>
-            <div className="fd-arch-node"><span>03 / THE INTELLIGENCE</span><strong>Best-fit AI</strong><small>Frontier · Open-weight · Hybrid</small></div>
-          </div>
-          <div className="fd-model-footer"><span>OPENAI / ANTHROPIC / GOOGLE / OPEN-WEIGHT / CLASSICAL SOFTWARE</span><span>TECHNOLOGY OPTIONS, NOT PARTNER ENDORSEMENTS</span></div>
-        </div>
-      </section>
+    <section className="adv-offerings" id="capabilities">
+      <div className="adv-shell">
+        <div className="adv-heading-row"><div><span className="adv-marker">02 / OUR PRACTICE</span><h2>Built for the<br/>complex work.</h2></div><p>From an uncertain first use case to an operational system, Archangel brings the engineering capacity to get there.</p></div>
+        <div className="adv-offerings-list">{services.map(s=><Link className="adv-offering" key={s.no} href={s.link}><span className="adv-offer-no">{s.no} / 04</span><div><h3>{s.name}</h3><p>{s.desc}</p></div><MoveUpRight size={24} strokeWidth={1.4}/></Link>)}</div>
+      </div>
+    </section>
 
-      <section className="fd-offerings fd-light-section" id="capabilities">
-        <div className="fd-container">
-          <div className="fd-section-head fd-head-row"><div><span className="fd-index">03 / WHAT WE DEPLOY</span><h2>Built for the work<br />that matters.</h2></div><p>From the first difficult workflow to a system teams can operate every day. One engineering partner across design, delivery and improvement.</p></div>
-          <div className="fd-discipline-list">
-            {disciplines.map((item) => (
-              <Link href={item.href} className="fd-discipline" key={item.number}>
-                <span className="fd-disc-num">{item.number} / 04</span>
-                <div><h3>{item.title}</h3><p>{item.body}</p></div>
-                <div className="fd-disc-end"><span>{item.detail}</span><ArrowUpRight size={25} strokeWidth={1.4} /></div>
-              </Link>
-            ))}
-          </div>
+    <section className="adv-workshow" id="selected-work">
+      <div className="adv-shell">
+        <div className="adv-heading-row adv-work-heading"><div><span className="adv-marker">03 / WORK & STUDIES</span><h2>See what we build.</h2></div><p>Real product development and clearly identified technical demonstrations. No borrowed client logos or invented impact statistics.</p></div>
+        <div className="adv-feature adv-feature-hanna">
+          <div className="adv-feature-content"><span className="adv-kicker">01 / ARCHANGEL PRODUCT · IN DEVELOPMENT</span><h3>Hanna</h3><p>Turning a clinical conversation into structured documentation and a patient-friendly care plan—with the clinician in charge of review.</p><a href="https://www.hanna.care" target="_blank" rel="noreferrer">Explore Hanna <ArrowUpRight size={17}/></a><small>Illustrative interface using sample content. Not a deployed hospital system.</small></div>
+          <div className="adv-feature-screen"><HannaPreview/></div>
         </div>
-      </section>
+        <div className="adv-feature adv-feature-ops">
+          <div className="adv-feature-screen"><WorkflowPreview/></div>
+          <div className="adv-feature-content"><span className="adv-kicker">02 / INTERNAL ENGINEERING STUDY</span><h3>Systems that<br/>make decisions visible.</h3><p>An example of document intake, validation, human approval and controlled handoff—designed around reliability and traceability.</p><Link href="/work">Explore our work <ArrowUpRight size={17}/></Link><small>Architecture illustration; not a commissioned client deployment.</small></div>
+        </div>
+      </div>
+    </section>
 
-      <section className="fd-method">
-        <div className="fd-container">
-          <div className="fd-section-head"><span className="fd-index">04 / THE OPERATING MODEL</span><h2>Build. Prove.<br /><span>Make it last.</span></h2><p>We work in short, testable loops with visible assumptions, practical safeguards and a clear path to production.</p></div>
-          <div className="fd-steps">
-            {principles.map((item) => (
-              <div className="fd-step" key={item.n}><span>{item.n}</span><h3>{item.title}</h3><p>{item.text}</p></div>
-            ))}
-          </div>
-          <div className="fd-method-note"><span>NO LOCK-IN BY DEFAULT</span><p>If simpler automation can solve the problem more reliably than AI, we say so.</p></div>
-        </div>
-      </section>
+    <section className="adv-method">
+      <div className="adv-shell">
+        <div className="adv-method-heading"><span className="adv-marker">04 / HOW FDE WORKS</span><h2>Close to the problem.<br/><em>Accountable for the result.</em></h2><p>We take an evidence-led path from the first working version to something people can operate with confidence.</p></div>
+        <div className="adv-steps">{steps.map(s=><div className="adv-step" key={s.no}><span>{s.no} / 04</span><h3>{s.title}</h3><p>{s.desc}</p></div>)}</div>
+        <div className="adv-method-foot"><span><Check size={14}/> Bounded pilots</span><span><Check size={14}/> Model choice by evidence</span><span><Check size={14}/> Human oversight where needed</span></div>
+      </div>
+    </section>
 
-      <section className="fd-evidence fd-light-section">
-        <div className="fd-container">
-          <div className="fd-section-head fd-head-row"><div><span className="fd-index">05 / SELECTED BUILD WORK</span><h2>Show the system.<br />Not just the pitch.</h2></div><p>We distinguish our own product development and technical demonstrations from verified customer deployments. No invented case-study metrics.</p></div>
-          <div className="fd-evidence-grid">
-            <article className="fd-evidence-card"><div className="fd-evidence-top"><span>01 / OWN PRODUCT</span><span>IN DEVELOPMENT</span></div><div className="fd-evidence-symbol">h.</div><h3>Hanna</h3><p>An AI-assisted clinical documentation and care-plan product. Human review is central; it is not presented as a deployed patient-care system.</p><a href="https://www.hanna.care" target="_blank" rel="noreferrer">Explore the product <ArrowUpRight size={17} /></a></article>
-            <article className="fd-evidence-card fd-evidence-alt"><div className="fd-evidence-top"><span>02 / TECHNICAL DEMONSTRATIONS</span><span>ILLUSTRATIVE</span></div><div className="fd-evidence-symbol">↗</div><h3>From workflow to system.</h3><p>Engineering studies showing intake, checks, human approval and integration patterns. These demonstrate how we build, not claimed client results.</p><Link href="/work">See our work <ArrowUpRight size={17} /></Link></article>
-          </div>
-        </div>
-      </section>
+    <section className="adv-models">
+      <div className="adv-shell adv-model-row">
+        <div><span className="adv-marker">05 / NO SINGLE-MODEL AGENDA</span><h2>One problem.<br/>Every option.</h2></div>
+        <div><p>OpenAI. Anthropic. Gemini. Open-weight models. Traditional software. We evaluate the trade-offs and choose the architecture your work needs—not the one a vendor wants to sell.</p><span>TECHNOLOGIES CONSIDERED / NOT CLAIMS OF PARTNERSHIP</span></div>
+      </div>
+    </section>
 
-      <section className="fd-end">
-        <div className="fd-container fd-end-inner">
-          <span className="fd-index">06 / START A DEPLOYMENT</span>
-          <h2>Bring us the<br /><span>hard problem.</span></h2>
-          <div className="fd-end-row"><p>We can begin with a focused discovery conversation, a scoped pilot or an engineering engagement alongside your team. Based in Thailand, working wherever the problem needs us.</p><Link className="fd-button fd-button-light" href={bookingHref} data-cta="fde-home-bottom">Talk to Archangel <ArrowRight size={19} /></Link></div>
-          <div className="fd-end-meta"><span>ARCHANGEL COMPANY LIMITED · BOI-PROMOTED IN THAILAND</span><a href={"mailto:" + site.email}>{site.email}</a></div>
-        </div>
-      </section>
-    </main>
-  );
+    <section className="adv-contact">
+      <div className="adv-shell adv-contact-wrap"><span className="adv-marker">06 / START HERE</span><h2>Bring us the<br/><em>hard part.</em></h2><div className="adv-contact-row"><p>Have an AI pilot that needs to ship, or a workflow you know could work better? Tell us what's blocking it. We'll define a practical first move.</p><Link href={bookingHref} className="adv-button adv-button-white" data-cta="adv-home-contact">Start a conversation <ArrowRight size={18}/></Link></div><div className="adv-contact-bottom"><span>ARCHANGEL COMPANY LIMITED · BANGKOK, THAILAND</span><span>INDEPENDENT BY DESIGN</span></div></div>
+    </section>
+  </main>;
 }
