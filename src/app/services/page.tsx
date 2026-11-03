@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { bookingHref } from "@/lib/site";
 import { SystemImage } from "@/components/deployment/Visuals";
 import { CapabilityAtlas } from "@/components/deployment/CinematicArt";
+import { MobileAtlas } from "@/components/deployment/MobileArt";
 
 export const metadata: Metadata = {
   title: "AI Deployment & Forward Deployed Engineering Services | Archangel",
@@ -26,7 +27,7 @@ export default function ServicesPage(){
         <h1>From first principles.<br/><em>To working systems.</em></h1>
         <p>We build beside your team, integrating AI with the workflows, tools and decisions that run your business. We choose technology by fit, not affiliation.</p>
         <Link className="adv-button adv-button-black" href={bookingHref} data-cta="adv-services-top">Discuss your deployment <ArrowUpRight size={17}/></Link>
-        <CapabilityAtlas/>
+        <div className="am4-desktop-art"><CapabilityAtlas/></div><div className="am4-mobile-art"><MobileAtlas/></div>
       </div>
     </section>
     <section className="adv-service-content">
