@@ -7,9 +7,9 @@ import { bookingHref } from "@/lib/site";
 
 const links = [
   { href: "/services", label: "Services" },
-  { href: "/work", label: "Examples" },
-  { href: "/ai-transformation", label: "AI at work" },
-  { href: "/company", label: "About" },
+  { href: "/#what-is-fde", label: "Approach" },
+  { href: "/work", label: "Work" },
+  { href: "/company", label: "Company" },
 ];
 
 export function Navbar() {
