@@ -1699,3 +1699,75 @@ h2 {
 /* Grid children must be allowed to shrink below their intrinsic content width. */
 .hanna-feature > *, .workshop-grid > *, .company-statement > *, .closing-grid > *, .split-hero > *, .section-grid > *, .footer-main > * { min-width: 0; }
 .hanna-flow-line { flex-wrap: wrap; }
+
+/* DESIGN ITERATION 3 — site-wide mobile polish and navigation accessibility */
+:root{--tap-target:44px}
+html{scroll-padding-top:88px}
+body{overflow-x:clip}
+.site-header{background:rgba(250,251,248,.96);backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:saturate(1.2) blur(14px)}
+.site-header.header-on-dark{background:transparent;backdrop-filter:none}
+.site-header:not(.header-on-dark){border-color:#dfe4dd}
+.nav-inner .wordmark{white-space:nowrap;letter-spacing:.055em}
+.desktop-links a,.nav-call{min-height:44px;display:flex;align-items:center}
+.nav-call{font-weight:600}
+.mobile-navigation{overscroll-behavior:contain;padding:clamp(19px,5vw,35px);padding-bottom:max(25px,env(safe-area-inset-bottom));overflow-y:auto}
+.mobile-navigation nav{margin:clamp(27px,6vh,55px) 0}
+.mobile-navigation nav a{min-height:60px}
+.mobile-navigation nav a:focus-visible,.site-header a:focus-visible,.site-header button:focus-visible,.mobile-navigation button:focus-visible{outline:3px solid #398077;outline-offset:4px}
+.mobile-navigation .button-primary{width:100%;min-height:52px}
+.site-footer{background:#0e1817;color:#eff5f0}
+.site-footer .footer-main nav a{line-height:1.45}
+.site-footer .footer-main nav a:hover,.site-footer .footer-contact a:hover{color:#b7dbc8}
+.site-footer .footer-bottom{border-color:#3b5952}
+.page-hero h1,.company-section h2,.interior h2{overflow-wrap:break-word}
+@media(max-width:1100px){
+ .nav-inner{gap:25px}
+ .desktop-links{gap:19px}
+ .nav-call{padding-left:20px;gap:15px}
+}
+@media(max-width:800px){
+ html{scroll-padding-top:76px}
+ .site-header{height:76px}
+ .page-shell{width:calc(100% - 40px)}
+ .site-header .nav-inner{gap:10px}
+ .site-header .menu-toggle{display:inline-flex;min-width:44px;min-height:44px}
+ .mobile-navigation nav a{font-size:clamp(24px,5.5vw,34px);line-height:1.2}
+ .footer-main{grid-template-columns:1fr 1fr;column-gap:22px}
+ .site-footer{padding-top:57px}
+ .footer-bottom{margin-top:48px}
+ .booking-panel{padding:28px}
+ .page-hero{padding-top:65px}
+ .page-hero h1{font-size:clamp(43px,8vw,70px)}
+}
+@media(max-width:600px){
+ .site-header .wordmark{font-size:clamp(18px,5.2vw,24px);letter-spacing:.03em}
+ .mobile-navigation nav{margin:26px 0}
+ .mobile-navigation nav a{padding:15px 0;min-height:58px}
+ .mobile-navigation>p{margin-top:25px}
+ .footer-main{grid-template-columns:1fr;gap:35px}
+ .footer-main>div:first-child{grid-column:auto}
+ .footer-main nav,.footer-contact{gap:13px}
+ .footer-main>div:first-child>p{font-size:23px}
+ .page-shell{width:calc(100% - 36px)}
+ .page-hero{padding:50px 0 44px}
+ .page-hero h1{font-size:clamp(40px,10vw,57px);letter-spacing:-.065em}
+ .page-hero .hero-deck{font-size:17px}
+ .page-hero .hero-actions{gap:12px}
+ .page-hero .hero-actions>a{min-height:44px;align-items:center}
+ .company-facts{grid-template-columns:1fr}
+ .booking-panel{padding:22px 19px}
+ .booking-meta{flex-wrap:wrap;gap:16px}
+ .interior .section-grid{gap:25px}
+ .mobile-navigation{padding-top:max(22px,env(safe-area-inset-top))}
+ .site-footer .footer-bottom{line-height:1.5}
+}
+@media(max-width:360px){
+ .site-header .wordmark{font-size:18px}
+ .page-shell{width:calc(100% - 30px)}
+ .mobile-navigation nav a{font-size:23px}
+ .site-footer{padding-top:45px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto!important}
+ .desktop-links a:after,.site-header *{transition:none!important}
+}
